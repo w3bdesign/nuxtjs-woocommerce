@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Hero />
     <ShowProducts :products="products" />
   </div>
 </template>

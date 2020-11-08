@@ -1,4 +1,8 @@
 export default {
+  // Environment variables (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env)
+  env: {
+    graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:3000/graphql',
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'nuxtjs-woocommerce',
@@ -46,10 +50,6 @@ export default {
   apollo: {
     clientConfigs: {
       default: '~/plugins/apollo-client-config.js',
-      //  default: {
-      // httpEndpoint: 'https://woo.dfweb.no/graphql',
-      // default: "~/plugins/apollo-client-config.js",
-      // },
     },
   },
 }

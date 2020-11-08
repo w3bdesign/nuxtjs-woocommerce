@@ -11,7 +11,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export default function (_context) {
   return {
-    httpEndpoint: 'https://woo.dfweb.no/graphql',
+    httpEndpoint: process.env.graphqlUrl,
     cache: new InMemoryCache({ fragmentMatcher }),
   }
 }

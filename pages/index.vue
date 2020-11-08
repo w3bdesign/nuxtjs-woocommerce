@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-for="product in products" :key="product.id">
-      <pre>{{ product }}</pre>
       <div v-for="p in product" :key="p.id">
         <p>{{ p.name }}</p>
         <p>
@@ -14,6 +13,24 @@
 
 <script>
 // https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
+
+/*
+{
+    "id": "cHJvZHVjdDozMg==",
+    "databaseId": 32,
+    "name": "Beanie with Logo",
+    "onSale": true,
+    "slug": "beanie-with-logo",
+    "image": {
+      "sourceUrl": "https://woo.dfweb.no/wp-content/uploads/2020/10/beanie-with-logo-1.jpg",
+      "__typename": "MediaItem"
+    },
+    "price": "kr18.00",
+    "regularPrice": "kr20.00",
+    "salePrice": "kr18.00",
+    "__typename": "SimpleProduct"
+  },
+  */
 
 import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql'
 

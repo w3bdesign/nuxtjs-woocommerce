@@ -1,21 +1,27 @@
 <template>
   <div>
     <div v-for="product in products" :key="product.id">
+      <pre>{{ product }}</pre>
       <div v-for="p in product" :key="p.id">
-        <pre>{{ p.name }} </pre>
+        <p>{{ p.name }}</p>
+        <p>
+          <img :src="p.image && p.image.sourceUrl" />
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import allProducts from '@/apollo/queries/allProducts.gql'
+// https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
+
+import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql'
 
 export default {
   apollo: {
     products: {
       prefetch: true,
-      query: allProducts,
+      query: FETCH_ALL_PRODUCTS_QUERY,
     },
   },
   head: {

@@ -1,0 +1,64 @@
+{
+  product(id: $id, idType: DATABASE_ID) {
+    id
+    databaseId
+    averageRating
+    slug
+    description
+    image {
+      id
+      uri
+      title
+      srcSet
+      sourceUrl
+    }
+    name
+    ... on SimpleProduct {
+      price
+      id
+    }
+    ... on VariableProduct {
+      price
+      id
+      paColors {
+        nodes {
+          name
+        }
+      }
+      paSizes {
+        nodes {
+          name
+        }
+      }
+      variations {
+        nodes {
+          id
+          databaseId
+          name
+          stockStatus
+          stockQuantity
+          purchasable
+          onSale
+          salePrice
+          regularPrice
+        }
+      }
+    }
+    ... on ExternalProduct {
+      price
+      id
+      externalUrl
+    }
+    ... on GroupProduct {
+      products {
+        nodes {
+          ... on SimpleProduct {
+            id
+            price
+          }
+        }
+      }
+      id
+    }
+  }
+}

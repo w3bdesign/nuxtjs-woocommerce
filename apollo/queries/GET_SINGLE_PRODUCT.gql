@@ -1,4 +1,4 @@
-{
+query Product($id: ID!) {
   product(id: $id, idType: DATABASE_ID) {
     id
     databaseId

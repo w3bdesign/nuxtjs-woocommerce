@@ -1,0 +1,9 @@
+{
+  productCategories(first: 20) {
+    nodes {
+      id
+      name
+      slug
+    }
+  }
+}

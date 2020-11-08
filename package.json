@@ -9,17 +9,21 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "test": "jest"
+    "test": "jest",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.4",
     "core-js": "^3.7.0",
+    "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.7",
     "vue": "^2.6.12",
     "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.19.1",
+    "@graphql-codegen/fragment-matcher": "2.0.0",
     "@nuxtjs/eslint-config": "^4.0.0",
     "@nuxtjs/eslint-module": "2.0.0",
     "@nuxtjs/tailwindcss": "^3.2.0",
@@ -33,6 +37,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^3.0.7",
+    "@graphql-codegen/introspection": "1.18.0"
   }
 }

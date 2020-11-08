@@ -45,9 +45,11 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: 'https://woo.dfweb.no/graphql',
-      },
+      default: '~/plugins/apollo-client-config.js',
+      //  default: {
+      // httpEndpoint: 'https://woo.dfweb.no/graphql',
+      // default: "~/plugins/apollo-client-config.js",
+      // },
     },
   },
 }

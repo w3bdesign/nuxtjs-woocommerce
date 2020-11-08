@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h2>Products ...</h2>
-    <div v-for="product in products" :key="product.id">
-      <div v-for="p in product" :key="p.id">
-        <p>{{ p.name }}</p>
-        <p>{{ p.price }}</p>
+    <h2>Show Products</h2>
+    <div v-for="data in products" :key="data.id">
+      <div v-for="product in data" :key="product.id">
+        <p>{{ product.name }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product.databaseId }}</p>
         <p>
-          <img :src="p.image && p.image.sourceUrl" />
+          <img :src="product.image && product.image.sourceUrl" />
         </p>
       </div>
     </div>
@@ -16,8 +17,10 @@
 <script>
 export default {
   name: 'ShowProducts',
-  // eslint-disable-next-line vue/require-prop-types
-  props: ['products'],
+  props: {
+    products: { type: Object, required: true },
+    // TODO Add more prop types here
+  },
 }
 </script>
 

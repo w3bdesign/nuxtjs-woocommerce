@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Hero />
     <ShowProducts :products="products" />
   </div>
 </template>
@@ -28,6 +29,7 @@
 import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql'
 
 export default {
+  layout: 'Layout',
   apollo: {
     products: {
       prefetch: true,
@@ -35,7 +37,7 @@ export default {
     },
   },
   head: {
-    title: 'All Products',
+    title: 'NuxtJS WooCommerce - Index',
   },
 }
 </script>

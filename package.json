@@ -10,7 +10,6 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
-    "apollo:introspection": "graphql-codegen",
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {

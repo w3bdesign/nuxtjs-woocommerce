@@ -6,8 +6,6 @@
 </template>
 
 <script>
-// https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
-
 /*
 {
     "id": "cHJvZHVjdDozMg==",

@@ -1,7 +1,11 @@
 <template>
   <div>
     <ShowSingleProduct />
-    Slug: {{ this.$route.params.product }} <br />ID: {{ this.$route.query.id }}
+    <br />
+    <div class="h-32 text-2xl text-center">
+      Slug: {{ this.$route.params.product }} <br />ID:
+      {{ this.$route.query.id }}
+    </div>
   </div>
 </template>
 

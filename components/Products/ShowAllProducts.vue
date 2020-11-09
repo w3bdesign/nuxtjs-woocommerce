@@ -11,7 +11,10 @@
             >
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"
-                :to="'/product/' + product.slug"
+                :to="{
+                  path: '/product/' + product.slug,
+                  query: { id: product.databaseId },
+                }"
               >
                 <img
                   id="product-image"

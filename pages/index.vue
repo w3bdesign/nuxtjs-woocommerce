@@ -1,7 +1,7 @@
 <template>
   <div>
     <Hero />
-    Here we will show ShowProducts
+    <ShowProducts :products="products" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>Here comes Products</div>
+    <div class="h-64 mt-32 text-2xl text-center">Here comes Products</div>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div>
     <div
       id="hero"
-      class="flex w-full mx-auto mt-20 bg-right bg-cover md:pt-0 md:items-center"
+      class="flex w-full mx-auto mt-16 bg-right bg-cover md:pt-0 md:items-center"
     >
       <div
         class="flex flex-col items-start justify-center w-full px-6 tracking-wide lg:w-1/2"

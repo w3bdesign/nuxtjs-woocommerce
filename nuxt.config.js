@@ -1,4 +1,5 @@
 export default {
+  target: 'static', // default is 'server'
   // Environment variables (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env)
   env: {
     graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:3000/graphql',

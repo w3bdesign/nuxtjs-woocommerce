@@ -88,16 +88,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <NuxtLink to="/cart">
-                      <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
-                      >
-                        <img
-                          class="h-12"
-                          aria-label="Cart"
-                          src="~/assets/Cart.svg"
-                      /></span>
-                    </NuxtLink>
+                    <Cart />
                   </li>
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"

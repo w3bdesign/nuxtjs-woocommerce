@@ -8,7 +8,7 @@
       <span
         class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
       >
-        1
+        {{ cartCount }}
       </span>
     </NuxtLink>
   </div>
@@ -19,7 +19,7 @@ export default {
   name: 'Cart',
   computed: {
     cartCount() {
-      return this.$store.state
+      return this.$store.state.cart.length
     },
   },
 }

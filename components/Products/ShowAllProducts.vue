@@ -7,7 +7,7 @@
             <div
               v-if="product.slug !== undefined"
               :key="product.id"
-              class="flex flex-col mt-6 md:w-1/2 xl:w-1/4"
+              class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:1/4 xl:w-1/4"
             >
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"

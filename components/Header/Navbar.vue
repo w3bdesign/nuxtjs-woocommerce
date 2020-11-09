@@ -57,6 +57,11 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
+                    <Search />
+                  </li>
+                  <li
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                  >
                     <NuxtLink to="/">
                       <span
                         class="text-xl text-white no-underline lg:text-black is-active"
@@ -89,11 +94,6 @@
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <Cart />
-                  </li>
-                  <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
-                  >
-                    <Search />
                   </li>
                 </ul>
               </nav>

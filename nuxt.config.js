@@ -1,5 +1,5 @@
 export default {
-  target: 'static', // default is 'server'
+  target: 'static', // Default is 'server'. Can be 'server' or 'static'
   // Environment variables (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env)
   env: {
     graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:3000/graphql',
@@ -38,6 +38,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: ['vue-instantsearch', 'instantsearch.js/es'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

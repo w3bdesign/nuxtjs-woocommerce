@@ -2,22 +2,23 @@
   <div>
     <header
       role="banner"
-      class="px-0 mx-0 container mx-auto pt-6 mb-6 flex flex-col justify-center"
+      class="container flex flex-col justify-center px-0 pt-6 mx-0 mx-auto mb-6"
     >
       <div class="flex flex-wrap lg:px-4">
-        <div class="my-2 pr-2 w-5/12 lg:w-3/12 overflow-hidden">
+        <div class="w-5/12 pr-2 my-2 overflow-hidden lg:w-3/12">
           <div class="ml-4 lg:ml-0">
             <a href="/">
               <img
-                class="md:pl-6"
-                src="https://pngimage.net/wp-content/uploads/2019/05/fake-logo-png-.png"
+                class="h-24"
+                aria-label="Nettbutikk logo"
+                src="~/assets/Logo.svg"
               />
             </a>
           </div>
         </div>
         <div class="w-5/12 lg:hidden"></div>
-        <div class="my-2 px-2 w-2/12 lg:hidden flex flex-row">
-          <div class="self-center block mr-4 w-full">
+        <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
+          <div class="self-center block w-full mr-4">
             <button
               id="nav-toggle"
               class="text-first"
@@ -27,20 +28,20 @@
               aria-label="Navigation"
             >
               <img
-                class="open w-1/2 align-end"
+                class="w-1/2 open align-end"
                 src="https://www.flaticon.com/svg/static/icons/svg/1828/1828859.svg"
               />
               <img
-                class="close hidden w-1/2"
+                class="hidden w-1/2 close"
                 src="https://www.flaticon.com/svg/static/icons/svg/61/61155.svg"
               />
             </button>
           </div>
         </div>
-        <div class="lg:w-1/12 hidden lg:block"></div>
+        <div class="hidden lg:w-1/12 lg:block"></div>
         <div
           id="nav-content"
-          class="w-full lg:w-8/12 hidden lg:block bg-black lg:bg-white mt-4 lg:mt-0 lg:text-right"
+          class="hidden w-full mt-4 bg-black lg:w-8/12 lg:block lg:bg-white lg:mt-0 lg:text-right"
           aria-expanded="false"
         >
           <div class="px-6 lg:px-0 lg:pt-5 xl:pt-7">
@@ -50,31 +51,31 @@
                 role="navigation"
                 aria-labelledby="block-main-menu"
               >
-                <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                <ul class="items-center justify-end flex-1 list-reset lg:flex">
                   <li
-                    class="inline-block w-full lg:text-base font-semibold no-underline py-2 lg:px-4"
+                    class="inline-block w-full py-2 font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <a
                       href="/"
-                      class="text-white text-2xl lg:text-black no-underline is-active"
+                      class="text-2xl text-white no-underline lg:text-black is-active"
                       >Home</a
                     >
                   </li>
                   <li
-                    class="inline-block w-full text-xl lg:text-base font-semibold no-underline py-2 lg:px-4"
+                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <a
                       href="/page-2"
-                      class="text-white text-2xl lg:text-black no-underline"
+                      class="text-2xl text-white no-underline lg:text-black"
                       >Products</a
                     >
                   </li>
                   <li
-                    class="inline-block w-full text-xl lg:text-base font-semibold no-underline py-2 lg:px-4"
+                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <a
                       href="/page-3"
-                      class="text-white text-2xl lg:text-black no-underline is-active"
+                      class="text-2xl text-white no-underline lg:text-black is-active"
                       >Categories</a
                     >
                   </li>

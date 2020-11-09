@@ -1,5 +1,7 @@
 # NuxtJS Ecommerce site with WooCommerce backend
 
+<img src="https://user-images.githubusercontent.com/45217974/98502800-36aefe00-2253-11eb-83b0-79d9dfa0793a.png" alt="Project screenshot" />
+
 ## This is currently a work in progress!
 
 1. Install and activate the following required plugins, in your WordPress plugin directory:

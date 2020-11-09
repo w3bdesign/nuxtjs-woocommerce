@@ -4,11 +4,18 @@
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="data in products">
           <template v-for="product in data">
-            <div :key="product.id" class="flex flex-col p-6 md:w-1/2 xl:w-1/4">
-              <NuxtLink :to="'/product/' + product.slug">
+            <div
+              v-if="product.slug !== undefined"
+              :key="product.id"
+              class="flex flex-col p-6 md:w-1/2 xl:w-1/4"
+            >
+              <NuxtLink
+                class="text-black cursor-pointer hover:underline"
+                :to="'/product/' + product.slug"
+              >
                 <img
                   id="product-image"
-                  class="transition duration-500 ease-in-out transform cursor-pointer hover:grow hover:shadow-lg hover:scale-105"
+                  class="transition duration-500 ease-in-out transform cursor-pointer hover:shadow-lg hover:scale-110"
                   :alt="product.name"
                   :src="productImage(product)"
                 />
@@ -44,4 +51,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+a:hover {
+  border: none;
+}
+</style>

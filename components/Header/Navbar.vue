@@ -9,7 +9,7 @@
           <div class="ml-4 lg:ml-0">
             <NuxtLink to="/">
               <img
-                class="h-20"
+                class="h-24"
                 aria-label="Nettbutikk logo"
                 src="~/assets/Logo.svg"
               />

@@ -1,5 +1,7 @@
 <template>
-  <div>Here comes Products</div>
+  <div>
+    <div>Here comes Products</div>
+  </div>
 </template>
 
 <script>

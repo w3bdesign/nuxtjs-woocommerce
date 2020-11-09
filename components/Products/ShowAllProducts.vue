@@ -1,13 +1,13 @@
 <template>
   <div>
-    <section class="container mx-auto mt-4 bg-white">
+    <section>
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="data in products">
           <template v-for="product in data">
             <div
               v-if="product.slug !== undefined"
               :key="product.id"
-              class="flex flex-col p-4 md:w-1/2 xl:w-1/4"
+              class="flex flex-col p-4 mt-4 md:w-1/2 xl:w-1/4"
             >
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"

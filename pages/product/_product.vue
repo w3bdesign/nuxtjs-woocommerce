@@ -1,7 +1,7 @@
 <template>
   <div>
     <ShowSingleProduct />
-    Slug: {{ this.$route.params.product }} ID: {{ this.$route.query.id }}
+    Slug: {{ this.$route.params.product }} <br />ID: {{ this.$route.query.id }}
   </div>
 </template>
 

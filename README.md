@@ -1,6 +1,6 @@
 # NuxtJS Ecommerce site with WooCommerce backend
 
-<img src="https://user-images.githubusercontent.com/45217974/98502800-36aefe00-2253-11eb-83b0-79d9dfa0793a.png" alt="Project screenshot" />
+<img src="https://user-images.githubusercontent.com/45217974/98603959-3c542480-22e3-11eb-9e53-0721d60320af.png" alt="Project screenshot" />
 
 ## This is currently a work in progress!
 

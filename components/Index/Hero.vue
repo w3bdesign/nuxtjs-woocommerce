@@ -2,23 +2,14 @@
   <div>
     <div
       id="hero"
-      className="flex w-full pt-12 mx-auto mt-24 bg-right bg-cover md:pt-0 md:items-center"
+      class="flex w-full mx-auto mt-20 bg-right bg-cover md:pt-0 md:items-center"
     >
-      <div className="container mx-auto">
-        <div
-          className="flex flex-col items-start justify-center w-full px-6 tracking-wide lg:w-1/2"
-        >
-          <h1 className="p-4 my-4 text-2xl text-white bg-black rounded-lg">
-            Stripete Zig Zag Pute Sett
-          </h1>
-
-          <a
-            className="inline-block px-6 py-3 text-xl leading-relaxed text-white uppercase bg-black rounded-lg hover:underline"
-            href="#"
-          >
-            se utvalget
-          </a>
-        </div>
+      <div
+        class="flex flex-col items-start justify-center w-full px-6 tracking-wide lg:w-1/2"
+      >
+        <span class="p-4 my-4 text-2xl text-white bg-black rounded-lg">
+          Stripete Zig Zag Pute Sett
+        </span>
       </div>
     </div>
   </div>

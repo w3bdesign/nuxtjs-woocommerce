@@ -7,13 +7,13 @@
       <div class="flex flex-wrap lg:px-4">
         <div class="w-5/12 pr-2 my-2 overflow-hidden lg:w-3/12">
           <div class="ml-4 lg:ml-0">
-            <a href="/">
+            <NuxtLink to="/">
               <img
-                class="h-24"
+                class="h-20"
                 aria-label="Nettbutikk logo"
                 src="~/assets/Logo.svg"
               />
-            </a>
+            </NuxtLink>
           </div>
         </div>
         <div class="w-5/12 lg:hidden"></div>
@@ -55,29 +55,33 @@
                   <li
                     class="inline-block w-full py-2 font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <a
-                      href="/"
-                      class="text-2xl text-white no-underline lg:text-black is-active"
-                      >Home</a
-                    >
+                    <NuxtLink to="/">
+                      <span
+                        class="text-xl text-white no-underline lg:text-black is-active"
+                      >
+                        Home
+                      </span>
+                    </NuxtLink>
                   </li>
                   <li
                     class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <a
-                      href="/page-2"
-                      class="text-2xl text-white no-underline lg:text-black"
-                      >Products</a
-                    >
+                    <NuxtLink to="/products">
+                      <span
+                        class="text-xl text-white no-underline lg:text-black"
+                        >Products</span
+                      >
+                    </NuxtLink>
                   </li>
                   <li
                     class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <a
-                      href="/page-3"
-                      class="text-2xl text-white no-underline lg:text-black is-active"
-                      >Categories</a
-                    >
+                    <NuxtLink to="/categories">
+                      <span
+                        class="text-xl text-white no-underline lg:text-black is-active"
+                        >Categories</span
+                      >
+                    </NuxtLink>
                   </li>
                 </ul>
               </nav>

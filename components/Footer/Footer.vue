@@ -1,5 +1,7 @@
 <template>
-  <div>Footer</div>
+  <div class="container mx-auto">
+    <footer class="mt-6">Footer</footer>
+  </div>
 </template>
 
 <script>

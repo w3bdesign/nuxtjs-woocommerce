@@ -1,13 +1,13 @@
 <template>
   <div>
-    <section class="container mx-auto bg-white">
+    <section class="container mx-auto mt-4 bg-white">
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="data in products">
           <template v-for="product in data">
             <div
               v-if="product.slug !== undefined"
               :key="product.id"
-              class="flex flex-col p-6 md:w-1/2 xl:w-1/4"
+              class="flex flex-col p-4 md:w-1/2 xl:w-1/4"
             >
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"
@@ -21,7 +21,7 @@
                 />
 
                 <div class="flex justify-center pt-3">
-                  <p class="font-bold text-center cursor-pointer">
+                  <p class="text-2xl font-bold text-center cursor-pointer">
                     {{ product.name }}
                   </p>
                 </div>
@@ -29,15 +29,15 @@
               <br />
 
               <div v-if="product.onSale" class="flex justify-center">
-                <div class="pt-1 text-gray-900 line-through">
+                <div class="pt-2 text-gray-900 line-through">
                   {{ product.regularPrice }}
                 </div>
-                <div class="pt-1 ml-2 text-gray-900">
+                <div class="pt-2 ml-2 text-lg text-gray-900">
                   {{ product.salePrice }}
                 </div>
               </div>
               <div v-else>
-                <p class="pt-1 text-center text-gray-900">
+                <p class="pt-2 text-lg text-center text-gray-900">
                   {{ product.price }}
                 </p>
               </div>

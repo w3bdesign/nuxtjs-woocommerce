@@ -23,7 +23,8 @@ export default {
 
 <style lang="postcss" scoped>
 #hero {
-  background-image: url('https://nextjs-woocommerce.now.sh/_next/static/media/hero.d989217c87215a6b28e263ae4aea50bf.jpg');
+  background-image: url('~assets/Hero.jpg');
   height: 24rem;
+  max-width: 1246px;
 }
 </style>

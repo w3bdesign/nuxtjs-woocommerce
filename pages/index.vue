@@ -1,12 +1,11 @@
 <template>
   <div>
     <Hero />
-    <ShowProducts :products="products" />
+    <ShowAllProducts :products="products" />
   </div>
 </template>
 
 <script>
-// <ShowProducts :products="products" />
 // https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
 
 /*

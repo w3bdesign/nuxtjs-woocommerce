@@ -5,12 +5,16 @@
         <template v-for="data in products">
           <template v-for="product in data">
             <div :key="product.id" class="flex flex-col p-6 md:w-1/2 xl:w-1/4">
-              <NuxtLink to="">
+              <NuxtLink :to="'/product/' + product.slug">
                 <img
                   id="product-image"
                   class="transition duration-500 ease-in-out transform cursor-pointer hover:grow hover:shadow-lg hover:scale-105"
                   :alt="product.name"
-                  :src="product.image && product.image.sourceUrl"
+                  :src="
+                    product.image
+                      ? product.image.sourceUrl
+                      : process.env.PLACEHOLDER_SMALL_IMAGE_URL
+                  "
                 />
                 <div class="flex justify-center pt-3">
                   <p class="font-bold text-center cursor-pointer">

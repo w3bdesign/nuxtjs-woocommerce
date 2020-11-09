@@ -93,14 +93,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <span
-                      class="text-xl text-white no-underline lg:text-black is-active"
-                    >
-                      <img
-                        class="h-12 cursor-pointer"
-                        aria-label="Cart"
-                        src="~/assets/Search.svg"
-                    /></span>
+                    <Search />
                   </li>
                 </ul>
               </nav>

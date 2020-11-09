@@ -10,12 +10,9 @@
                   id="product-image"
                   class="transition duration-500 ease-in-out transform cursor-pointer hover:grow hover:shadow-lg hover:scale-105"
                   :alt="product.name"
-                  :src="
-                    product.image
-                      ? product.image.sourceUrl
-                      : process.env.PLACEHOLDER_SMALL_IMAGE_URL
-                  "
+                  :src="productImage(product)"
                 />
+
                 <div class="flex justify-center pt-3">
                   <p class="font-bold text-center cursor-pointer">
                     {{ product.name }}
@@ -36,6 +33,13 @@ export default {
   props: {
     products: { type: Object, required: true },
     // TODO Add more prop types here
+  },
+  methods: {
+    productImage(product) {
+      return product.image
+        ? product.image.sourceUrl
+        : process.env.placeholderSmallImage
+    },
   },
 }
 </script>

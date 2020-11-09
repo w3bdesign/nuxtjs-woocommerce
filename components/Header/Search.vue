@@ -10,7 +10,7 @@
         class="absolute inset-y-0 flex items-center pl-56 pointer-events-none"
       >
         <svg
-          class="w-6 h-6 text-gray-600 pointer-events-none fill-current"
+          class="w-6 h-6 text-gray-500 pointer-events-none fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >

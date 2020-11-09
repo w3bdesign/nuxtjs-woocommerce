@@ -47,4 +47,6 @@ The current release has been tested and is confirmed working with the following 
 - NuxtJS
 - Tailwind CSS
 - Vue Apollo with GraphQL Codegen
+- Responsive design
 - Support for simple products and variable products
+- Algolia search (work in progress)

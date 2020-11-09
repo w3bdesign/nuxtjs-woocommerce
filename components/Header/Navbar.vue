@@ -53,7 +53,7 @@
               >
                 <ul class="items-center justify-end flex-1 list-reset lg:flex">
                   <li
-                    class="inline-block w-full py-2 font-semibold no-underline lg:text-base lg:px-4"
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <NuxtLink to="/">
                       <span
@@ -64,7 +64,7 @@
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <NuxtLink to="/products">
                       <span
@@ -74,7 +74,7 @@
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <NuxtLink to="/categories">
                       <span
@@ -84,27 +84,27 @@
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <NuxtLink to="/cart">
                       <span
                         class="text-xl text-white no-underline lg:text-black is-active"
                       >
                         <img
-                          class="w-full h-12"
+                          class="h-12"
                           aria-label="Cart"
                           src="~/assets/Cart.svg"
                       /></span>
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
                     <span
                       class="text-xl text-white no-underline lg:text-black is-active"
                     >
                       <img
-                        class="w-full h-12 cursor-pointer"
+                        class="h-12 cursor-pointer"
                         aria-label="Cart"
                         src="~/assets/Search.svg"
                     /></span>

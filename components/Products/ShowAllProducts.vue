@@ -31,16 +31,16 @@
               </NuxtLink>
               <br />
 
-              <div v-if="product.onSale" class="flex justify-center">
-                <div class="pt-2 text-gray-900 line-through">
+              <div v-if="product.onSale" class="flex justify-center mt-2">
+                <div class="text-lg text-gray-900 line-through">
                   {{ product.regularPrice }}
                 </div>
-                <div class="pt-2 ml-2 text-lg text-gray-900">
+                <div class="ml-4 text-xl text-gray-900">
                   {{ product.salePrice }}
                 </div>
               </div>
               <div v-else>
-                <p class="pt-2 text-lg text-center text-gray-900">
+                <p class="mt-2 text-xl text-center text-gray-900">
                   {{ product.price }}
                 </p>
               </div>

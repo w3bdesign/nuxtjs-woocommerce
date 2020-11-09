@@ -51,7 +51,9 @@
                 role="navigation"
                 aria-labelledby="block-main-menu"
               >
-                <ul class="items-center justify-end flex-1 list-reset lg:flex">
+                <ul
+                  class="items-center justify-end flex-1 pr-4 -mr-10 list-reset lg:flex"
+                >
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >

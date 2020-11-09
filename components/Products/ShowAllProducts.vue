@@ -7,7 +7,7 @@
             <div
               v-if="product.slug !== undefined"
               :key="product.id"
-              class="flex flex-col p-4 mt-4 md:w-1/2 xl:w-1/4"
+              class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:1/4 xl:w-1/4"
             >
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"
@@ -18,7 +18,7 @@
               >
                 <img
                   id="product-image"
-                  class="transition duration-500 ease-in-out transform cursor-pointer hover:shadow-lg hover:scale-110"
+                  class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:shadow-lg hover:scale-110"
                   :alt="product.name"
                   :src="productImage(product)"
                 />

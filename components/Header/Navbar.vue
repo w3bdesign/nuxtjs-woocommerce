@@ -28,7 +28,7 @@
               aria-label="Navigation"
             >
               <img
-                class="w-1/2 open align-end"
+                class="w-32 -ml-10 open align-end"
                 src="https://www.flaticon.com/svg/static/icons/svg/1828/1828859.svg"
               />
               <img
@@ -82,6 +82,32 @@
                         >Categories</span
                       >
                     </NuxtLink>
+                  </li>
+                  <li
+                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                  >
+                    <NuxtLink to="/cart">
+                      <span
+                        class="text-xl text-white no-underline lg:text-black is-active"
+                      >
+                        <img
+                          class="w-full h-12"
+                          aria-label="Cart"
+                          src="~/assets/Cart.svg"
+                      /></span>
+                    </NuxtLink>
+                  </li>
+                  <li
+                    class="inline-block w-full py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                  >
+                    <span
+                      class="text-xl text-white no-underline lg:text-black is-active"
+                    >
+                      <img
+                        class="w-full h-12 cursor-pointer"
+                        aria-label="Cart"
+                        src="~/assets/Search.svg"
+                    /></span>
                   </li>
                 </ul>
               </nav>

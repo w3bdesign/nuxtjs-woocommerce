@@ -35,7 +35,7 @@ export default {
     },
   },
   head: {
-    title: 'NuxtJS WooCommerce - Index',
+    title: 'NuxtJS WooCommerce - Home',
   },
 }
 </script>

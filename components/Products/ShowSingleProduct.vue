@@ -72,13 +72,13 @@
 // https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
 export default {
   name: 'ShowSingleProduct',
+  props: {
+    product: { type: Object, required: true },
+  },
   methods: {
     stripHTML(description) {
       return description.replace(/(<([^>]+)>)/gi, '')
     },
-  },
-  props: {
-    product: { type: Object, required: true },
   },
 }
 </script>

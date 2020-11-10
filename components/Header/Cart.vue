@@ -2,7 +2,11 @@
   <div>
     <NuxtLink to="/cart">
       <span class="text-xl text-white no-underline lg:text-black is-active">
-        <img class="h-12" aria-label="Cart" src="~/assets/Cart.svg"
+        <img
+          alt="Cart icon"
+          class="h-12"
+          aria-label="Cart"
+          src="~/assets/Cart.svg"
       /></span>
 
       <span

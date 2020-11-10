@@ -9,6 +9,7 @@
           <div class="ml-4 lg:ml-0">
             <NuxtLink to="/">
               <img
+                alt="Logo"
                 class="h-24"
                 aria-label="Nettbutikk logo"
                 src="~/assets/Logo.svg"
@@ -28,12 +29,14 @@
               aria-label="Navigation"
             >
               <img
+                alt="Hamburger icon"
                 class="w-32 -ml-10 open align-end"
-                src="https://www.flaticon.com/svg/static/icons/svg/1828/1828859.svg"
+                src="~/assets/Hamburger.svg"
               />
               <img
+                alt="Close hamburger icon"
                 class="hidden w-1/2 close"
-                src="https://www.flaticon.com/svg/static/icons/svg/61/61155.svg"
+                src="~/assets/CloseHamburger.svg"
               />
             </button>
           </div>

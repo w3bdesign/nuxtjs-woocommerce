@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="categories">
     <section class="container mx-auto bg-white">
       <div
         class="grid gap-2 px-2 pt-2 pb-2 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 xs:grid-cols-3"

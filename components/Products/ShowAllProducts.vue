@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="products">
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="data in products">

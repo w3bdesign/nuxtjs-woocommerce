@@ -7,7 +7,7 @@
 
 <img src="https://user-images.githubusercontent.com/45217974/98603959-3c542480-22e3-11eb-9e53-0721d60320af.png" alt="Project screenshot" />
 
-## This is currently a work in progress!
+# This is currently a work in progress!
 
 1. Install and activate the following required plugins, in your WordPress plugin directory:
 

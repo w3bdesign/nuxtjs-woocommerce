@@ -39,7 +39,7 @@
 
             <br />
             <p class="pt-1 mt-4 text-2xl text-gray-900">
-              DESCRIPTION_WITHOUT_HTML
+              {{ stripHTML(product.description) }}
             </p>
 
             <p
@@ -72,6 +72,11 @@
 // https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
 export default {
   name: 'ShowSingleProduct',
+  methods: {
+    stripHTML(description) {
+      return description.replace(/(<([^>]+)>)/gi, '')
+    },
+  },
   props: {
     product: { type: Object, required: true },
   },

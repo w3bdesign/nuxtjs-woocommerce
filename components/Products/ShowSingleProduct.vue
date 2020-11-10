@@ -57,9 +57,9 @@
             </p>
 
             <div class="pt-1 mt-2">
-              <AddToCartButton v-if="product.variations" />
+              <AddToCartButton v-if="product.variations" :product="product" />
 
-              <AddToCartButton v-else />
+              <AddToCartButton v-else :product="product" />
             </div>
           </div>
         </div>

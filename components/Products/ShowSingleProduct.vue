@@ -1,9 +1,9 @@
 <template>
   <div v-if="product">
-    <section class="py-8 bg-white">
+    <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
         <div
-          class="grid grid-cols-1 gap-4 mt-16 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
+          class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
         >
           <img
             v-if="product.image !== undefined"

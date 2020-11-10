@@ -62,5 +62,4 @@ The current release has been tested and is confirmed working with the following 
 - Finish implementing Algolia search
 - Maybe implement more animations
 - Mobile menu
-- Checkout
-- Add to cart
+- Checkout process

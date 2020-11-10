@@ -4,8 +4,6 @@
       role="banner"
       class="container flex flex-col justify-center px-0 pt-6 mx-0 mx-auto mb-6"
     >
-
-
       <div class="flex flex-wrap lg:px-4">
         <div class="w-5/12 pr-2 my-2 overflow-hidden lg:w-3/12">
           <div class="ml-4 lg:ml-0">

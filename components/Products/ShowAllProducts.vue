@@ -48,14 +48,14 @@
       </div>
     </section>
   </div>
-  <div v-else>Loading ...</div>
+  <div v-else><LoadingSpinner /></div>
 </template>
 
 <script>
 export default {
   name: 'ShowProducts',
   props: {
-    products: { type: Object, required: true },
+    products: { type: Array, required: true },
     // TODO Add more prop types here
   },
   methods: {

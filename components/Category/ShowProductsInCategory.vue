@@ -7,7 +7,7 @@
         <ShowAllProducts :products="products.products.nodes" />
       </div>
     </div>
-    <div v-else>Loading ...</div>
+    <div v-else><LoadingSpinner /></div>
   </div>
 </template>
 

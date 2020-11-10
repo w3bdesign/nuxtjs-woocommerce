@@ -11,7 +11,8 @@ export default {
   layout: 'Layout',
   apollo: {
     products: {
-      prefetch: true,
+      // prefetch: true,
+      prefetch: false,
       query: FETCH_ALL_PRODUCTS_QUERY,
     },
   },

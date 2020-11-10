@@ -66,6 +66,7 @@
       </div>
     </section>
   </div>
+  <div v-else><LoadingSpinner /></div>
 </template>
 
 <script>

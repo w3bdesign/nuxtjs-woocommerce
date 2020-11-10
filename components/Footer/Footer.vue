@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-24">
     <footer
       class="px-6 text-center bg-white border border-gray-300 rounded-lg shadow-lg"
     >

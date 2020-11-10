@@ -8,5 +8,3 @@ export default {
   name: 'ShowSingleProduct',
 }
 </script>
-
- 

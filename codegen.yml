@@ -1,10 +1,10 @@
 overwrite: true
-schema: "https://woo.dfweb.no/graphql"
-documents: "apollo/queries/*.gql"
+schema: 'https://woo.dfweb.no/graphql'
+documents: 'apollo/queries/*.gql'
 generates:
   src/generated/graphql.ts:
     plugins:
-      - "fragment-matcher"
+      - 'fragment-matcher'
   ./graphql.schema.json:
     plugins:
-      - "introspection"
+      - 'introspection'

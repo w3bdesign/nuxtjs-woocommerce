@@ -36,6 +36,15 @@ const searchClient = algoliasearch(
 )
 
 export default {
+  components: {
+    AisInstantSearchSsr,
+    AisRefinementList,
+    AisHits,
+    AisHighlight,
+    AisSearchBox,
+    AisStats,
+    AisPagination,
+  },
   mixins: [
     createServerRootMixin({
       searchClient,
@@ -53,15 +62,7 @@ export default {
 
     this.instantsearch.hydrate(results)
   },
-  components: {
-    AisInstantSearchSsr,
-    AisRefinementList,
-    AisHits,
-    AisHighlight,
-    AisSearchBox,
-    AisStats,
-    AisPagination,
-  },
+
   head() {
     return {
       link: [

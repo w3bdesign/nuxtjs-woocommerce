@@ -1,14 +1,13 @@
 <template>
   <div>
-    <br />
-    <div class="h-32 text-2xl text-center">
-      Slug: {{ this.$route.params.product }} <br />ID:
-      {{ this.$route.query.id }}
-    </div>
+    <ShowAllProductsInCategory />
   </div>
 </template>
 
 <script>
+// this.$route.params.category
+// this.$route.query.id
+
 export default {
   name: 'Category',
   layout: 'Layout',

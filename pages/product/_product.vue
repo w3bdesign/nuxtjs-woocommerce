@@ -10,14 +10,6 @@ import GET_SINGLE_PRODUCT_QUERY from '@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.
 export default {
   name: 'Product',
   layout: 'Layout',
-  computed: {
-    getSlug() {
-      return this.$route.params.product
-    },
-    getID() {
-      return this.$route.query.id
-    },
-  },
   apollo: {
     product: {
       query: GET_SINGLE_PRODUCT_QUERY,

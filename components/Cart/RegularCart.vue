@@ -1,6 +1,9 @@
 <template>
   <div>
-    <table class="hidden table-auto md:block lg:block xl:block">
+    <table
+      class="hidden table-auto md:block lg:block xl:block"
+      aria-describedby="Cart content table"
+    >
       <thead>
         <tr>
           <th class="px-4 py-2" scope="col" />

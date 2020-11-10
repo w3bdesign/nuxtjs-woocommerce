@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShowAllProducts :products="products" />
+    <ShowAllProducts :products="products.nodes" />
   </div>
 </template>
 

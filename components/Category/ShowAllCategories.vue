@@ -30,6 +30,7 @@
       </div>
     </section>
   </div>
+  <div v-else>Loading ...</div>
 </template>
 
 <script>

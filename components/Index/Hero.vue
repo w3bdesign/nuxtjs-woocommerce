@@ -8,7 +8,7 @@
         class="flex flex-col items-start justify-center w-full px-6 tracking-wide lg:w-1/2"
       >
         <span class="p-4 my-4 text-2xl text-white bg-black rounded-lg">
-          Stripete Zig Zag Pute Sett
+          Modern Pillow Sample Set
         </span>
       </div>
     </div>

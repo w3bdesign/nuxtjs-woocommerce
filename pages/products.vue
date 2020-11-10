@@ -1,13 +1,23 @@
 <template>
   <div>
-    <div class="h-64 mt-32 text-2xl text-center">Here comes Products</div>
+    <ShowAllProducts :products="products" />
   </div>
 </template>
 
 <script>
+import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql'
+
 export default {
-  name: 'Products',
   layout: 'Layout',
+  apollo: {
+    products: {
+      prefetch: true,
+      query: FETCH_ALL_PRODUCTS_QUERY,
+    },
+  },
+  head: {
+    title: 'NuxtJS WooCommerce - Products',
+  },
 }
 </script>
 

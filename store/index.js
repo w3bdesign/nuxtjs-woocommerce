@@ -2,7 +2,7 @@
 // https://nuxtjs.org/docs/2.x/directory-structure/store
 
 export const state = () => ({
-  cart: [{ id: 0, name: 'Test product', quantity: 1 }],
+  cart: [],
 })
 
 export const mutations = {

@@ -45,7 +45,7 @@ The current release has been tested and is confirmed working with the following 
 5. Start the server with `npm run dev`
 6. Enable COD (Cash On Demand) payment method in WooCommerce
 7. Add a product to the cart
-8. Proceed to checkout (Gå til kasse)
+8. Proceed to checkout
 9. Fill in your details and place the order
 
 ## Features
@@ -55,4 +55,12 @@ The current release has been tested and is confirmed working with the following 
 - Vue Apollo with GraphQL Codegen
 - Responsive design
 - Support for simple products and variable products
-- Algolia search (work in progress)
+- GraphQL-based filters
+
+## TODO
+
+- Finish implementing Algolia search
+- Maybe implement more animations
+- Mobile menu
+- Checkout
+- Add to cart

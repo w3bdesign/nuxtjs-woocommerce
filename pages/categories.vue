@@ -1,13 +1,23 @@
 <template>
   <div>
-    <div class="h-64 mt-32 text-2xl text-center">Here comes Categories</div>
+    <ShowAllCategories :categories="productCategories" />
   </div>
 </template>
 
 <script>
+import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql'
+
 export default {
-  name: 'Categories',
   layout: 'Layout',
+  apollo: {
+    productCategories: {
+      prefetch: true,
+      query: FETCH_ALL_CATEGORIES_QUERY,
+    },
+  },
+  head: {
+    title: 'NuxtJS WooCommerce - Categories',
+  },
 }
 </script>
 

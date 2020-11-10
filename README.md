@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce/badge)](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce)
+
 # NuxtJS Ecommerce site with WooCommerce backend
 
 <img src="https://user-images.githubusercontent.com/45217974/98603959-3c542480-22e3-11eb-9e53-0721d60320af.png" alt="Project screenshot" />

@@ -10,6 +10,7 @@
       /></span>
 
       <span
+        v-if="cartIsNotEmpty"
         class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
       >
         {{ cartCount }}
@@ -26,6 +27,9 @@ export default {
   computed: {
     cartCount() {
       return this.$store.state.cart.length
+    },
+    cartIsNotEmpty() {
+      return this.$store.state.cart.length !== 0
     },
   },
 }

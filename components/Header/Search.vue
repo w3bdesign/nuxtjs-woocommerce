@@ -24,6 +24,7 @@
 </template>
 
 <script>
+// https://www.algolia.com/doc/guides/building-search-ui/going-further/server-side-rendering/vue/#with-nuxt
 export default {
   name: 'Search',
 }

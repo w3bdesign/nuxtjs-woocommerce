@@ -9,12 +9,15 @@
           src="~/assets/Cart.svg"
       /></span>
 
-      <span
-        v-if="cartIsNotEmpty"
-        class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
-      >
-        {{ cartCount }}
-      </span>
+      <transition name="cart">
+        <span
+          v-if="cartIsNotEmpty"
+          :key="cartCount"
+          class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
+        >
+          {{ cartCount }}
+        </span>
+      </transition>
     </NuxtLink>
   </div>
 </template>

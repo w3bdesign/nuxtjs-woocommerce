@@ -19,6 +19,10 @@ export default {
   head: {
     title: 'NuxtJS WooCommerce - Home',
   },
+  transition: {
+    name: 'home',
+    mode: 'out-in',
+  },
 }
 </script>
 

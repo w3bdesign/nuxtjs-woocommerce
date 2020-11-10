@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <ShowCartContents />
-  </div>
+  <div>Checkout page<br /><ShowCartContents /></div>
 </template>
 
 <script>
 export default {
-  name: 'Cart',
+  name: 'Checkout',
   layout: 'Layout',
   transition: {
     name: 'home',

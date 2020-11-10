@@ -19,5 +19,9 @@ export default {
       },
     },
   },
+  transition: {
+    name: 'home',
+    mode: 'out-in',
+  },
 }
 </script>

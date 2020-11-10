@@ -14,5 +14,3 @@ export default {
   layout: 'Layout',
 }
 </script>
-
- 

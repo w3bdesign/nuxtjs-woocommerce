@@ -3,11 +3,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addProductToCart(state, payload) {
-    state.cart.push({ id: payload.id, product: payload })
+  addProductToCart(stateToChange, payload) {
+    stateToChange.cart.push({ id: payload.id, product: payload })
   },
 
-  deleteProductFromCart(state, index) {
-    state.cart.splice(index, 1)
+  deleteProductFromCart(stateToChange, index) {
+    stateToChange.cart.splice(index, 1)
   },
 }

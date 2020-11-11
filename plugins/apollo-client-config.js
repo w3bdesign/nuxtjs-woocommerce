@@ -11,6 +11,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export default function (_context) {
   // https://github.com/nuxt-community/apollo-module/issues/176
+
   return {
     httpEndpoint: process.env.graphqlUrl,
     httpLinkOptions: {

@@ -56,10 +56,10 @@ The current release has been tested and is confirmed working with the following 
 - Responsive design
 - Support for simple products and variable products
 - GraphQL-based filters
+- CSS animations and transitions
 
 ## TODO
 
 - Finish implementing Algolia search
-- Maybe implement more animations
 - Mobile menu
 - Checkout process

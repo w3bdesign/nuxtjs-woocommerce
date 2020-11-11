@@ -1,13 +1,25 @@
 <template>
-  <button
-    class="w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-    @click="addProductToCart(product)"
-  >
-    ADD TO CART
-  </button>
+  <div>
+    <button
+      class="w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
+      @click="addProductToCart(product)"
+    >
+      ADD TO CART
+    </button>
+    <button
+      class="w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
+      @click="addProductToWooCart(product)"
+    >
+      ADD TO WOO CART
+    </button>
+  </div>
 </template>
 
 <script>
+import { uid } from 'uid'
+
+import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
+
 export default {
   props: {
     product: { type: Object, required: true },
@@ -15,6 +27,26 @@ export default {
   methods: {
     addProductToCart(product) {
       this.$store.commit('addProductToCart', product)
+    },
+    async addProductToWooCart(product) {
+      const productQueryInput = {
+        clientMutationId: uid(), // Generate a unique id.
+        productId: product.databaseId,
+      }
+
+      console.log(productQueryInput)
+
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: ADD_TO_CART_MUTATION,
+            variables: productQueryInput,
+          })
+          .then(({ data }) => data && console.log(data))
+        // await this.$apolloHelpers.onLogin(res.token)
+      } catch (e) {
+        console.error(e)
+      }
     },
   },
 }

@@ -29,22 +29,22 @@ export default {
       this.$store.commit('addProductToCart', product)
     },
     async addProductToWooCart(product) {
+      const productId = product.databaseId ? product.databaseId : product
+
       const productQueryInput = {
         clientMutationId: uid(), // Generate a unique id.
-        productId: product.databaseId,
+        productId,
       }
-
-      console.log(productQueryInput)
 
       try {
         await this.$apollo
           .mutate({
             mutation: ADD_TO_CART_MUTATION,
-            variables: productQueryInput,
+            variables: { input: productQueryInput },
           })
           .then(({ data }) => data && console.log(data))
-        // await this.$apolloHelpers.onLogin(res.token)
       } catch (e) {
+        console.log('Error!')
         console.error(e)
       }
     },

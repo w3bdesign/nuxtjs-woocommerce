@@ -12,6 +12,12 @@
     >
       ADD TO WOO CART
     </button>
+    <button
+      class="w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
+      @click="getWooCart"
+    >
+      FETCH WOO CART
+    </button>
   </div>
 </template>
 
@@ -19,14 +25,24 @@
 import { uid } from 'uid'
 
 import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
+import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 
 export default {
   props: {
     product: { type: Object, required: true },
   },
   methods: {
-    addProductToCart(product) {
-      this.$store.commit('addProductToCart', product)
+    async getWooCart() {
+      try {
+        await this.$apollo
+          .query({
+            query: GET_CART_QUERY,
+          })
+          .then(({ data }) => data && console.log(data))
+      } catch (e) {
+        console.log('Error!')
+        console.error(e)
+      }
     },
     async addProductToWooCart(product) {
       const productId = product.databaseId ? product.databaseId : product
@@ -47,6 +63,10 @@ export default {
         console.log('Error!')
         console.error(e)
       }
+    },
+    addProductToCart(product) {
+      this.$store.commit('addProductToCart', product)
+      this.addProductToWooCart(product)
     },
   },
 }

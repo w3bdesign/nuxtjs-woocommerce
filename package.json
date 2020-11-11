@@ -18,6 +18,7 @@
     "core-js": "^3.7.0",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.7",
+    "uid": "^2.0.0",
     "vue": "^2.6.12",
     "vue-instantsearch": "^3.4.2",
     "vue-server-renderer": "^2.6.12",

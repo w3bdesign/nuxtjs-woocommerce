@@ -33,12 +33,16 @@ export default {
   },
   methods: {
     async getWooCart() {
+      // const token = Cookies.get('woocommerce-session')
+
       try {
         await this.$apollo
           .query({
             query: GET_CART_QUERY,
           })
-          .then(({ data }) => data && console.log(data))
+          .then(({ data }) => {
+            data && console.log(data)
+          })
       } catch (e) {
         console.log('Error!')
         console.error(e)
@@ -58,7 +62,9 @@ export default {
             mutation: ADD_TO_CART_MUTATION,
             variables: { input: productQueryInput },
           })
-          .then(({ data }) => data && console.log(data))
+          .then(({ data }) => {
+            data && console.log(data)
+          })
       } catch (e) {
         console.log('Error!')
         console.error(e)

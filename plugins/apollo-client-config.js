@@ -12,6 +12,12 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 export default function (_context) {
   return {
     httpEndpoint: process.env.graphqlUrl,
+    fetchOptions: {
+      mode: 'cors',
+    },
+    httpLinkOptions: {
+      credentials: 'include',
+    },
     cache: new InMemoryCache({ fragmentMatcher }),
   }
 }

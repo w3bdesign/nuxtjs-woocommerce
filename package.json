@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,8 +13,8 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@nuxtjs/apollo": "^4.0.1-rc.4",
-    "algoliasearch": "^4.6.0",
+    "@nuxtjs/apollo": "4.0.1-rc.5",
+    "algoliasearch": "^4.7.0",
     "core-js": "^3.7.0",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.14.7",
@@ -27,8 +27,9 @@
   "devDependencies": {
     "@graphql-codegen/cli": "1.19.1",
     "@graphql-codegen/fragment-matcher": "2.0.0",
-    "@nuxtjs/eslint-config": "^4.0.0",
-    "@nuxtjs/eslint-module": "2.0.0",
+    "@graphql-codegen/introspection": "1.18.0",
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "3.0.1",
     "@nuxtjs/tailwindcss": "^3.2.0",
     "@vue/test-utils": "^1.1.1",
     "babel-core": "7.0.0-bridge.0",
@@ -36,11 +37,11 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
-    "vue-jest": "^3.0.7",
-    "@graphql-codegen/introspection": "1.18.0"
+    "vue-jest": "^3.0.7"
   }
 }

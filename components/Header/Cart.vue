@@ -16,16 +16,16 @@
       </transition>
 
       <transition name="cart">
-        <span
-          v-if="cartLength"
-          :key="cartCount"
-          class="absolute w-6 h-6 pb-2 ml-12 -mt-12 text-center text-white bg-black rounded-full"
-        >
-          {{ cartLength }}
-        </span>
+        <div v-if="cartLength" :key="cartCount">
+          <span
+            class="absolute w-6 h-6 pb-2 ml-12 -mt-12 text-center text-white bg-black rounded-full"
+          >
+            {{ cartLength }}
+          </span>
+          <span>Total: {{ subTotal }}</span>
+        </div>
       </transition>
     </NuxtLink>
-    <span v-if="remoteCart">Total: {{ subTotal }}</span>
   </div>
 </template>
 

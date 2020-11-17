@@ -19,29 +19,12 @@
 import { uid } from 'uid'
 
 import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
-import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 
 export default {
   props: {
     product: { type: Object, required: true },
   },
   methods: {
-    async getWooCart() {
-      // const token = Cookies.get('woocommerce-session')
-
-      try {
-        await this.$apollo
-          .query({
-            query: GET_CART_QUERY,
-          })
-          .then(({ data }) => {
-            data && console.log(data)
-          })
-      } catch (e) {
-        console.log('Error!')
-        console.error(e)
-      }
-    },
     async addProductToWooCart(product) {
       const productId = product.databaseId ? product.databaseId : product
 

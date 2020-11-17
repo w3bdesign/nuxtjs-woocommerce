@@ -12,7 +12,7 @@
 
       <transition name="cart">
         <span
-          v-if="remoteCart"
+          v-if="cartLength"
           :key="cartCount"
           class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
         >
@@ -20,7 +20,7 @@
         </span>
       </transition>
     </NuxtLink>
-    <pre v-if="remoteCart">Total: {{ subTotal }}</pre>
+    <span v-if="remoteCart">Total: {{ subTotal }}</span>
   </div>
 </template>
 

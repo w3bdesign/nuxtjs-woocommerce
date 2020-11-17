@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
+import useFetchWooCart from '@/hooks/useFetchWooCart'
 
 export default {
   name: 'Cart',
@@ -42,25 +42,22 @@ export default {
       subTotal: null,
     }
   },
-  mounted() {
-    this.getWooCart()
-  },
-  methods: {
-    async getWooCart() {
-      try {
-        await this.$apollo
-          .query({
-            query: GET_CART_QUERY,
-          })
-          .then(({ data }) => {
-            this.remoteCart = data
-            this.cartLength = data.cart.contents.nodes[0].quantity
-            this.subTotal = data.cart.total
-          })
-      } catch (e) {
-        this.remoteError = e
-      }
-    },
+  async mounted() {
+    const {
+      remoteCart,
+      cartLength,
+      subTotal,
+      remoteError,
+    } = await useFetchWooCart(this)
+
+    if (remoteCart) {
+      this.remoteCart = remoteCart
+      this.cartLength = cartLength
+      this.subTotal = subTotal
+    }
+    if (remoteError) {
+      this.remoteError = remoteError
+    }
   },
 }
 </script>

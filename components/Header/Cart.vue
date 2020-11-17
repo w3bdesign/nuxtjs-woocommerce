@@ -56,7 +56,6 @@ export default {
             this.remoteCart = data
             this.cartLength = data.cart.contents.nodes[0].quantity
             this.subTotal = data.cart.total
-            console.log(data)
           })
       } catch (e) {
         this.remoteError = e
@@ -64,5 +63,4 @@ export default {
     },
   },
 }
-// getWooCart()
 </script>

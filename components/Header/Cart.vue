@@ -2,19 +2,24 @@
   <div>
     <pre v-if="remoteCart"></pre>
     <NuxtLink to="/cart">
-      <span class="text-xl text-white no-underline lg:text-black is-active">
-        <img
-          alt="Cart icon"
-          class="h-12"
-          aria-label="Cart"
-          src="~/assets/Cart.svg"
-      /></span>
+      <transition name="cart">
+        <span
+          v-if="cartLength"
+          class="text-xl text-white no-underline lg:text-black is-active"
+        >
+          <img
+            alt="Cart icon"
+            class="h-12"
+            aria-label="Cart"
+            src="~/assets/Cart.svg"
+        /></span>
+      </transition>
 
       <transition name="cart">
         <span
           v-if="cartLength"
           :key="cartCount"
-          class="absolute w-6 h-6 pb-2 -mt-12 text-center text-white bg-black rounded-full"
+          class="absolute w-6 h-6 pb-2 ml-12 -mt-12 text-center text-white bg-black rounded-full"
         >
           {{ cartLength }}
         </span>

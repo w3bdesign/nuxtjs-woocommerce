@@ -1,22 +1,39 @@
 <template>
   <div container mx-auto>
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
-
-    <span v-for="products in cartProducts" :key="products.key">
-      Name: {{ products.product.name }} <br />
-      Image:
-      <img
-        :src="products.product.image.sourceUrl"
-        width="50"
-        height="50"
-        alt="products.product.name"
-      />
-      <br />
-      Quantity: {{ products.quantity }} <br />
-      Total:
-      {{ products.total }}
-      <br />
-    </span>
+    <section class="mt-10">
+      <div
+        v-for="products in cartProducts"
+        :key="products.id"
+        class="mt-4 flex-container"
+      >
+        <div class="item">
+          <span class="h-12 font-extrabold">Remove: <br /></span>
+          <span class="inline-block mt-6">
+            <img
+              class="ml-4"
+              alt="Remove icon"
+              aria-label="Remove"
+              src="~/assets/Remove.svg"
+            />
+          </span>
+        </div>
+        <div class="item">
+          <span class="h-12 font-extrabold">Name: <br /></span>
+          <span class="inline-block mt-6">{{ products.product.name }}</span>
+        </div>
+        <div class="item">
+          <span class="h-12 mt-2 font-extrabold">Quantity: <br /> </span>
+          <span class="inline-block mt-6">
+            {{ products.quantity }}
+          </span>
+        </div>
+        <div class="item">
+          <span class="h-12 mt-2 font-extrabold">Subtotal: <br /></span>
+          <span class="inline-block mt-6"> {{ products.total }} </span>
+        </div>
+      </div>
+    </section>
     <LoadingSpinner v-if="loading" />
     <NuxtLink to="/checkout">
       <button
@@ -33,7 +50,6 @@
 </template>
 
 <script>
-import { stripHTML } from '@/utils/functions'
 import useFetchWooCart from '@/hooks/useFetchWooCart'
 
 export default {
@@ -72,6 +88,22 @@ export default {
       this.remoteError = remoteError
     }
   },
-  methods: { stripHTML },
 }
 </script>
+
+<style scoped>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  border: 1px rgb(197, 197, 197) solid;
+  max-width: 98vw;
+}
+
+.item {
+  @apply lg:m-2 xl:m-4 xl:w-1/6 lg:w-1/6 sm:m-2 w-auto;
+}
+</style>

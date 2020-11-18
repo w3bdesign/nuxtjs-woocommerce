@@ -56,12 +56,6 @@ export default {
       this.$ssrContext.nuxt.algoliaState = algoliaState
     })
   },
-  beforeMount() {
-    const results =
-      this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
-
-    this.instantsearch.hydrate(results)
-  },
 
   head() {
     return {
@@ -73,6 +67,12 @@ export default {
         },
       ],
     }
+  },
+  beforeMount() {
+    const results =
+      this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
+
+    this.instantsearch.hydrate(results)
   },
 }
 </script>

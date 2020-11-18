@@ -15,12 +15,12 @@ export default {
       query: FETCH_ALL_PRODUCTS_QUERY,
     },
   },
-  head: {
-    title: 'NuxtJS WooCommerce - Products',
-  },
   transition: {
     name: 'home',
     mode: 'out-in',
+  },
+  head: {
+    title: 'NuxtJS WooCommerce - Products',
   },
 }
 </script>

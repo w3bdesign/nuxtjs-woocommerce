@@ -58,7 +58,6 @@
 
             <div class="pt-1 mt-2">
               <AddToCartButton v-if="product.variations" :product="product" />
-
               <AddToCartButton v-else :product="product" />
             </div>
           </div>
@@ -70,16 +69,13 @@
 </template>
 
 <script>
-// https://github.com/nuxt/nuxt.js/tree/dev/examples/vue-apollo
+import { stripHTML } from '@/utils/functions'
+
 export default {
   name: 'ShowSingleProduct',
   props: {
     product: { type: Object, required: true },
   },
-  methods: {
-    stripHTML(description) {
-      return description.replace(/(<([^>]+)>)/gi, '')
-    },
-  },
+  methods: { stripHTML },
 }
 </script>

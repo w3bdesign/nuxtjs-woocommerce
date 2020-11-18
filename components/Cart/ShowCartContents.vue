@@ -1,7 +1,13 @@
 <template>
   <div container mx-auto>
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
-    <pre v-if="remoteCart">{{ remoteCart }}</pre>
+
+    <span v-for="products in cartProducts" :key="products.key">
+      Name: {{ products.product.name }} <br />
+      Description: {{ products.product.description }}
+
+      <pre>{{ products }}</pre>
+    </span>
     <LoadingSpinner v-if="loading" />
     <NuxtLink to="/checkout">
       <button
@@ -29,6 +35,14 @@ export default {
       subTotal: null,
       loading: true,
     }
+  },
+  computed: {
+    cartProducts() {
+      if (this.remoteCart) {
+        return this.remoteCart.cart.contents.nodes
+      }
+      return null
+    },
   },
   async mounted() {
     const {

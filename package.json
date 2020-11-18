@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -25,7 +25,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.19.1",
+    "@graphql-codegen/cli": "1.19.2",
     "@graphql-codegen/fragment-matcher": "2.0.0",
     "@graphql-codegen/introspection": "1.18.0",
     "@nuxtjs/eslint-config": "^5.0.0",

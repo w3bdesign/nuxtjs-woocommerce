@@ -4,16 +4,14 @@
     <pre v-if="remoteCart">{{ remoteCart }}</pre>
     <br />
     <LoadingSpinner v-if="loading" />
-
     <NuxtLink to="/checkout">
       <button
-        v-if="cartIsNotEmpty"
+        v-if="remoteCart"
         class="w-48 h-12 px-4 py-2 mt-12 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       >
         CHECKOUT
       </button>
     </NuxtLink>
-    <br />
 
     <h2 v-if="!remoteCart && !loading" class="m-4 text-3xl text-center">
       Cart is currently empty
@@ -22,7 +20,7 @@
 </template>
 
 <script>
-import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
+import useFetchWooCart from '@/hooks/useFetchWooCart'
 
 export default {
   data() {
@@ -34,38 +32,23 @@ export default {
       loading: true,
     }
   },
-  mounted() {
-    this.getWooCart()
+  async mounted() {
+    const {
+      remoteCart,
+      cartLength,
+      subTotal,
+      remoteError,
+    } = await useFetchWooCart(this)
+
+    if (remoteCart) {
+      this.remoteCart = remoteCart
+      this.cartLength = cartLength
+      this.subTotal = subTotal
+      this.loading = false
+    }
+    if (remoteError) {
+      this.remoteError = remoteError
+    }
   },
-  methods: {
-    async getWooCart() {
-      try {
-        await this.$apollo
-          .query({
-            query: GET_CART_QUERY,
-          })
-          .then(({ data }) => {
-            this.remoteCart = data
-            this.cartLength = data.cart.contents.nodes[0].quantity
-            this.subTotal = data.cart.total
-            this.loading = false
-          })
-      } catch (e) {
-        this.remoteError = e
-        this.loading = false
-      }
-    },
-  },
-  /* computed: {
-    cartContents() {
-      return this.$store.state.cart
-    },
-    cartIsNotEmpty() {
-      return this.cartContents.length !== 0
-    },
-    cartIsEmpty() {
-      return this.cartContents.length === 0
-    },
-  }, */
 }
 </script>

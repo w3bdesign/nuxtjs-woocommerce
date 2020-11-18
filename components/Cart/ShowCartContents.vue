@@ -4,7 +4,7 @@
 
     <span v-for="products in cartProducts" :key="products.key">
       Name: {{ products.product.name }} <br />
-      Description: {{ products.product.description }}
+      Description: {{ stripHTML(products.product.description) }}
 
       <pre>{{ products }}</pre>
     </span>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { stripHTML } from '@/utils/functions'
 import useFetchWooCart from '@/hooks/useFetchWooCart'
 
 export default {
@@ -62,5 +63,6 @@ export default {
       this.remoteError = remoteError
     }
   },
+  methods: { stripHTML },
 }
 </script>

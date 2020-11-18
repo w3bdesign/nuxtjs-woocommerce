@@ -44,7 +44,6 @@ export default {
   methods: {
     async addProductToWooCart(product) {
       const productId = product.databaseId ? product.databaseId : product
-
       const productQueryInput = {
         clientMutationId: uid(), // Generate a unique id.
         productId,
@@ -65,7 +64,6 @@ export default {
     },
     addProductToCart(product) {
       this.loading = true
-      this.$store.commit('addProductToCart', product)
       this.addProductToWooCart(product)
     },
   },

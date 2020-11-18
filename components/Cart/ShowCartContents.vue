@@ -2,7 +2,6 @@
   <div container mx-auto>
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <pre v-if="remoteCart">{{ remoteCart }}</pre>
-    <br />
     <LoadingSpinner v-if="loading" />
     <NuxtLink to="/checkout">
       <button
@@ -12,7 +11,6 @@
         CHECKOUT
       </button>
     </NuxtLink>
-
     <h2 v-if="!remoteCart && !loading" class="m-4 text-3xl text-center">
       Cart is currently empty
     </h2>

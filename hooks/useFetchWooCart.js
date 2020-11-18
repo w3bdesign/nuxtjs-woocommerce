@@ -7,11 +7,11 @@ export default async function useFetchWooCart(test) {
         query: GET_CART_QUERY,
       })
       .then(({ data }) => {
-        let cartLength = 0
         const remoteCart = data
         const subTotal = data.cart.total
-        data.cart.contents.nodes.forEach(
-          (argument) => (cartLength += argument.quantity)
+        const cartLength = data.cart.contents.nodes.reduce(
+          (accumulator, argument) => accumulator + argument.quantity,
+          0
         )
         return { remoteCart, cartLength, subTotal }
       })

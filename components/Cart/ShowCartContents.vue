@@ -4,9 +4,18 @@
 
     <span v-for="products in cartProducts" :key="products.key">
       Name: {{ products.product.name }} <br />
-      Description: {{ stripHTML(products.product.description) }}
-
-      <pre>{{ products }}</pre>
+      Image:
+      <img
+        :src="products.product.image.sourceUrl"
+        width="50"
+        height="50"
+        alt="products.product.name"
+      />
+      <br />
+      Quantity: {{ products.quantity }} <br />
+      Total:
+      {{ products.total }}
+      <br />
     </span>
     <LoadingSpinner v-if="loading" />
     <NuxtLink to="/checkout">

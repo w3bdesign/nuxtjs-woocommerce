@@ -16,7 +16,7 @@
       </transition>
 
       <transition name="cart">
-        <div v-if="cartLength" :key="cartCount">
+        <div v-if="cartLength">
           <span
             class="absolute w-6 h-6 pb-2 ml-12 -mt-12 text-center text-white bg-black rounded-full"
           >

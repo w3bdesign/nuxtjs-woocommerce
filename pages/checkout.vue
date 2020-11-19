@@ -1,6 +1,7 @@
 <template>
   <div>
     <ShowCartContents /> <br />
+    Form:
     <FormulateInput type="text" />
   </div>
 </template>

@@ -15,6 +15,7 @@
               alt="Remove icon"
               aria-label="Remove"
               src="@/assets/Remove.svg"
+              @click="handleRemoveProduct(products)"
             />
           </span>
         </div>
@@ -50,7 +51,10 @@
 </template>
 
 <script>
+import { uid } from 'uid'
+
 import useFetchWooCart from '@/hooks/useFetchWooCart'
+import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION'
 
 export default {
   data() {
@@ -87,6 +91,41 @@ export default {
     if (remoteError) {
       this.remoteError = remoteError
     }
+  },
+  methods: {
+    async handleRemoveProduct(products) {
+      // event.stopPropagation()
+      // const newQuantity = 0
+      // alert(products)
+      const updatedItems = []
+      updatedItems.push({
+        key: products.key,
+        quantity: 0,
+      })
+
+      // const newItems
+
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: UPDATE_CART_MUTATION,
+            variables: {
+              // input: { clientMutationId: uid, items: updatedItems },
+              input: {
+                clientMutationId: uid(),
+                items: updatedItems,
+              },
+            },
+          })
+          .then(({ data }) => {
+            // this.loading = false
+            console.log(data)
+          })
+      } catch (error) {
+        console.log(error)
+        // this.error = e
+      }
+    },
   },
 }
 </script>

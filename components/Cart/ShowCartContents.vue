@@ -36,17 +36,10 @@
       </div>
     </section>
     <LoadingSpinner v-if="loading" />
-    <NuxtLink to="/checkout">
-      <button
-        v-if="remoteCart"
-        class="w-48 h-12 px-4 py-2 mt-12 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      >
-        CHECKOUT
-      </button>
-    </NuxtLink>
-    <h2 v-if="!remoteCart && !loading" class="m-4 text-3xl text-center">
+    <h2 v-if="!cartLength && !loading" class="m-4 text-3xl text-center">
       Cart is currently empty
     </h2>
+    <CheckoutButton :cart="remoteCart" />
   </div>
 </template>
 
@@ -105,7 +98,6 @@ export default {
           .mutate({
             mutation: UPDATE_CART_MUTATION,
             variables: {
-              // input: { clientMutationId: uid, items: updatedItems },
               input: {
                 clientMutationId: uid(),
                 items: updatedItems,

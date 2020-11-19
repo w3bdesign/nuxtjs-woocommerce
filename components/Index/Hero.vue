@@ -25,6 +25,6 @@ export default {
 #hero {
   background-image: url('~assets/Hero.jpg');
   height: 24rem;
-  max-width: 1246px;
+  max-width: 1376px;
 }
 </style>

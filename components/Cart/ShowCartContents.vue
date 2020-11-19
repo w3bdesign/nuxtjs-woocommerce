@@ -94,16 +94,11 @@ export default {
   },
   methods: {
     async handleRemoveProduct(products) {
-      // event.stopPropagation()
-      // const newQuantity = 0
-      // alert(products)
       const updatedItems = []
       updatedItems.push({
         key: products.key,
         quantity: 0,
       })
-
-      // const newItems
 
       try {
         await this.$apollo
@@ -118,12 +113,10 @@ export default {
             },
           })
           .then(({ data }) => {
-            // this.loading = false
-            console.log(data)
+            this.loading = false
           })
       } catch (error) {
-        console.log(error)
-        // this.error = e
+        this.remoteError = error
       }
     },
   },

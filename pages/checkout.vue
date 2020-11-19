@@ -1,5 +1,8 @@
 <template>
-  <div>Checkout page<br /><ShowCartContents /></div>
+  <div>
+    <ShowCartContents /> <br />
+    <FormulateInput type="text" />
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="remoteCart">
+  <div>
     <NuxtLink to="/cart">
       <transition name="cart">
         <span

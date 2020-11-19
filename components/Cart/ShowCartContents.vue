@@ -8,10 +8,10 @@
         class="mt-4 flex-container"
       >
         <div class="item">
-          <span class="h-12 font-extrabold">Remove: <br /></span>
-          <span class="inline-block mt-6">
+          <span class="block mt-2 font-extrabold">Remove: <br /></span>
+          <span class="item-content">
             <img
-              class="ml-4"
+              class="mt-2 ml-4"
               alt="Remove icon"
               aria-label="Remove"
               src="~/assets/Remove.svg"
@@ -19,18 +19,18 @@
           </span>
         </div>
         <div class="item">
-          <span class="h-12 font-extrabold">Name: <br /></span>
-          <span class="inline-block mt-6">{{ products.product.name }}</span>
+          <span class="block mt-2 font-extrabold">Name: <br /></span>
+          <span class="item-content">{{ products.product.name }}</span>
         </div>
         <div class="item">
-          <span class="h-12 mt-2 font-extrabold">Quantity: <br /> </span>
-          <span class="inline-block mt-6">
+          <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
+          <span class="item-content">
             {{ products.quantity }}
           </span>
         </div>
         <div class="item">
-          <span class="h-12 mt-2 font-extrabold">Subtotal: <br /></span>
-          <span class="inline-block mt-6"> {{ products.total }} </span>
+          <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
+          <span class="item-content"> {{ products.total }} </span>
         </div>
       </div>
     </section>
@@ -105,5 +105,9 @@ export default {
 
 .item {
   @apply lg:m-2 xl:m-4 xl:w-1/6 lg:w-1/6 sm:m-2 w-auto;
+}
+
+.item-content {
+  @apply inline-block mt-4 w-20 h-12 md:w-full lg:w-full xl:w-full;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div container mx-auto>
+  <div>
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <section class="mt-10">
       <div
         v-for="products in cartProducts"
         :key="products.id"
-        class="mt-4 flex-container"
+        class="container mx-auto mt-4 flex-container"
       >
         <div class="item">
           <span class="block mt-2 font-extrabold">Remove: <br /></span>
@@ -132,7 +132,7 @@ export default {
   align-items: center;
   align-content: center;
   border: 1px rgb(197, 197, 197) solid;
-  max-width: 98vw;
+  max-width: 1380px;
 }
 
 .item {

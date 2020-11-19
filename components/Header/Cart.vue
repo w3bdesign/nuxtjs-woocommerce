@@ -13,7 +13,6 @@
             src="~/assets/Cart.svg"
         /></span>
       </transition>
-
       <transition name="cart">
         <div v-if="cartLength">
           <span

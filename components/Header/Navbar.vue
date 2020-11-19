@@ -96,7 +96,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <Cart />
+                    <Cart class="-mr-4" />
                   </li>
                 </ul>
               </nav>
@@ -113,3 +113,9 @@ export default {
   name: 'Navbar',
 }
 </script>
+
+<style scoped>
+header {
+  max-width: 1400px;
+}
+</style>

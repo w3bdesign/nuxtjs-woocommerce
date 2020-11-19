@@ -11,10 +11,10 @@
           <span class="block mt-2 font-extrabold">Remove: <br /></span>
           <span class="item-content">
             <img
-              class="mt-2 ml-4"
+              class="mt-2 ml-4 cursor-pointer"
               alt="Remove icon"
               aria-label="Remove"
-              src="~/assets/Remove.svg"
+              src="@/assets/Remove.svg"
             />
           </span>
         </div>

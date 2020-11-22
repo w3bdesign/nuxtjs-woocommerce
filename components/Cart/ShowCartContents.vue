@@ -125,8 +125,8 @@ export default {
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  border: 1px rgb(197, 197, 197) solid;
   max-width: 1380px;
+  @apply border border-gray-300 rounded-lg shadow;
 }
 
 .item {

@@ -8,7 +8,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="firstName"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="First name"
                   :validation="[['required'], ['min', 3]]"
                   type="text"
@@ -17,7 +17,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="lastName"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="Last name"
                   :validation="[['required'], ['min', 3]]"
                   type="text"
@@ -26,7 +26,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="address1"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="Address"
                   :validation="[['required'], ['min', 3]]"
                   type="text"
@@ -35,7 +35,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="postcode"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="Postal code"
                   :validation="[['required'], ['number']]"
                   type="text"
@@ -44,7 +44,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="city"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="City"
                   :validation="[['required'], ['min', 2]]"
                   type="text"
@@ -53,7 +53,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="email"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="Email"
                   :validation="[['required'], ['email']]"
                   type="text"
@@ -62,7 +62,7 @@
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="phone"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="text-input"
                   label="Phone"
                   :validation="[['required'], ['max', 8], ['number']]"
                   type="text"
@@ -95,3 +95,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.text-input {
+  @apply p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md;
+}
+</style>

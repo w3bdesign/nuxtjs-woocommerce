@@ -10,6 +10,7 @@
                   name="firstName"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="First name"
+                  :validation="[['required'], ['min', 3]]"
                   type="text"
                 />
               </div>
@@ -18,6 +19,7 @@
                   name="lastName"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="Last name"
+                  :validation="[['required'], ['min', 3]]"
                   type="text"
                 />
               </div>

@@ -79,6 +79,7 @@
             </div>
           </div>
         </div>
+        <PlaceOrderButton />
       </section>
     </FormulateForm>
   </div>

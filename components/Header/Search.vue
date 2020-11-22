@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="relative text-xl text-white no-underline is-active">
-      <input
-        class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
-        type="text"
-        placeholder="Click to search"
-      />
+      <input class="text-input" type="text" placeholder="Click to search" />
       <div
         class="absolute inset-y-0 flex items-center pl-56 pointer-events-none"
       >
@@ -29,3 +25,9 @@ export default {
   name: 'Search',
 }
 </script>
+
+<style scoped>
+.text-input {
+  @apply p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md;
+}
+</style>

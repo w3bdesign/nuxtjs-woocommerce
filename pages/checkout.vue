@@ -1,5 +1,11 @@
 <template>
-  <div><ShowCartContents /> <br />Form: <CheckoutForm /></div>
+  <div>
+    <ShowCartContents />
+    <br />
+    Form:
+    <br />
+    <CheckoutForm />
+  </div>
 </template>
 
 <script>

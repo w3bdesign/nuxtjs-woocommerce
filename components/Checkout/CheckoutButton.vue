@@ -12,8 +12,6 @@
 
 <script>
 export default {
-  props: {
-    cart: { type: Object, required: false, default: null },
-  },
+  name: 'CheckoutButton',
 }
 </script>

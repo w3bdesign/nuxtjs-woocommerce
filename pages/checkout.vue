@@ -1,9 +1,6 @@
 <template>
   <div>
     <ShowCartContents />
-    <br />
-    Form:
-    <br />
     <CheckoutForm />
   </div>
 </template>

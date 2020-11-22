@@ -4,7 +4,11 @@
     <br />
     <pre>{{ validation }}</pre>
     <br />
-    <FormulateForm v-model="formData" @validation="validation = $event">
+    <FormulateForm
+      v-model="formData"
+      @validation="validation = $event"
+      @submit="showAlert"
+    >
       <section class="text-gray-700">
         <div class="container p-4 py-2 mx-auto">
           <div class="mx-auto lg:w-1/2 md:w-2/3">
@@ -68,7 +72,7 @@
                   name="phone"
                   class="text-input"
                   label="Phone"
-                  :validation="[['required'], ['max', 8], ['number']]"
+                  :validation="[['required'], ['number']]"
                   type="text"
                 />
               </div>
@@ -97,6 +101,11 @@ export default {
       formData: {},
       validation: {},
     }
+  },
+  methods: {
+    showAlert() {
+      alert('You submitted the form.')
+    },
   },
 }
 </script>

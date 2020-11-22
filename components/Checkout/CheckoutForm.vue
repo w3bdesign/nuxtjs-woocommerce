@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-4">
     <FormulateForm v-model="formData">
       <section class="text-gray-700">
         <div class="container p-4 py-2 mx-auto">

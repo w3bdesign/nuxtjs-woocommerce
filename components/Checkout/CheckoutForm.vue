@@ -1,6 +1,10 @@
 <template>
   <div class="container mx-auto mt-4">
-    <FormulateForm v-model="formData">
+    <pre>{{ formData }}</pre>
+    <br />
+    <pre>{{ validation }}</pre>
+    <br />
+    <FormulateForm v-model="formData" @validation="validation = $event">
       <section class="text-gray-700">
         <div class="container p-4 py-2 mx-auto">
           <div class="mx-auto lg:w-1/2 md:w-2/3">
@@ -79,7 +83,7 @@
             </div>
           </div>
         </div>
-        <PlaceOrderButton />
+        <SubmitOrderButton />
       </section>
     </FormulateForm>
   </div>
@@ -91,6 +95,7 @@ export default {
   data() {
     return {
       formData: {},
+      validation: {},
     }
   },
 }

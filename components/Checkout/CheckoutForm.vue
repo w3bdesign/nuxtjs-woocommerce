@@ -28,6 +28,7 @@
                   name="address1"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="Address"
+                  :validation="[['required'], ['min', 3]]"
                   type="text"
                 />
               </div>
@@ -36,6 +37,7 @@
                   name="postcode"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="Postal code"
+                  :validation="[['required'], ['number']]"
                   type="text"
                 />
               </div>
@@ -44,6 +46,7 @@
                   name="city"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="City"
+                  :validation="[['required'], ['min', 2]]"
                   type="text"
                 />
               </div>
@@ -52,6 +55,7 @@
                   name="email"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="Email"
+                  :validation="[['required'], ['email']]"
                   type="text"
                 />
               </div>
@@ -60,13 +64,14 @@
                   name="phone"
                   class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
                   label="Phone"
+                  :validation="[['required'], ['max', 8], ['number']]"
                   type="text"
                 />
               </div>
               <div class="w-1/2 p-2">
                 <FormulateInput
                   name="paymentMethod"
-                  class="p-2 text-gray-800 placeholder-gray-800 border border-gray-400 rounded shadow-md"
+                  class="invisible"
                   value="cod"
                   type="hidden"
                 />

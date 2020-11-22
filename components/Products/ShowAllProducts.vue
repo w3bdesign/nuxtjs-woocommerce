@@ -17,19 +17,16 @@
             >
               <img
                 id="product-image"
-                class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:shadow-lg hover:scale-110"
+                class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-110"
                 :alt="product.name"
                 :src="productImage(product)"
               />
-
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
                 </p>
               </div>
             </NuxtLink>
-            <br />
-
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 {{ product.regularPrice }}

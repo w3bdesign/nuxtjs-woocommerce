@@ -8,6 +8,7 @@
 
 <script>
 import useFetchWooCart from '@/hooks/useFetchWooCart'
+
 export default {
   name: 'Cart',
   layout: 'Layout',

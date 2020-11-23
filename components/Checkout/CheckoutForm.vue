@@ -86,7 +86,7 @@
             </div>
           </div>
         </div>
-        <SubmitOrderButton />
+        <SubmitOrderButton :success="success" :loading="loading" />
       </section>
     </FormulateForm>
   </div>
@@ -103,8 +103,9 @@ export default {
   name: 'CheckoutForm',
   data() {
     return {
-      loading: null,
+      loading: false,
       error: null,
+      success: false,
       formData: {},
       validation: {},
     }
@@ -114,11 +115,11 @@ export default {
     async submitOrder() {
       // const checkoutData = await createCheckoutData(this.formData)
       // console.log(checkoutData)
+      this.loading = true
       const order = this.formData
 
       const checkoutData = {
         clientMutationId: uid(),
-
         billing: {
           firstName: order.firstName,
           lastName: order.lastName,
@@ -159,6 +160,10 @@ export default {
           })
           .then(({ data }) => {
             this.loading = false
+            if (data.checkout.result === 'success') {
+              this.success = true
+              this.$router.push('/success')
+            }
           })
       } catch (error) {
         this.error = error

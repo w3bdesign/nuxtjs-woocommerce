@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShowCartContents display-remove="true" />
+    <ShowCartContents display-remove />
     <CheckoutButton v-if="remoteCart" />
     <h2 v-if="remoteError">Error during cart loading!</h2>
   </div>
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       remoteCart: null,
+      remoteError: null,
     }
   },
   async mounted() {

@@ -1,13 +1,12 @@
 <template>
   <div class="container mx-auto mt-4">
-    <pre>{{ formData }}</pre>
+    <pre>{{ error }}</pre>
     <br />
-    <pre>{{ validation }}</pre>
-    <br />
+
     <FormulateForm
       v-model="formData"
       @validation="validation = $event"
-      @submit="showAlert"
+      @submit="submitOrder"
     >
       <section class="text-gray-700">
         <div class="container p-4 py-2 mx-auto">
@@ -94,17 +93,76 @@
 </template>
 
 <script>
+import { uid } from 'uid'
+
+import CHECKOUT_MUTATION from '@/apollo/mutations/CHECKOUT_MUTATION'
+
+import { createCheckoutData } from '@/utils/functions'
+
 export default {
   name: 'CheckoutForm',
   data() {
     return {
+      loading: null,
+      error: null,
       formData: {},
       validation: {},
     }
   },
   methods: {
-    showAlert() {
-      alert('You submitted the form.')
+    createCheckoutData,
+    async submitOrder() {
+      // const checkoutData = await createCheckoutData(this.formData)
+      // console.log(checkoutData)
+      const order = this.formData
+
+      const checkoutData = {
+        clientMutationId: uid(),
+
+        billing: {
+          firstName: order.firstName,
+          lastName: order.lastName,
+          address1: order.address1,
+          address2: order.address2,
+          city: order.city,
+          country: order.country,
+          state: order.state,
+          postcode: order.postcode,
+          email: order.email,
+          phone: order.phone,
+          company: order.company,
+        },
+        shipping: {
+          firstName: order.firstName,
+          lastName: order.lastName,
+          address1: order.address1,
+          address2: order.address2,
+          city: order.city,
+          country: order.country,
+          state: order.state,
+          postcode: order.postcode,
+          email: order.email,
+          phone: order.phone,
+          company: order.company,
+        },
+        shipToDifferentAddress: false,
+        paymentMethod: order.paymentMethod,
+        isPaid: false,
+        transactionId: 'hjkhjkhsdsdiui',
+      }
+
+      try {
+        await this.$apollo
+          .mutate({
+            mutation: CHECKOUT_MUTATION,
+            variables: { input: checkoutData },
+          })
+          .then(({ data }) => {
+            this.loading = false
+          })
+      } catch (error) {
+        this.error = error
+      }
     },
   },
 }

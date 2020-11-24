@@ -3,10 +3,17 @@ import {
   InMemoryCache,
 } from 'apollo-cache-inmemory'
 
+import { HttpLink } from 'apollo-link-http'
+import { ApolloLink } from 'apollo-link'
+
 import introspectionQueryResultData from '@/graphql.schema.json'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
+})
+
+const httpLink = new HttpLink({
+  uri: process.env.graphqlUrl,
 })
 
 // https://github.com/vuejs/vue-apollo/issues/713
@@ -17,21 +24,60 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 // https://stackoverflow.com/questions/48558681/add-custom-header-to-apollo-client-polling-request
 
-export default function (_context) {
-  // Sample session that we will send
-  const session =
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd29vLmRmd2ViLm5vIiwiaWF0IjoxNjA2MTg1MDY5LCJuYmYiOjE2MDYxODUwNjksImV4cCI6MTYwNjM1Nzg2OSwiZGF0YSI6eyJjdXN0b21lcl9pZCI6IjBmZTRkZWYwMjUyNGUxYjc3YWE3MjRiMTc4YTA0ZjZlIn19.sGswTRLMP2ID-ZCecGgrB8Z8T0qbguBMj1wmqraYxxo'
+export const middleware = new ApolloLink((operation, forward) => {
+  /**
+   * If session data exist in local storage, set value as session header.
+   */
 
+  if (process.browser) {
+    const session = localStorage.getItem('woo-session')
+    if (session.length > 0) {
+      operation.setContext(({ headers = {} }) => ({
+        headers: {
+          'woocommerce-session': `Session ${session}`,
+        },
+      }))
+    }
+  }
+  return forward(operation)
+})
+
+export const afterware = new ApolloLink((operation, forward) => {
+  return forward(operation).map((response) => {
+    /**
+     * Check for session header and update session in local storage accordingly.
+     */
+    const context = operation.getContext()
+    const {
+      response: { headers },
+    } = context
+    const session =
+      headers.get('woocommerce-session') || localStorage.getItem('woo-session')
+
+    if (process.browser) {
+      if (localStorage.getItem('woo-session') !== session) {
+        localStorage.setItem('woo-session', session)
+      }
+    }
+
+    return response
+  })
+})
+
+export default function (_context) {
   return {
-    httpEndpoint: process.env.graphqlUrl,
+    defaultHttpLink: false,
+    link: middleware.concat(afterware.concat(httpLink)),
+
+    // httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',
       // mode: 'no-cors',
     },
     httpLinkOptions: {
-      credentials: 'same-origin',
+      // credentials: 'same-origin',
       // credentials: 'include',
-      headers: { 'woocommerce-session': `Session ${session}` },
+      // headers: { 'woocommerce-session': `Session ${session}` },
     },
     cache: new InMemoryCache({ fragmentMatcher }),
   }

@@ -47,6 +47,6 @@
     "vue-jest": "^3.0.7"
   },
   "engines": {
-    "node": "14.x"
+    "node": "12.x"
   }
 }

@@ -15,6 +15,8 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 // https://github.com/vuejs/vue-apollo/issues/713
 // https://github.com/vuejs/vue-apollo/issues/865
 
+// https://stackoverflow.com/questions/48558681/add-custom-header-to-apollo-client-polling-request
+
 export default function (_context) {
   // Sample session that we will send
   const session =

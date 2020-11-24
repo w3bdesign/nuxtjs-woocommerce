@@ -17,7 +17,8 @@ export default function (_context) {
       mode: 'no-cors',
     },
     httpLinkOptions: {
-      credentials: 'include',
+      credentials: 'same-origin',
+      // credentials: 'include',
       // headers: {  'woocommerce-session': `Session ${session}`,}
     },
     cache: new InMemoryCache({ fragmentMatcher }),

@@ -41,6 +41,8 @@ export default {
     }
   },
   async mounted() {
+    console.log('Mounted .... ')
+
     const {
       remoteCart,
       cartLength,

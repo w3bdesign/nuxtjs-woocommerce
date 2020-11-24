@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -45,5 +45,8 @@
     "prettier": "^2.2.0",
     "tailwindcss": "^2.0.1-compat",
     "vue-jest": "^3.0.7"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }

@@ -14,6 +14,7 @@ export default function (_context) {
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',
+      // mode: 'no-cors',
     },
     httpLinkOptions: {
       credentials: 'include',

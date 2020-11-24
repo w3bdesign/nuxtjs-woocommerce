@@ -1,4 +1,4 @@
-// import { uid } from 'uid'
+import { uid } from 'uid'
 
 function stripHTML(description) {
   return description.replace(/(<([^>]+)>)/gi, '')
@@ -6,8 +6,7 @@ function stripHTML(description) {
 
 function createCheckoutData(form) {
   const checkoutData = {
-    // clientMutationId: uid(),
-    clientMutationId: 'test',
+    clientMutationId: uid(),
     billing: {
       firstName: form.firstName,
       lastName: form.lastName,
@@ -39,7 +38,7 @@ function createCheckoutData(form) {
     isPaid: false,
     transactionId: 'fgfgfggf',
   }
-  // console.log(checkoutData)
+
   return { checkoutData }
 }
 

@@ -12,6 +12,8 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 // https://github.com/vuejs/vue-apollo/issues/713
 // https://github.com/w3bdesign/nextjs-woocommerce/blob/master/utils/apollo/ApolloClient.js
 // https://github.com/vuejs/vue-apollo/issues/1019
+// https://github.com/vuejs/vue-apollo/issues/713
+// https://github.com/vuejs/vue-apollo/issues/865
 
 export default function (_context) {
   // Sample session that we will send

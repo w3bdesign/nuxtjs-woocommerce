@@ -54,10 +54,8 @@ export const afterware = new ApolloLink((operation, forward) => {
     const session =
       headers.get('woocommerce-session') || localStorage.getItem('woo-session')
 
-    if (process.browser) {
-      if (localStorage.getItem('woo-session') !== session) {
-        localStorage.setItem('woo-session', session)
-      }
+    if (process.browser && localStorage.getItem('woo-session') !== session) {
+      localStorage.setItem('woo-session', session)
     }
 
     return response
@@ -68,8 +66,7 @@ export default function (_context) {
   return {
     defaultHttpLink: false,
     link: middleware.concat(afterware.concat(httpLink)),
-
-    // httpEndpoint: process.env.graphqlUrl,
+    httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',
       // mode: 'no-cors',

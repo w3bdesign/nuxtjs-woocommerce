@@ -1,6 +1,9 @@
 <template>
   <div>
-    <ShowProductsInCategory :products="productCategory" />
+    <pre>Loading: {{ loading }} </pre>
+    <div v-if="!loading">
+      <ShowProductsInCategory :products="productCategory" />
+    </div>
   </div>
 </template>
 
@@ -10,18 +13,22 @@ import GET_PRODUCTS_FROM_CATEGORY_QUERY from '@/apollo/queries/GET_PRODUCTS_FROM
 export default {
   name: 'Category',
   layout: 'Layout',
+  transition: {
+    name: 'home',
+    mode: 'out-in',
+  },
+  data: () => ({
+    loading: 0,
+  }),
   apollo: {
     productCategory: {
+      $loadingKey: 'loading',
       query: GET_PRODUCTS_FROM_CATEGORY_QUERY,
       prefetch: ({ id, slug }) => ({ id, slug }),
       variables() {
         return { id: this.$route.query.id, slug: this.$route.params.category }
       },
     },
-  },
-  transition: {
-    name: 'home',
-    mode: 'out-in',
   },
 }
 </script>

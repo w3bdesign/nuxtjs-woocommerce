@@ -1,20 +1,16 @@
-/*
 import {
   IntrospectionFragmentMatcher,
   InMemoryCache,
 } from 'apollo-cache-inmemory'
-*/
 
 import { HttpLink } from 'apollo-link-http'
 import { ApolloLink } from 'apollo-link'
 
-// import introspectionQueryResultData from '@/graphql.schema.json'
+import introspectionQueryResultData from '@/graphql.schema.json'
 
-/*
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
 })
-*/
 
 const httpLink = new HttpLink({
   uri: process.env.graphqlUrl,
@@ -76,9 +72,9 @@ export default function (_context) {
     },
     httpLinkOptions: {
       // credentials: 'same-origin',
-      // credentials: 'include',
+      credentials: 'include',
       // headers: { 'woocommerce-session': `Session ${session}` },
     },
-    // cache: new InMemoryCache({ fragmentMatcher }),
+    cache: new InMemoryCache({ fragmentMatcher }),
   }
 }

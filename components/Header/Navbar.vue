@@ -96,7 +96,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <Cart class="-mr-4" />
+                    Cart class="-mr-4"
                   </li>
                 </ul>
               </nav>

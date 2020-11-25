@@ -18,7 +18,7 @@ export default {
   apollo: {
     productCategories: {
       $loadingKey: 'loading',
-      prefetch: true,
+      prefetch: false,
       query: FETCH_ALL_CATEGORIES_QUERY,
     },
   },

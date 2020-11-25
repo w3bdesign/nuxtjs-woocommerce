@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <pre>Loading: {{ loading }} </pre>
-    <div v-if="!loading">
-      <ShowProductsInCategory :products="productCategory" />
-    </div>
+  <div v-if="productCategory">
+    <ShowProductsInCategory :products="productCategory" />
   </div>
 </template>
 
@@ -17,9 +14,6 @@ export default {
     name: 'home',
     mode: 'out-in',
   },
-  data: () => ({
-    loading: 0,
-  }),
   apollo: {
     productCategory: {
       $loadingKey: 'loading',

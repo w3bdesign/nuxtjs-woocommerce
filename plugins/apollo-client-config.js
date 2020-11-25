@@ -63,8 +63,8 @@ export const afterware = new ApolloLink((operation, forward) => {
 
 export default function (_context) {
   return {
-    defaultHttpLink: false,
-    link: middleware.concat(afterware.concat(httpLink)),
+    // defaultHttpLink: false,
+    // link: middleware.concat(afterware.concat(httpLink)),
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <pre>ID: {{ this.$route.query.id }} </pre>
     <ShowSingleProduct :product="product" />
   </div>
 </template>

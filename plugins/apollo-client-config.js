@@ -57,7 +57,6 @@ export const afterware = new ApolloLink((operation, forward) => {
     if (process.browser && localStorage.getItem('woo-session') !== session) {
       localStorage.setItem('woo-session', session)
     }
-
     return response
   })
 })

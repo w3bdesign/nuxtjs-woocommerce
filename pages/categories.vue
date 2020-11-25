@@ -1,6 +1,9 @@
 <template>
   <div>
-    <ShowAllCategories :categories="productCategories" />
+    <pre>Loading: {{ loading }} </pre>
+    <div v-if="!loading">
+      <ShowAllCategories :categories="productCategories" />
+    </div>
   </div>
 </template>
 
@@ -9,8 +12,12 @@ import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QU
 
 export default {
   layout: 'Layout',
+  data: () => ({
+    loading: 0,
+  }),
   apollo: {
     productCategories: {
+      $loadingKey: 'loading',
       prefetch: true,
       query: FETCH_ALL_CATEGORIES_QUERY,
     },

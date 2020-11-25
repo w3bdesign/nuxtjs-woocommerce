@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <ShowSingleProduct :product="product" />
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
   layout: 'Layout',
   apollo: {
     product: {
+      $loadingKey: 'loading',
       query: GET_SINGLE_PRODUCT_QUERY,
       prefetch: ({ id, slug }) => ({ id, slug }),
       variables() {

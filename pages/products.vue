@@ -12,19 +12,20 @@ import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.
 
 export default {
   layout: 'Layout',
+  transition: {
+    name: 'home',
+    mode: 'out-in',
+  },
   data: () => ({
     loading: 0,
   }),
   apollo: {
     products: {
       $loadingKey: 'loading',
-      prefetch: true,
+      // prefetch: true,
+      prefetch: false,
       query: FETCH_ALL_PRODUCTS_QUERY,
     },
-  },
-  transition: {
-    name: 'home',
-    mode: 'out-in',
   },
   head: {
     title: 'NuxtJS WooCommerce - Products',

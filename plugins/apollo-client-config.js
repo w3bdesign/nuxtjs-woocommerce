@@ -72,7 +72,7 @@ export default function (_context) {
     },
     httpLinkOptions: {
       // credentials: 'same-origin',
-      credentials: 'include',
+      // credentials: 'include',
       // headers: { 'woocommerce-session': `Session ${session}` },
     },
     cache: new InMemoryCache({ fragmentMatcher }),

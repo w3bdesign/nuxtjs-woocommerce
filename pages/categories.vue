@@ -10,9 +10,6 @@ export default {
   layout: 'Layout',
   apollo: {
     productCategories: {
-      error(error) {
-        console.error("We've got an error!", error)
-      },
       prefetch: true,
       // query: FETCH_ALL_CATEGORIES_QUERY,
       query: gql`

@@ -15,7 +15,6 @@ export default {
   layout: 'Layout',
   apollo: {
     productCategories: {
-      throttle: 5000,
       error(error) {
         console.error("We've got an error!", error)
       },

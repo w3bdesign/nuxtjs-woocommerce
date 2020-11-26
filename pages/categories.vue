@@ -9,7 +9,7 @@
 
 <script>
 import { gql } from 'graphql-tag'
-import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql'
+// import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql'
 
 export default {
   layout: 'Layout',

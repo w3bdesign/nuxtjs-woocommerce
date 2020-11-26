@@ -56,6 +56,8 @@ export default {
             variables: { input: productQueryInput },
           })
           .then(({ data }) => {
+            console.log('Data: ')
+            console.log(data)
             this.loading = false
           })
       } catch (e) {

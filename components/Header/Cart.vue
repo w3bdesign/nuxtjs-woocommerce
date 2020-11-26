@@ -48,9 +48,6 @@ export default {
       remoteError,
     } = await useFetchWooCart(this)
 
-    console.log('Cart: ')
-    console.log(remoteCart)
-
     if (remoteCart) {
       this.remoteCart = remoteCart
       this.cartLength = cartLength

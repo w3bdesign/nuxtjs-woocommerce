@@ -71,8 +71,8 @@ export default function (_context) {
       // For example: default query options
       $query: {
         loadingKey: 'loading',
-        // fetchPolicy: 'cache-and-network',
-        fetchPolicy: 'network-only',
+        fetchPolicy: 'cache-and-network',
+        // fetchPolicy: 'network-only',
       },
     },
     defaultHttpLink: false,

@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <div v-if="!productCategories">No categories</div>
-    <div v-if="productCategories">
-      <ShowAllCategories :categories="productCategories" />
-    </div>
-  </div>
+  <ShowAllCategories :categories="productCategories" />
 </template>
 
 <script>

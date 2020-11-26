@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@braid/vue-formulate": "^2.4.5",
-    "@nuxtjs/apollo": "4.0.1-rc.5",
-    "algoliasearch": "^4.8.1",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "algoliasearch": "^4.8.2",
     "apollo-link": "^1.2.14",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
@@ -29,9 +29,9 @@
     "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.19.2",
-    "@graphql-codegen/fragment-matcher": "2.0.0",
-    "@graphql-codegen/introspection": "1.18.0",
+    "@graphql-codegen/cli": "^1.19.3",
+    "@graphql-codegen/fragment-matcher": "^2.0.1",
+    "@graphql-codegen/introspection": "^1.18.1",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "3.0.1",
     "@nuxtjs/tailwindcss": "^3.2.0",

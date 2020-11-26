@@ -14,11 +14,11 @@ export default {
   layout: 'Layout',
   apollo: {
     productCategories: {
-      debounce: 5000,
+      throttle: 5000,
       error(error) {
         console.error("We've got an error!", error)
       },
-      prefetch: false,
+      prefetch: true,
       query: FETCH_ALL_CATEGORIES_QUERY,
     },
   },

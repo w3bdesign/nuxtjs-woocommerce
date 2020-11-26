@@ -36,7 +36,7 @@
 <script>
 export default {
   props: {
-    categories: { type: Object, required: true },
+    categories: { type: Object, required: false, default: null },
     // TODO Add more prop types here
   },
 }

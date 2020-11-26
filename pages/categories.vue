@@ -12,9 +12,12 @@ import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QU
 
 export default {
   layout: 'Layout',
-
   apollo: {
     productCategories: {
+      debounce: 5000,
+      error(error) {
+        console.error("We've got an error!", error)
+      },
       prefetch: false,
       query: FETCH_ALL_CATEGORIES_QUERY,
     },

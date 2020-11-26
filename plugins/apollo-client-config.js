@@ -63,6 +63,18 @@ export const afterware = new ApolloLink((operation, forward) => {
 
 export default function (_context) {
   return {
+    /**
+     * default 'apollo' definition
+     */
+    defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
+      $query: {
+        loadingKey: 'loading',
+        // fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'network-only',
+      },
+    },
     defaultHttpLink: false,
     link: middleware.concat(afterware.concat(httpLink)),
     httpEndpoint: process.env.graphqlUrl,

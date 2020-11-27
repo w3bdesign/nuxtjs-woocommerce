@@ -15,6 +15,7 @@ export default {
   },
   apollo: {
     products: {
+      pollInterval: process.server ? undefined : 2000,
       prefetch: true,
       query: FETCH_ALL_PRODUCTS_QUERY,
     },

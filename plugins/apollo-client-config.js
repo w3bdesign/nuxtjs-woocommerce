@@ -63,6 +63,7 @@ export const afterware = new ApolloLink((operation, forward) => {
 
 export default function (_context) {
   return {
+    ssr: true,
     /**
      * default 'apollo' definition
      */

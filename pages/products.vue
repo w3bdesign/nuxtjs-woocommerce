@@ -13,11 +13,9 @@ export default {
     name: 'home',
     mode: 'out-in',
   },
-
   apollo: {
     products: {
-      // prefetch: true,
-      prefetch: false,
+      prefetch: true,
       query: FETCH_ALL_PRODUCTS_QUERY,
     },
   },

@@ -1,8 +1,8 @@
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 
-export default async function useFetchWooCart(test) {
+export default async function useFetchWooCart(client) {
   try {
-    return await test.$apollo
+    return await client.$apollo
       .query({
         query: GET_CART_QUERY,
       })
@@ -13,6 +13,8 @@ export default async function useFetchWooCart(test) {
           (accumulator, argument) => accumulator + argument.quantity,
           0
         )
+        // client.$apollo.queries.cart.startPolling(2000)
+
         return { remoteCart, cartLength, subTotal }
       })
   } catch (error) {

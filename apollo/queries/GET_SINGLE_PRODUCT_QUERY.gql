@@ -5,7 +5,7 @@ query Product($id: ID!) {
     slug
     description
     image {
-      id
+      databaseId
       uri
       title
       srcSet

@@ -21,7 +21,8 @@ export default {
       // prefetch: ({ id, slug }) => ({ id, slug }),
       prefetch: false,
       variables() {
-        return { id: this.$route.query.id, slug: this.$route.params.product }
+        // return { id: this.$route.query.id, slug: this.$route.params.product }
+        return { id: 32 }
       },
     },
   },

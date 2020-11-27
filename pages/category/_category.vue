@@ -18,7 +18,7 @@ export default {
     productCategory: {
       $loadingKey: 'loading',
       query: GET_PRODUCTS_FROM_CATEGORY_QUERY,
-      prefetch: ({ id, slug }) => ({ id, slug }),
+      // prefetch: ({ id, slug }) => ({ id, slug }),
       variables() {
         return { id: this.$route.query.id, slug: this.$route.params.category }
       },

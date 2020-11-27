@@ -1,6 +1,5 @@
 query Product($id: ID!) {
   product(id: $id, idType: DATABASE_ID) {
-    id
     databaseId
     averageRating
     slug
@@ -15,11 +14,11 @@ query Product($id: ID!) {
     name
     ... on SimpleProduct {
       price
-      id
+      databaseId
     }
     ... on VariableProduct {
       price
-      id
+      databaseId
       paColors {
         nodes {
           name
@@ -32,7 +31,6 @@ query Product($id: ID!) {
       }
       variations {
         nodes {
-          id
           databaseId
           name
           stockStatus
@@ -46,14 +44,14 @@ query Product($id: ID!) {
     }
     ... on ExternalProduct {
       price
-      id
+      databaseId
       externalUrl
     }
     ... on GroupProduct {
       products {
         nodes {
           ... on SimpleProduct {
-            id
+            databaseId
             price
           }
         }

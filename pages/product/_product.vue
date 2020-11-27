@@ -14,15 +14,13 @@ export default {
     name: 'home',
     mode: 'out-in',
   },
-
   apollo: {
     product: {
       query: GET_SINGLE_PRODUCT_QUERY,
       // prefetch: ({ id, slug }) => ({ id, slug }),
       prefetch: false,
       variables() {
-        // return { id: this.$route.query.id, slug: this.$route.params.product }
-        return { id: 32 }
+        return { id: this.$route.query.id, slug: this.$route.params.product }
       },
     },
   },

@@ -1,6 +1,7 @@
 {
   productCategories(first: 20) {
     nodes {
+      id
       databaseId
       name
       slug

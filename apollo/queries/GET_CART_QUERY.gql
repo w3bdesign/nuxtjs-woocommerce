@@ -4,7 +4,6 @@
       nodes {
         key
         product {
-          id
           databaseId
           name
           description

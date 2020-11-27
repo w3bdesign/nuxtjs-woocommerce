@@ -11,6 +11,7 @@ export default {
     productCategories: {
       prefetch: true,
       query: FETCH_ALL_CATEGORIES_QUERY,
+      pollInterval: process.server ? undefined : 2000,
     },
   },
   head: {

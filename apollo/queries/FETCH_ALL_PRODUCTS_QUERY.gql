@@ -1,7 +1,6 @@
 {
   products(first: 24) {
     nodes {
-      id
       databaseId
       name
       onSale
@@ -10,11 +9,13 @@
         sourceUrl
       }
       ... on SimpleProduct {
+        databaseId
         price
         regularPrice
         salePrice
       }
       ... on VariableProduct {
+        databaseId
         price
         regularPrice
         salePrice

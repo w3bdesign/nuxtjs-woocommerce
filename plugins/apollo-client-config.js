@@ -52,9 +52,9 @@ export const afterware = new ApolloLink((operation, forward) => {
     const {
       response: { headers },
     } = context
+
     const session =
       headers.get('woocommerce-session') || localStorage.getItem('woo-session')
-
     if (process.browser && localStorage.getItem('woo-session') !== session) {
       localStorage.setItem('woo-session', session)
     }

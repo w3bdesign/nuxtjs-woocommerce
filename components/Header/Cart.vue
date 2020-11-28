@@ -1,7 +1,7 @@
 <template>
   <div>
     <span v-if="remoteError" class="text-xl text-red-500"
-      >Error getting cart - {{ remoteError }}</span
+      >Error getting cart</span
     >
     <div v-else>
       <NuxtLink to="/cart">

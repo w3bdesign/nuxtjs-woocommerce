@@ -3,7 +3,7 @@ import {
   InMemoryCache,
 } from 'apollo-cache-inmemory'
 
-// import { HttpLink } from 'apollo-link-http'
+import { HttpLink } from 'apollo-link-http'
 import { ApolloLink } from 'apollo-link'
 
 import introspectionQueryResultData from '@/graphql.schema.json'
@@ -12,9 +12,9 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
 })
 
-/* const httpLink = new HttpLink({
+const httpLink = new HttpLink({
   uri: process.env.graphqlUrl,
-}) */
+})
 
 // https://github.com/vuejs/vue-apollo/issues/713
 // https://github.com/w3bdesign/nextjs-woocommerce/blob/master/utils/apollo/ApolloClient.js
@@ -75,8 +75,8 @@ export default function (_context) {
         // fetchPolicy: 'network-only',
       },
     },
-    defaultHttpLink: true,
-    // link: middleware.concat(afterware.concat(httpLink)),
+    defaultHttpLink: false,
+    link: middleware.concat(afterware.concat(httpLink)),
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',

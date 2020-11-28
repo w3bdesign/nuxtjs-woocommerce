@@ -27,8 +27,6 @@
 </template>
 
 <script>
-// import { uid } from 'uid'
-
 import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
 
 export default {
@@ -43,11 +41,10 @@ export default {
   },
   methods: {
     async addProductToWooCart(product) {
-      // const productId = product.databaseId ? product.databaseId : product
+      const productId = product.databaseId ? product.databaseId : product
 
       const productQueryInput = {
-        // clientMutationId: uid(), // Generate a unique id.
-        productId: 31,
+        productId,
       }
 
       try {

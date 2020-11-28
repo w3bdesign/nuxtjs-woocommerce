@@ -16,14 +16,6 @@ const httpLink = new HttpLink({
   uri: process.env.graphqlUrl,
 })
 
-// https://github.com/vuejs/vue-apollo/issues/713
-// https://github.com/w3bdesign/nextjs-woocommerce/blob/master/utils/apollo/ApolloClient.js
-// https://github.com/vuejs/vue-apollo/issues/1019
-// https://github.com/vuejs/vue-apollo/issues/713
-// https://github.com/vuejs/vue-apollo/issues/865
-
-// https://stackoverflow.com/questions/48558681/add-custom-header-to-apollo-client-polling-request
-
 export const middleware = new ApolloLink((operation, forward) => {
   /**
    * If session data exist in local storage, set value as session header.
@@ -32,7 +24,7 @@ export const middleware = new ApolloLink((operation, forward) => {
   if (process.browser) {
     const session = localStorage.getItem('woo-session') || 'test'
 
-    if (session.length > 0) {
+    if (session && session.length > 0) {
       operation.setContext(({ headers = {} }) => ({
         headers: {
           'woocommerce-session': `Session ${session}`,
@@ -69,12 +61,9 @@ export default function (_context) {
      * default 'apollo' definition
      */
     defaultOptions: {
-      // See 'apollo' definition
-      // For example: default query options
       $query: {
         loadingKey: 'loading',
         fetchPolicy: 'cache-and-network',
-        // fetchPolicy: 'network-only',
       },
     },
     defaultHttpLink: false,
@@ -82,12 +71,9 @@ export default function (_context) {
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',
-      // mode: 'no-cors',
     },
     httpLinkOptions: {
-      // credentials: 'same-origin',
       credentials: 'include',
-      // headers: { 'woocommerce-session': `Session` },
     },
     cache: new InMemoryCache({ fragmentMatcher }),
   }

@@ -113,8 +113,6 @@ export default {
   methods: {
     createCheckoutData,
     async submitOrder() {
-      // const checkoutData = await createCheckoutData(this.formData)
-      // console.log(checkoutData)
       this.loading = true
       const order = this.formData
 

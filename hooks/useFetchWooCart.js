@@ -7,8 +7,6 @@ export default async function useFetchWooCart(client) {
         query: GET_CART_QUERY,
       })
       .then(({ data }) => {
-        console.log('Data from cart: ')
-        console.log(data)
         const remoteCart = data
         const subTotal = data.cart.total
         const cartLength = data.cart.contents.nodes.reduce(
@@ -19,8 +17,6 @@ export default async function useFetchWooCart(client) {
         return { remoteCart, cartLength, subTotal }
       })
   } catch (error) {
-    console.log('Error: ')
-    console.log(error)
     return { remoteError: error }
   }
 }

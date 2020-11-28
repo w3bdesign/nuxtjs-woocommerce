@@ -7,17 +7,20 @@ export default async function useFetchWooCart(client) {
         query: GET_CART_QUERY,
       })
       .then(({ data }) => {
+        console.log('Data from cart: ')
+        console.log(data)
         const remoteCart = data
         const subTotal = data.cart.total
         const cartLength = data.cart.contents.nodes.reduce(
           (accumulator, argument) => accumulator + argument.quantity,
           0
         )
-        // client.$apollo.queries.cart.startPolling(2000)
 
         return { remoteCart, cartLength, subTotal }
       })
   } catch (error) {
+    console.log('Error: ')
+    console.log(error)
     return { remoteError: error }
   }
 }

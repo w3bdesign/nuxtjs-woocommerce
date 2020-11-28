@@ -1,0 +1,12 @@
+mutation($input: AddToCartInput!) {
+  addToCart(input: $input) {
+    cartItem {
+      product {
+        node {
+          id
+          databaseId
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import {
   InMemoryCache,
 } from 'apollo-cache-inmemory'
 
-// import { HttpLink } from 'apollo-link-http'
+import { HttpLink } from 'apollo-link-http'
 import { ApolloLink } from 'apollo-link'
 
 import introspectionQueryResultData from '@/graphql.schema.json'
@@ -12,9 +12,9 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
 })
 
-/* const httpLink = new HttpLink({
+const httpLink = new HttpLink({
   uri: process.env.graphqlUrl,
-}) */
+})
 
 // https://github.com/vuejs/vue-apollo/issues/713
 // https://github.com/w3bdesign/nextjs-woocommerce/blob/master/utils/apollo/ApolloClient.js
@@ -30,7 +30,8 @@ export const middleware = new ApolloLink((operation, forward) => {
    */
 
   if (process.browser) {
-    const session = localStorage.getItem('woo-session')
+    const session = localStorage.getItem('woo-session') || 'test'
+
     if (session.length > 0) {
       operation.setContext(({ headers = {} }) => ({
         headers: {
@@ -54,7 +55,8 @@ export const afterware = new ApolloLink((operation, forward) => {
 
     const session =
       headers.get('woocommerce-session') || localStorage.getItem('woo-session')
-    if (process.browser && localStorage.getItem('woo-session') !== session) {
+
+    if (process.browser && session) {
       localStorage.setItem('woo-session', session)
     }
     return response
@@ -75,8 +77,8 @@ export default function (_context) {
         // fetchPolicy: 'network-only',
       },
     },
-    // defaultHttpLink: false,
-    // link: middleware.concat(afterware.concat(httpLink)),
+    defaultHttpLink: false,
+    link: middleware.concat(afterware.concat(httpLink)),
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
       mode: 'cors',

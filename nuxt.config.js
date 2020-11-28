@@ -1,5 +1,4 @@
 export default {
-  middleware: ['isAuth'],
   generate: {
     fallback: true,
   },

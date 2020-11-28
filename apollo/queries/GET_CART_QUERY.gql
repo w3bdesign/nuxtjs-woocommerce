@@ -4,6 +4,7 @@
       nodes {
         key
         product {
+          id
           databaseId
           name
           description
@@ -13,7 +14,7 @@
           averageRating
           reviewCount
           image {
-            databaseId
+            id
             sourceUrl
             srcSet
             altText
@@ -21,7 +22,7 @@
           }
           galleryImages {
             nodes {
-              databaseId
+              id
               sourceUrl
               srcSet
               altText
@@ -30,6 +31,7 @@
           }
         }
         variation {
+          id
           databaseId
           name
           description
@@ -39,7 +41,7 @@
           regularPrice
           salePrice
           image {
-            databaseId
+            id
             sourceUrl
             srcSet
             altText

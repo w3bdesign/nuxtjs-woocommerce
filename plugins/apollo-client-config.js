@@ -13,7 +13,8 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 })
 
 const httpLink = new HttpLink({
-  uri: process.env.graphqlUrl,
+  // uri: process.env.graphqlUrl,
+  uri: 'https://woo.dfweb.no/graphql',
 })
 
 // https://github.com/vuejs/vue-apollo/issues/713

@@ -14,7 +14,6 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 /* const httpLink = new HttpLink({
   uri: process.env.graphqlUrl,
- 
 }) */
 
 // https://github.com/vuejs/vue-apollo/issues/713
@@ -76,7 +75,7 @@ export default function (_context) {
         // fetchPolicy: 'network-only',
       },
     },
-    // defaultHttpLink: true,
+    // defaultHttpLink: false,
     // link: middleware.concat(afterware.concat(httpLink)),
     httpEndpoint: process.env.graphqlUrl,
     fetchOptions: {
@@ -86,7 +85,7 @@ export default function (_context) {
     httpLinkOptions: {
       // credentials: 'same-origin',
       credentials: 'include',
-      headers: { 'woocommerce-session': `Session` },
+      // headers: { 'woocommerce-session': `Session` },
     },
     cache: new InMemoryCache({ fragmentMatcher }),
   }

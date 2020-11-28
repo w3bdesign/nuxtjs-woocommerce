@@ -28,7 +28,8 @@
 </template>
 
 <script>
-import useFetchWooCart from '@/hooks/useFetchWooCart'
+// import useFetchWooCart from '@/hooks/useFetchWooCart'
+import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 
 export default {
   name: 'Cart',
@@ -40,7 +41,28 @@ export default {
       subTotal: null,
     }
   },
-  async mounted() {
+  apollo: {
+    cart: {
+      prefetch: true,
+      query: GET_CART_QUERY,
+      pollInterval: process.server ? undefined : 2000,
+      result({ data, loading, networkStatus }) {
+        const cartIsReady = networkStatus === 7
+        if (cartIsReady) {
+          console.log('Cart is ready')
+          this.remoteCart = data
+          this.subTotal = data.cart.total
+          this.cartLength = data.cart.contents.nodes.reduce(
+            (accumulator, argument) => accumulator + argument.quantity,
+            0
+          )
+          // return { remoteCart, cartLength, subTotal }
+        }
+      },
+    },
+  },
+
+  /* async mounted() {
     const {
       remoteCart,
       cartLength,
@@ -56,6 +78,6 @@ export default {
     if (remoteError) {
       this.remoteError = remoteError
     }
-  },
+  }, */
 }
 </script>

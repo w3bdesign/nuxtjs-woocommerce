@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -17,7 +17,6 @@
     "@nuxtjs/apollo": "4.0.1-rc.5",
     "algoliasearch": "^4.8.2",
     "apollo-link": "^1.2.14",
-    "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "core-js": "^3.8.0",
     "graphql-tag": "^2.11.0",

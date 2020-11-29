@@ -1,7 +1,12 @@
 <template>
   <div>
     <Hero />
-    <ShowAllProducts :products="products.nodes" />
+    <div v-if="products">
+      <ShowAllProducts :products="products.nodes" />
+    </div>
+    <div v-else>
+      <LoadingSpinner />
+    </div>
   </div>
 </template>
 

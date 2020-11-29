@@ -30,14 +30,12 @@
       </div>
     </section>
   </div>
-  <div v-else><LoadingSpinner /></div>
 </template>
 
 <script>
 export default {
   props: {
     categories: { type: Object, required: false, default: null },
-    // TODO Add more prop types here
   },
 }
 </script>

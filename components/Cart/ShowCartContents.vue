@@ -73,7 +73,6 @@ export default {
     cart: {
       prefetch: true,
       query: GET_CART_QUERY,
-      pollInterval: process.server ? undefined : 2000,
       result({ data, loading, networkStatus }) {
         const cartIsReady = networkStatus === 7
         this.loading = loading
@@ -96,6 +95,7 @@ export default {
     async handleRemoveProduct(products) {
       this.loading = true
       this.removingCartItem = true
+      this.$apollo.queries.cart.startPolling(300)
       const updatedItems = []
       updatedItems.push({
         key: products.key,
@@ -115,6 +115,7 @@ export default {
           .then(({ data }) => {
             this.loading = false
             this.removingCartItem = false
+            this.$apollo.queries.cart.stopPolling()
           })
       } catch (error) {
         this.loading = false

@@ -55,6 +55,7 @@ export default {
           })
           .then(({ data }) => {
             this.loading = false
+            this.$apollo.queries.cart.refetch()
           })
       } catch (e) {
         this.error = e

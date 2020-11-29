@@ -7,7 +7,7 @@
         :key="products.id"
         class="container mx-auto mt-4 flex-container"
       >
-        <div class="item">
+        <div v-if="displayRemove" class="item">
           <span class="block mt-2 font-extrabold">Remove: <br /></span>
           <span class="item-content">
             <img
@@ -48,6 +48,9 @@ import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION'
 
 export default {
+  props: {
+    displayRemove: { type: Boolean, required: false },
+  },
   data() {
     return {
       remoteCart: null,

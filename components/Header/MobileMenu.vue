@@ -7,7 +7,7 @@
           id="nav-toggle"
           class="mt-6 burger burger-squeeze"
           aria-haspopup="true"
-          aria-expanded="false"
+          :aria-expanded="expandedMenu"
           aria-controls="menu"
           aria-label="Navigation"
           :class="{ open: expandedMenu }"

@@ -96,7 +96,7 @@ export default {
   methods: {
     async handleRemoveProduct(products) {
       this.removingCartItem = true
-      this.$apollo.queries.cart.startPolling(1000)
+
       const updatedItems = []
       updatedItems.push({
         key: products.key,
@@ -115,7 +115,7 @@ export default {
           })
           .then(({ data }) => {
             this.removingCartItem = false
-            this.$apollo.queries.cart.stopPolling()
+            this.$apollo.queries.cart.refetch()
           })
       } catch (error) {
         this.remoteError = error

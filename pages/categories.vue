@@ -1,5 +1,10 @@
 <template>
-  <ShowAllCategories :categories="productCategories" />
+  <div v-if="productCategories">
+    <ShowAllCategories :categories="productCategories" />
+  </div>
+  <div v-else>
+    <LoadingSpinner />
+  </div>
 </template>
 
 <script>
@@ -11,7 +16,6 @@ export default {
     productCategories: {
       prefetch: true,
       query: FETCH_ALL_CATEGORIES_QUERY,
-      pollInterval: process.server ? undefined : 2000,
     },
   },
   head: {

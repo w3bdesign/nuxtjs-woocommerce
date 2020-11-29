@@ -2,6 +2,7 @@
   <div v-if="products">
     <ShowAllProducts :products="products.nodes" />
   </div>
+  <div v-else><LoadingSpinner /></div>
 </template>
 
 <script>

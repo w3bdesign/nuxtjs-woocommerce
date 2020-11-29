@@ -2,6 +2,9 @@
   <div v-if="product">
     <ShowSingleProduct :product="product" />
   </div>
+  <div v-else>
+    <LoadingSpinner />
+  </div>
 </template>
 
 <script>
@@ -17,8 +20,7 @@ export default {
   apollo: {
     product: {
       query: GET_SINGLE_PRODUCT_QUERY,
-      // prefetch: ({ id, slug }) => ({ id, slug }),
-      prefetch: false,
+      prefetch: ({ id, slug }) => ({ id, slug }),
       variables() {
         return { id: this.$route.query.id, slug: this.$route.params.product }
       },

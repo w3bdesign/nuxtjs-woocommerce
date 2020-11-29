@@ -10,6 +10,8 @@
           aria-expanded="false"
           aria-controls="menu"
           aria-label="Navigation"
+          :class="{ open: expandedMenu }"
+          @click="displayMobileMenu"
         >
           <div class="burger-lines"></div>
         </button>
@@ -21,6 +23,16 @@
 <script>
 export default {
   name: 'MobileMenu',
+  data() {
+    return {
+      expandedMenu: false,
+    }
+  },
+  methods: {
+    displayMobileMenu() {
+      this.expandedMenu = !this.expandedMenu
+    },
+  },
 }
 </script>
 

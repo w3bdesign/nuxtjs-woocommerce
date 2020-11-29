@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="cartProducts">
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <section class="mt-10">
       <div
@@ -7,11 +7,12 @@
         :key="products.id"
         class="container mx-auto mt-4 flex-container"
       >
-        <div v-if="displayRemove" class="item">
+        <div class="item">
           <span class="block mt-2 font-extrabold">Remove: <br /></span>
           <span class="item-content">
             <img
               class="mt-2 ml-4 cursor-pointer"
+              :class="{ removing: removingCartItem }"
               alt="Remove icon"
               aria-label="Remove"
               src="@/assets/Remove.svg"
@@ -43,22 +44,18 @@
 </template>
 
 <script>
-import { uid } from 'uid'
-
-import useFetchWooCart from '@/hooks/useFetchWooCart'
+import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION'
 
 export default {
-  props: {
-    displayRemove: { type: Boolean, required: false },
-  },
   data() {
     return {
       remoteCart: null,
       remoteError: null,
       cartLength: null,
       subTotal: null,
-      loading: true,
+      loading: false,
+      removingCartItem: false,
     }
   },
   computed: {
@@ -69,26 +66,33 @@ export default {
       return null
     },
   },
-  async mounted() {
-    const {
-      remoteCart,
-      cartLength,
-      subTotal,
-      remoteError,
-    } = await useFetchWooCart(this)
+  apollo: {
+    cart: {
+      prefetch: true,
+      query: GET_CART_QUERY,
+      pollInterval: process.server ? undefined : 2000,
+      result({ data, loading, networkStatus }) {
+        const cartIsReady = networkStatus === 7
+        this.loading = loading
 
-    if (remoteCart) {
-      this.remoteCart = remoteCart
-      this.cartLength = cartLength
-      this.subTotal = subTotal
-      this.loading = false
-    }
-    if (remoteError) {
-      this.remoteError = remoteError
-    }
+        if (cartIsReady) {
+          this.remoteCart = data
+          this.subTotal = data.cart.total
+          this.cartLength = data.cart.contents.nodes.reduce(
+            (accumulator, argument) => accumulator + argument.quantity,
+            0
+          )
+        }
+      },
+      error(error) {
+        this.remoteError = error
+      },
+    },
   },
   methods: {
     async handleRemoveProduct(products) {
+      this.loading = true
+      this.removingCartItem = true
       const updatedItems = []
       updatedItems.push({
         key: products.key,
@@ -101,15 +105,16 @@ export default {
             mutation: UPDATE_CART_MUTATION,
             variables: {
               input: {
-                clientMutationId: uid(),
                 items: updatedItems,
               },
             },
           })
           .then(({ data }) => {
             this.loading = false
+            this.removingCartItem = false
           })
       } catch (error) {
+        this.loading = false
         this.remoteError = error
       }
     },
@@ -135,5 +140,9 @@ export default {
 
 .item-content {
   @apply inline-block mt-4 w-20 h-12 md:w-full lg:w-full xl:w-full;
+}
+
+.removing {
+  @apply animate-spin cursor-not-allowed;
 }
 </style>

@@ -1,45 +1,48 @@
 <template>
-  <div v-if="cartProducts">
-    <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
-    <section class="mt-10">
-      <div
-        v-for="products in cartProducts"
-        :key="products.id"
-        class="container mx-auto mt-4 flex-container"
-      >
-        <div v-if="displayRemove" class="item">
-          <span class="block mt-2 font-extrabold">Remove: <br /></span>
-          <span class="item-content">
-            <img
-              class="mt-2 ml-4 cursor-pointer"
-              :class="{ removing: removingCartItem }"
-              alt="Remove icon"
-              aria-label="Remove"
-              src="@/assets/Remove.svg"
-              @click="handleRemoveProduct(products)"
-            />
-          </span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Name: <br /></span>
-          <span class="item-content">{{ products.product.name }}</span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
-          <span class="item-content">
-            {{ products.quantity }}
-          </span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
-          <span class="item-content"> {{ products.total }} </span>
-        </div>
-      </div>
-    </section>
+  <div>
     <LoadingSpinner v-if="loading" />
-    <h2 v-if="!cartLength && !loading" class="m-4 text-3xl text-center">
-      Cart is currently empty
-    </h2>
+    <div>
+      <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
+      <section class="mt-10">
+        <div
+          v-for="products in cartProducts"
+          :key="products.id"
+          class="container mx-auto mt-4 flex-container"
+        >
+          <div v-if="displayRemove" class="item">
+            <span class="block mt-2 font-extrabold">Remove: <br /></span>
+            <span class="item-content">
+              <img
+                class="mt-2 ml-4 cursor-pointer"
+                :class="{ removing: removingCartItem }"
+                alt="Remove icon"
+                aria-label="Remove"
+                src="@/assets/Remove.svg"
+                @click="handleRemoveProduct(products)"
+              />
+            </span>
+          </div>
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Name: <br /></span>
+            <span class="item-content">{{ products.product.name }}</span>
+          </div>
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
+            <span class="item-content">
+              {{ products.quantity }}
+            </span>
+          </div>
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
+            <span class="item-content"> {{ products.total }} </span>
+          </div>
+        </div>
+      </section>
+      <h2 v-if="!cartProducts.length" class="m-4 text-3xl text-center">
+        Cart is currently empty
+      </h2>
+      <CheckoutButton v-if="displayRemove && cartProducts.length" />
+    </div>
   </div>
 </template>
 
@@ -55,9 +58,8 @@ export default {
     return {
       remoteCart: null,
       remoteError: null,
-      cartLength: null,
       subTotal: null,
-      loading: false,
+      loading: true,
       removingCartItem: false,
     }
   },
@@ -74,10 +76,10 @@ export default {
       prefetch: true,
       query: GET_CART_QUERY,
       result({ data, loading, networkStatus }) {
-        const cartIsReady = networkStatus === 7
-        this.loading = loading
+        const cartIsReady = data && networkStatus === 7
 
         if (cartIsReady) {
+          this.loading = false
           this.remoteCart = data
           this.subTotal = data.cart.total
           this.cartLength = data.cart.contents.nodes.reduce(
@@ -93,9 +95,8 @@ export default {
   },
   methods: {
     async handleRemoveProduct(products) {
-      this.loading = true
       this.removingCartItem = true
-      this.$apollo.queries.cart.startPolling(300)
+      this.$apollo.queries.cart.startPolling(1000)
       const updatedItems = []
       updatedItems.push({
         key: products.key,
@@ -113,12 +114,10 @@ export default {
             },
           })
           .then(({ data }) => {
-            this.loading = false
             this.removingCartItem = false
             this.$apollo.queries.cart.stopPolling()
           })
       } catch (error) {
-        this.loading = false
         this.remoteError = error
       }
     },

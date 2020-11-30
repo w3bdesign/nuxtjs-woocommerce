@@ -22,7 +22,7 @@
             Categories
           </NuxtLink>
         </li>
-        <li class="flex justify-center mt-4 text-lg linkStyle">
+        <li class="flex justify-center mt-6 text-lg linkStyleCart">
           <NuxtLink to="/cart" @click.native="displayMobileMenu">
             <Cart />
           </NuxtLink>
@@ -71,6 +71,10 @@ export default {
 /* Style for mobile menu links */
 .linkStyle {
   @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded;
+}
+
+.linkStyleCart {
+  @apply w-auto p-4 m-4 font-bold text-center;
 }
 
 /* Main hamburger styling */

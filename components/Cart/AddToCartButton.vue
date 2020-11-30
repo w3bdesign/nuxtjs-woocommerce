@@ -42,7 +42,6 @@ export default {
   methods: {
     async addProductToWooCart(product) {
       const productId = product.databaseId ? product.databaseId : product
-
       const productQueryInput = {
         productId,
       }
@@ -56,6 +55,7 @@ export default {
           .then(({ data }) => {
             this.loading = false
             this.$apollo.queries.cart.refetch()
+            this.$router.push('/cart')
           })
       } catch (e) {
         this.error = e

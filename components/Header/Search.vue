@@ -1,17 +1,12 @@
 <template>
   <div>
-    <div class="relative text-xl text-white no-underline is-active">
-      <input class="text-input" type="text" placeholder="Click to search" />
-      <div
-        class="absolute inset-y-0 flex items-center pl-56 pointer-events-none"
-      >
-        <svg
-          class="w-6 h-6 text-gray-500 pointer-events-none fill-current"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-        >
+    <div class="flex items-center text-xl text-input">
+      <input type="text" placeholder="Click to search" />
+      <div class="search-input__icon">
+        <svg width="25" height="25" viewBox="0 0 16 16">
           <path
-            d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+            fill="#333"
+            d="M9.962 8.716c0.653-0.905 1.038-2.015 1.038-3.216 0-3.038-2.462-5.5-5.5-5.5s-5.5 2.462-5.5 5.5 2.462 5.5 5.5 5.5c1.201 0 2.312-0.385 3.216-1.038l5.284 6.038 2-2-6.038-5.284zM5.5 9.5c-2.209 0-4-1.791-4-4s1.791-4 4-4c2.209 0 4 1.791 4 4s-1.791 4-4 4z"
           ></path>
         </svg>
       </div>

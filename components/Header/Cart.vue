@@ -12,7 +12,7 @@
           >
             <img
               alt="Cart icon"
-              class="h-12"
+              class="h-12 ml-4 lg:ml-0"
               aria-label="Cart"
               src="~/assets/Cart.svg"
           /></span>
@@ -20,7 +20,7 @@
         <transition name="cart">
           <div v-if="cartLength">
             <span
-              class="absolute w-6 h-6 pb-2 ml-12 -mt-12 text-center text-white bg-black rounded-full"
+              class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-12"
             >
               {{ cartLength }}
             </span>

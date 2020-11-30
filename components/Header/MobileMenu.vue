@@ -9,21 +9,23 @@
       }"
     >
       <ul>
-        <li class="linkStyle">
+        <li class="text-xl linkStyle">
           <NuxtLink to="/" @click.native="displayMobileMenu"> Home </NuxtLink>
         </li>
-        <li class="linkStyle">
+        <li class="text-xl linkStyle">
           <NuxtLink to="/products" @click.native="displayMobileMenu">
             Products
           </NuxtLink>
         </li>
-        <li class="linkStyle">
+        <li class="text-xl linkStyle">
           <NuxtLink to="/categories" @click.native="displayMobileMenu">
             Categories
           </NuxtLink>
         </li>
-        <li class="linkStyle">
-          <Cart />
+        <li class="flex justify-center mt-4 text-lg linkStyle">
+          <NuxtLink to="/cart" @click.native="displayMobileMenu">
+            <Cart />
+          </NuxtLink>
         </li>
       </ul>
     </div>
@@ -68,7 +70,7 @@ export default {
 <style scoped>
 /* Style for mobile menu links */
 .linkStyle {
-  @apply w-auto p-4 m-4 text-xl font-bold text-center border border-gray-300 border-opacity-50 shadow;
+  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow;
 }
 
 /* Main hamburger styling */

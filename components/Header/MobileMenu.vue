@@ -10,13 +10,17 @@
     >
       <ul>
         <li class="linkStyle">
-          <NuxtLink to="/"> Home </NuxtLink>
+          <NuxtLink to="/" @click.native="displayMobileMenu"> Home </NuxtLink>
         </li>
         <li class="linkStyle">
-          <NuxtLink to="/products"> Products </NuxtLink>
+          <NuxtLink to="/products" @click.native="displayMobileMenu">
+            Products
+          </NuxtLink>
         </li>
         <li class="linkStyle">
-          <NuxtLink to="/categories"> Categories </NuxtLink>
+          <NuxtLink to="/categories" @click.native="displayMobileMenu">
+            Categories
+          </NuxtLink>
         </li>
       </ul>
     </div>
@@ -41,14 +45,6 @@
 </template>
 
 <script>
-/*
-:class="{
-        hidden: !expandedMenu,
-        fixed: expandedMenu,
-        animate__fadeInLeft: expandedMenu,
-        animate__fadeOutRight: !expandedMenu && !firstRender,
-      }"
-      */
 export default {
   name: 'MobileMenu',
   data() {
@@ -56,27 +52,6 @@ export default {
       expandedMenu: false,
       firstRender: true,
     }
-  },
-  computed: {
-    expandedMenuClass() {
-      let className = ''
-
-      if (this.expandedMenu) {
-        className = 'animate__fadeInLeft fixed'
-      }
-
-      if (!this.expandedMenu && !this.firstRender) {
-        className = 'animate__fadeOutRight'
-      }
-      return className
-
-      /*
-         hidden: !expandedMenu,
-        fixed: expandedMenu,
-        animate__fadeInLeft: expandedMenu,
-        animate__fadeOutRight: !expandedMenu && !firstRender,
-        */
-    },
   },
   methods: {
     displayMobileMenu() {
@@ -88,6 +63,7 @@ export default {
 </script>
 
 <style scoped>
+/* Style for mobile menu links */
 .linkStyle {
   @apply w-auto p-4 m-4 text-xl font-bold text-center border border-gray-300 border-opacity-50 shadow;
 }

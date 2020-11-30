@@ -1,7 +1,7 @@
 <template>
   <div>
     <span v-if="remoteError" class="text-xl text-red-500"
-      >Error getting cart</span
+      >Error getting cart<br />The server may be down</span
     >
     <div v-else>
       <NuxtLink to="/cart">
@@ -44,6 +44,9 @@ export default {
       cartLength: null,
       subTotal: null,
     }
+  },
+  mounted() {
+    this.$apollo.queries.cart.refetch()
   },
   apollo: {
     cart: {

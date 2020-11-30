@@ -22,6 +22,9 @@
             Categories
           </NuxtLink>
         </li>
+        <li class="linkStyle">
+          <Cart />
+        </li>
       </ul>
     </div>
     <div class="w-5/12 lg:hidden"></div>

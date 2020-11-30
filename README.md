@@ -60,8 +60,9 @@ The current release has been tested and is confirmed working with the following 
 - GraphQL-based filters
 - CSS animations and transitions
 - Checkout process
+- Animated mobile menu
 
 ## TODO
 
 - Finish implementing Algolia search
-- Mobile menu
+

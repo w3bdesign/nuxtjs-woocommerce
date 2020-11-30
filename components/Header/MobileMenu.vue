@@ -1,5 +1,17 @@
 <template>
   <div>
+    <div
+      v-if="!firstRender"
+      class="w-screen h-64 mt-32 bg-black animate__animated"
+      :class="{
+        hidden: !expandedMenu,
+        fixed: expandedMenu,
+        animate__fadeInLeft: expandedMenu,
+        animate__fadeOutRight: !expandedMenu && !firstRender,
+      }"
+    >
+      Expanded mobile menu
+    </div>
     <div class="w-5/12 lg:hidden"></div>
     <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
       <div class="self-center block w-full mr-4">
@@ -21,16 +33,47 @@
 </template>
 
 <script>
+/*
+:class="{
+        hidden: !expandedMenu,
+        fixed: expandedMenu,
+        animate__fadeInLeft: expandedMenu,
+        animate__fadeOutRight: !expandedMenu && !firstRender,
+      }"
+      */
 export default {
   name: 'MobileMenu',
   data() {
     return {
       expandedMenu: false,
+      firstRender: true,
     }
+  },
+  computed: {
+    expandedMenuClass() {
+      let className = ''
+
+      if (this.expandedMenu) {
+        className = 'animate__fadeInLeft fixed'
+      }
+
+      if (!this.expandedMenu && !this.firstRender) {
+        className = 'animate__fadeOutRight'
+      }
+      return className
+
+      /*
+         hidden: !expandedMenu,
+        fixed: expandedMenu,
+        animate__fadeInLeft: expandedMenu,
+        animate__fadeOutRight: !expandedMenu && !firstRender,
+        */
+    },
   },
   methods: {
     displayMobileMenu() {
       this.expandedMenu = !this.expandedMenu
+      this.firstRender = false
     },
   },
 }
@@ -89,6 +132,7 @@ export default {
   left: 1em;
   top: 1em;
 }
+
 /* Burger animations classes */
 .burger.burger-squeeze .burger-lines,
 .burger.burger-squeeze .burger-lines:after,

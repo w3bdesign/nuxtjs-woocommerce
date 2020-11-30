@@ -1,16 +1,24 @@
 <template>
-  <div>
+  <div class="relative">
     <div
       v-if="!firstRender"
-      class="w-screen h-64 mt-32 bg-black animate__animated"
+      class="fixed top-0 left-0 w-screen mt-40 bg-white z-100 h-96 animate__animated"
       :class="{
-        hidden: !expandedMenu,
-        fixed: expandedMenu,
         animate__fadeInLeft: expandedMenu,
         animate__fadeOutRight: !expandedMenu && !firstRender,
       }"
     >
-      Expanded mobile menu
+      <ul>
+        <li class="linkStyle">
+          <NuxtLink to="/"> Home </NuxtLink>
+        </li>
+        <li class="linkStyle">
+          <NuxtLink to="/products"> Products </NuxtLink>
+        </li>
+        <li class="linkStyle">
+          <NuxtLink to="/categories"> Categories </NuxtLink>
+        </li>
+      </ul>
     </div>
     <div class="w-5/12 lg:hidden"></div>
     <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
@@ -80,6 +88,10 @@ export default {
 </script>
 
 <style scoped>
+.linkStyle {
+  @apply w-auto p-4 m-4 text-xl font-bold text-center border border-gray-300 border-opacity-50 shadow;
+}
+
 /* Main hamburger styling */
 .burger {
   height: 3em;

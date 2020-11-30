@@ -70,7 +70,7 @@ export default {
 <style scoped>
 /* Style for mobile menu links */
 .linkStyle {
-  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow;
+  @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded;
 }
 
 /* Main hamburger styling */

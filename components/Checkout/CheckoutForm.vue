@@ -12,7 +12,7 @@
         <div class="container p-4 py-2 mx-auto">
           <div class="mx-auto lg:w-1/2 md:w-2/3">
             <div class="flex flex-wrap -m-2">
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="firstName"
                   class="text-input"
@@ -21,7 +21,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="lastName"
                   class="text-input"
@@ -30,7 +30,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="address1"
                   class="text-input"
@@ -39,7 +39,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="postcode"
                   class="text-input"
@@ -48,7 +48,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="city"
                   class="text-input"
@@ -57,7 +57,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="email"
                   class="text-input"
@@ -66,7 +66,7 @@
                   type="text"
                 />
               </div>
-              <div class="w-1/2 p-2">
+              <div class="w-full p-2 lg:w-1/2">
                 <FormulateInput
                   name="phone"
                   class="text-input"

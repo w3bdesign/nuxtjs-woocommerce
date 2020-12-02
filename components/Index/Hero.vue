@@ -23,7 +23,7 @@ export default {
 
 <style lang="postcss" scoped>
 #hero {
-  background-image: url('~assets/Hero.jpg');
+  background-image: url('~assets/images/Hero.jpg');
   height: 24rem;
   max-width: 1350px;
 }

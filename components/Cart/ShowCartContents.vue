@@ -17,7 +17,7 @@
                 :class="{ removing: removingCartItem }"
                 alt="Remove icon"
                 aria-label="Remove"
-                src="@/assets/Remove.svg"
+                src="@/assets/svg/Remove.svg"
                 @click="handleRemoveProduct(products)"
               />
             </span>

@@ -55,7 +55,6 @@ export default {
           .then(({ data }) => {
             this.loading = false
             this.$apollo.queries.cart.refetch()
-            this.$router.push('/cart')
           })
       } catch (e) {
         this.error = e
@@ -64,6 +63,7 @@ export default {
     addProductToCart(product) {
       this.loading = true
       this.addProductToWooCart(product)
+      this.$router.push('/cart')
     },
   },
 }

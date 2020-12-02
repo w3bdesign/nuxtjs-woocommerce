@@ -52,7 +52,6 @@ export default {
   name: 'ShowProducts',
   props: {
     products: { type: Array, required: true },
-    // TODO Add more prop types here
   },
   methods: {
     productImage(product) {

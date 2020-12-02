@@ -7,6 +7,9 @@ export default {
   env: {
     graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:3000/graphql',
     placeholderSmallImage: process.env.PLACEHOLDER_SMALL_IMAGE_URL || '',
+    AlgoliaApplicationId: process.env.ALGOLIA_APPLICATION_ID || '',
+    AlgoliaSearchOnlyAPIKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY || '',
+    AlgoliaIndexName: process.env.ALGOLIA_INDEX_NAME || '',
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {

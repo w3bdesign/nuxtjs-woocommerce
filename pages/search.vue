@@ -55,6 +55,7 @@ export default {
       indexName: process.env.AlgoliaIndexName,
     }),
   ],
+  layout: 'Layout',
   serverPrefetch() {
     return this.instantsearch.findResultsState(this).then((algoliaState) => {
       this.$ssrContext.nuxt.algoliaState = algoliaState

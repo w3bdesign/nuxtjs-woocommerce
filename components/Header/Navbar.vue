@@ -11,7 +11,7 @@
               alt="Logo"
               class="h-20 lg:h-24"
               aria-label="Nettbutikk logo"
-              src="~/assets/Logo.svg"
+              src="~/assets/svg/Logo.svg"
             />
           </div>
         </div>

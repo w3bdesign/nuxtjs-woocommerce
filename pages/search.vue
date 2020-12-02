@@ -6,10 +6,13 @@
     <ais-hits>
       <template slot="item" slot-scope="{ item }">
         <p>
-          <ais-highlight attribute="name" :hit="item" />
+          <ais-highlight attribute="product_name" :hit="item" />
         </p>
         <p>
-          <ais-highlight attribute="brand" :hit="item" />
+          <ais-highlight attribute="short_description" :hit="item" />
+        </p>
+        <p>
+          <img :src="item.product_image" alt="item.product_name" />
         </p>
       </template>
     </ais-hits>
@@ -28,11 +31,12 @@ import {
   AisPagination,
   createServerRootMixin,
 } from 'vue-instantsearch'
+
 import algoliasearch from 'algoliasearch/lite'
 
 const searchClient = algoliasearch(
-  'latency',
-  '6be0576ff61c053d5f9a3225e2a90f76'
+  process.env.AlgoliaApplicationId,
+  process.env.AlgoliaSearchOnlyAPIKey
 )
 
 export default {
@@ -48,7 +52,7 @@ export default {
   mixins: [
     createServerRootMixin({
       searchClient,
-      indexName: 'instant_search',
+      indexName: process.env.AlgoliaIndexName,
     }),
   ],
   serverPrefetch() {

@@ -121,6 +121,8 @@ export default {
   position: absolute;
   transform: rotate(0);
 }
+
+/*
 .burger .burger-lines:after {
   left: 0;
   top: -1em;
@@ -129,6 +131,7 @@ export default {
   left: 1em;
   top: 1em;
 }
+*/
 
 /* Burger animations classes */
 .burger.burger-squeeze .burger-lines,

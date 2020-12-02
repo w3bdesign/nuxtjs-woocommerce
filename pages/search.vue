@@ -5,14 +5,26 @@
     <ais-refinement-list attribute="brand" />
     <ais-hits>
       <template slot="item" slot-scope="{ item }">
-        <p>
-          <ais-highlight attribute="product_name" :hit="item" />
+        <NuxtLink
+          class="text-black cursor-pointer hover:underline"
+          :to="{
+            path: '/product/' + item.product_name,
+            query: { id: item.objectID },
+          }"
+        >
+          <p class="p-2 text-2xl font-bold text-center">
+            {{ item.product_name }}
+          </p>
+        </NuxtLink>
+
+        <p class="p-2 text-xl text-center">
+          {{ item.short_description }}
         </p>
-        <p>
-          <ais-highlight attribute="short_description" :hit="item" />
-        </p>
-        <p>
+        <p class="p-2">
           <img :src="item.product_image" alt="item.product_name" />
+        </p>
+        <p class="p-2 text-xl text-center">
+          {{ item.sale_price ? item.sale_price : item.regular_price }} kr
         </p>
       </template>
     </ais-hits>
@@ -21,11 +33,16 @@
 </template>
 
 <script>
+// TODO
+/*
+  Replace empty spaces with dash (-)
+
+  const trimmedProductName = product_name.replace(/ /g, '-');
+*/
 import {
   AisInstantSearchSsr,
   AisRefinementList,
   AisHits,
-  AisHighlight,
   AisSearchBox,
   AisStats,
   AisPagination,
@@ -44,7 +61,6 @@ export default {
     AisInstantSearchSsr,
     AisRefinementList,
     AisHits,
-    AisHighlight,
     AisSearchBox,
     AisStats,
     AisPagination,
@@ -55,6 +71,7 @@ export default {
       indexName: process.env.AlgoliaIndexName,
     }),
   ],
+  layout: 'Layout',
   serverPrefetch() {
     return this.instantsearch.findResultsState(this).then((algoliaState) => {
       this.$ssrContext.nuxt.algoliaState = algoliaState

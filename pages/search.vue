@@ -8,7 +8,7 @@
         <NuxtLink
           class="text-black cursor-pointer hover:underline"
           :to="{
-            path: '/product/' + item.product_name,
+            path: '/product/' + convertProductNameToSlug(item.product_name),
             query: { id: item.objectID },
           }"
         >
@@ -33,12 +33,6 @@
 </template>
 
 <script>
-// TODO
-/*
-  Replace empty spaces with dash (-)
-
-  const trimmedProductName = product_name.replace(/ /g, '-');
-*/
 import {
   AisInstantSearchSsr,
   AisRefinementList,
@@ -72,12 +66,6 @@ export default {
     }),
   ],
   layout: 'Layout',
-  serverPrefetch() {
-    return this.instantsearch.findResultsState(this).then((algoliaState) => {
-      this.$ssrContext.nuxt.algoliaState = algoliaState
-    })
-  },
-
   head() {
     return {
       link: [
@@ -94,6 +82,17 @@ export default {
       this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
 
     this.instantsearch.hydrate(results)
+  },
+  methods: {
+    convertProductNameToSlug(productName) {
+      const productNameSlug = productName.replace(/ /g, '-').toLowerCase()
+      return productNameSlug
+    },
+  },
+  serverPrefetch() {
+    return this.instantsearch.findResultsState(this).then((algoliaState) => {
+      this.$ssrContext.nuxt.algoliaState = algoliaState
+    })
   },
 }
 </script>

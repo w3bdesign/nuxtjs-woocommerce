@@ -59,6 +59,7 @@ The current release has been tested and is confirmed working with the following 
 - Support for simple products and variable products
 - GraphQL-based filters
 - CSS animations and transitions
+- Form handling and validation with Vue Formulate
 - Checkout process
 - Animated mobile menu
 

@@ -66,6 +66,7 @@ export default {
       },
       error(error) {
         this.remoteError = error
+        window.location.reload(true)
       },
     },
   },

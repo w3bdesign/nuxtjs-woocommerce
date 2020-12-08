@@ -1,9 +1,6 @@
 <template>
   <div>
-    <span v-if="remoteError" class="text-xl text-red-500"
-      >Error getting cart<br />The server may be down</span
-    >
-    <div v-else>
+    <div v-if="!remoteError">
       <NuxtLink to="/cart">
         <transition name="cart">
           <span
@@ -66,7 +63,9 @@ export default {
       },
       error(error) {
         this.remoteError = error
-        window.location.reload(true)
+        if (!localStorage.getItem('woo-session')) {
+          window.location.reload(true)
+        }
       },
     },
   },

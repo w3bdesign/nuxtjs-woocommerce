@@ -66,4 +66,5 @@ The current release has been tested and is confirmed working with the following 
 ## TODO
 
 - Finish implementing Algolia search
+- Make Algolia look good on mobile
 

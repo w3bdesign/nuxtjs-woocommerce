@@ -12,7 +12,7 @@
 1. Install and activate the following required plugins, in your WordPress plugin directory:
 
 - [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.
-- [wp-graphql](https://github.com/wp-graphql/wp-graphql) Exposes GraphQL for WordPress.
+- [wp-graphql](https://wordpress.org/plugins/wp-graphql) Exposes GraphQL for WordPress.
 - [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) Adds WooCommerce functionality to a WPGraphQL schema.
 - [algolia-woo-indexer](https://github.com/w3bdesign/algolia-woo-indexer) Sends WooCommerce products to Algolia. Required for search to work.
 - [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
@@ -24,8 +24,8 @@ Optional plugin:
 The current release has been tested and is confirmed working with the following versions:
 
 - WordPress version 5.5.3
-- WooCommerce version 4.7.0
-- WP GraphQL version 1.0.0
+- WooCommerce version 4.8.0
+- WP GraphQL version 1.0.3
 - WooGraphQL version 0.6.1 (latest development version)
 - WPGraphQL CORS version 1.1.0 (with introspection enabled)
 

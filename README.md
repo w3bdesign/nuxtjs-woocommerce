@@ -23,9 +23,9 @@ Optional plugin:
 
 The current release has been tested and is confirmed working with the following versions:
 
-- WordPress version 5.5.3
+- WordPress version 5.6.0
 - WooCommerce version 4.8.0
-- WP GraphQL version 1.0.3
+- WP GraphQL version 1.0.5
 - WooGraphQL version 0.6.1 (latest development version)
 - WPGraphQL CORS version 1.1.0 (with introspection enabled)
 

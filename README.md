@@ -65,6 +65,7 @@ The current release has been tested and is confirmed working with the following 
 
 ## TODO
 
+- Make WooCommerce session token expire and get deleted after 24 hours
 - Finish implementing Algolia search
 - Make Algolia look good on mobile
 

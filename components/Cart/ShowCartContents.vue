@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 <template>
   <div>
     <LoadingSpinner v-if="loading" />
@@ -90,6 +91,10 @@ export default {
       },
       error(error) {
         this.remoteError = error
+        // Logs out an error in the console if we are in development mode
+        if (process.env.NODE_ENV === 'development') {
+          console.error(error)
+        }
       },
     },
   },

@@ -24,7 +24,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.0.2",
     "uid": "^2.0.0",
     "vue": "^2.6.12",
-    "vue-instantsearch": "^3.4.2",
+    "vue-instantsearch": "^3.4.3",
     "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   },

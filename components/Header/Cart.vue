@@ -63,7 +63,13 @@ export default {
       },
       error(error) {
         this.remoteError = error
-        if (!localStorage.getItem('woo-session')) {
+        // Logs out an error in the console if we are in development mode
+        if (process.env.NODE_ENV === 'development') {
+          console.error(error)
+        }
+        // Check if we are in the browser before checking localStorage
+        // Will refresh the page to refetch the session from WooCommerce
+        if (process.browser && !localStorage.getItem('woo-session')) {
           window.location.reload(true)
         }
       },

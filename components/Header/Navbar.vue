@@ -89,9 +89,6 @@
 </template>
 
 <script>
-// https://march08.github.io/animated-burgers/#htmlcss
-// https://css-snippets.com/slide-in-panel/
-
 export default {
   name: 'Navbar',
 }

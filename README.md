@@ -63,6 +63,16 @@ The current release has been tested and is confirmed working with the following 
 - Checkout process
 - Animated mobile menu
 
+## Troubleshooting
+
+**I am getting a cart undefined error?**
+
+Check that you are using the 0.6.1 version of the WooGraphQL plugin
+
+**The products page isn't loading?**
+
+Check the attributes of the products. Right now the application requires Size and Color.
+
 ## TODO
 
 - Make WooCommerce session token expire and get deleted after 24 hours

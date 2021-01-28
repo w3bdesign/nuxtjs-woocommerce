@@ -122,17 +122,6 @@ export default {
   transform: rotate(0);
 }
 
-/*
-.burger .burger-lines:after {
-  left: 0;
-  top: -1em;
-}
-.burger .burger-lines:before {
-  left: 1em;
-  top: 1em;
-}
-*/
-
 /* Burger animations classes */
 .burger.burger-squeeze .burger-lines,
 .burger.burger-squeeze .burger-lines:after,

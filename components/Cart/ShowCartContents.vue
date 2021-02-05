@@ -79,7 +79,7 @@ export default {
       result({ data, loading, networkStatus }) {
         const cartIsReady = data && networkStatus === 7
 
-        if (cartIsReady) {
+        if (cartIsReady && !loading) {
           this.loading = false
           this.remoteCart = data
           this.subTotal = data.cart.total
@@ -118,7 +118,7 @@ export default {
               },
             },
           })
-          .then(({ data }) => {
+          .then(() => {
             this.removingCartItem = false
             this.$apollo.queries.cart.refetch()
           })

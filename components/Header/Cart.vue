@@ -52,7 +52,7 @@ export default {
       pollInterval: process.server ? undefined : 2000,
       result({ data, loading, networkStatus }) {
         const cartIsReady = networkStatus === 7
-        if (cartIsReady) {
+        if (cartIsReady && !loading) {
           this.remoteCart = data
           this.subTotal = data.cart.total
           this.cartLength = data.cart.contents.nodes.reduce(
@@ -68,10 +68,11 @@ export default {
         if (debug) {
           console.error(error)
         }
+
         // Check if we are in the browser before checking localStorage
         // Will refresh the page to refetch the session from WooCommerce
         if (process.browser && !localStorage.getItem('woo-session')) {
-          window.location.reload(true)
+          this.$router.push({ path: '/', force: true })
         }
       },
     },

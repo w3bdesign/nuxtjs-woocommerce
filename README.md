@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1835e693354349ffaa703c0bbaf2b52b)](https://app.codacy.com/gh/w3bdesign/nuxtjs-woocommerce?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nuxtjs-woocommerce&utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce/badge)](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nuxtjs-woocommerce&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nuxtjs-woocommerce)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nuxtjs-woocommerce&metric=code_smells)](https://sonarcloud.io/dashboard?id=w3bdesign_nuxtjs-woocommerce)

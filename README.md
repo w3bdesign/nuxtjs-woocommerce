@@ -9,6 +9,15 @@
 
 # This is currently a work in progress!
 
+# Table Of Contents (TOC)
+
+-   [Installation](##Installation)
+-   [Features](##Features)
+-   [Troubleshooting](##Troubleshooting)
+-   [TODO](##TODO)
+
+## Installation
+
 1.  Install and activate the following required plugins, in your WordPress plugin directory:
 
 -   [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.

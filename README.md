@@ -60,6 +60,7 @@ The current release has been tested and is confirmed working with the following 
 -   NuxtJS
 -   Tailwind CSS
 -   Vue Apollo with GraphQL Codegen
+-   Vue Awesome Swiper for image slider on frontpage
 -   Responsive design
 -   Support for simple products
 -   GraphQL-based filters

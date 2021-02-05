@@ -2,7 +2,7 @@
   <div>
     <swiper id="hero" ref="mySwiper" :options="swiperOption">
       <swiper-slide
-        ><img src="~assets/images/Hero.jpg" />
+        ><img alt="Image slider slide #1" src="~assets/images/Hero.jpg" />
         <div
           class="flex flex-col items-start justify-center w-full mx-auto tracking-wide lg:w-1/2"
         >
@@ -14,7 +14,7 @@
         </div>
       </swiper-slide>
       <swiper-slide
-        ><img src="~assets/images/Hero2.jpg" />
+        ><img alt="Image slider slide #2" src="~assets/images/Hero2.jpg" />
         <div
           class="flex flex-col items-start justify-center w-full mx-auto tracking-wide lg:w-1/2"
         >

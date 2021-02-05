@@ -11,10 +11,10 @@
 
 # Table Of Contents (TOC)
 
--   [Installation](##Installation)
--   [Features](##Features)
--   [Troubleshooting](##Troubleshooting)
--   [TODO](##TODO)
+-   [Installation](#Installation)
+-   [Features](#Features)
+-   [Troubleshooting](#Troubleshooting)
+-   [TODO](#TODO)
 
 ## Installation
 

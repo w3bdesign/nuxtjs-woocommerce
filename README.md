@@ -93,5 +93,4 @@ Check the attributes of the products. Right now the application requires Size an
 
 -   Look into variable product support
 -   Make WooCommerce session token expire and get deleted after 24 hours
--   Finish implementing Algolia search
 -   Make Algolia look good on mobile

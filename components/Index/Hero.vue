@@ -42,8 +42,6 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
-import 'swiper/swiper-bundle.min.css'
-
 export default {
   name: 'Hero',
   components: {

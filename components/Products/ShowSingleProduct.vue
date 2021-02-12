@@ -20,10 +20,8 @@
             :alt="product.name"
             :src="process.env.placeholderSmallImage"
           />
-
           <div class="ml-8">
             <p class="text-3xl font-bold text-left">{{ product.name }}</p>
-
             <div v-if="product.onSale" class="flex">
               <p class="pt-1 mt-4 text-3xl text-gray-900">
                 {{ product.salePrice }}
@@ -32,16 +30,13 @@
                 {{ product.regularPrice }}
               </p>
             </div>
-
             <p v-else class="pt-1 mt-4 text-2xl text-gray-900">
               {{ product.price }}
             </p>
-
             <br />
             <p class="pt-1 mt-4 text-2xl text-gray-900">
               {{ stripHTML(product.description) }}
             </p>
-
             <p
               v-if="product.variations"
               class="pt-1 mt-4 text-xl text-gray-900"
@@ -55,7 +50,6 @@
                 VARIATION
               </select>
             </p>
-
             <div class="pt-1 mt-2">
               <AddToCartButton v-if="product.variations" :product="product" />
               <AddToCartButton v-else :product="product" />

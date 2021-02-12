@@ -4,6 +4,7 @@ query Product($id: ID!) {
     averageRating
     slug
     description
+    onSale
     image {
       databaseId
       uri
@@ -14,10 +15,14 @@ query Product($id: ID!) {
     name
     ... on SimpleProduct {
       price
+      salePrice
+      regularPrice
       databaseId
     }
     ... on VariableProduct {
       price
+      salePrice
+      regularPrice
       databaseId
       paColors {
         nodes {

@@ -2,6 +2,7 @@ query Product($id: ID!) {
   product(id: $id, idType: DATABASE_ID) {
     databaseId
     averageRating
+    name
     slug
     description
     onSale
@@ -12,7 +13,6 @@ query Product($id: ID!) {
       srcSet
       sourceUrl
     }
-    name
     ... on SimpleProduct {
       price
       salePrice

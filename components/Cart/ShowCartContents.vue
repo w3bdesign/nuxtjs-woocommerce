@@ -78,7 +78,6 @@ export default {
       query: GET_CART_QUERY,
       result({ data, loading, networkStatus }) {
         const cartIsReady = data && networkStatus === 7
-
         if (cartIsReady && !loading) {
           this.loading = false
           this.remoteCart = data
@@ -101,13 +100,11 @@ export default {
   methods: {
     async handleRemoveProduct(products) {
       this.removingCartItem = true
-
       const updatedItems = []
       updatedItems.push({
         key: products.key,
         quantity: 0,
       })
-
       try {
         await this.$apollo
           .mutate({

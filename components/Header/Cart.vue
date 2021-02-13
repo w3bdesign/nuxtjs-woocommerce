@@ -76,7 +76,7 @@ export default {
         // Check if we are in the browser before checking localStorage
         // Will refresh the page to refetch the session from WooCommerce
         if (process.browser && !localStorage.getItem('woo-session')) {
-          window.location.reload(true)
+          this.$router.push('/')
         }
       },
     },

@@ -2,7 +2,6 @@
   <div class="container mx-auto mt-4">
     <pre>{{ error }}</pre>
     <br />
-
     <FormulateForm
       v-model="formData"
       @validation="validation = $event"

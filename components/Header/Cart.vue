@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div v-if="!remoteError">
+    <div v-if="remoteError">
+      <span class="text-xl text-red-500"
+        >Error fetching cart. Please refresh the page.</span
+      >
+    </div>
+    <div v-else>
       <NuxtLink to="/cart">
         <transition name="cart">
           <span
@@ -71,7 +76,7 @@ export default {
         // Check if we are in the browser before checking localStorage
         // Will refresh the page to refetch the session from WooCommerce
         if (process.browser && !localStorage.getItem('woo-session')) {
-          window.location.reload(true)
+          this.$router.push('/')
         }
       },
     },

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 <template>
   <div>
-    <LoadingSpinner v-if="loading" />
+    <SpinnerLoadingSpinner v-if="loading" />
     <div>
       <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
       <section class="mt-10">
@@ -42,7 +42,7 @@
       <h2 v-if="!cartProducts.length" class="m-4 text-3xl text-center">
         Cart is currently empty
       </h2>
-      <CheckoutButton v-if="displayRemove && cartProducts.length" />
+      <CartCheckoutButton v-if="displayRemove && cartProducts.length" />
     </div>
   </div>
 </template>

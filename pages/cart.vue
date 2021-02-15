@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShowCartContents display-remove />
+    <CartShowCartContents display-remove />
   </div>
 </template>
 

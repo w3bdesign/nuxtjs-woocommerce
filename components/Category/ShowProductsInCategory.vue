@@ -5,14 +5,14 @@
         {{ products.name }}
       </h1>
       <br />
-      <ShowAllProducts :products="products.products.nodes" />
+      <ProductsShowAllProducts :products="products.products.nodes" />
       <div v-if="noProducts" class="mt-10">
         <h2 class="h-10 text-2xl font-bold text-center">
           No products to display
         </h2>
       </div>
     </div>
-    <div v-else><LoadingSpinner /></div>
+    <div v-else><SpinnerLoadingSpinner /></div>
   </div>
 </template>
 

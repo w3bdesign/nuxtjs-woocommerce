@@ -85,7 +85,7 @@
             </div>
           </div>
         </div>
-        <SubmitOrderButton :success="success" :loading="loading" />
+        <OrderSubmitOrderButton :success="success" :loading="loading" />
       </section>
     </FormulateForm>
   </div>
@@ -114,7 +114,6 @@ export default {
     async submitOrder() {
       this.loading = true
       const order = this.formData
-
       const checkoutData = {
         clientMutationId: uid(),
         billing: {

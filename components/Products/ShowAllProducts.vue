@@ -49,7 +49,7 @@
 
 <script>
 export default {
-  name: 'ShowProducts',
+  name: 'ShowAllProducts',
   props: {
     products: { type: Array, required: true },
   },

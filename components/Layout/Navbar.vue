@@ -15,7 +15,7 @@
             />
           </div>
         </div>
-        <MobileMenu />
+        <LayoutMobileMenu />
         <div class="hidden lg:w-1/12 lg:block"></div>
         <div
           id="nav-content"
@@ -76,7 +76,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <Cart class="-mr-4" />
+                    <LayoutCart class="-mr-4" />
                   </li>
                 </ul>
               </nav>

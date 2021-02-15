@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Navbar />
+    <LayoutNavbar />
     <Nuxt class="container p-4 mx-auto" />
-    <Footer />
+    <LayoutFooter />
   </div>
 </template>
 

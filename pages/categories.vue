@@ -1,9 +1,9 @@
 <template>
   <div v-if="productCategories">
-    <ShowAllCategories :categories="productCategories" />
+    <CategoryShowAllCategories :categories="productCategories" />
   </div>
   <div v-else>
-    <LoadingSpinner />
+    <SpinnerLoadingSpinner />
   </div>
 </template>
 

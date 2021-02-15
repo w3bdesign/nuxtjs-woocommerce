@@ -1,8 +1,8 @@
 <template>
   <div v-if="products">
-    <ShowAllProducts :products="products.nodes" />
+    <ProductsShowAllProducts :products="products.nodes" />
   </div>
-  <div v-else><LoadingSpinner /></div>
+  <div v-else><SpinnerLoadingSpinner /></div>
 </template>
 
 <script>

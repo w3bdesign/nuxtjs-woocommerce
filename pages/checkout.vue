@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ShowCartContents />
-    <CheckoutForm />
+    <CartShowCartContents />
+    <OrderCheckoutForm />
   </div>
 </template>
 

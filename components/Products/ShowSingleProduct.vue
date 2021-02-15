@@ -51,8 +51,11 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
-              <AddToCartButton v-if="product.variations" :product="product" />
-              <AddToCartButton v-else :product="product" />
+              <CartAddToCartButton
+                v-if="product.variations"
+                :product="product"
+              />
+              <CartAddToCartButton v-else :product="product" />
             </div>
           </div>
         </div>

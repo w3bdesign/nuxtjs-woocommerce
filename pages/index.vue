@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Hero />
+    <IndexHero />
     <div v-if="products">
-      <ShowAllProducts :products="products.nodes" />
+      <ProductsShowAllProducts :products="products.nodes" />
     </div>
     <div v-else>
-      <LoadingSpinner />
+      <SpinnerLoadingSpinner />
     </div>
   </div>
 </template>

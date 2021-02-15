@@ -16,7 +16,6 @@
             {{ item.product_name }}
           </p>
         </NuxtLink>
-
         <p class="p-2 text-xl text-center">
           {{ item.short_description }}
         </p>
@@ -80,6 +79,9 @@ export default {
   beforeMount() {
     const results =
       this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
+
+    console.log('Results: ')
+    console.log(results)
 
     this.instantsearch.hydrate(results)
   },

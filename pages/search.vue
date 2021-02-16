@@ -79,16 +79,11 @@ export default {
   beforeMount() {
     const results =
       this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
-
-    console.log('Results: ')
-    console.log(results)
-
     this.instantsearch.hydrate(results)
   },
   methods: {
     convertProductNameToSlug(productName) {
-      const productNameSlug = productName.replace(/ /g, '-').toLowerCase()
-      return productNameSlug
+      return productName.replace(/ /g, '-').toLowerCase()
     },
   },
   serverPrefetch() {

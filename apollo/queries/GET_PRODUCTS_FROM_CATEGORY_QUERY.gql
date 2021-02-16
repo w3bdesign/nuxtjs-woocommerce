@@ -6,6 +6,7 @@ query ProductsFromCategory($id: ID!) {
       nodes {
         id
         databaseId
+        onSale
         averageRating
         slug
         description
@@ -18,10 +19,16 @@ query ProductsFromCategory($id: ID!) {
         }
         name
         ... on SimpleProduct {
+          salePrice
+          regularPrice
+          onSale
           price
           id
         }
         ... on VariableProduct {
+          salePrice
+          regularPrice
+          onSale
           price
           id
         }

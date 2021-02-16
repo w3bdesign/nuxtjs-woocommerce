@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -21,7 +21,7 @@
     "core-js": "^3.8.3",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.15.0",
-    "swiper": "^6.4.11",
+    "swiper": "^6.4.12",
     "tailwindcss": "2.0.3",
     "uid": "^2.0.0",
     "vue": "^2.6.12",

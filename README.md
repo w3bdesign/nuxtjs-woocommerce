@@ -72,7 +72,7 @@ The current release has been tested and is confirmed working with the following 
 -   Vue Apollo with GraphQL Codegen
 -   Vue Awesome Swiper for image slider on frontpage
 -   Responsive design
--   Support for simple products
+-   Support for simple and variable products
 -   GraphQL-based filters
 -   CSS animations and transitions
 -   Form handling and validation with Vue Formulate
@@ -91,6 +91,5 @@ Check the attributes of the products. Right now the application requires Size an
 
 ## TODO
 
--   Look into variable product support
 -   Make WooCommerce session token expire and get deleted after 24 hours
 -   Make Algolia look good on mobile

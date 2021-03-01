@@ -12,7 +12,6 @@
             :alt="product.name"
             :src="product.image.sourceUrl"
           />
-
           <img
             v-else
             id="product-image"
@@ -24,7 +23,7 @@
             <p class="text-3xl font-bold text-left">{{ product.name }}</p>
             <div v-if="product.onSale" class="flex">
               <p class="pt-1 mt-4 text-3xl text-gray-900">
-                {{ product.salePrice }}
+                {{ filteredVariantPrice(product.salePrice) }}
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
                 {{ product.regularPrice }}
@@ -44,16 +43,24 @@
               <span class="py-2">Varianter</span>
               <select
                 id="variant"
+                v-model="variationProduct"
                 name="variant"
                 class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
               >
-                VARIATION
+                <option
+                  v-for="(variation, index) in product.variations.nodes"
+                  :key="variation.databaseId"
+                  :value="variation.databaseId"
+                  :selected="index === 0"
+                >
+                  {{ variation.name }}
+                </option>
               </select>
             </p>
             <div class="pt-1 mt-2">
               <CartAddToCartButton
                 v-if="product.variations"
-                :product="product"
+                :product="variationProduct"
               />
               <CartAddToCartButton v-else :product="product" />
             </div>
@@ -65,13 +72,23 @@
 </template>
 
 <script>
-import { stripHTML } from '@/utils/functions'
+import { stripHTML, filteredVariantPrice } from '@/utils/functions'
 
 export default {
   name: 'ShowSingleProduct',
   props: {
     product: { type: Object, required: true },
   },
-  methods: { stripHTML },
+  data() {
+    return {
+      // Set default value
+      variationProduct: 18,
+    }
+  },
+
+  methods: {
+    stripHTML,
+    filteredVariantPrice,
+  },
 }
 </script>

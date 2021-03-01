@@ -32,7 +32,7 @@
                 {{ product.regularPrice }}
               </div>
               <div class="ml-4 text-xl text-gray-900">
-                {{ product.salePrice }}
+                {{ filteredVariantPrice(product.salePrice) }}
               </div>
             </div>
             <div v-else>
@@ -48,17 +48,21 @@
 </template>
 
 <script>
+import { filteredVariantPrice } from '@/utils/functions'
+
 export default {
   name: 'ShowAllProducts',
   props: {
     products: { type: Array, required: true },
   },
+
   methods: {
     productImage(product) {
       return product.image
         ? product.image.sourceUrl
         : process.env.placeholderSmallImage
     },
+    filteredVariantPrice,
   },
 }
 </script>

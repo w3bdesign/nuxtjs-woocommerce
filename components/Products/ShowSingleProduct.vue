@@ -24,7 +24,7 @@
             <p class="text-3xl font-bold text-left">{{ product.name }}</p>
             <div v-if="product.onSale" class="flex">
               <p class="pt-1 mt-4 text-3xl text-gray-900">
-                {{ product.salePrice }}
+                {{ filteredVariantPrice(product.salePrice) }}
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
                 {{ product.regularPrice }}
@@ -65,13 +65,13 @@
 </template>
 
 <script>
-import { stripHTML } from '@/utils/functions'
+import { stripHTML, filteredVariantPrice } from '@/utils/functions'
 
 export default {
   name: 'ShowSingleProduct',
   props: {
     product: { type: Object, required: true },
   },
-  methods: { stripHTML },
+  methods: { stripHTML, filteredVariantPrice },
 }
 </script>

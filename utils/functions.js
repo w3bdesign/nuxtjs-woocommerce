@@ -4,6 +4,11 @@ function stripHTML(description) {
   return description.replace(/(<([^>]+)>)/gi, '')
 }
 
+function filteredVariantPrice(price) {
+  // Filter price from "kr198.00 - kr299.00" to kr299.00
+  return price.substring(price.length, price.indexOf('-')).replace('-', '')
+}
+
 function createCheckoutData(form) {
   const checkoutData = {
     clientMutationId: uid(),
@@ -42,4 +47,4 @@ function createCheckoutData(form) {
   return { checkoutData }
 }
 
-export { stripHTML, createCheckoutData }
+export { stripHTML, createCheckoutData, filteredVariantPrice }

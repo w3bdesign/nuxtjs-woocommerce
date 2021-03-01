@@ -31,7 +31,7 @@ import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION'
 
 export default {
   props: {
-    product: { type: Object, required: true },
+    product: { type: [Number, Object], required: true },
   },
   data() {
     return {
@@ -52,7 +52,7 @@ export default {
             mutation: ADD_TO_CART_MUTATION,
             variables: { input: productQueryInput },
           })
-          .then(({ data }) => {
+          .then(() => {
             this.loading = false
             this.$apollo.queries.cart.refetch()
           })

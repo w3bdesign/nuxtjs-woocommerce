@@ -9,11 +9,15 @@ export function stripHTML(string) {
 }
 
 /**
- * Filter price from "kr198.00 - kr299.00" to kr299.00
- * @param {String} price The inputted price string to filter
+ * Filter variant price. Changes "kr198.00 - kr299.00" to kr299.00 or kr198 depending on the side variable
+ * @param {String} side Which side of the string to return (which side of the "-" symbol)
+ * @param {String} price The inputted price that we need to convert
  */
-export function filteredVariantPrice(price) {
-  return price.substring(price.length, price.indexOf('-')).replace('-', '')
+export const filteredVariantPrice = (price, side) => {
+  if (side === 'right') {
+    return price.substring(price.length, price.indexOf('-')).replace('-', '')
+  }
+  return price.substring(0, price.indexOf('-')).replace('-', '')
 }
 
 /**

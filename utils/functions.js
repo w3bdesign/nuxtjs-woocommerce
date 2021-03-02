@@ -25,7 +25,7 @@ export const filteredVariantPrice = (price, side) => {
  * @param {Object} form Form data to process
  */
 export function createCheckoutData(form) {
-  const checkoutData = {
+  return {
     clientMutationId: uid(),
     billing: {
       firstName: form.firstName,
@@ -58,5 +58,4 @@ export function createCheckoutData(form) {
     isPaid: false,
     transactionId: 'fgfgfggf',
   }
-  return checkoutData
 }

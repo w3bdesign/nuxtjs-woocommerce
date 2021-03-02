@@ -27,14 +27,23 @@
                 </p>
               </div>
             </NuxtLink>
+
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
-                {{ product.regularPrice }}
+                <span v-if="product.variations">
+                  {{ filteredVariantPrice(product.price, 'right') }}</span
+                >
+                <span v-else>{{ product.regularPrice }}</span>
               </div>
+
               <div class="ml-4 text-xl text-gray-900">
-                {{ filteredVariantPrice(product.salePrice) }}
+                <span v-if="product.variations">
+                  {{ filteredVariantPrice(product.price) }}</span
+                >
+                <span v-else>{{ product.salePrice }}</span>
               </div>
             </div>
+
             <div v-else>
               <p class="mt-2 text-xl text-center text-gray-900">
                 {{ product.price }}
@@ -55,7 +64,6 @@ export default {
   props: {
     products: { type: Array, required: true },
   },
-
   methods: {
     productImage(product) {
       return product.image

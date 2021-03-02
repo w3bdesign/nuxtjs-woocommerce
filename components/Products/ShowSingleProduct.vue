@@ -23,10 +23,16 @@
             <p class="text-3xl font-bold text-left">{{ product.name }}</p>
             <div v-if="product.onSale" class="flex">
               <p class="pt-1 mt-4 text-3xl text-gray-900">
-                {{ filteredVariantPrice(product.salePrice) }}
+                <span v-if="product.variations">
+                  {{ filteredVariantPrice(product.price) }}</span
+                >
+                <span v-else>{{ product.salePrice }}</span>
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
-                {{ product.regularPrice }}
+                <span v-if="product.variations">
+                  {{ filteredVariantPrice(product.price, 'right') }}</span
+                >
+                <span v-else>{{ product.regularPrice }}</span>
               </p>
             </div>
             <p v-else class="pt-1 mt-4 text-2xl text-gray-900">

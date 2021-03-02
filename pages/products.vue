@@ -18,7 +18,7 @@ export default {
     products: {
       prefetch: true,
       query: FETCH_ALL_PRODUCTS_QUERY,
-      pollInterval: process.server ? undefined : 2000,
+      pollInterval: process.server ? undefined : 3000,
     },
   },
   head: {

@@ -19,6 +19,13 @@
         price
         regularPrice
         salePrice
+        variations {
+          nodes {
+            price
+            regularPrice
+            salePrice
+          }
+        }
       }
     }
   }

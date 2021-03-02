@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,7 +13,7 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.5.0",
+    "@braid/vue-formulate": "^2.5.1",
     "@nuxtjs/apollo": "4.0.1-rc.5",
     "algoliasearch": "^4.8.5",
     "apollo-link": "^1.2.14",

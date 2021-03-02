@@ -1,15 +1,26 @@
 import { uid } from 'uid'
 
-function stripHTML(description) {
-  return description.replace(/(<([^>]+)>)/gi, '')
+/**
+ * Strips HTML from the inputted string
+ * @param {String} description Input text to strip HTML from
+ */
+export function stripHTML(string) {
+  return string.replace(/(<([^>]+)>)/gi, '')
 }
 
-function filteredVariantPrice(price) {
-  // Filter price from "kr198.00 - kr299.00" to kr299.00
+/**
+ * Filter price from "kr198.00 - kr299.00" to kr299.00
+ * @param {String} price The inputted price string to filter
+ */
+export function filteredVariantPrice(price) {
   return price.substring(price.length, price.indexOf('-')).replace('-', '')
 }
 
-function createCheckoutData(form) {
+/**
+ * Prepares the checkout object based on the input data from the checkout form
+ * @param {Object} form Form data to process
+ */
+export function createCheckoutData(form) {
   const checkoutData = {
     clientMutationId: uid(),
     billing: {
@@ -43,8 +54,5 @@ function createCheckoutData(form) {
     isPaid: false,
     transactionId: 'fgfgfggf',
   }
-
-  return { checkoutData }
+  return checkoutData
 }
-
-export { stripHTML, createCheckoutData, filteredVariantPrice }

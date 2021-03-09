@@ -15,7 +15,7 @@
   "dependencies": {
     "@braid/vue-formulate": "^2.5.1",
     "@nuxtjs/apollo": "4.0.1-rc.5",
-    "algoliasearch": "^4.8.5",
+    "algoliasearch": "^4.8.6",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
     "core-js": "^3.9.1",

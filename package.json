@@ -13,7 +13,7 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.5.1",
+    "@braid/vue-formulate": "^2.5.2",
     "@nuxtjs/apollo": "4.0.1-rc.5",
     "algoliasearch": "^4.8.6",
     "apollo-link": "^1.2.14",

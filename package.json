@@ -34,7 +34,7 @@
     "@graphql-codegen/cli": "1.21.1",
     "@graphql-codegen/fragment-matcher": "2.0.1",
     "@graphql-codegen/introspection": "1.18.1",
-    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-config": "^6.0.0",
     "@nuxtjs/eslint-module": "3.0.2",
     "@nuxtjs/tailwindcss": "^3.4.3",
     "@vue/test-utils": "^1.1.3",

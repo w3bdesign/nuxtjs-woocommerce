@@ -64,4 +64,7 @@ export default {
       default: '@/plugins/apollo-client-config.js',
     },
   },
+  /* tailwindcss: {
+    jit: true,
+  }, */
 }

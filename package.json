@@ -21,7 +21,7 @@
     "core-js": "^3.9.1",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.15.3",
-    "postcss": "^8.2.8",
+    "postcss": "7.0.32",
     "swiper": "^6.5.0",
     "tailwindcss": "2.0.4",
     "uid": "^2.0.0",

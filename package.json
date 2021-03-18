@@ -12,24 +12,6 @@
     "test": "jest",
     "codegen": "graphql-codegen --config codegen.yml"
   },
-  "dependencies": {
-    "@braid/vue-formulate": "^2.5.2",
-    "@nuxtjs/apollo": "4.0.1-rc.5",
-    "algoliasearch": "^4.8.6",
-    "apollo-link": "^1.2.14",
-    "apollo-link-http": "^1.5.17",
-    "core-js": "^3.9.1",
-    "graphql-tag": "^2.11.0",
-    "nuxt": "^2.15.3",
-    "swiper": "^6.5.0",
-    "tailwindcss": "2.0.4",
-    "uid": "^2.0.0",
-    "vue": "^2.6.12",
-    "vue-awesome-swiper": "^4.1.1",
-    "vue-instantsearch": "^3.5.0",
-    "vue-server-renderer": "^2.6.12",
-    "vue-template-compiler": "^2.6.12"
-  },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.3",
     "@graphql-codegen/fragment-matcher": "2.0.1",
@@ -50,6 +32,22 @@
     "jest": "^26.6.3",
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^3.0.7",
+    "@braid/vue-formulate": "^2.5.2",
+    "@nuxtjs/apollo": "4.0.1-rc.5",
+    "algoliasearch": "^4.8.6",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "core-js": "^3.9.1",
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.15.3",
+    "swiper": "^6.5.0",
+    "tailwindcss": "2.0.4",
+    "uid": "^2.0.0",
+    "vue": "^2.6.12",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-instantsearch": "^3.5.0",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   }
 }

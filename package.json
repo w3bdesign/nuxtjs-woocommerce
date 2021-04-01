@@ -38,7 +38,7 @@
     "algoliasearch": "^4.8.6",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
-    "core-js": "^3.9.1",
+    "core-js": "^3.10.0",
     "graphql-tag": "^2.11.0",
     "nuxt": "^2.15.3",
     "swiper": "^6.5.0",

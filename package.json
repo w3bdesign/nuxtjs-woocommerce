@@ -39,7 +39,7 @@
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
     "core-js": "^3.13.0",
-    "graphql-tag": "^2.11.0",
+    "graphql-tag": "^2.12.4",
     "nuxt": "^2.15.4",
     "swiper": "^6.6.2",
     "tailwindcss": "2.1.2",

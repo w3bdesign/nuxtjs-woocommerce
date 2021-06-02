@@ -47,7 +47,7 @@
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",
     "vue-instantsearch": "^3.7.0",
-    "vue-server-renderer": "^2.6.12",
+    "vue-server-renderer": "^2.6.13",
     "vue-template-compiler": "^2.6.12"
   }
 }

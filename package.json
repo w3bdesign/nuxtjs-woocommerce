@@ -42,7 +42,7 @@
     "graphql-tag": "^2.12.4",
     "nuxt": "^2.15.7",
     "swiper": "^6.7.0",
-    "tailwindcss": "2.2.0",
+    "tailwindcss": "2.2.2",
     "uid": "^2.0.0",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",

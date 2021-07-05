@@ -19,7 +19,13 @@
         <div class="hidden lg:w-1/12 lg:block"></div>
         <div
           id="nav-content"
-          class="hidden w-full mt-4 bg-black lg:w-8/12 lg:block lg:bg-white lg:mt-0 lg:text-right"
+          class="
+            hidden
+            w-full
+            mt-4
+            bg-black
+            lg:w-8/12 lg:block lg:bg-white lg:mt-0 lg:text-right
+          "
           aria-expanded="false"
         >
           <div class="px-6 lg:px-0 lg:pt-5 xl:pt-7">
@@ -30,21 +36,48 @@
                 aria-labelledby="block-main-menu"
               >
                 <ul
-                  class="items-center justify-end flex-1 pr-4 -mr-4 list-reset lg:flex"
+                  class="
+                    items-center
+                    justify-end
+                    flex-1
+                    pr-4
+                    -mr-4
+                    list-reset
+                    lg:flex
+                  "
                 >
                   <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="
+                      inline-block
+                      py-2
+                      text-xl
+                      font-semibold
+                      no-underline
+                      lg:text-base lg:px-4
+                    "
                   >
                     <NuxtLink to="/">
                       <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
+                        class="
+                          text-xl text-white
+                          no-underline
+                          lg:text-black
+                          is-active
+                        "
                       >
                         Home
                       </span>
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="
+                      inline-block
+                      py-2
+                      text-xl
+                      font-semibold
+                      no-underline
+                      lg:text-base lg:px-4
+                    "
                   >
                     <NuxtLink to="/products">
                       <span
@@ -54,27 +87,58 @@
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="
+                      inline-block
+                      py-2
+                      text-xl
+                      font-semibold
+                      no-underline
+                      lg:text-base lg:px-4
+                    "
                   >
                     <NuxtLink to="/categories">
                       <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
+                        class="
+                          text-xl text-white
+                          no-underline
+                          lg:text-black
+                          is-active
+                        "
                         >Categories</span
                       >
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="
+                      inline-block
+                      py-2
+                      text-xl
+                      font-semibold
+                      no-underline
+                      lg:text-base lg:px-4
+                    "
                   >
                     <NuxtLink to="/search">
                       <span
-                        class="text-xl text-white no-underline lg:text-black is-active"
+                        class="
+                          text-xl text-white
+                          no-underline
+                          lg:text-black
+                          is-active
+                        "
                         >Search</span
                       >
                     </NuxtLink>
                   </li>
                   <li
-                    class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
+                    class="
+                      inline-block
+                      py-2
+                      text-xl
+                      font-semibold
+                      no-underline
+                      lg:text-base lg:px-4
+                    "
                   >
                     <LayoutCart class="-mr-4" />
                   </li>

@@ -22,7 +22,18 @@
         <transition name="cart">
           <div v-if="cartLength">
             <span
-              class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-white bg-black rounded-full lg:ml-14"
+              class="
+                absolute
+                w-6
+                h-6
+                pb-2
+                ml-16
+                -mt-12
+                text-center text-white
+                bg-black
+                rounded-full
+                lg:ml-14
+              "
             >
               {{ cartLength }}
             </span>

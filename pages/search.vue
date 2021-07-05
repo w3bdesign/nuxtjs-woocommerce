@@ -70,8 +70,7 @@ export default {
       link: [
         {
           rel: 'stylesheet',
-          href:
-            'https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css',
+          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css',
         },
       ],
     }

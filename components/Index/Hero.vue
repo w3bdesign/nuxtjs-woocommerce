@@ -4,10 +4,26 @@
       <swiper-slide
         ><img alt="Image slider slide #1" src="~assets/images/Hero.jpg" />
         <div
-          class="flex flex-col items-start justify-center w-full mx-auto tracking-wide lg:w-1/2"
+          class="
+            flex flex-col
+            items-start
+            justify-center
+            w-full
+            mx-auto
+            tracking-wide
+            lg:w-1/2
+          "
         >
           <span
-            class="w-full p-4 mt-4 text-center text-white bg-black text-md lg:text-2xl lg:-mt-64"
+            class="
+              w-full
+              p-4
+              mt-4
+              text-center text-white
+              bg-black
+              text-md
+              lg:text-2xl lg:-mt-64
+            "
           >
             Modern Pillow Sample Set
           </span>
@@ -16,10 +32,26 @@
       <swiper-slide
         ><img alt="Image slider slide #2" src="~assets/images/Hero2.jpg" />
         <div
-          class="flex flex-col items-start justify-center w-full mx-auto tracking-wide lg:w-1/2"
+          class="
+            flex flex-col
+            items-start
+            justify-center
+            w-full
+            mx-auto
+            tracking-wide
+            lg:w-1/2
+          "
         >
           <span
-            class="w-full p-4 mt-4 text-center text-white bg-black text-md lg:text-2xl lg:-mt-64"
+            class="
+              w-full
+              p-4
+              mt-4
+              text-center text-white
+              bg-black
+              text-md
+              lg:text-2xl lg:-mt-64
+            "
           >
             Modern Interior Sample
           </span>

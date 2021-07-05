@@ -7,13 +7,13 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "lint": "npm run lint:js",
     "test": "jest",
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.21.5",
+    "@graphql-codegen/cli": "1.21.6",
     "@graphql-codegen/fragment-matcher": "2.0.1",
     "@graphql-codegen/introspection": "1.18.2",
     "@nuxt/postcss8": "^1.1.3",

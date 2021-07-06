@@ -27,6 +27,7 @@
         </p>
       </template>
     </ais-hits>
+    <br />
     <ais-pagination />
   </ais-instant-search-ssr>
 </template>
@@ -70,7 +71,7 @@ export default {
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css',
+          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/algolia-min.css',
         },
       ],
     }
@@ -92,3 +93,18 @@ export default {
   },
 }
 </script>
+
+<style>
+@media (max-width: 767px) {
+  .ais-Hits-item {
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .ais-Hits-item {
+    width: 30%;
+  }
+}
+</style>

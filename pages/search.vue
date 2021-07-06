@@ -94,14 +94,17 @@ export default {
 }
 </script>
 
-<style scoped>
-li {
-  width: 100vw !important;
+<style>
+@media (max-width: 767px) {
+  .ais-Hits-item {
+    padding: 10px;
+    width: 100%;
+  }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .ais-Hits-item {
-    width: 100vw !important;
+    width: 30%;
   }
 }
 </style>

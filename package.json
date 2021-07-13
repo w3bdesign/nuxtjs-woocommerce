@@ -46,7 +46,7 @@
     "uid": "^2.0.0",
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-instantsearch": "^3.7.0",
+    "vue-instantsearch": "^3.8.1",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14"
   }

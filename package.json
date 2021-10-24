@@ -29,7 +29,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "jest": "^27.2.5",
+    "jest": "^27.3.1",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
     "vue-jest": "^3.0.7",

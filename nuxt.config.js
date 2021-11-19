@@ -33,7 +33,10 @@ export default {
   css: ['@/assets/css/animate.min.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/vue-formulate'],
+  plugins: [
+    '~/plugins/vue-formulate',
+    { src: '~/plugins/vue-awesome-swiper', mode: 'client', ssr: false },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

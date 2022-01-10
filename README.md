@@ -7,8 +7,6 @@
 
 <img src="https://user-images.githubusercontent.com/45217974/106988377-f129a080-676f-11eb-94b9-a44c86ea6c79.png" alt="Project screenshot" />
 
-## This is currently a work in progress
-
 ## Table Of Contents (TOC)
 
 -   [Installation](#Installation)

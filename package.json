@@ -33,7 +33,7 @@
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "vue-jest": "^3.0.7",
-    "@braid/vue-formulate": "^2.5.2",
+    "@braid/vue-formulate": "^2.5.3",
     "@nuxtjs/apollo": "4.0.1-rc.5",
     "algoliasearch": "^4.12.0",
     "apollo-link": "^1.2.14",

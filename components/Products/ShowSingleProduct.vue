@@ -3,49 +3,19 @@
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
         <div
-          class="
-            grid grid-cols-1
-            gap-4
-            mt-8
-            lg:grid-cols-2
-            xl:grid-cols-2
-            md:grid-cols-2
-            sm:grid-cols-2
-          "
+          class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
         >
           <img
             v-if="product.image !== undefined"
             id="product-image"
-            class="
-              h-auto
-              p-8
-              transition
-              duration-500
-              ease-in-out
-              transform
-              xl:p-2
-              md:p-2
-              lg:p-2
-              hover:grow hover:shadow-lg hover:scale-105
-            "
+            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
             :alt="product.name"
             :src="product.image.sourceUrl"
           />
           <img
             v-else
             id="product-image"
-            class="
-              h-auto
-              p-8
-              transition
-              duration-500
-              ease-in-out
-              transform
-              xl:p-2
-              md:p-2
-              lg:p-2
-              hover:grow hover:shadow-lg hover:scale-105
-            "
+            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
             :alt="product.name"
             :src="process.env.placeholderSmallImage"
           />
@@ -81,16 +51,7 @@
                 id="variant"
                 v-model="variationProduct"
                 name="variant"
-                class="
-                  block
-                  w-64
-                  px-6
-                  py-2
-                  bg-white
-                  border border-gray-500
-                  rounded-lg
-                  focus:outline-none focus:shadow-outline
-                "
+                class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
               >
                 <option
                   v-for="(variation, index) in product.variations.nodes"

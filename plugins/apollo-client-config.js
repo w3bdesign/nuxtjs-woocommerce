@@ -35,8 +35,8 @@ export const middleware = new ApolloLink((operation, forward) => {
   return forward(operation)
 })
 
-export const afterware = new ApolloLink((operation, forward) => {
-  return forward(operation).map((response) => {
+export const afterware = new ApolloLink((operation, forward) =>
+  forward(operation).map((response) => {
     /**
      * Check for session header and update session in local storage accordingly.
      */
@@ -53,7 +53,7 @@ export const afterware = new ApolloLink((operation, forward) => {
     }
     return response
   })
-})
+)
 
 export default function () {
   return {

@@ -35,23 +35,25 @@ export const middleware = new ApolloLink((operation, forward) => {
   return forward(operation)
 })
 
-export const afterware = new ApolloLink((operation, forward) => forward(operation).map((response) => {
-  /**
-   * Check for session header and update session in local storage accordingly.
-   */
-  const context = operation.getContext()
-  const {
-    response: { headers },
-  } = context
+export const afterware = new ApolloLink((operation, forward) =>
+  forward(operation).map((response) => {
+    /**
+     * Check for session header and update session in local storage accordingly.
+     */
+    const context = operation.getContext()
+    const {
+      response: { headers },
+    } = context
 
-  const session =
-    headers.get('woocommerce-session') || localStorage.getItem('woo-session')
+    const session =
+      headers.get('woocommerce-session') || localStorage.getItem('woo-session')
 
-  if (process.browser && session) {
-    localStorage.setItem('woo-session', session)
-  }
-  return response
-}))
+    if (process.browser && session) {
+      localStorage.setItem('woo-session', session)
+    }
+    return response
+  })
+)
 
 export default function () {
   return {

@@ -56,6 +56,6 @@ export function createCheckoutData(form) {
     shipToDifferentAddress: false,
     paymentMethod: form.paymentMethod,
     isPaid: false,
-    transactionId: 'fgfgfggf',
+    transactionId: 'test',
   }
 }

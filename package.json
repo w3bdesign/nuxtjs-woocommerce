@@ -14,7 +14,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i --legacy-peer-deps"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.21.6",
+    "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/fragment-matcher": "2.0.1",
     "@graphql-codegen/introspection": "1.18.2",
     "@nuxt/postcss8": "^1.1.3",

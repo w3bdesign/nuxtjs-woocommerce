@@ -36,7 +36,7 @@
     "vue-jest": "^3.0.7",
     "@braid/vue-formulate": "^2.5.3",
     "@nuxtjs/apollo": "4.0.1-rc.5",
-    "algoliasearch": "^4.12.2",
+    "algoliasearch": "^4.13.0",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
     "core-js": "^3.21.1",

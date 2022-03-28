@@ -49,7 +49,6 @@
               <span class="py-2">Varianter</span>
               <select
                 id="variant"
-               
                 name="variant"
                 class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
               >

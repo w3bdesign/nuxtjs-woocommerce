@@ -32,7 +32,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
     "postcss": "^8.4.12",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.1",
     "vue-jest": "^3.0.7",
     "@braid/vue-formulate": "^2.5.3",
     "@nuxtjs/apollo": "4.0.1-rc.5",

@@ -59,7 +59,7 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           // loader: 'eslint-loader', // DEPRECATED
-          //loader: "eslint-webpack-plugin",
+          // loader: "eslint-webpack-plugin",
           exclude: /(node_modules)/,
         })
       }

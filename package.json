@@ -30,7 +30,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.5.1",
-    "core-js": "^3.21.1",
+    "core-js": "^3.22.1",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-loader": "^4.0.2",

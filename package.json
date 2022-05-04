@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "1.0.28",
+  "version": "0.985",
   "private": true,
   "scripts": {
     "dev": "nuxt",

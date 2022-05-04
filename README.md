@@ -32,8 +32,8 @@ The current release has been tested and is confirmed working with the following 
 
 -   WordPress version 5.8.2
 -   WooCommerce version 6.4.1
--   WP GraphQL version 1.2.4
--   WooGraphQL version 0.6.1 (latest development version)
+-   WP GraphQL version 1.5.0
+-   WooGraphQL version 0.6.1
 
 2.  For debugging and testing, install either:
 

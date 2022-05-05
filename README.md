@@ -63,7 +63,7 @@ The current release has been tested and is confirmed working with the following 
 
 ## Features
 
--   NuxtJS
+-   Nuxt 2
 -   Tailwind CSS
 -   Vue Apollo with GraphQL Codegen
 -   Responsive design

@@ -28,7 +28,7 @@ Optional plugin:
 -   [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
 -   [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
 
-The current release has been tested and is confirmed working with the following versions:
+The current release has been tested and is confirmed working with the following plugin versions:
 
 -   WordPress version 5.8.2
 -   WooCommerce version 6.4.1
@@ -63,7 +63,7 @@ The current release has been tested and is confirmed working with the following 
 
 ## Features
 
--   NuxtJS
+-   Nuxt 2
 -   Tailwind CSS
 -   Vue Apollo with GraphQL Codegen
 -   Responsive design

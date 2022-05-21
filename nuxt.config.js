@@ -58,8 +58,6 @@ export default {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          // loader: 'eslint-loader', // DEPRECATED
-          // loader: "eslint-webpack-plugin",
           exclude: /(node_modules)/,
         })
       }

@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils'
+
 import Hero from '@/components/Index/Hero.vue'
 
 describe('Hero', () => {

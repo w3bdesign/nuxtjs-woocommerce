@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "0.989",
+  "version": "0.99",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -22,7 +22,7 @@
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/eslint-config": "^10.0.0",
     "@nuxtjs/eslint-module": "3.1.0",
-    "@nuxtjs/tailwindcss": "5.0.4",
+    "@nuxtjs/tailwindcss": "^5.1.2",
     "@vue/test-utils": "1.3.0",
     "algoliasearch": "^4.13.1",
     "apollo-link": "^1.2.14",

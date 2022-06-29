@@ -11,7 +11,7 @@
     "lint": "npm run lint:js",
     "test": "jest",
     "codegen": "graphql-codegen --config codegen.yml",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm i --legacy-peer-deps"
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "devDependencies": {
     "@braid/vue-formulate": "^2.5.3",

@@ -43,7 +43,7 @@
     "nuxt": "^2.15.8",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
-    "tailwindcss": "3.1.5",
+    "tailwindcss": "3.1.6",
     "uid": "^2.0.0",
     "vue": "2.7.4",
     "vue-instantsearch": "4.4.0",

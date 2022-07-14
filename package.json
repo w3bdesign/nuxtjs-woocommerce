@@ -13,12 +13,16 @@
     "codegen": "graphql-codegen --config codegen.yml",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
+  "dependencies": {
+    "@nuxt/postcss8": "^1.1.3"
+
+  },
   "devDependencies": {
     "@braid/vue-formulate": "^2.5.3",
     "@graphql-codegen/cli": "2.8.0",
     "@graphql-codegen/fragment-matcher": "3.3.0",
     "@graphql-codegen/introspection": "2.2.0",
-    "@nuxt/postcss8": "^1.1.3",
+   
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/eslint-config": "^10.0.0",
     "@nuxtjs/tailwindcss": "^5.2.0",

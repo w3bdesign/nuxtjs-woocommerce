@@ -1,7 +1,7 @@
 export default {
-  generate: {
+  /* generate: {
     fallback: true,
-  },
+  },*/
   target: 'server', // Default is 'server'. Can be 'server' or 'static'
   // Environment variables (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env)
   env: {

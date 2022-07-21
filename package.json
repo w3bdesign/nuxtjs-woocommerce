@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@braid/vue-formulate": "^2.5.3",
-    "@graphql-codegen/cli": "2.9.0",
+    "@graphql-codegen/cli": "2.9.1",
     "@graphql-codegen/fragment-matcher": "3.3.0",
     "@graphql-codegen/introspection": "2.2.0",
     "@nuxt/postcss8": "^1.1.3",

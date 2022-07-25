@@ -87,4 +87,3 @@ Check the attributes of the products. Right now the application requires Size an
 ## TODO
 
 -   Make WooCommerce session token expire and get deleted after 24 hours
--   Make Algolia look good on mobile 

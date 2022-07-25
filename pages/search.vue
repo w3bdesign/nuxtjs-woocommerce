@@ -50,8 +50,6 @@ const searchClient = algoliasearch(
   process.env.AlgoliaSearchOnlyAPIKey
 )
 
-console.log("searchClient: ", searchClient)
-
 export default {
   components: {
     AisInstantSearchSsr,

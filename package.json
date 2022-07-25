@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "0.990",
+  "version": "0.9.9",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -46,7 +46,7 @@
     "tailwindcss": "3.1.6",
     "uid": "^2.0.0",
     "vue": "2.7.8",
-    "vue-instantsearch": "4.4.2",
+    "vue-instantsearch": "3.9.0",
     "vue-jest": "^3.0.7",
     "vue-server-renderer": "2.7.8",
     "vue-template-compiler": "2.7.8"

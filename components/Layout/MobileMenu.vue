@@ -22,6 +22,11 @@
             Categories
           </NuxtLink>
         </li>
+        <li class="text-xl linkStyle">
+          <NuxtLink to="/search" @click.native="displayMobileMenu">
+            Search
+          </NuxtLink>
+        </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
           <NuxtLink to="/cart" @click.native="displayMobileMenu">
             <Cart />

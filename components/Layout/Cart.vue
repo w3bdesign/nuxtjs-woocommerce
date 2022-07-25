@@ -38,7 +38,7 @@
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY'
 
 export default {
-  name: 'Cart',
+  name: 'LayoutCart',
   data() {
     return {
       remoteCart: null,

@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       v-if="!firstRender"
-      class="fixed top-0 left-0 w-screen mt-40 bg-white h-96 animate__animated z-50"
+      class="fixed top-0 left-0 w-screen mt-40 bg-white h-full animate__animated z-50"
       :class="{
         animate__fadeInLeft: expandedMenu,
         animate__fadeOutRight: !expandedMenu && !firstRender,
@@ -29,7 +29,7 @@
         </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
           <NuxtLink to="/cart" @click.native="displayMobileMenu">
-            <Cart />
+            <LayoutCart />
           </NuxtLink>
         </li>
       </ul>

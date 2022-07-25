@@ -43,6 +43,8 @@ import {
   createServerRootMixin,
 } from 'vue-instantsearch'
 
+import { renderToString } from '@vue/server-renderer'
+
 import algoliasearch from 'algoliasearch/lite'
 
 const searchClient = algoliasearch(
@@ -87,9 +89,11 @@ export default {
     },
   },
   serverPrefetch() {
-    return this.instantsearch.findResultsState(this).then((algoliaState) => {
-      this.$ssrContext.nuxt.algoliaState = algoliaState
-    })
+    return this.instantsearch
+      .findResultsState(this, renderToString)
+      .then((algoliaState) => {
+        this.$ssrContext.nuxt.algoliaState = algoliaState
+      })
   },
 }
 </script>

@@ -42,7 +42,7 @@ export default {
   buildModules: [
     //'@nuxt/postcss8',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+   // '@nuxtjs/tailwindcss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

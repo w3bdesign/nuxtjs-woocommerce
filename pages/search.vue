@@ -3,7 +3,7 @@
     <ais-search-box />
     <ais-stats />
     <ais-refinement-list attribute="brand" />
-    <ais-hits>
+    <ais-hits :class-names="{ 'ais-Hits-item': 'MyCustomHitsItem' }">
       <template slot="item" slot-scope="{ item }">
         <NuxtLink
           class="text-black cursor-pointer hover:underline"
@@ -96,14 +96,14 @@ export default {
 
 <style>
 @media (max-width: 767px) {
-  .ais-Hits-item {
+  .MyCustomHitsItem {
     padding: 10px;
     width: 100%;
   }
 }
 
 @media (min-width: 768px) {
-  .ais-Hits-item {
+  .MyCustomHitsItem {
     width: 30%;
   }
 }

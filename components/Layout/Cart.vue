@@ -54,7 +54,7 @@ export default {
     cart: {
       prefetch: true,
       query: GET_CART_QUERY,
-      pollInterval: process.server ? undefined : 2000,
+      pollInterval: process.server ? undefined : 3000,
       result({ data, loading, networkStatus }) {
         const cartIsReady = networkStatus === 7
         if (cartIsReady && !loading) {

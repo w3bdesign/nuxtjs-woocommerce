@@ -45,10 +45,10 @@
     "prettier": "2.7.1",
     "tailwindcss": "3.1.8",
     "uid": "2.0.0",
-    "vue": "2.7.8",
+    "vue": "2.7.9",
     "vue-instantsearch": "3.9.0",
     "vue-jest": "3.0.7",
-    "vue-server-renderer": "2.7.8",
-    "vue-template-compiler": "2.7.8"
+    "vue-server-renderer": "2.7.9",
+    "vue-template-compiler": "2.7.9"
   }
 }

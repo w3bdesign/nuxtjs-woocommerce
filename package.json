@@ -44,7 +44,7 @@
     "postcss": "8.4.16",
     "prettier": "2.7.1",
     "tailwindcss": "3.1.8",
-    "uid": "2.0.0",
+    "uid": "2.0.1",
     "vue": "2.7.10",
     "vue-instantsearch": "3.9.0",
     "vue-jest": "3.0.7",

@@ -22,7 +22,6 @@ export default {
   head: {
     title: 'NuxtJS WooCommerce - Home',
   },
-
   apollo: {
     products: {
       prefetch: true,

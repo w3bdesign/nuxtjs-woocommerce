@@ -27,7 +27,6 @@
                 </p>
               </div>
             </NuxtLink>
-
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 <span v-if="product.variations">

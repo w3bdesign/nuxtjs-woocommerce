@@ -46,7 +46,7 @@
     "tailwindcss": "3.1.8",
     "uid": "2.0.1",
     "vue": "2.7.10",
-    "vue-instantsearch": "3.9.0",
+    "vue-instantsearch": "4.6.0",
     "vue-jest": "3.0.7",
     "vue-server-renderer": "2.7.10",
     "vue-template-compiler": "2.7.10"

@@ -27,7 +27,6 @@
                 </p>
               </div>
             </NuxtLink>
-
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 <span v-if="product.variations">
@@ -35,7 +34,6 @@
                 >
                 <span v-else>{{ product.regularPrice }}</span>
               </div>
-
               <div class="ml-4 text-xl text-gray-900">
                 <span v-if="product.variations">
                   {{ filteredVariantPrice(product.price) }}</span
@@ -43,7 +41,6 @@
                 <span v-else>{{ product.salePrice }}</span>
               </div>
             </div>
-
             <div v-else>
               <p class="mt-2 text-xl text-center text-gray-900">
                 {{ product.price }}

@@ -48,7 +48,7 @@
     "vue": "2.7.12",
     "vue-instantsearch": "3.9.0",
     "vue-jest": "3.0.7",
-    "vue-server-renderer": "2.7.12",
+    "vue-server-renderer": "2.7.13",
     "vue-template-compiler": "2.7.12"
   }
 }

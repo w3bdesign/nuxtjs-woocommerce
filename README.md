@@ -9,10 +9,15 @@
 
 ## Table Of Contents (TOC)
 
+-   [Vue 3](#vue3)
 -   [Installation](#Installation)
 -   [Features](#Features)
 -   [Troubleshooting](#Troubleshooting)
 -   [TODO](#TODO)
+
+## Vue 3
+
+I have converted this project to an Astro project with Vue 3 and `<script setup>` syntax here: [Astro with Vue 3](https://github.com/w3bdesign/astro-woocommerce)
 
 ## Installation
 

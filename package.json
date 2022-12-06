@@ -52,8 +52,8 @@
     "vue-template-compiler": "^2.7.14"
   },
   "resolutions": {
-    "@apollo/federation": "^0.38.0",
-    "@nuxt/kit": "3.0.0-rc.13"
+    "@apollo/federation": "^0.38.1"
+    
   }
 
 }

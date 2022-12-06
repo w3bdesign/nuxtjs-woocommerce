@@ -53,5 +53,8 @@
   },
   "resolutions": {
     "@apollo/federation": "^0.38.0"
+  },
+  "dependencies": {
+    "graphql": "^16.6.0"
   }
 }

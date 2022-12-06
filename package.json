@@ -52,6 +52,6 @@
     "vue-template-compiler": "^2.7.14"
   },
   "resolutions": {
-    "@apollo/federation": "^0.38.1"
+    "@apollo/federation": "^0.38.0"
   }
 }

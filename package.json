@@ -50,7 +50,10 @@
     "vue-jest": "3.0.7",
     "vue-server-renderer": "^2.7.14",
     "vue-template-compiler": "^2.7.14"
+  },
+  "resolutions": {
+    "@apollo/federation": "^0.38.1"
+    
   }
-  
 
 }

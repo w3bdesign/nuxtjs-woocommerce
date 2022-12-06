@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-woocommerce",
-  "version": "0.994",
+  "version": "0.993",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,7 +11,7 @@
     "lint": "npm run lint:js",
     "test": "jest",
     "codegen": "graphql-codegen --config codegen.yml",
-    "refresh": "rm -rf node_modules && rm yarn.lock && yarn"
+    "refresh": "rm -rf node_modules && rm yarn.lock && yarn --ignore-engines"
   },
   "devDependencies": {
     "@braid/vue-formulate": "2.5.3",

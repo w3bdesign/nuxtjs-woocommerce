@@ -55,6 +55,6 @@
     "@apollo/federation": "^0.38.1"
   },
   "engines": {
-    "node": "16.13.2"
+    "node": "16.18.1"
   }
 }

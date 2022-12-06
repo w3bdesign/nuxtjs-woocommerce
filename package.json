@@ -56,6 +56,6 @@
     "postcss-nesting": "10.2.0"
   },
   "engines": {
-    "node": "16.18.1"
+    "node": "18.12.1"
   }
 }

@@ -53,7 +53,5 @@
   },
   "resolutions": {
     "@apollo/federation": "^0.38.1"
-    
   }
-
 }

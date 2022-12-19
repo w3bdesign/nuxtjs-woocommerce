@@ -24,7 +24,7 @@
     "@nuxtjs/eslint-module": "3.1.0",
     "@nuxtjs/tailwindcss": "4.2.1",
     "@vue/test-utils": "2.2.6",
-    "algoliasearch": "4.14.2",
+    "algoliasearch": "4.14.3",
     "apollo-link": "1.2.14",
     "apollo-link-http": "1.5.17",
     "babel-core": "7.0.0-bridge.0",

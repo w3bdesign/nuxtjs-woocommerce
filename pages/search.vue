@@ -4,7 +4,7 @@
     <ais-stats />
     <ais-refinement-list attribute="brand" />
     <ais-hits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
-      <template slot="item" slot-scope="{ item }">
+      <template #item="{ item }">
         <NuxtLink
           class="text-black cursor-pointer hover:underline"
           :to="{

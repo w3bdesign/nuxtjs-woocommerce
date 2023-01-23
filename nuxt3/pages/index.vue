@@ -1,7 +1,9 @@
 <template>
   <div>
     <IndexHero />
-    Data: {{ data?.products.nodes }}
+    <div v-if="data.products">
+      <ProductsShowAll :products="data.products.nodes" />
+    </div>
   </div>
 </template>
 

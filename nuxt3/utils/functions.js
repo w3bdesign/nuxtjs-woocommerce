@@ -5,7 +5,7 @@ import { uid } from 'uid'
  * @param {String} description Input text to strip HTML from
  */
 export function stripHTML(string) {
-  return string.replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g, '')
+  return string.replace(/<\/?[^>]+(>|$)/gi, '')
 }
 
 /**

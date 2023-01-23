@@ -16,8 +16,8 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       viewport: 'width=500, initial-scale=1',
-      title: 'Nuxt 3 - Woocommerce',
-      meta: [{ name: 'description', content: 'My amazing site.' }],
+      // title: 'Nuxt 3 - Woocommerce',
+      meta: [{ name: 'description', content: 'Nuxt 3 - Woocommerce' }],
     },
   },
 })

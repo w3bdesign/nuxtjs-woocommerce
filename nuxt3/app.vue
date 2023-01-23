@@ -1,6 +1,7 @@
 <template>
   <div>
-    NuxtWelcome
-    <h1 class="text-3xl font-bold underline">Hello world! This is Tailwind</h1>
+    <span class="text-3xl font-bold underline p-4"
+      >Hello world! This is Tailwind</span
+    >
   </div>
 </template>

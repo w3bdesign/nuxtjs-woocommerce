@@ -20,7 +20,6 @@ export default defineNuxtConfig({
       meta: [{ name: 'description', content: 'Nuxt 3 - Woocommerce' }],
     },
   },
-
   apollo: {
     clients: {
       default: { httpEndpoint: 'https://woocommerce.dfweb.no/graphql' },

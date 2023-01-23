@@ -87,12 +87,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Navbar',
-}
-</script>
-
 <style scoped>
 header {
   max-width: 1400px;

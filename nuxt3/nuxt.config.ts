@@ -22,6 +22,8 @@ export default defineNuxtConfig({
   },
 
   apollo: {
-    clients: { default: { httpEndpoint: 'https://woocommerce.dfweb.no/graphql' } },
+    clients: {
+      default: { httpEndpoint: 'https://woocommerce.dfweb.no/graphql' },
+    },
   },
 })

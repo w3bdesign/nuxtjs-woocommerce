@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <span class="text-3xl font-bold underline p-4"
-      >Hello world! This is Tailwind</span
+  <Html>
+    <Body
+      class="antialiased duration-300 transition-colors text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900"
     >
-  </div>
+      <NuxtLayout>
+        <NuxtLoadingIndicator :height="5" :duration="3000" :throttle="400" />
+        <NuxtPage />
+      </NuxtLayout>
+    </Body>
+  </Html>
 </template>

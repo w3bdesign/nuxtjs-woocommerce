@@ -8,7 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0"
+    "autoprefixer": "^10.4.13",
+    "nuxt": "^3.0.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   },
   "overrides": {
     "vue": "latest"

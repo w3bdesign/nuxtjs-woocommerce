@@ -39,4 +39,6 @@ import { ref } from 'vue'
 
 const cartLength = ref(1)
 const subTotal = ref('99 kr')
+
+const remoteError = ref(false)
 </script>

@@ -35,7 +35,8 @@
 </template>
 
 <script setup>
-const cartLength = ref(1)
-const subTotal = ref("99 kr")
+import { ref } from 'vue'
 
+const cartLength = ref(1)
+const subTotal = ref('99 kr')
 </script>

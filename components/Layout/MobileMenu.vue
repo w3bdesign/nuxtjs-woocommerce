@@ -23,9 +23,7 @@
           </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink to="/search" @click="displayMobileMenu">
-            Search
-          </NuxtLink>
+          <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
         </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
           <NuxtLink to="/cart" @click="displayMobileMenu">

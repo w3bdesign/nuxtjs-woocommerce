@@ -13,8 +13,6 @@
 </template>
 
 <script setup>
-import { useHead } from 'vue'
-
 useHead({
   title: 'Index',
   titleTemplate: '%s - Nuxt 3 Woocommerce',

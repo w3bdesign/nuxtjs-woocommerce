@@ -1,0 +1,54 @@
+query ProductsFromCategory($id: ID!) {
+  productCategory(id: $id) {
+    id
+    name
+    products(first: 50) {
+      nodes {
+        id
+        databaseId
+        onSale
+        averageRating
+        slug
+        description
+        image {
+          id
+          uri
+          title
+          srcSet
+          sourceUrl
+        }
+        name
+        ... on SimpleProduct {
+          salePrice
+          regularPrice
+          onSale
+          price
+          id
+        }
+        ... on VariableProduct {
+          salePrice
+          regularPrice
+          onSale
+          price
+          id
+        }
+        ... on ExternalProduct {
+          price
+          id
+          externalUrl
+        }
+        ... on GroupProduct {
+          products {
+            nodes {
+              ... on SimpleProduct {
+                id
+                price
+              }
+            }
+          }
+          id
+        }
+      }
+    }
+  }
+}

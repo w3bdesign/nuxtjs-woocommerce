@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.0.0",
     "postcss": "^8.4.21",

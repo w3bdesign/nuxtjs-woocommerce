@@ -5,7 +5,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   components: true,
   css: ['~/assets/css/main.css'],
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@nuxtjs/apollo'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -19,5 +19,9 @@ export default defineNuxtConfig({
       // title: 'Nuxt 3 - Woocommerce',
       meta: [{ name: 'description', content: 'Nuxt 3 - Woocommerce' }],
     },
+  },
+
+  apollo: {
+    clients: { default: { httpEndpoint: 'https://woocommerce.dfweb.no/graphql' } },
   },
 })

@@ -5,7 +5,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "refresh": "rm -rf node_modules && rm package-lock.lock && npm install"
   },
   "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.5",

@@ -63,11 +63,7 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
-              <CartAddToCartButton
-                v-if="props.product.variations"
-                :product="18"
-              />
-              <CartAddToCartButton v-else :product="product" />
+              <CartAddToCartButton :product="props.product" />
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   components: true,
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
   modules: ['@pinia/nuxt', '@nuxtjs/apollo'],
+  plugins: ['~/plugins/apollo'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -21,8 +22,21 @@ export default defineNuxtConfig({
     },
   },
   apollo: {
+    //authType: 'Bearer',
+   // authHeader: 'Authorization',
+    tokenStorage: 'cookie',
     clients: {
-      default: { httpEndpoint: 'https://woocommerce.dfweb.no/graphql' },
+      default: {
+        httpEndpoint: 'https://woocommerce.dfweb.no/graphql',
+        httpLinkOptions: {
+          credentials: 'include',
+          headers: {
+            'woocommerce-session':
+              'Session eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd29vY29tbWVyY2UuZGZ3ZWIubm8iLCJpYXQiOjE2NzQ1MzMyODYsIm5iZiI6MTY3NDUzMzI4NiwiZXhwIjoxNjc0NzA2MDg2LCJkYXRhIjp7ImN1c3RvbWVyX2lkIjoidF8wMmU5YTUxNTY2NDhiYjQzYjc1N2ZkMzViN2ZjYjkifX0.MI71c0A2Xz4eg3gYuJZVT2xPL-2_SCV1LWIDoTZnJdg',
+          },
+        },
+      },
+      tokenName: 'woocommerce-session',
     },
   },
 })

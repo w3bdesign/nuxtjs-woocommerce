@@ -9,11 +9,11 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     console.log('Token: ', token)
     console.log('My Token: ', mytoken)
-    //console.log('wooToken: ', wooToken)
+    // console.log('wooToken: ', wooToken)
 
     console.log('woo headers: ', headers)
 
     // apply apollo client token
-    //token.value = githubToken;
+    // token.value = githubToken;
   })
 })

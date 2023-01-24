@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     },
   },
   apollo: {
-    //authType: 'Bearer',
-   // authHeader: 'Authorization',
+    // authType: 'Bearer',
+    // authHeader: 'Authorization',
     tokenStorage: 'cookie',
     clients: {
       default: {

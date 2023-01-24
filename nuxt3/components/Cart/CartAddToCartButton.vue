@@ -52,7 +52,7 @@ const addProductToWooCart = async (product) => {
 
   const variables = { input: productQueryInput }
 
-  const { mutate, loading, error, onDone } = useMutation(ADD_TO_CART_MUTATION, {
+  const { mutate, error, onDone } = useMutation(ADD_TO_CART_MUTATION, {
     variables,
   })
 

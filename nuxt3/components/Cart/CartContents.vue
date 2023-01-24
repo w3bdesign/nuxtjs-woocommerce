@@ -1,6 +1,31 @@
-
 <template>
-  <div>Cart siden</div>
+  <div>
+    <div v-if="data">
+      <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
+      <section class="mt-10">
+        <div
+          v-for="products in data.cart.contents.nodes"
+          :key="products.id"
+          class="container mx-auto mt-4 flex-container"
+        >
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Name: <br /></span>
+            <span class="item-content">{{ products.product.name }}</span>
+          </div>
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
+            <span class="item-content">
+              {{ products.quantity }}
+            </span>
+          </div>
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
+            <span class="item-content"> {{ products.total }} </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -8,8 +33,6 @@ import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 
 const variables = { limit: 5 }
 const { data } = await useAsyncQuery(GET_CART_QUERY, variables)
-
-console.log('Cart data: ', data)
 </script>
 
 <style scoped>

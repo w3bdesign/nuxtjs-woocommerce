@@ -53,7 +53,7 @@
   },
   "resolutions": {
     "@apollo/federation": "^0.38.1",
-    "postcss-nesting": "10.2.0"
+    "postcss-nesting": "11.0.0"
   },
   "engines": {
     "node": "16.18.1"

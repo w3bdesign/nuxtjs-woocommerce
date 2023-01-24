@@ -23,9 +23,7 @@ const props = defineProps({
   },
 })
 
-const noProducts = ref(false)
-
-/* const noProducts = computed(() => {
-  return products.products.nodes.length === 0
-}) */
+const noProducts = computed(() => {
+  return props.products.products.nodes.length === 0
+})
 </script>

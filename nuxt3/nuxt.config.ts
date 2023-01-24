@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     tokenStorage: 'cookie',
     clients: {
       default: {
-        httpEndpoint: 'https://woocommerce.dfweb.no/graphql',
+        httpEndpoint: process.env.PUBLIC_GRAPHQL_URL,
         httpLinkOptions: {
           credentials: 'include',
           headers: {

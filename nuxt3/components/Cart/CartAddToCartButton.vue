@@ -44,7 +44,7 @@ const addProductToCart = (product) => {
   // this.$router.push('/cart')
 }
 
-const addProductToWooCart = async (product) => {
+const addProductToWooCart = (product) => {
   const productId = product.databaseId ? product.databaseId : product
   const productQueryInput = {
     productId,

@@ -6,6 +6,6 @@
   "extends": ["plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "no-undef": "warn"
+    "eslint/no-undef": "warn"
   }
 }

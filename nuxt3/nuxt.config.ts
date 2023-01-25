@@ -3,6 +3,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  ssr: true,
   components: true,
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
   modules: ['@pinia/nuxt', '@nuxtjs/apollo', '@formkit/nuxt'],
@@ -20,6 +21,9 @@ export default defineNuxtConfig({
       viewport: 'width=500, initial-scale=1',
       meta: [{ name: 'description', content: 'Nuxt 3 - Woocommerce' }],
     },
+    // global transition
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
   apollo: {
     authType: 'Session',

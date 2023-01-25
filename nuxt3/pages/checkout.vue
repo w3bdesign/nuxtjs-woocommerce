@@ -1,6 +1,6 @@
 <template>
   <div>
     <CartContents />
-    CheckoutForm
+    <CheckoutForm />
   </div>
 </template>

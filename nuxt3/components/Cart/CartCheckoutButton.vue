@@ -8,7 +8,7 @@
 
 <style scoped>
 button {
-  @apply w-48 h-12 px-4 py-2 mt-12 font-bold text-white bg-blue-500 rounded hover:bg-blue-800;
+  @apply relative w-48 h-12 px-4 py-2 mt-4 transition ease-in-out delay-75 duration-300 font-bold text-white bg-blue-500 rounded hover:bg-blue-800;
 }
 
 .button-link {

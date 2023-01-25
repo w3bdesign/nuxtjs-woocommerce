@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
+      class="relative w-48 h-12 px-4 py-2 mt-4 transition ease-in-out delay-75 duration-300 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       :class="{ disabled: isLoading }"
       @click="addProductToCart(props.product)"
     >

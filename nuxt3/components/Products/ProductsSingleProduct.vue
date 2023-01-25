@@ -80,6 +80,7 @@ import { stripHTML, filteredVariantPrice } from '@/utils/functions'
 const props = defineProps({
   product: {
     type: [Object],
+    required: true
   },
 })
 </script>

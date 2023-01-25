@@ -36,6 +36,7 @@
 const props = defineProps({
   categories: {
     type: [Object],
+    required: true
   },
 })
 </script>

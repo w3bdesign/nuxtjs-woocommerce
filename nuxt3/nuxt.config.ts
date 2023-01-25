@@ -5,7 +5,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   components: true,
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
-  modules: ['@pinia/nuxt', '@nuxtjs/apollo'],
+  modules: ['@pinia/nuxt', '@nuxtjs/apollo', '@formkit/nuxt'],
   plugins: ['~/plugins/apollo'],
   runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL } },
   postcss: {

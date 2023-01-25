@@ -10,18 +10,19 @@
     "format": "prettier --write \"**/*.{js,ts,vue}\"",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
-  "devDependencies": {   
+  "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
-    "autoprefixer": "^10.4.13",    
+    "autoprefixer": "^10.4.13",
     "nuxt": "^3.1.0",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "tailwindcss": "^3.2.4"
   },
   "overrides": {
     "vue": "latest"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.0.0-beta.14",
     "@pinia/nuxt": "^0.4.6",
     "pinia": "^2.0.29"
   }

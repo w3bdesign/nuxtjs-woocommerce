@@ -54,7 +54,7 @@
 
 <script setup>
 const expandedMenu = useState('expandedMenu', () => false)
-const firstRender = useState('firstRender', () => false)
+const firstRender = useState('firstRender', () => true)
 
 const displayMobileMenu = () => {
   expandedMenu.value = !expandedMenu.value

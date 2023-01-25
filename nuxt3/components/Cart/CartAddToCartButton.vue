@@ -2,12 +2,12 @@
   <div>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: isLoading || error }"
+      :class="{ disabled: isLoading }"
       @click="addProductToCart(props.product)"
     >
       ADD TO CART
       <svg
-        v-if="isLoading || error"
+        v-if="isLoading"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"
@@ -37,10 +37,12 @@ const props = defineProps({
   },
 })
 
+const router = useRouter()
+
 const addProductToCart = (product) => {
   isLoading.value = true
   addProductToWooCart(product)
-  // this.$router.push('/cart')
+  router.push('/cart')
 }
 
 const addProductToWooCart = (product) => {
@@ -51,7 +53,7 @@ const addProductToWooCart = (product) => {
 
   const variables = { input: productQueryInput }
 
-  const { mutate, error, onDone } = useMutation(ADD_TO_CART_MUTATION, {
+  const { mutate, onDone } = useMutation(ADD_TO_CART_MUTATION, {
     variables,
   })
 

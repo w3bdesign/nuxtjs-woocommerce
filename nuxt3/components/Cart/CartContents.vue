@@ -33,6 +33,7 @@
     >
       Cart is currently empty
     </h2>
+    <CartCheckoutButton v-if="data" />
   </div>
 </template>
 

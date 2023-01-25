@@ -1,8 +1,8 @@
 <template>
-  <div v-if="!success" class="flex justify-center">
+  <div v-if="!props.success" class="flex justify-center">
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: loading }"
+      :class="{ disabled: props.loading }"
       type="submit"
     >
       SUBMIT ORDER
@@ -27,11 +27,10 @@
 </template>
 
 <script>
-export default {
-  name: 'SubmitOrderButton',
-  props: {
+const props = defineProps([
+  {
     loading: { type: Boolean, required: false, default: false },
     success: { type: Boolean, required: false, default: false },
   },
-}
+])
 </script>

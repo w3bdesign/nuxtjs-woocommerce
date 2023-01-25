@@ -35,10 +35,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+const cartLength = useState('cartLength', () => 1)
+const subTotal = useState('subTotal', () => '99 kr')
 
-const cartLength = ref(1)
-const subTotal = ref('99 kr')
-
-const remoteError = ref(false)
+const remoteError = useState('remoteError', () => false)
 </script>

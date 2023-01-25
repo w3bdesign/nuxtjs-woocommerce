@@ -1,7 +1,9 @@
 <template>
   <div>
     <div v-if="data">
-      <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
+      <h1 class="h-10 p-6 text-3xl font-bold text-center">
+        Cart
+      </h1>
       <section class="mt-10">
         <div
           v-for="products in data.cart.contents.nodes"
@@ -9,30 +11,43 @@
           class="container mx-auto mt-4 flex-container"
         >
           <div class="item">
-            <span class="block mt-2 font-extrabold">Name: <br /></span>
+            <span class="block mt-2 font-extrabold">Name: <br></span>
             <span class="item-content">{{ products.product.name }}</span>
           </div>
           <div class="item">
-            <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
+            <span class="block mt-2 font-extrabold">Quantity: <br> </span>
             <span class="item-content">
               {{ products.quantity }}
             </span>
           </div>
           <div class="item">
-            <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
+            <span class="block mt-2 font-extrabold">Subtotal: <br></span>
             <span class="item-content"> {{ products.total }} </span>
           </div>
         </div>
       </section>
     </div>
+    <h2
+      v-if="!data"
+      class="m-4 text-3xl text-center"
+    >
+      Cart is currently empty
+    </h2>
   </div>
 </template>
 
 <script setup>
+// https://blog.openreplay.com/integrating-graphql-into-nuxt-apps-with-nuxt-apollo/
+
+// https://stackblitz.com/edit/github-tntdhv?file=.env,app.vue,plugins%2Fapollo.ts,pages%2Findex.vue&theme=dark
+
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 
 const variables = { limit: 5 }
 const { data } = await useAsyncQuery(GET_CART_QUERY, variables)
+
+
+
 </script>
 
 <style scoped>

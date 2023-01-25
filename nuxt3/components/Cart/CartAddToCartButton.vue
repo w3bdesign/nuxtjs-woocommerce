@@ -29,8 +29,7 @@
 <script setup>
 import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION.gql'
 
-// const loading = ref(false)
-const isLoading = ref(false)
+const isLoading = useState('isLoading', () => false)
 
 const props = defineProps({
   product: {
@@ -58,7 +57,9 @@ const addProductToWooCart = (product) => {
 
   mutate(variables)
 
-  onDone(() => (isLoading.value = false))
+  onDone(() => {
+    isLoading.value = false
+  })
 }
 </script>
 

@@ -38,5 +38,5 @@ export const BILLING_SCHEMA = object().shape({
   postcode: number().required().moreThan(1111),
   city: string().required(),
   email: string().required().email(),
-  phone: number().required().moreThan(11111111),
+  phone: number().required().moreThan(11_111_111),
 })

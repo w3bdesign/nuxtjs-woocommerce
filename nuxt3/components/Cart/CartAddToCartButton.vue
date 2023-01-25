@@ -2,12 +2,12 @@
   <div>
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: isLoading }"
+      :class="{ disabled: isLoading || error }"
       @click="addProductToCart(props.product)"
     >
       ADD TO CART
       <svg
-        v-if="isLoading"
+        v-if="isLoading || error"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"

@@ -4,5 +4,8 @@
     "sourceType": "module"
   },
   "extends": ["plugin:prettier/recommended"],
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "rules": {
+    "no-undef": "warn"
+  }
 }

@@ -43,9 +43,9 @@ import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
 const upperCaseFirstChar = (input) =>
   input.charAt(0).toUpperCase() + input.slice(1)
 
-const handleSubmit = (values) => {
-  const paymentMethod = 'cod'
+const paymentMethod = 'cod'
 
+const handleSubmit = (values) => {
   const billing = {
     firstName: values.firstName,
     lastName: values.lastName,

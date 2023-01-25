@@ -7,9 +7,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
   modules: ['@pinia/nuxt', '@nuxtjs/apollo'],
   plugins: ['~/plugins/apollo'],
-
-  runtimeConfig: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL },
-
+  runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL } },
   postcss: {
     plugins: {
       tailwindcss: {},

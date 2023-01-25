@@ -37,17 +37,9 @@
 </template>
 
 <script setup>
-// https://blog.openreplay.com/integrating-graphql-into-nuxt-apps-with-nuxt-apollo/
-
-// https://stackblitz.com/edit/github-tntdhv?file=.env,app.vue,plugins%2Fapollo.ts,pages%2Findex.vue&theme=dark
-
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 
-const variables = { limit: 5 }
-const { data } = await useAsyncQuery(GET_CART_QUERY, variables)
-
-
-
+const { data } = await useAsyncQuery(GET_CART_QUERY)
 </script>
 
 <style scoped>

@@ -27,10 +27,8 @@
 </template>
 
 <script>
-const props = defineProps([
-  {
-    loading: { type: Boolean, required: false, default: false },
-    success: { type: Boolean, required: false, default: false },
-  },
-])
+const props = defineProps({
+  loading: { type: Boolean, required: false, default: false },
+  success: { type: Boolean, required: false, default: false },
+})
 </script>

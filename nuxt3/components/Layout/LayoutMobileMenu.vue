@@ -52,21 +52,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MobileMenu',
-  data() {
-    return {
-      expandedMenu: false,
-      firstRender: true,
-    }
-  },
-  methods: {
-    displayMobileMenu() {
-      this.expandedMenu = !this.expandedMenu
-      this.firstRender = false
-    },
-  },
+<script setup>
+const expandedMenu = useState('expandedMenu', () => false)
+const firstRender = useState('firstRender', () => false)
+
+const displayMobileMenu = () => {
+  expandedMenu.value = !expandedMenu.value
+  firstRender.value = false
 }
 </script>
 

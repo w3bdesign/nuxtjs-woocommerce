@@ -1,5 +1,0 @@
-// ROLLUP_NO_REPLACE 
- const Logo = "<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 2560 1600\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\" style=\"fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;\"><g><path id=\"path6\" d=\"M2478.72,454.403c-113.886,-555.147 -1188.09,-590.304 -1880.53,-167.355l0,46.712c691.529,-356.951 1672.77,-354.674 1762.07,156.703c30.088,169.408 -64.677,345.599 -234.592,446.977l0,132.671c204.542,-75.049 413.622,-317.951 353.054,-615.708m-1259.15,971.975c-477.868,44.229 -975.784,-25.389 -1045.49,-400.268c-34.618,-184.596 49.655,-380.519 160.817,-502.078l0,-65.085c-200.445,176.431 -309.325,399.592 -246.459,663.088c80.173,338.135 507.481,529.535 1159.84,465.806c258.294,-24.937 596.322,-108.394 830.914,-237.864l0,-183.94c-213.193,127.67 -565.796,233.149 -859.617,260.341Z\" style=\"fill:#127cc1;fill-rule:nonzero;\"/><text x=\"411.139px\" y=\"832.405px\" style=\"font-family:'uchess';font-size:400px;fill:#127cc1;\">Webshop</text></g></svg>";
-
-export { Logo as default };
-//# sourceMappingURL=Logo.mjs.map

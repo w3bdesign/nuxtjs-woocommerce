@@ -7,14 +7,16 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "refresh": "rm -rf node_modules && rm package-lock.lock && npm install"
+    "format": "prettier --write \"**/*.{js,ts,vue}\"",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "devDependencies": {   
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "autoprefixer": "^10.4.13",    
     "nuxt": "^3.1.0",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "prettier": "^2.8.3"
   },
   "overrides": {
     "vue": "latest"

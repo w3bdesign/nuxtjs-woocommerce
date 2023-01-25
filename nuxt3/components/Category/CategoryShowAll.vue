@@ -6,10 +6,7 @@
       >
         <template v-for="nodes in props.categories">
           <template v-for="category in nodes">
-            <div
-              v-if="category.slug !== undefined"
-              :key="category.id"
-            >
+            <div v-if="category.slug !== undefined" :key="category.id">
               <NuxtLink
                 class="text-black cursor-pointer hover:underline"
                 :to="{

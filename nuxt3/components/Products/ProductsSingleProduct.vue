@@ -11,40 +11,36 @@
             class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
             :alt="props.product.name"
             :src="props.product.image.sourceUrl"
-          >
+          />
           <img
             v-else
             id="product-image"
             class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
             :alt="props.product.name"
             :src="process.env.placeholderSmallImage"
-          >
+          />
           <div class="ml-8">
             <p class="text-3xl font-bold text-left">
               {{ props.product.name }}
             </p>
-            <div
-              v-if="props.product.onSale"
-              class="flex"
-            >
+            <div v-if="props.product.onSale" class="flex">
               <p class="pt-1 mt-4 text-3xl text-gray-900">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(props.product.price) }}</span>
+                  {{ filteredVariantPrice(props.product.price) }}</span
+                >
                 <span v-else>{{ props.product.salePrice }}</span>
               </p>
               <p class="pt-1 pl-8 mt-4 text-2xl text-gray-900 line-through">
                 <span v-if="props.product.variations">
-                  {{ filteredVariantPrice(props.product.price, 'right') }}</span>
+                  {{ filteredVariantPrice(props.product.price, 'right') }}</span
+                >
                 <span v-else>{{ props.product.regularPrice }}</span>
               </p>
             </div>
-            <p
-              v-else
-              class="pt-1 mt-4 text-2xl text-gray-900"
-            >
+            <p v-else class="pt-1 mt-4 text-2xl text-gray-900">
               {{ props.product.price }}
             </p>
-            <br>
+            <br />
             <p class="pt-1 mt-4 text-2xl text-gray-900">
               {{ stripHTML(props.product.description) }}
             </p>

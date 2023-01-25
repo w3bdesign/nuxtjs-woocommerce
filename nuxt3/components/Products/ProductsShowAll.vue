@@ -1,10 +1,7 @@
 <template>
   <div v-if="products">
     <section>
-      <div
-        id="product-container"
-        class="flex flex-wrap items-center"
-      >
+      <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="product in products">
           <div
             v-if="product.slug !== undefined"
@@ -23,25 +20,24 @@
                 class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-110"
                 :alt="product.name"
                 :src="productImage(product)"
-              >
+              />
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
                 </p>
               </div>
             </NuxtLink>
-            <div
-              v-if="product.onSale"
-              class="flex justify-center mt-2"
-            >
+            <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, 'right') }}</span>
+                  {{ filteredVariantPrice(product.price, 'right') }}</span
+                >
                 <span v-else>{{ product.regularPrice }}</span>
               </div>
               <div class="ml-4 text-xl text-gray-900">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price) }}</span>
+                  {{ filteredVariantPrice(product.price) }}</span
+                >
                 <span v-else>{{ product.salePrice }}</span>
               </div>
             </div>

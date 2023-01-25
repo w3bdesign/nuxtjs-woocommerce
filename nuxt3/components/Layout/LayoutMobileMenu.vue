@@ -10,42 +10,23 @@
     >
       <ul>
         <li class="text-xl linkStyle">
-          <NuxtLink
-            to="/"
-            @click="displayMobileMenu"
-          >
-            Home
-          </NuxtLink>
+          <NuxtLink to="/" @click="displayMobileMenu"> Home </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink
-            to="/products"
-            @click="displayMobileMenu"
-          >
+          <NuxtLink to="/products" @click="displayMobileMenu">
             Products
           </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink
-            to="/categories"
-            @click="displayMobileMenu"
-          >
+          <NuxtLink to="/categories" @click="displayMobileMenu">
             Categories
           </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink
-            to="/search"
-            @click="displayMobileMenu"
-          >
-            Search
-          </NuxtLink>
+          <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
         </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
-          <NuxtLink
-            to="/cart"
-            @click="displayMobileMenu"
-          >
+          <NuxtLink to="/cart" @click="displayMobileMenu">
             <LayoutCart />
           </NuxtLink>
         </li>

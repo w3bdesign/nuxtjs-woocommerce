@@ -7,7 +7,7 @@
     >
       SUBMIT ORDER
       <svg
-        v-if="loading"
+        v-if="props.loading"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"

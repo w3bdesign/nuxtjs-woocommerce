@@ -28,12 +28,16 @@
     <h2 v-if="!data" class="m-4 text-3xl text-center">
       Cart is currently empty
     </h2>
-    <CartCheckoutButton v-if="data" />
+    <CartCheckoutButton v-if="props.showCheckoutButton && data" />
   </div>
 </template>
 
 <script setup>
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
+
+const props = defineProps({
+  showCheckoutButton: { type: Boolean, required: false, default: false },
+})
 
 const { data } = await useAsyncQuery(GET_CART_QUERY)
 </script>

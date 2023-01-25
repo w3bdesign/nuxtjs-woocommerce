@@ -38,12 +38,9 @@ const props = defineProps({
   },
 })
 
-const router = useRouter()
-
 const addProductToCart = (product) => {
   isLoading.value = true
   addProductToWooCart(product)
-  //router.push('/cart')
 }
 
 const addProductToWooCart = (product) => {

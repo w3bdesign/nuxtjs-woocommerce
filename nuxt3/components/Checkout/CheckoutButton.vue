@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 const props = defineProps({
   loading: { type: Boolean, required: false, default: false },
   success: { type: Boolean, required: false, default: false },

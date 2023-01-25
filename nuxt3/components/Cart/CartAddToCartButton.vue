@@ -3,7 +3,7 @@
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
       :class="{ disabled: isLoading }"
-      @click="addProductToCart(product)"
+      @click="addProductToCart(props.product)"
     >
       ADD TO CART
       <svg
@@ -31,10 +31,9 @@ import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION.gql'
 
 const isLoading = useState('isLoading', () => false)
 
-const { product } = defineProps({
+const props = defineProps({
   product: {
     type: [Object],
-    required: true
   },
 })
 

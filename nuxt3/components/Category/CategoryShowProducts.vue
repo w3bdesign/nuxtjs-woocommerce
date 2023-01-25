@@ -1,11 +1,11 @@
 <template>
   <div class="container mx-auto">
-    <div v-if="products">
+    <div v-if="props.products">
       <h1 class="h-10 p-6 text-3xl font-bold text-center">
-        {{ products.name }}
+        {{ props.products.name }}
       </h1>
       <br />
-      <ProductsShowAll :products="products.products.nodes" />
+      <ProductsShowAll :products="props.products.products.nodes" />
       <div v-if="noProducts" class="mt-10">
         <h2 class="h-10 text-2xl font-bold text-center">
           No products to display
@@ -19,13 +19,13 @@
 </template>
 
 <script setup>
-const { products } = defineProps({
+const props = defineProps({
   products: {
     type: [Object],
   },
 })
 
 const noProducts = computed(() => {
-  return products.products.nodes.length === 0
+  return props.products.products.nodes.length === 0
 })
 </script>

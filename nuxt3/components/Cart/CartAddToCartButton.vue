@@ -34,7 +34,7 @@ const isLoading = useState('isLoading', () => false)
 const props = defineProps({
   product: {
     type: [Object],
-    required: true
+    required: true,
   },
 })
 

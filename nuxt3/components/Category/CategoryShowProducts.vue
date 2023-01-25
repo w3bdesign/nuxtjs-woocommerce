@@ -22,7 +22,7 @@
 const props = defineProps({
   products: {
     type: [Object],
-    required: true
+    required: true,
   },
 })
 

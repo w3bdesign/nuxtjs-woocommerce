@@ -12,11 +12,11 @@
               class="h-20 lg:h-24"
               aria-label="Nettbutikk logo"
               src="~/assets/svg/Logo.svg"
-            />
+            >
           </div>
         </div>
         <LayoutMobileMenu />
-        <div class="hidden lg:w-1/12 lg:block"></div>
+        <div class="hidden lg:w-1/12 lg:block" />
         <div
           id="nav-content"
           class="hidden w-full mt-4 bg-black lg:w-8/12 lg:block lg:bg-white lg:mt-0 lg:text-right"
@@ -48,8 +48,7 @@
                     <NuxtLink to="/products">
                       <span
                         class="text-xl text-white no-underline lg:text-black"
-                        >Products</span
-                      >
+                      >Products</span>
                     </NuxtLink>
                   </li>
                   <li
@@ -58,8 +57,7 @@
                     <NuxtLink to="/categories">
                       <span
                         class="text-xl text-white no-underline lg:text-black is-active"
-                        >Categories</span
-                      >
+                      >Categories</span>
                     </NuxtLink>
                   </li>
                   <li
@@ -68,8 +66,7 @@
                     <NuxtLink to="/search">
                       <span
                         class="text-xl text-white no-underline lg:text-black is-active"
-                        >Search</span
-                      >
+                      >Search</span>
                     </NuxtLink>
                   </li>
                   <li

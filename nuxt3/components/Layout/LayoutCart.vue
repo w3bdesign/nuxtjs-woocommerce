@@ -1,9 +1,7 @@
 <template>
   <div>
     <div v-if="remoteError">
-      <span class="text-xl text-red-500"
-        >Error fetching cart. Please refresh the page.</span
-      >
+      <span class="text-xl text-red-500">Error fetching cart. Please refresh the page.</span>
     </div>
     <div v-else>
       <NuxtLink to="/cart">
@@ -17,7 +15,7 @@
               class="h-12 ml-4 lg:ml-2"
               aria-label="Cart"
               src="~/assets/svg/Cart.svg"
-          /></span>
+            ></span>
         </transition>
         <transition name="cart">
           <div v-if="cartLength">

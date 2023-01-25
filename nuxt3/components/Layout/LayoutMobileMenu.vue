@@ -10,29 +10,48 @@
     >
       <ul>
         <li class="text-xl linkStyle">
-          <NuxtLink to="/" @click="displayMobileMenu"> Home </NuxtLink>
+          <NuxtLink
+            to="/"
+            @click="displayMobileMenu"
+          >
+            Home
+          </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink to="/products" @click="displayMobileMenu">
+          <NuxtLink
+            to="/products"
+            @click="displayMobileMenu"
+          >
             Products
           </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink to="/categories" @click="displayMobileMenu">
+          <NuxtLink
+            to="/categories"
+            @click="displayMobileMenu"
+          >
             Categories
           </NuxtLink>
         </li>
         <li class="text-xl linkStyle">
-          <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
+          <NuxtLink
+            to="/search"
+            @click="displayMobileMenu"
+          >
+            Search
+          </NuxtLink>
         </li>
         <li class="flex justify-center mt-6 text-lg linkStyleCart">
-          <NuxtLink to="/cart" @click="displayMobileMenu">
+          <NuxtLink
+            to="/cart"
+            @click="displayMobileMenu"
+          >
             <LayoutCart />
           </NuxtLink>
         </li>
       </ul>
     </div>
-    <div class="w-5/12 lg:hidden"></div>
+    <div class="w-5/12 lg:hidden" />
     <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
       <div class="self-center block w-full mr-4">
         <button
@@ -45,7 +64,7 @@
           :class="{ open: expandedMenu }"
           @click="displayMobileMenu"
         >
-          <div class="burger-lines"></div>
+          <div class="burger-lines" />
         </button>
       </div>
     </div>

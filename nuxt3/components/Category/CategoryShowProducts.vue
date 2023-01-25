@@ -26,7 +26,5 @@ const props = defineProps({
   },
 })
 
-const noProducts = computed(() => {
-  return props.products.products.nodes.length === 0
-})
+const noProducts = computed(() => props.products.products.nodes.length === 0)
 </script>

@@ -23,6 +23,7 @@
         />
       </svg>
     </button>
+    <span v-if="isError" class="text-xl h-6 font-bold mt-6 block text-red-500">Error adding product to cart. Please try again.</span>
   </div>
 </template>
 
@@ -30,6 +31,7 @@
 import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION.gql'
 
 const isLoading = useState('isLoading', () => false)
+const isError = useState('isError', () => false)
 
 const props = defineProps({
   product: {
@@ -51,7 +53,7 @@ const addProductToWooCart = (product) => {
 
   const variables = { input: productQueryInput }
 
-  const { mutate, onDone } = useMutation(ADD_TO_CART_MUTATION, {
+  const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
     variables,
   })
 
@@ -59,6 +61,12 @@ const addProductToWooCart = (product) => {
 
   onDone(() => {
     isLoading.value = false
+    isError.value = false
+  })
+
+  onError(() => {
+    isLoading.value = false
+    isError.value = true
   })
 }
 </script>

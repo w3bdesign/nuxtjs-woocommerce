@@ -68,7 +68,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Create the apollo client
   const apolloClient = new ApolloClient({
     link: middleware.concat(afterware.concat(httpLink)),
-    // link: afterware.concat(httpLink),
+
     cache,
   })
 

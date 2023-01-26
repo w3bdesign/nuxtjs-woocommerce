@@ -6,7 +6,12 @@ export default defineNuxtConfig({
   ssr: true,
   components: true,
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
-  modules: ['@pinia/nuxt', '@nuxtjs/apollo', '@formkit/nuxt', '@nuxtjs/algolia'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/apollo',
+    '@formkit/nuxt',
+    '@nuxtjs/algolia',
+  ],
   plugins: ['~/plugins/apollo'],
   runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL } },
   postcss: {
@@ -24,6 +29,11 @@ export default defineNuxtConfig({
     // global transition
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
+  algolia: {
+    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+    applicationId: process.env.ALGOLIA_APPLICATION_ID,
+    instantSearch: { theme: 'algolia' },
   },
   apollo: {
     authType: 'Session',

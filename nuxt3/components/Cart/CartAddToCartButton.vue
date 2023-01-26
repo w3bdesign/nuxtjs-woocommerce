@@ -32,7 +32,7 @@ import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION.gql'
 const isLoading = useState('isLoading', () => false)
 const isError = useState('isError', () => false)
 
-const props = defineProps({
+defineProps({
   product: {
     type: [Object],
     required: true,

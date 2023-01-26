@@ -56,7 +56,7 @@
 <script setup>
 import { filteredVariantPrice } from '@/utils/functions'
 
-const props = defineProps({
+defineProps({
   products: { type: Array, required: true },
 })
 

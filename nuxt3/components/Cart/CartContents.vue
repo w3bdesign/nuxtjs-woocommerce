@@ -35,7 +35,7 @@
 <script setup>
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 
-const props = defineProps({
+defineProps({
   showCheckoutButton: { type: Boolean, required: false, default: false },
 })
 

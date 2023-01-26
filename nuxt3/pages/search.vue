@@ -6,11 +6,10 @@
       <AisRefinementList attribute="pa_color" />
       <AisHits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
         <template v-slot:item="{ item }">
-          <a
-            :href="`/product/${convertProductNameToSlug(item.product_name)}/${
+          <NuxtLink
+            :to="`/product/${convertProductNameToSlug(item.product_name)}?id=${
               item.objectID
             }`"
-            class="text-black cursor-pointer hover:underline"
           >
             <p class="p-2 text-2xl font-bold text-center">
               {{ item.product_name }}
@@ -23,7 +22,7 @@
             <p class="p-2 text-xl font-bold text-center">
               {{ item.sale_price ? item.sale_price : item.regular_price }} kr
             </p>
-          </a>
+          </NuxtLink>
         </template>
       </AisHits>
       <br />

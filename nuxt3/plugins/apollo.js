@@ -8,7 +8,7 @@ import {
 import { provideApolloClient } from '@vue/apollo-composable'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const cookie = useCookie('woo-session', { maxAge: 86400, sameSite: 'none', secure: true })
+  const cookie = useCookie('woo-session', { maxAge: 86_400, sameSite: 'none', secure: true })
   const config = useRuntimeConfig()
 
   const httpLink = createHttpLink({

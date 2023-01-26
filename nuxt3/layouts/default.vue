@@ -1,7 +1,7 @@
 <template>
   <div>
     <LayoutNavbar />
-    <div class="container p-4 mx-auto">
+    <div class="container mx-auto max-w-[84.375rem]">
       <slot />
     </div>
     <LayoutFooter />

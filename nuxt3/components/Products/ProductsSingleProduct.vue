@@ -8,14 +8,14 @@
           <img
             v-if="product.image !== undefined"
             id="product-image"
-            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
+            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:shadow-lg hover:scale-95"
             :alt="product.name"
             :src="product.image.sourceUrl"
           />
           <img
             v-else
             id="product-image"
-            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
+            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:shadow-lg hover:scale-95"
             :alt="product.name"
             :src="process.env.placeholderSmallImage"
           />

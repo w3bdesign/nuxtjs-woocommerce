@@ -75,7 +75,7 @@
                   <li
                     class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                   >
-                    <LayoutCart class="-mr-4" />
+                    <LayoutCart />
                   </li>
                 </ul>
               </nav>

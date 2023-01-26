@@ -7,12 +7,11 @@
       <div class="flex flex-wrap lg:px-4">
         <div class="w-9/12 pr-2 my-2 overflow-hidden lg:w-3/12 md:w-10/12">
           <div class="ml-4 lg:ml-0">
-            <nuxt-img
+            <img
               alt="Logo"
-              preload
               class="h-20 lg:h-24"
               aria-label="Nettbutikk logo"
-              src="/svg/Logo.svg"
+              src="~/assets/svg/Logo.svg"
             />
           </div>
         </div>

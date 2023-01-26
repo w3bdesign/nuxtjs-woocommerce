@@ -11,7 +11,6 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27907872.f4dd19d",
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "autoprefixer": "^10.4.13",
     "nuxt": "^3.1.0",

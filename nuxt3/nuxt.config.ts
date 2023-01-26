@@ -6,10 +6,9 @@ export default defineNuxtConfig({
   ssr: true,
   components: true,
   css: ['~/assets/css/main.css', '~/assets/css/animate.min.css'],
-  modules: ['@pinia/nuxt', '@nuxtjs/apollo', '@formkit/nuxt', '@nuxt/image-edge'],
+  modules: ['@pinia/nuxt', '@nuxtjs/apollo', '@formkit/nuxt'],
   plugins: ['~/plugins/apollo'],
   runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL } },
-
   postcss: {
     plugins: {
       tailwindcss: {},

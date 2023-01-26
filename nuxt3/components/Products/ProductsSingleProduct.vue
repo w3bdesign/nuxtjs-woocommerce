@@ -5,14 +5,14 @@
         <div
           class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
         >
-          <nuxt-img
+          <img
             v-if="props.product.image !== undefined"
             id="product-image"
             class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"
             :alt="props.product.name"
             :src="props.product.image.sourceUrl"
           />
-          <nuxt-img
+          <img
             v-else
             id="product-image"
             class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:grow hover:shadow-lg hover:scale-105"

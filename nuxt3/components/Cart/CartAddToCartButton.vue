@@ -23,7 +23,6 @@
         />
       </svg>
     </button>
-    <span v-if="isError" class="text-xl h-6 font-bold mt-6 block text-red-500">Error adding product to cart. Please try again.</span>
   </div>
 </template>
 
@@ -67,6 +66,7 @@ const addProductToWooCart = (product) => {
   onError(() => {
     isLoading.value = false
     isError.value = true
+    mutate(variables)
   })
 }
 </script>

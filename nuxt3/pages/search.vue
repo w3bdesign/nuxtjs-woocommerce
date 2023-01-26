@@ -7,9 +7,10 @@
       <AisHits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
         <template #item="{ item }">
           <NuxtLink
-            :to="`/product/${convertProductNameToSlug(item.product_name)}?id=${
-              item.objectID
-            }`"
+            :to="{
+              path: '/product/' + convertProductNameToSlug(item.product_name),
+              query: { id: item.objectID },
+            }"
           >
             <p class="p-2 text-2xl font-bold text-center">
               {{ item.product_name }}

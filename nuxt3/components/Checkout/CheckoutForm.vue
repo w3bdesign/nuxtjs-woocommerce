@@ -38,7 +38,9 @@ import { Form, Field, ErrorMessage } from 'vee-validate'
 
 import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
 
-// import { checkoutOrder } from '@/graphql/mutations/checkoutOrder'
+import { uid } from 'uid'
+
+import CHECKOUT_MUTATION from '@/apollo/mutations/CHECKOUT_MUTATION.gql'
 
 const upperCaseFirstChar = (input) =>
   input.charAt(0).toUpperCase() + input.slice(1)
@@ -61,8 +63,7 @@ const handleSubmit = (values) => {
   }
 
   const checkoutData = {
-    // clientMutationId: uid(),
-    clientMutationId: '12345678abcdef',
+    clientMutationId: uid(),
     billing,
     shipping: billing,
     shipToDifferentAddress: false,
@@ -71,18 +72,16 @@ const handleSubmit = (values) => {
     transactionId: 'hjkhjkhsdsdiui',
   }
 
-  /* try {
-    checkoutOrder(checkoutData).then((result) => {
-      if (result === 'success') {
-        location.href = '/success'
-      } else {
-        location.href = '/error'
-      }
-    })
-  } catch (e) {
-    if (import.meta.env.DEV) {
-      console.log('Error: ', e)
-    }
-  } */
+  const variables = { input: checkoutData }
+
+  const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION, {
+    variables,
+  })
+
+  mutate(checkoutData)
+
+  onDone(() => alert('Order placed!'))
+
+  onError(() => alert('Error, order not placed'))
 }
 </script>

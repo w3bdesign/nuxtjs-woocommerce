@@ -77,7 +77,7 @@
 <script setup>
 import { stripHTML, filteredVariantPrice } from '@/utils/functions'
 
- defineProps({
+defineProps({
   product: {
     type: [Object],
     required: true,

@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
- defineProps({
+defineProps({
   categories: {
     type: [Object],
     required: true,

@@ -60,11 +60,8 @@ defineProps({
   products: { type: Array, required: true },
 })
 
-const productImage = (product) => {
-  return product.image
-    ? product.image.sourceUrl
-    : process.env.placeholderSmallImage
-}
+const productImage = (product) =>
+  product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
 </script>
 
 <style scoped>

@@ -41,7 +41,9 @@ const cartLength = useState('cartLength', () => 0)
 const subTotal = useState('subTotal', '')
 const remoteError = useState('remoteError', () => false)
 
-const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY)
+const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
+  options: { fetchPolicy: 'cache-and-network' },
+})
 
 const updateCartDisplay = () => {
   if (data) {

@@ -28,7 +28,7 @@
     <h2 v-if="!data" class="m-4 text-3xl text-center">
       Cart is currently empty
     </h2>
-    <CartCheckoutButton v-if="props.showCheckoutButton && data" />
+    <CartCheckoutButton v-if="showCheckoutButton && data" />
   </div>
 </template>
 

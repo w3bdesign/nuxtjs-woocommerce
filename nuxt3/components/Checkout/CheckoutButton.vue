@@ -1,13 +1,13 @@
 <template>
-  <div v-if="!props.success" class="flex justify-center">
+  <div v-if="!success" class="flex justify-center">
     <button
       class="relative w-48 h-12 px-4 py-2 mt-4 transition ease-in-out delay-75 duration-300 font-bold text-white bg-blue-500 rounded hover:bg-blue-800"
-      :class="{ disabled: props.loading }"
+      :class="{ disabled: loading }"
       type="submit"
     >
       SUBMIT ORDER
       <svg
-        v-if="props.loading"
+        v-if="loading"
         class="absolute -mt-6 -ml-2 animate-spin"
         width="25"
         height="25"

@@ -36,9 +36,8 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
 
-import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
-
 import { uid } from 'uid'
+import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
 
 import CHECKOUT_MUTATION from '@/apollo/mutations/CHECKOUT_MUTATION.gql'
 

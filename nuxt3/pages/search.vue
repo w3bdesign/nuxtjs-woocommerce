@@ -5,7 +5,7 @@
       <AisStats />
       <AisRefinementList attribute="pa_color" />
       <AisHits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
-        <template v-slot:item="{ item }">
+        <template #item="{ item }">
           <NuxtLink
             :to="`/product/${convertProductNameToSlug(item.product_name)}?id=${
               item.objectID

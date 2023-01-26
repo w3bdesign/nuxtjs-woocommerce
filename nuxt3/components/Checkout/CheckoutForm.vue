@@ -35,8 +35,8 @@
 
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-
 import { uid } from 'uid'
+
 import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
 
 import CHECKOUT_MUTATION from '@/apollo/mutations/CHECKOUT_MUTATION.gql'
@@ -46,19 +46,31 @@ const upperCaseFirstChar = (input) =>
 
 const paymentMethod = 'cod'
 
-const handleSubmit = (values) => {
+const handleSubmit = ({
+  firstName,
+  lastName,
+  address1,
+  address2,
+  city,
+  country,
+  state,
+  postcode,
+  email,
+  phone,
+  company,
+}) => {
   const billing = {
-    firstName: values.firstName,
-    lastName: values.lastName,
-    address1: values.address1,
-    address2: values.address2,
-    city: values.city,
-    country: values.country,
-    state: values.state,
-    postcode: values.postcode,
-    email: values.email,
-    phone: values.phone,
-    company: values.company,
+    firstName,
+    lastName,
+    address1,
+    address2,
+    city,
+    country,
+    state,
+    postcode,
+    email,
+    phone,
+    company,
   }
 
   const checkoutData = {

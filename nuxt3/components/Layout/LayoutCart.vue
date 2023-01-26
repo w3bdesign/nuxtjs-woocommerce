@@ -43,20 +43,23 @@ const remoteError = useState('remoteError', () => false)
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY)
 
+const updateCartDisplay = () => {
+  if (data) {
+    cartLength.value = data.value.cart.contents.nodes.reduce(
+      (accumulator, argument) => accumulator + argument.quantity,
+      0
+    )
+
+    subTotal.value = data.value.cart.total
+
+    remoteError.value = error
+  }
+}
+
 setInterval(() => {
   if (!pending.value) {
     execute()
-
-    if (data) {
-      cartLength.value = data.value.cart.contents.nodes.reduce(
-        (accumulator, argument) => accumulator + argument.quantity,
-        0
-      )
-
-      subTotal.value = data.value.cart.total
-
-      remoteError.value = error
-    }
+    updateCartDisplay()
   }
 }, 3000)
 </script>

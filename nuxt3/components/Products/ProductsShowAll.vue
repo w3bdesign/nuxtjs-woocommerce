@@ -53,22 +53,17 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { filteredVariantPrice } from '@/utils/functions'
 
-export default {
-  name: 'ShowAllProducts',
-  props: {
-    products: { type: Array, required: true },
-  },
-  methods: {
-    productImage(product) {
-      return product.image
-        ? product.image.sourceUrl
-        : process.env.placeholderSmallImage
-    },
-    filteredVariantPrice,
-  },
+const props = defineProps({
+  products: { type: Array, required: true },
+})
+
+const productImage = (product) => {
+  return product.image
+    ? product.image.sourceUrl
+    : process.env.placeholderSmallImage
 }
 </script>
 

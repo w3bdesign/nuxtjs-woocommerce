@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
 #hero {
   max-width: 1350px;
 }

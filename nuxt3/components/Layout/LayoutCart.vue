@@ -37,6 +37,8 @@
 <script setup>
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 
+import { getCookie } from '@/utils/functions'
+
 const cartLength = useState('cartLength', () => 0)
 const subTotal = useState('subTotal', '')
 const remoteError = useState('remoteError', () => false)
@@ -49,7 +51,7 @@ const updateCartDisplay = () => {
   if (!data) {
     return
   }
-  
+
   cartLength.value = data.value.cart.contents.nodes.reduce(
     (accumulator, argument) => accumulator + argument.quantity,
     0
@@ -61,9 +63,11 @@ const updateCartDisplay = () => {
 }
 
 setInterval(() => {
-  if (!pending.value) {
-    execute()
-    updateCartDisplay()
+  if (process.client) {
+    if (!pending.value && getCookie('woo-session')) {
+      execute()
+      updateCartDisplay()
+    }
   }
 }, 3000)
 </script>

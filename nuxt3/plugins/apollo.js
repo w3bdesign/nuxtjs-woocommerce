@@ -24,16 +24,12 @@ export default defineNuxtPlugin((nuxtApp) => {
      * If session data exist in local storage, set value as session header.
      */
 
-    if (process.client) {
-      const session = localStorage.getItem('woo-session') || 'test'
-
-      if (session && session.length > 0) {
-        operation.setContext(() => ({
-          headers: {
-            'woocommerce-session': `Session ${session}`,
-          },
-        }))
-      }
+    if (process.client && cookie.value) {
+      operation.setContext(() => ({
+        headers: {
+          'woocommerce-session': `Session ${cookie.value}`,
+        },
+      }))
     }
 
     return forward(operation)
@@ -50,13 +46,10 @@ export default defineNuxtPlugin((nuxtApp) => {
         response: { headers },
       } = context
 
-      const session =
-        headers.get('woocommerce-session') ||
-        localStorage.getItem('woo-session')
+      const session = headers.get('woocommerce-session') || cookie.value
 
       if (process.client && session) {
         cookie.value = session
-        localStorage.setItem('woo-session', session)
       }
       return response
     })
@@ -68,13 +61,12 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Create the apollo client
   const apolloClient = new ApolloClient({
     link: middleware.concat(afterware.concat(httpLink)),
-
     cache,
   })
 
+  provideApolloClient(apolloClient)
+
   nuxtApp.hook('apollo:auth', ({ token }) => {
     token.value = cookie.value
-
-    provideApolloClient(apolloClient)
   })
 })

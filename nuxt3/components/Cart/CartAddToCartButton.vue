@@ -63,7 +63,6 @@ const addProductToCart = (product) => {
   onError(() => {
     isLoading.value = false
     isError.value = true
-    //mutate(variables)
   })
 }
 </script>

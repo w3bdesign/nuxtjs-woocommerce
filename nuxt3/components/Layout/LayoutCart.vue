@@ -63,11 +63,9 @@ const updateCartDisplay = () => {
 }
 
 setInterval(() => {
-  if (process.client) {
-    if (!pending.value && getCookie('woo-session')) {
-      execute()
-      updateCartDisplay()
-    }
+  if (process.client && !pending.value && getCookie('woo-session')) {
+    execute()
+    updateCartDisplay()
   }
 }, 3000)
 </script>

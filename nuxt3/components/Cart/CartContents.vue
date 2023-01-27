@@ -66,10 +66,10 @@ defineProps({
 const { data } = await useAsyncQuery(GET_CART_QUERY)
 
 const handleRemoveProduct = ({ key }) => {
-  let updatedItems = []
+  const updatedItems = []
 
   updatedItems.push({
-    key: key,
+    key,
     quantity: 0,
   })
 

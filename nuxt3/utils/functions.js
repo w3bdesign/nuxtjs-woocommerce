@@ -66,7 +66,7 @@ export function createCheckoutData(form) {
  */
 export function getCookie(cName) {
   const name = cName + '='
-  const cDecoded = decodeURIComponent(document.cookie) 
+  const cDecoded = decodeURIComponent(document.cookie)
   const cArr = cDecoded.split('; ')
   let res
   cArr.forEach((val) => {

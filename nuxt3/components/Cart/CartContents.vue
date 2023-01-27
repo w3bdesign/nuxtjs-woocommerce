@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="data">
+    <div v-if="data.cart?.contents?.nodes?.length">
       <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
       <section class="mt-10">
         <div
@@ -8,6 +8,20 @@
           :key="products.id"
           class="container mx-auto mt-4 flex-container"
         >
+          <div class="item">
+            <span class="block mt-2 font-extrabold">Remove: <br /></span>
+            <span class="item-content">
+              <img
+                class="mt-2 ml-4 cursor-pointer"
+                :class="{ removing: isRemoving }"
+                alt="Remove icon"
+                aria-label="Remove"
+                src="@/assets/svg/Remove.svg"
+                @click="handleRemoveProduct(products)"
+              />
+            </span>
+          </div>
+
           <div class="item">
             <span class="block mt-2 font-extrabold">Name: <br /></span>
             <span class="item-content">{{ products.product.name }}</span>
@@ -25,21 +39,61 @@
         </div>
       </section>
     </div>
-    <h2 v-if="!data" class="m-4 text-3xl text-center">
+    <h2
+      v-if="!data.cart?.contents?.nodes?.length"
+      class="m-4 text-3xl text-center"
+    >
       Cart is currently empty
     </h2>
-    <CartCheckoutButton v-if="showCheckoutButton && data" />
+    <CartCheckoutButton
+      v-if="showCheckoutButton && data.cart?.contents?.nodes?.length"
+    />
   </div>
 </template>
 
 <script setup>
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
+import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION.gql'
+
+const router = useRouter()
+
+const isRemoving = useState('isRemoving', () => false)
 
 defineProps({
   showCheckoutButton: { type: Boolean, required: false, default: false },
 })
 
 const { data } = await useAsyncQuery(GET_CART_QUERY)
+
+const handleRemoveProduct = ({ key }) => {
+  let updatedItems = []
+
+  updatedItems.push({
+    key: key,
+    quantity: 0,
+  })
+
+  isRemoving.value = true
+
+  const variables = {
+    input: {
+      items: updatedItems,
+    },
+  }
+
+  const { mutate, onDone, onError } = useMutation(UPDATE_CART_MUTATION, {
+    variables,
+  })
+
+  mutate(variables)
+
+  onDone(() => {
+    isRemoving.value = false
+    document.location = '/cart'
+  })
+
+  onError(() => (isRemoving.value = false))
+}
 </script>
 
 <style scoped>

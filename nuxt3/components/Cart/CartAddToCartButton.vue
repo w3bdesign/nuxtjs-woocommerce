@@ -40,11 +40,6 @@ defineProps({
 })
 
 const addProductToCart = (product) => {
-  isLoading.value = true
-  addProductToWooCart(product)
-}
-
-const addProductToWooCart = (product) => {
   const productId = product.databaseId ? product.databaseId : product
   const productQueryInput = {
     productId,
@@ -56,6 +51,8 @@ const addProductToWooCart = (product) => {
     variables,
   })
 
+  isLoading.value = true
+
   mutate(variables)
 
   onDone(() => {
@@ -66,7 +63,7 @@ const addProductToWooCart = (product) => {
   onError(() => {
     isLoading.value = false
     isError.value = true
-    mutate(variables)
+    //mutate(variables)
   })
 }
 </script>

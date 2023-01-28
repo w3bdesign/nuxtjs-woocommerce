@@ -55,8 +55,6 @@
 import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
 import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION.gql'
 
-const router = useRouter()
-
 const isRemoving = useState('isRemoving', () => false)
 
 defineProps({

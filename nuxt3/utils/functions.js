@@ -13,48 +13,55 @@ export function stripHTML(string) {
  * @param {String} side Which side of the string to return (which side of the "-" symbol)
  * @param {String} price The inputted price that we need to convert
  */
-export const filteredVariantPrice = (price, side) => {
+export function filteredVariantPrice(price, side) {
   if (side === "right") {
     return price.substring(price.length, price.indexOf("-")).replace("-", "");
   }
   return price.substring(0, price.indexOf("-")).replace("-", "");
-};
+}
 
 /**
  * Prepares the checkout object based on the input data from the checkout form
  * @param {Object} form Form data to process
  */
-export function createCheckoutData(form) {
+export function createCheckoutData({
+  firstName,
+  lastName,
+  address1,
+  address2,
+  city,
+  country,
+  state,
+  postcode,
+  email,
+  phone,
+  company,
+  paymentMethod,
+}) {
+  const checkoutData = {
+    firstName,
+    lastName,
+    address1,
+    address2,
+    city,
+    country,
+    state,
+    postcode,
+    email,
+    phone,
+    company,
+  };
+
   return {
     clientMutationId: uid(),
     billing: {
-      firstName: form.firstName,
-      lastName: form.lastName,
-      address1: form.address1,
-      address2: form.address2,
-      city: form.city,
-      country: form.country,
-      state: form.state,
-      postcode: form.postcode,
-      email: form.email,
-      phone: form.phone,
-      company: form.company,
+      ...checkoutData,
     },
     shipping: {
-      firstName: form.firstName,
-      lastName: form.lastName,
-      address1: form.address1,
-      address2: form.address2,
-      city: form.city,
-      country: form.country,
-      state: form.state,
-      postcode: form.postcode,
-      email: form.email,
-      phone: form.phone,
-      company: form.company,
+      ...checkoutData,
     },
     shipToDifferentAddress: false,
-    paymentMethod: form.paymentMethod,
+    paymentMethod,
     isPaid: false,
     transactionId: "test",
   };

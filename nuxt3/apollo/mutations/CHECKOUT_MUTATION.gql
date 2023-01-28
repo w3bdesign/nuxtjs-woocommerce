@@ -1,7 +1,0 @@
- mutation CHECKOUT_MUTATION($input: CheckoutInput!) {
-    checkout(input: $input) {
-      result
-      redirect
-    }
-  }
-

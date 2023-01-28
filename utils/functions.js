@@ -5,7 +5,7 @@ import { uid } from 'uid'
  * @param {String} description Input text to strip HTML from
  */
 export function stripHTML(string) {
-  return string.replace(/(<([^>]+)>)/gi, '')
+  return string.replace(/<\/?[^>]+(>|$)/gi, '')
 }
 
 /**
@@ -58,4 +58,19 @@ export function createCheckoutData(form) {
     isPaid: false,
     transactionId: 'test',
   }
+}
+
+/**
+ * Get specific cookie from document.cookie
+ * @param {String} cName Name of cookie to return
+ */
+export function getCookie(cName) {
+  const name = `${cName}=`
+  const cDecoded = decodeURIComponent(document.cookie)
+  const cArr = cDecoded.split('; ')
+  let res
+  cArr.forEach((val) => {
+    if (val.indexOf(name) === 0) res = val.substring(name.length)
+  })
+  return res
 }

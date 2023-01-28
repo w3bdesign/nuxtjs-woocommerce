@@ -1,6 +1,6 @@
 <template>
-  <div v-if="data.productCategories">
-    <CategoryShowAll :categories="data.productCategories" />
+  <div v-if="data?.productCategory">
+    <CategoryShowProducts :products="data.productCategory" />
   </div>
   <div v-else>
     <SpinnerLoading />
@@ -8,13 +8,18 @@
 </template>
 
 <script setup>
-import FETCH_ALL_CATEGORIES_QUERY from '@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql'
+import GET_PRODUCTS_FROM_CATEGORY_QUERY from '@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql'
 
-const variables = { limit: 5 }
-const { data } = await useAsyncQuery(FETCH_ALL_CATEGORIES_QUERY, variables)
+const route = useRoute()
+
+const variables = { id: route.query.id, slug: route.params.category }
+const { data } = await useAsyncQuery(
+  GET_PRODUCTS_FROM_CATEGORY_QUERY,
+  variables
+)
 
 useHead({
-  title: 'Categories',
+  title: route.params.category,
   titleTemplate: '%s - Nuxt 3 Woocommerce',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },

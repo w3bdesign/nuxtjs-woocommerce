@@ -1,17 +1,22 @@
 <template>
   <div>
-    <CartShowCartContents />
-    <OrderCheckoutForm />
+    <CartContents />
+    <CheckoutForm />
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Checkout',
-  layout: 'Layout',
-  transition: {
-    name: 'home',
-    mode: 'out-in',
-  },
-}
+<script setup>
+useHead({
+  title: 'Checkout',
+  titleTemplate: '%s - Nuxt 3 Woocommerce',
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Nuxt 3 Woocommerce',
+    },
+  ],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+})
 </script>

@@ -1,23 +1,29 @@
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1835e693354349ffaa703c0bbaf2b52b)](https://app.codacy.com/gh/w3bdesign/nuxtjs-woocommerce?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nuxtjs-woocommerce&utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce/badge)](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nuxtjs-woocommerce&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nuxtjs-woocommerce)
 
-# NuxtJS Ecommerce site with WooCommerce backend
+# Nuxt 3 Ecommerce site with WooCommerce backend
 
 <img src="https://user-images.githubusercontent.com/45217974/106988377-f129a080-676f-11eb-94b9-a44c86ea6c79.png" alt="Project screenshot" />
 
 ## Table Of Contents (TOC)
 
--   [Vue 3](#vue3)
--   [Installation](#Installation)
 -   [Features](#Features)
+-   [Installation](#Installation)
 -   [Troubleshooting](#Troubleshooting)
 -   [TODO](#TODO)
 
-## Vue 3
+## Features
 
-I have converted this project to an Astro project with Vue 3 and `<script setup>` syntax here: [Astro with Vue 3](https://github.com/w3bdesign/astro-woocommerce)
+-   Nuxt 3
+-   Tailwind CSS
+-   Nuxt Apollo
+-   Responsive design
+-   Support for simple and variable products
+-   CSS animations and transitions
+-   Form handling and validation with Formkit, Vee Validate and Yup
+-   Checkout process
+-   Animated mobile menu
 
 ## Installation
 
@@ -35,49 +41,28 @@ Optional plugin:
 
 The current release has been tested and is confirmed working with the following plugin versions:
 
--   WordPress version 6.1.0
+-   WordPress version 6.1.1
 -   WooCommerce version 7.1.0
 -   WP GraphQL version 1.5.0
 -   WooGraphQL version 0.6.2
 
-2.  For debugging and testing, install either:
-
-    <https://addons.mozilla.org/en-US/firefox/addon/apollo-developer-tools/> (Firefox)
-
-    <https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm> (Chrome)
-
-    Rename .env.example to .env so the Apollo debugger will correctly load. It will not load if the NODE_ENV variable is not correctly set.
-
-3.  Make sure WooCommerce has some products already or import some sample products
+2.  Make sure WooCommerce has some products already or import some sample products
 
     The WooCommerce sample products CSV file is available at `wp-content/plugins/woocommerce/sample-data/sample_products.csv` or [Sample products](sample_products/)
 
     Import the products at `WP Dashboard > Tools > Import > WooCommerce products(CSV)`
 
-4.  Clone or fork the repo and modify `.env` with the URL to the GraphQL endpoint (or set environment variables in the configuration UI for your deployment solution)
+3.  Clone or fork the repo and modify `.env` with the URL to the GraphQL endpoint (or set environment variables in the configuration UI for your deployment solution)
 
-5.  Start the server with `npm run dev`
+4.  Start the server with `npm run dev`
 
-6.  Enable COD (Cash On Demand) payment method in WooCommerce
+5.  Enable COD (Cash On Demand) payment method in WooCommerce
 
-7.  Add a product to the cart
+6.  Add a product to the cart
 
-8.  Proceed to checkout
+7.  Proceed to checkout
 
-9.  Fill in your details and place the order
-
-## Features
-
--   Nuxt 2
--   Tailwind CSS
--   Vue Apollo with GraphQL Codegen
--   Responsive design
--   Support for simple and variable products
--   GraphQL-based filters
--   CSS animations and transitions
--   Form handling and validation with Vue Formulate
--   Checkout process
--   Animated mobile menu
+8.  Fill in your details and place the order
 
 ## Troubleshooting
 
@@ -91,4 +76,4 @@ Check the attributes of the products. Right now the application requires Size an
 
 ## TODO
 
--   Make WooCommerce session token expire and get deleted after 24 hours
+-   Refactor and improve codebase with reusable components

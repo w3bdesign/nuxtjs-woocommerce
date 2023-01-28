@@ -1,97 +1,66 @@
 <template>
-  <ais-instant-search-ssr>
-    <ais-search-box />
-    <ais-stats />
-    <ais-refinement-list attribute="brand" />
-    <ais-hits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
-      <template slot="item" slot-scope="{ item }">
-        <NuxtLink
-          class="text-black cursor-pointer hover:underline"
-          :to="{
-            path: '/product/' + convertProductNameToSlug(item.product_name),
-            query: { id: item.objectID },
-          }"
-        >
-          <p class="p-2 text-2xl font-bold text-center">
-            {{ item.product_name }}
-          </p>
-        </NuxtLink>
-        <p class="p-2 text-xl text-center">
-          {{ item.short_description }}
-        </p>
-        <p class="p-2">
-          <img :src="item.product_image" alt="item.product_name" />
-        </p>
-        <p class="p-2 text-xl text-center">
-          {{ item.sale_price ? item.sale_price : item.regular_price }} kr
-        </p>
-      </template>
-    </ais-hits>
-    <br />
-    <ais-pagination />
-  </ais-instant-search-ssr>
+  <div>
+    <AisInstantSearch :index-name="indexName" :search-client="algolia">
+      <AisSearchBox />
+      <AisStats />
+      <AisRefinementList attribute="pa_color" />
+      <AisHits :class-names="{ 'ais-Hits-item': 'CustomHitsItem' }">
+        <template #item="{ item }">
+          <NuxtLink
+            :to="{
+              path: '/product/' + convertProductNameToSlug(item.product_name),
+              query: { id: item.objectID },
+            }"
+          >
+            <p class="p-2 text-2xl font-bold text-center">
+              {{ item.product_name }}
+            </p>
+            <p
+              class="p-2 transition duration-700 ease-in-out transform cursor-pointer hover:scale-95"
+            >
+              <img :src="item.product_image" alt="item.product_name" />
+            </p>
+            <p class="p-2 text-xl font-bold text-center">
+              {{ item.sale_price ? item.sale_price : item.regular_price }} kr
+            </p>
+          </NuxtLink>
+        </template>
+      </AisHits>
+      <br />
+      <AisPagination />
+    </AisInstantSearch>
+  </div>
 </template>
 
-<script>
+<script setup>
 import {
-  AisInstantSearchSsr,
-  AisRefinementList,
-  AisHits,
+  AisInstantSearch,
   AisSearchBox,
+  AisRefinementList,
   AisStats,
   AisPagination,
-  createServerRootMixin,
-} from 'vue-instantsearch'
+  AisHits,
+} from "vue-instantsearch/vue3/es/index.js";
 
-import algoliasearch from 'algoliasearch/lite'
+const indexName = "dfweb";
+const algolia = useAlgoliaRef();
 
-const searchClient = algoliasearch(
-  process.env.AlgoliaApplicationId,
-  process.env.AlgoliaSearchOnlyAPIKey
-)
+const convertProductNameToSlug = (productName) =>
+  productName.replace(/ /g, "-").toLowerCase();
 
-export default {
-  components: {
-    AisInstantSearchSsr,
-    AisRefinementList,
-    AisHits,
-    AisSearchBox,
-    AisStats,
-    AisPagination,
-  },
-  mixins: [
-    createServerRootMixin({
-      searchClient,
-      indexName: process.env.AlgoliaIndexName,
-    }),
-  ],
-  layout: 'Layout',
-  head() {
-    return {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7.4.5/themes/algolia-min.css',
-        },
-      ],
-    }
-  },
-  beforeMount() {
-    const results =
-      this.$nuxt.context.nuxtState.algoliaState || window.__NUXT__.algoliaState
-    this.instantsearch.hydrate(results)
-  },
-  methods: {
-    convertProductNameToSlug(productName) {
-      return productName.replace(/ /g, '-').toLowerCase()
+useHead({
+  title: "Search",
+  titleTemplate: "%s - Nuxt 3 Woocommerce",
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      hid: "description",
+      name: "description",
+      content: "Nuxt 3 Woocommerce",
     },
-  },
-  serverPrefetch() {
-    return this.instantsearch.findResultsState(this).then((algoliaState) => {
-      this.$ssrContext.nuxt.algoliaState = algoliaState
-    })
-  },
-}
+  ],
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+});
 </script>
 
 <style>
@@ -104,7 +73,13 @@ export default {
 
 @media (min-width: 768px) {
   .CustomHitsItem {
-    width: 30%;
+    width: 47%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .CustomHitsItem {
+    width: 32%;
   }
 }
 </style>

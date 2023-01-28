@@ -1,28 +1,26 @@
 <template>
-  <div v-if="products">
-    <ProductsShowAllProducts :products="products.nodes" />
+  <div v-if="data.products">
+    <ProductsShowAll :products="data.products.nodes" />
   </div>
-  <div v-else><SpinnerLoadingSpinner /></div>
 </template>
 
-<script>
-import FETCH_ALL_PRODUCTS_QUERY from '@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql'
+<script setup>
+import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 
-export default {
-  layout: 'Layout',
-  transition: {
-    name: 'home',
-    mode: 'out-in',
-  },
-  apollo: {
-    products: {
-      prefetch: true,
-      query: FETCH_ALL_PRODUCTS_QUERY,
-      pollInterval: process.server ? undefined : 3000,
+const variables = { limit: 5 };
+const { data } = await useAsyncQuery(FETCH_ALL_PRODUCTS_QUERY, variables);
+
+useHead({
+  title: "Products",
+  titleTemplate: "%s - Nuxt 3 Woocommerce",
+  meta: [
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      hid: "description",
+      name: "description",
+      content: "Nuxt 3 Woocommerce",
     },
-  },
-  head: {
-    title: 'NuxtJS WooCommerce - Products',
-  },
-}
+  ],
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+});
 </script>

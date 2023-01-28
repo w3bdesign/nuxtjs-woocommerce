@@ -35,37 +35,37 @@
 </template>
 
 <script setup>
-import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
+import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
-import { getCookie } from '@/utils/functions'
+import { getCookie } from "@/utils/functions";
 
-const cartLength = useState('cartLength', () => 0)
-const subTotal = useState('subTotal', '')
-const remoteError = useState('remoteError', () => false)
+const cartLength = useState("cartLength", () => 0);
+const subTotal = useState("subTotal", "");
+const remoteError = useState("remoteError", () => false);
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
-  options: { fetchPolicy: 'cache-and-network' },
-})
+  options: { fetchPolicy: "cache-and-network" },
+});
 
 const updateCartDisplay = () => {
   if (!data) {
-    return
+    return;
   }
 
   cartLength.value = data.value.cart.contents.nodes.reduce(
     (accumulator, argument) => accumulator + argument.quantity,
     0
-  )
+  );
 
-  subTotal.value = data.value.cart.total
+  subTotal.value = data.value.cart.total;
 
-  remoteError.value = error
-}
+  remoteError.value = error;
+};
 
 setInterval(() => {
-  if (process.client && !pending.value && getCookie('woo-session')) {
-    execute()
-    updateCartDisplay()
+  if (process.client && !pending.value && getCookie("woo-session")) {
+    execute();
+    updateCartDisplay();
   }
-}, 3000)
+}, 3000);
 </script>

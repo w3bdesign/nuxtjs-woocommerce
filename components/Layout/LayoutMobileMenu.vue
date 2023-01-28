@@ -53,13 +53,13 @@
 </template>
 
 <script setup>
-const expandedMenu = useState('expandedMenu', () => false)
-const firstRender = useState('firstRender', () => true)
+const expandedMenu = useState("expandedMenu", () => false);
+const firstRender = useState("firstRender", () => true);
 
 const displayMobileMenu = () => {
-  expandedMenu.value = !expandedMenu.value
-  firstRender.value = false
-}
+  expandedMenu.value = !expandedMenu.value;
+  firstRender.value = false;
+};
 </script>
 
 <style scoped>
@@ -91,7 +91,7 @@ const displayMobileMenu = () => {
   top: 1em;
 }
 .burger:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 150%;
@@ -108,7 +108,7 @@ const displayMobileMenu = () => {
 .burger .burger-lines:before {
   pointer-events: none;
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   border-radius: 0.25em;
   background-color: #000;

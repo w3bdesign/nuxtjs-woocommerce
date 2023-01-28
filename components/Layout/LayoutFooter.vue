@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed } from "vue";
 
-const todayDate = computed(() => new Date().getFullYear())
+const todayDate = computed(() => new Date().getFullYear());
 </script>

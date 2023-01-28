@@ -27,44 +27,44 @@
 </template>
 
 <script setup>
-import ADD_TO_CART_MUTATION from '@/apollo/mutations/ADD_TO_CART_MUTATION.gql'
+import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
-const isLoading = useState('isLoading', () => false)
-const isError = useState('isError', () => false)
+const isLoading = useState("isLoading", () => false);
+const isError = useState("isError", () => false);
 
 defineProps({
   product: {
     type: [Object],
     required: true,
   },
-})
+});
 
 const addProductToCart = (product) => {
-  const productId = product.databaseId ? product.databaseId : product
+  const productId = product.databaseId ? product.databaseId : product;
   const productQueryInput = {
     productId,
-  }
+  };
 
-  const variables = { input: productQueryInput }
+  const variables = { input: productQueryInput };
 
   const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
     variables,
-  })
+  });
 
-  isLoading.value = true
+  isLoading.value = true;
 
-  mutate(variables)
+  mutate(variables);
 
   onDone(() => {
-    isLoading.value = false
-    isError.value = false
-  })
+    isLoading.value = false;
+    isError.value = false;
+  });
 
   onError(() => {
-    isLoading.value = false
-    isError.value = true
-  })
-}
+    isLoading.value = false;
+    isError.value = true;
+  });
+};
 </script>
 
 <style scoped>

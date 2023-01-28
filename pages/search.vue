@@ -40,27 +40,27 @@ import {
   AisStats,
   AisPagination,
   AisHits,
-} from 'vue-instantsearch/vue3/es/index.js'
+} from "vue-instantsearch/vue3/es/index.js";
 
-const indexName = 'dfweb'
-const algolia = useAlgoliaRef()
+const indexName = "dfweb";
+const algolia = useAlgoliaRef();
 
 const convertProductNameToSlug = (productName) =>
-  productName.replace(/ /g, '-').toLowerCase()
+  productName.replace(/ /g, "-").toLowerCase();
 
 useHead({
-  title: 'Search',
-  titleTemplate: '%s - Nuxt 3 Woocommerce',
+  title: "Search",
+  titleTemplate: "%s - Nuxt 3 Woocommerce",
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
     {
-      hid: 'description',
-      name: 'description',
-      content: 'Nuxt 3 Woocommerce',
+      hid: "description",
+      name: "description",
+      content: "Nuxt 3 Woocommerce",
     },
   ],
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-})
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+});
 </script>
 
 <style>

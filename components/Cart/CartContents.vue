@@ -52,46 +52,46 @@
 </template>
 
 <script setup>
-import GET_CART_QUERY from '@/apollo/queries/GET_CART_QUERY.gql'
-import UPDATE_CART_MUTATION from '@/apollo/mutations/UPDATE_CART_MUTATION.gql'
+import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
+import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
 
-const isRemoving = useState('isRemoving', () => false)
+const isRemoving = useState("isRemoving", () => false);
 
 defineProps({
   showCheckoutButton: { type: Boolean, required: false, default: false },
-})
+});
 
-const { data } = await useAsyncQuery(GET_CART_QUERY)
+const { data } = await useAsyncQuery(GET_CART_QUERY);
 
 const handleRemoveProduct = ({ key }) => {
-  const updatedItems = []
+  const updatedItems = [];
 
   updatedItems.push({
     key,
     quantity: 0,
-  })
+  });
 
-  isRemoving.value = true
+  isRemoving.value = true;
 
   const variables = {
     input: {
       items: updatedItems,
     },
-  }
+  };
 
   const { mutate, onDone, onError } = useMutation(UPDATE_CART_MUTATION, {
     variables,
-  })
+  });
 
-  mutate(variables)
+  mutate(variables);
 
   onDone(() => {
-    isRemoving.value = false
-    document.location = '/cart'
-  })
+    isRemoving.value = false;
+    document.location = "/cart";
+  });
 
-  onError(() => (isRemoving.value = false))
-}
+  onError(() => (isRemoving.value = false));
+};
 </script>
 
 <style scoped>

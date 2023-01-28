@@ -30,7 +30,7 @@
             <div v-if="product.onSale" class="flex justify-center mt-2">
               <div class="text-lg text-gray-900 line-through">
                 <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, 'right') }}</span
+                  {{ filteredVariantPrice(product.price, "right") }}</span
                 >
                 <span v-else>{{ product.regularPrice }}</span>
               </div>
@@ -54,14 +54,14 @@
 </template>
 
 <script setup>
-import { filteredVariantPrice } from '@/utils/functions'
+import { filteredVariantPrice } from "@/utils/functions";
 
 defineProps({
   products: { type: Array, required: true },
-})
+});
 
 const productImage = (product) =>
-  product.image ? product.image.sourceUrl : process.env.placeholderSmallImage
+  product.image ? product.image.sourceUrl : process.env.placeholderSmallImage;
 </script>
 
 <style scoped>

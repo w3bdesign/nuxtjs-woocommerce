@@ -34,17 +34,17 @@
 </template>
 
 <script setup>
-import { Form, Field, ErrorMessage } from 'vee-validate'
-import { uid } from 'uid'
+import { Form, Field, ErrorMessage } from "vee-validate";
+import { uid } from "uid";
 
-import { BILLING_FIELDS, BILLING_SCHEMA } from './constants/BILLING_FIELDS'
+import { BILLING_FIELDS, BILLING_SCHEMA } from "./constants/BILLING_FIELDS";
 
-import CHECKOUT_MUTATION from '@/apollo/mutations/CHECKOUT_MUTATION.gql'
+import CHECKOUT_MUTATION from "@/apollo/mutations/CHECKOUT_MUTATION.gql";
 
 const upperCaseFirstChar = (input) =>
-  input.charAt(0).toUpperCase() + input.slice(1)
+  input.charAt(0).toUpperCase() + input.slice(1);
 
-const paymentMethod = 'cod'
+const paymentMethod = "cod";
 
 const handleSubmit = ({
   firstName,
@@ -71,7 +71,7 @@ const handleSubmit = ({
     email,
     phone,
     company,
-  }
+  };
 
   const checkoutData = {
     clientMutationId: uid(),
@@ -80,19 +80,19 @@ const handleSubmit = ({
     shipToDifferentAddress: false,
     paymentMethod,
     isPaid: false,
-    transactionId: 'hjkhjkhsdsdiui',
-  }
+    transactionId: "hjkhjkhsdsdiui",
+  };
 
-  const variables = { input: checkoutData }
+  const variables = { input: checkoutData };
 
   const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION, {
     variables,
-  })
+  });
 
-  mutate(checkoutData)
+  mutate(checkoutData);
 
-  onDone(() => alert('Order placed!'))
+  onDone(() => alert("Order placed!"));
 
-  onError(() => alert('Error, order not placed'))
-}
+  onError(() => alert("Error, order not placed"));
+};
 </script>

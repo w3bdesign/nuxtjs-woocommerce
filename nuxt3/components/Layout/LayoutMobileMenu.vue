@@ -32,7 +32,7 @@
         </li>
       </ul>
     </div>
-    <div class="w-5/12 lg:hidden"></div>
+    <div class="w-5/12 lg:hidden" />
     <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
       <div class="self-center block w-full mr-4">
         <button
@@ -45,28 +45,20 @@
           :class="{ open: expandedMenu }"
           @click="displayMobileMenu"
         >
-          <div class="burger-lines"></div>
+          <div class="burger-lines" />
         </button>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MobileMenu',
-  data() {
-    return {
-      expandedMenu: false,
-      firstRender: true,
-    }
-  },
-  methods: {
-    displayMobileMenu() {
-      this.expandedMenu = !this.expandedMenu
-      this.firstRender = false
-    },
-  },
+<script setup>
+const expandedMenu = useState('expandedMenu', () => false)
+const firstRender = useState('firstRender', () => true)
+
+const displayMobileMenu = () => {
+  expandedMenu.value = !expandedMenu.value
+  firstRender.value = false
 }
 </script>
 

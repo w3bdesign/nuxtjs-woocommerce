@@ -3,21 +3,21 @@ import {
   ApolloLink,
   InMemoryCache,
   ApolloClient,
-} from '@apollo/client/core'
+} from "@apollo/client/core";
 
-import { provideApolloClient } from '@vue/apollo-composable'
+import { provideApolloClient } from "@vue/apollo-composable";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const cookie = useCookie('woo-session', {
+  const cookie = useCookie("woo-session", {
     maxAge: 86_400,
-    sameSite: 'none',
+    sameSite: "none",
     secure: true,
-  })
-  const config = useRuntimeConfig()
+  });
+  const config = useRuntimeConfig();
 
   const httpLink = createHttpLink({
     uri: config.graphqlURL,
-  })
+  });
 
   const middleware = new ApolloLink((operation, forward) => {
     /**
@@ -27,46 +27,46 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (process.client && cookie.value) {
       operation.setContext(() => ({
         headers: {
-          'woocommerce-session': `Session ${cookie.value}`,
+          "woocommerce-session": `Session ${cookie.value}`,
         },
-      }))
+      }));
     }
 
-    return forward(operation)
-  })
+    return forward(operation);
+  });
 
   const afterware = new ApolloLink((operation, forward) =>
     forward(operation).map((response) => {
       /**
        * Check for session header and update session in local storage accordingly.
        */
-      const context = operation.getContext()
+      const context = operation.getContext();
 
       const {
         response: { headers },
-      } = context
+      } = context;
 
-      const session = headers.get('woocommerce-session') || cookie.value
+      const session = headers.get("woocommerce-session") || cookie.value;
 
       if (process.client && session) {
-        cookie.value = session
+        cookie.value = session;
       }
-      return response
+      return response;
     })
-  )
+  );
 
   // Cache implementation
-  const cache = new InMemoryCache()
+  const cache = new InMemoryCache();
 
   // Create the apollo client
   const apolloClient = new ApolloClient({
     link: middleware.concat(afterware.concat(httpLink)),
     cache,
-  })
+  });
 
-  provideApolloClient(apolloClient)
+  provideApolloClient(apolloClient);
 
-  nuxtApp.hook('apollo:auth', ({ token }) => {
-    token.value = cookie.value
-  })
-})
+  nuxtApp.hook("apollo:auth", ({ token }) => {
+    token.value = cookie.value;
+  });
+});

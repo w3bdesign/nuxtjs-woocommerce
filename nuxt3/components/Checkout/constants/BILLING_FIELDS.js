@@ -1,35 +1,35 @@
-import { object, string, number } from 'yup'
+import { object, string, number } from "yup";
 
 export const BILLING_FIELDS = [
   {
-    inputId: 'firstName',
-    label: 'First name',
+    inputId: "firstName",
+    label: "First name",
   },
   {
-    inputId: 'lastName',
-    label: 'Last name',
+    inputId: "lastName",
+    label: "Last name",
   },
   {
-    inputId: 'address1',
-    label: 'Address',
+    inputId: "address1",
+    label: "Address",
   },
   {
-    inputId: 'postcode',
-    label: 'Postcode',
+    inputId: "postcode",
+    label: "Postcode",
   },
   {
-    inputId: 'city',
-    label: 'City',
+    inputId: "city",
+    label: "City",
   },
   {
-    inputId: 'email',
-    label: 'Email',
+    inputId: "email",
+    label: "Email",
   },
   {
-    inputId: 'phone',
-    label: 'Phone',
+    inputId: "phone",
+    label: "Phone",
   },
-]
+];
 
 export const BILLING_SCHEMA = object().shape({
   firstName: string().required(),
@@ -39,4 +39,4 @@ export const BILLING_SCHEMA = object().shape({
   city: string().required(),
   email: string().required().email(),
   phone: number().required().moreThan(11_111_111),
-})
+});

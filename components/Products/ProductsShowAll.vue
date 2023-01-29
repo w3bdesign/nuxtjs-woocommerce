@@ -1,8 +1,8 @@
 <template>
-  <div v-if="products">
+  <div v-if="data?.products?.nodes">
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
-        <template v-for="product in products">
+        <template v-for="product in data.products.nodes">
           <div
             v-if="product.slug !== undefined"
             :key="product.id"
@@ -54,14 +54,14 @@
 </template>
 
 <script setup>
+import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 import { filteredVariantPrice } from "@/utils/functions";
-
-defineProps({
-  products: { type: Array, required: true },
-});
 
 const productImage = (product) =>
   product.image ? product.image.sourceUrl : process.env.placeholderSmallImage;
+
+const variables = { limit: 99 };
+const { data } = await useAsyncQuery(FETCH_ALL_PRODUCTS_QUERY, variables);
 </script>
 
 <style scoped>

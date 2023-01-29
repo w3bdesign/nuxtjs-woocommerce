@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/algolia",
   ],
   plugins: ["~/plugins/apollo"],
-  runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL } },
+  runtimeConfig: { public: { graphqlURL: process.env.PUBLIC_GRAPHQL_URL, placeholderImage: process.env.PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL } },
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -62,6 +62,8 @@ const updateCartDisplay = () => {
   remoteError.value = error;
 };
 
+onMounted(() => updateCartDisplay());
+
 setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
     execute();

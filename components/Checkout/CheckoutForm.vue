@@ -91,7 +91,7 @@ const handleSubmit = ({
 
   mutate(checkoutData);
 
-  onDone(() => alert("Order placed!"));
+  onDone(async () => await navigateTo("/success"));
 
   onError(() => alert("Error, order not placed"));
 };

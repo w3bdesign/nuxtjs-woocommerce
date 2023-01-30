@@ -65,7 +65,7 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
-              <CartAddToCartButton :product="data.product" />
+              <ProductsAddToCartButton :product="data.product" />
             </div>
           </div>
         </div>

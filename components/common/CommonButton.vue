@@ -4,6 +4,7 @@
       <button
         :class="{ disabled: isLoading }"
         @click="$emit('CommonButtonClick')"
+        type="submit"
       >
         <slot />
         <svg
@@ -29,6 +30,7 @@
     <button
       :class="{ disabled: isLoading }"
       @click="$emit('CommonButtonClick')"
+      type="submit"
     >
       <slot />
       <svg
@@ -54,7 +56,7 @@
 <script setup>
 /*
  * Usage:
- * <CommonButton @common-button-click="functionName" isLoading="true">Common button</CommonButton>
+ * <CommonButton @common-button-click="functionName" is-loading="true" link-to="/link">Common button</CommonButton>
  */
 
 defineEmits(["CommonButtonClick"]);

@@ -11,7 +11,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const cookie = useCookie("woo-session", {
     maxAge: 86_400,
     sameSite: "none",
-    secure: true,
+    secure: false,
   });
   const config = useRuntimeConfig();
 
@@ -23,6 +23,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     /**
      * If session data exist in local storage, set value as session header.
      */
+
+    console.log("Process.client: ", process.client)
+
+    console.log("Middleware cookie.value: ", cookie.value)
 
     if (process.client && cookie.value) {
       operation.setContext(() => ({
@@ -48,7 +52,10 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       const session = headers.get("woocommerce-session") || cookie.value;
 
+      console.log("Afterware Session: ", session)
+
       if (process.client && session) {
+        console.log("Vi setter cookie ....")
         cookie.value = session;
       }
       return response;

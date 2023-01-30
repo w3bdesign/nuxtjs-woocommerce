@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     maxAge: 86_400,
     //sameSite: "lax",
     sameSite: "none",
-    secure: true,
+    secure: false,
   });
   const config = useRuntimeConfig();
 

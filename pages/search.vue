@@ -42,7 +42,9 @@ import {
   AisHits,
 } from "vue-instantsearch/vue3/es/index.js";
 
-const indexName = "dfweb";
+const config = useRuntimeConfig();
+
+const indexName = config.indexName;
 const algolia = useAlgoliaRef();
 
 const convertProductNameToSlug = (productName) =>

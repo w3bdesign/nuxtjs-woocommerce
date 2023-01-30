@@ -45,9 +45,11 @@
     >
       Cart is currently empty
     </h2>
-    <CartCheckoutButton
+    <CommonButton
+      link-to="/checkout"
       v-if="showCheckoutButton && data.cart?.contents?.nodes?.length"
-    />
+      >CHECKOUT</CommonButton
+    >
   </div>
 </template>
 

@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       graphqlURL: process.env.PUBLIC_GRAPHQL_URL,
+      indexName: process.env.PUBLIC_ALGOLIA_INDEX_NAME,
       placeholderImage: process.env.PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL,
     },
   },

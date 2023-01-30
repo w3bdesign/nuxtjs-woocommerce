@@ -55,13 +55,33 @@
 
 <script setup>
 import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
+import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
+
 import { filteredVariantPrice } from "@/utils/functions";
 
-const productImage = (product) =>
-  product.image ? product.image.sourceUrl : process.env.placeholderSmallImage;
+const props = defineProps({
+  categoryId: { type: String, required: false },
+  categorySlug: { type: String, required: false },
+});
 
-const variables = { limit: 99 };
-const { data } = await useAsyncQuery(FETCH_ALL_PRODUCTS_QUERY, variables);
+const config = useRuntimeConfig();
+
+const productImage = (product) =>
+  product.image ? product.image.sourceUrl : config.placeholderImage;
+
+const productVariables = { limit: 99 };
+const { data } = await useAsyncQuery(
+  FETCH_ALL_PRODUCTS_QUERY,
+  productVariables
+);
+
+if (props.id) {
+  const categoryVariables = { id: props.categoryId, slug: props.categorySlug };
+  const { data } = await useAsyncQuery(
+    GET_PRODUCTS_FROM_CATEGORY_QUERY,
+    categoryVariables
+  );
+}
 </script>
 
 <style scoped>

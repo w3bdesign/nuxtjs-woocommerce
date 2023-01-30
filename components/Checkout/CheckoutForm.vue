@@ -26,7 +26,7 @@
           </ErrorMessage>
         </div>
         <div class="w-full flex justify-center mt-6">
-          <CheckoutButton />
+          <CommonButton>SUBMIT ORDER</CommonButton>
         </div>
       </div>
     </Form>

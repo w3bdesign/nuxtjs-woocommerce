@@ -4,6 +4,7 @@
       <button
         :class="{ disabled: isLoading }"
         @click="$emit('CommonButtonClick')"
+        type="submit"
       >
         <slot />
         <svg
@@ -29,6 +30,7 @@
     <button
       :class="{ disabled: isLoading }"
       @click="$emit('CommonButtonClick')"
+      type="submit"
     >
       <slot />
       <svg

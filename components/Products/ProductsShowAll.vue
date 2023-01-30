@@ -57,8 +57,10 @@
 import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 import { filteredVariantPrice } from "@/utils/functions";
 
+const config = useRuntimeConfig();
+
 const productImage = (product) =>
-  product.image ? product.image.sourceUrl : process.env.placeholderSmallImage;
+  product.image ? product.image.sourceUrl : config.placeholderImage;
 
 const variables = { limit: 99 };
 const { data } = await useAsyncQuery(FETCH_ALL_PRODUCTS_QUERY, variables);

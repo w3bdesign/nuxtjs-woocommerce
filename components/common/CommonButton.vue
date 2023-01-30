@@ -27,8 +27,9 @@
 </template>
 
 <script setup>
-/* Usage:
- * <CommonButton @common-button-click="function name" isLoading="true">Common button</CommonButton>
+/*
+ * Usage:
+ * <CommonButton @common-button-click="functionName" isLoading="true">Common button</CommonButton>
  */
 
 defineEmits(["CommonButtonClick"]);

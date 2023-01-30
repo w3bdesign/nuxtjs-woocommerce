@@ -66,6 +66,8 @@
             </p>
             <div class="pt-1 mt-2">
               <ProductsAddToCartButton :product="data.product" />
+
+             
             </div>
           </div>
         </div>
@@ -76,6 +78,7 @@
 
 <script setup>
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
+import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
 import { stripHTML, filteredVariantPrice } from "@/utils/functions";
 
@@ -87,5 +90,18 @@ const props = defineProps({
 });
 
 const variables = { id: props.id, slug: props.slug };
-const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+//const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+const { data } = await useQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+
+/*const addProductToCart = () => {
+  console.log("Data: ", data.product)
+  const productId = data.product.databaseId
+    ? data.product.databaseId
+    : data.product;
+  const productQueryInput = {
+    productId,
+  };
+  
+};
+*/
 </script>

@@ -10,9 +10,7 @@ import { provideApolloClient } from "@vue/apollo-composable";
 export default defineNuxtPlugin((nuxtApp) => {
   const cookie = useCookie("woo-session", {
     maxAge: 86_400,
-   sameSite: "lax",
-   // sameSite: "none",
-   // secure: false,
+    sameSite: "lax",
   });
   const config = useRuntimeConfig();
 
@@ -24,10 +22,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     /**
      * If session data exist in local storage, set value as session header.
      */
-
-    console.log("Process.client: ", process.client);
-
-    console.log("Middleware cookie.value: ", cookie.value);
 
     if (process.client && cookie.value) {
       operation.setContext(() => ({
@@ -53,11 +47,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       const session = headers.get("woocommerce-session") || cookie.value;
 
-      console.log("Afterware Session: ", session);
-
       if (process.client && session) {
         if (session !== cookie.value) {
-          console.log("Vi setter cookie ....");
           cookie.value = session;
         }
       }
@@ -77,10 +68,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   provideApolloClient(apolloClient);
 
   nuxtApp.hook("apollo:auth", ({ token }) => {
-
-    console.log("Vi setter token ....", cookie.value);
-
-
     token.value = cookie.value;
   });
 });

@@ -10,8 +10,9 @@ import { provideApolloClient } from "@vue/apollo-composable";
 export default defineNuxtPlugin((nuxtApp) => {
   const cookie = useCookie("woo-session", {
     maxAge: 86_400,
+    //sameSite: "lax",
     sameSite: "none",
-    secure: false,
+    secure: true,
   });
   const config = useRuntimeConfig();
 
@@ -55,8 +56,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       console.log("Afterware Session: ", session);
 
       if (process.client && session) {
-        console.log("Vi setter cookie ....");
-        cookie.value = session;
+        if (session !== cookie.value) {
+          console.log("Vi setter cookie ....");
+          cookie.value = session;
+        }
       }
       return response;
     })
@@ -74,6 +77,10 @@ export default defineNuxtPlugin((nuxtApp) => {
   provideApolloClient(apolloClient);
 
   nuxtApp.hook("apollo:auth", ({ token }) => {
+
+    console.log("Vi setter token ....", cookie.value);
+
+
     token.value = cookie.value;
   });
 });

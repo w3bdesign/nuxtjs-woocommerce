@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxtjs/apollo",
     "@formkit/nuxt",
     "@nuxtjs/algolia",
+    "nuxt-icon",
   ],
   plugins: ["~/plugins/apollo"],
   runtimeConfig: {

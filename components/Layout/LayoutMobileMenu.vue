@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       v-if="!firstRender"
-      class="fixed top-0 left-0 w-screen mt-40 bg-white h-full animate__animated z-50"
+      class="fixed top-0 left-0 h-[650px] w-screen mt-40 bg-white animate__animated z-50"
       :class="{
         animate__fadeInLeft: expandedMenu,
         animate__fadeOutRight: !expandedMenu && !firstRender,
@@ -25,11 +25,6 @@
         <li class="text-xl linkStyle">
           <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
         </li>
-        <li class="flex justify-center mt-6 text-lg linkStyleCart">
-          <NuxtLink to="/cart" @click="displayMobileMenu">
-            <LayoutCart />
-          </NuxtLink>
-        </li>
       </ul>
     </div>
     <div class="w-5/12 lg:hidden" />
@@ -37,7 +32,7 @@
       <div class="self-center block w-full mr-4">
         <button
           id="nav-toggle"
-          class="mt-6 burger burger-squeeze"
+          class="mt-2 burger burger-squeeze"
           aria-haspopup="true"
           :aria-expanded="expandedMenu"
           aria-controls="menu"
@@ -80,6 +75,7 @@ const displayMobileMenu = () => {
   font-size: 14px;
   cursor: pointer;
   transition: 0.5s all;
+
   -webkit-tap-highlight-color: transparent;
 }
 .burger .burger-lines:after {
@@ -111,7 +107,7 @@ const displayMobileMenu = () => {
   content: "";
   width: 100%;
   border-radius: 0.25em;
-  background-color: #000;
+  background-color: #fff;
   height: 0.25em;
   position: absolute;
   transform: rotate(0);

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="linkTo" class="flex justify-center">
+  <div v-if="linkTo" :class="{ center: centerButton }">
     <NuxtLink :to="linkTo" class="button-link">
       <button
         :class="{ disabled: isLoading }"
@@ -26,7 +26,7 @@
       </button>
     </NuxtLink>
   </div>
-  <div v-else class="flex justify-center">
+  <div v-else :class="{ center: centerButton }">
     <button
       :class="{ disabled: isLoading }"
       @click="$emit('CommonButtonClick')"
@@ -56,7 +56,7 @@
 <script setup>
 /*
  * Usage:
- * <CommonButton @common-button-click="functionName" is-loading="true" link-to="/link">Common button</CommonButton>
+ * <CommonButton @common-button-click="functionName" is-loading="true" center-button="false" link-to="/link">Common button</CommonButton>
  */
 
 defineEmits(["CommonButtonClick"]);
@@ -72,6 +72,7 @@ defineProps({
     required: false,
     default: "",
   },
+  centerButton: { type: Boolean, required: false, default: false },
 });
 </script>
 
@@ -86,5 +87,9 @@ button {
 
 .button-link {
   border-bottom: none;
+}
+
+.center {
+  @apply flex justify-center;
 }
 </style>

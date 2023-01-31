@@ -6,7 +6,7 @@
           class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
         >
           <img
-            v-if="data.product.image !== undefined"
+            v-if="data.product.image"
             id="product-image"
             class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:shadow-lg hover:scale-95"
             :alt="data.product.name"

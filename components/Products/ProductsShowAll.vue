@@ -4,7 +4,7 @@
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="product in data.products.nodes">
           <div
-            v-if="product.slug !== undefined"
+            v-if="product.slug"
             :key="product.id"
             class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:1/4 xl:w-1/4"
           >
@@ -17,7 +17,7 @@
             >
               <img
                 id="product-image"
-                class="container mx-auto transition duration-500 ease-in-out transform cursor-pointer lg:w-64 xl:w-64 sm:p-4 hover:scale-110"
+                class="container p-8 border w-4/5 border-gray-200 mx-auto lg:h-[190px] rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:w-64 sm:p-4 hover:scale-95"
                 :alt="product.name"
                 :src="productImage(product)"
               />

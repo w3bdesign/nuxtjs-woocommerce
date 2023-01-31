@@ -5,6 +5,7 @@
       <slot />
     </div>
     <LayoutFooter />
+    <LayoutStickyFooter />
   </div>
 </template>
 

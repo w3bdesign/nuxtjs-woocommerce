@@ -71,6 +71,10 @@ The current release has been tested and is confirmed working with the following 
 
 Check that you are using the 0.6.2 version of the [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) plugin
 
+### I encounter a bug with add to cart
+
+Try logging off wp-admin and try again.
+
 ### The products page isn't loading
 
 Check the attributes of the products. Right now the application requires Size and Color.

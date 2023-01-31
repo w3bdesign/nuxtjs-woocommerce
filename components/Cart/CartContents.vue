@@ -48,6 +48,7 @@
     <CommonButton
       link-to="/checkout"
       v-if="showCheckoutButton && data.cart?.contents?.nodes?.length"
+      center-button
       >CHECKOUT</CommonButton
     >
   </div>

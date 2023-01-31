@@ -65,7 +65,12 @@
               </select>
             </p>
             <div class="pt-1 mt-2">
-              <ProductsAddToCartButton :product="data.product" />
+              <CommonButton
+                @common-button-click="addProductToCart(data.product)"
+                :is-loading="isLoading"
+              >
+                ADD TO CART</CommonButton
+              >
             </div>
           </div>
         </div>
@@ -76,8 +81,11 @@
 
 <script setup>
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
+import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
 import { stripHTML, filteredVariantPrice } from "@/utils/functions";
+
+const isLoading = useState("isLoading", () => false);
 
 const config = useRuntimeConfig();
 
@@ -88,4 +96,29 @@ const props = defineProps({
 
 const variables = { id: props.id, slug: props.slug };
 const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+
+const addProductToCart = async (product) => {
+  const productId = product.databaseId ? product.databaseId : product;
+  const productQueryInput = {
+    productId,
+  };
+
+  isLoading.value = true;
+
+  const addToCartvariables = { input: productQueryInput };
+
+  const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
+    addToCartvariables,
+  });
+
+  mutate(addToCartvariables);
+
+  onDone(() => {
+    isLoading.value = false;
+  });
+
+  onError(() => {
+    isLoading.value = false;
+  });
+};
 </script>

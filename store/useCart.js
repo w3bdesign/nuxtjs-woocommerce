@@ -24,12 +24,8 @@ export const useCart = defineStore("cartState", {
     removeProductFromCart(product) {
       this.cart.splice(this.cart.indexOf(product), 1);
     },
-
     clearCart() {
-      console.log("Called clear cart action");
-      this.cart = [];
-      //this.cart.length = 0;
-      console.log("Length: ", this.cart.length);
+      this.cart.length = 0;
     },
   },
   getters: {

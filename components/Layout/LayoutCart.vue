@@ -49,9 +49,13 @@ import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
 import { getCookie } from "@/utils/functions";
 
+import { useCart } from "@/store/useCart";
+
 const cartLength = useState("cartLength", () => 0);
 const subTotal = useState("subTotal", "");
 const remoteError = useState("remoteError", () => false);
+
+const cart = useCart();
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
   options: { fetchPolicy: "cache-and-network" },
@@ -72,12 +76,14 @@ const updateCartDisplay = () => {
   remoteError.value = error;
 };
 
-onMounted(() => updateCartDisplay());
+onBeforeMount(() => updateCartDisplay());
 
 setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
     execute();
     updateCartDisplay();
+
+    //console.log("Cart content from useCart: ", cart.getCartContent);
   }
 }, 3000);
 </script>

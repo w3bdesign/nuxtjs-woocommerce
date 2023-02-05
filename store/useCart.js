@@ -8,23 +8,23 @@ const state = {
   error: null,
 };
 
-export const useCart = defineStore("shopState", {
+export const useCart = defineStore("cartState", {
   state: () => state,
   actions: {
-    addToCart({ item }) {
+    addToCart(product) {
       const foundProductInCartIndex = this.cart.findIndex(
-        (cartItem) => item.slug === cartItem.slug
+        (cartproduct) => product.slug === cartproduct.slug
       );
 
       if (foundProductInCartIndex > -1) {
         this.cart[foundProductInCartIndex].quantity += 1;
       } else {
-        item.quantity = 1;
-        this.cart.push(item);
+        product.quantity = 1;
+        this.cart.push(product);
       }
     },
-    removeProductFromCart({ item }) {
-      this.cart.splice(this.cart.indexOf(item), 1);
+    removeProductFromCart({ product }) {
+      this.cart.splice(this.cart.indexOf(product), 1);
     },
 
     clearCart() {

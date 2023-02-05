@@ -60,8 +60,12 @@ export const useCart = defineStore("cartState", {
       return this.customer;
     },
     getCartTotal() {
+      const currencySymbol = useRuntimeConfig().public.currencySymbol || "kr";
+
       return this.cart.reduce(
-        (total, product) => total + product.price * product.quantity,
+        (total, product) =>
+          total +
+          Number(product.price.replace(currencySymbol, "")) * product.quantity,
         0
       );
     },

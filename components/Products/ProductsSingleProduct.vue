@@ -111,9 +111,7 @@ const addProductToCart = async (product) => {
 
   const addToCartvariables = { input: productQueryInput };
 
- console.log("Should add cart to product:", product);
   cart.addToCart(product);
- 
 
   const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
     addToCartvariables,

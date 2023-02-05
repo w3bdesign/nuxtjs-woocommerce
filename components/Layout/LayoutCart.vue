@@ -36,7 +36,9 @@
             >
               {{ cartLength }}
             </span>
-            <span class="text-white lg:text-black">Total: {{ subTotal }}</span>
+            <span class="text-white lg:text-black"
+              >Total: {{ config.currencySymbol }} {{ subTotal }}</span
+            >
           </div>
         </transition>
       </NuxtLink>
@@ -55,6 +57,8 @@ const cartLength = useState("cartLength", () => 0);
 const subTotal = useState("subTotal", "");
 const remoteError = useState("remoteError", () => false);
 
+const config = useRuntimeConfig();
+
 const cart = useCart();
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
@@ -66,19 +70,9 @@ const updateCartDisplay = () => {
     return;
   }
 
-  /*cartLength.value = data.value.cart.contents.nodes.reduce(
-    (accumulator, argument) => accumulator + argument.quantity,
-    0
-  );
-*/
-
   cartLength.value = cart.getCartQuantity;
 
   subTotal.value = cart.getCartTotal;
-
-  console.log("Pinia total: ", cart.getCartTotal);
-
-  //subTotal.value = data.value.cart.total;
 
   remoteError.value = error;
 };
@@ -90,8 +84,7 @@ onBeforeMount(() => {
 
 setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
-    //execute();
     updateCartDisplay();
   }
-}, 3000);
+}, 2000);
 </script>

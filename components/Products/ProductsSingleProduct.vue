@@ -85,9 +85,13 @@ import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
 import { stripHTML, filteredVariantPrice } from "@/utils/functions";
 
+import { useCart } from "@/store/useCart";
+
 const isLoading = useState("isLoading", () => false);
 
 const config = useRuntimeConfig();
+
+const cart = useCart();
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -106,6 +110,8 @@ const addProductToCart = async (product) => {
   isLoading.value = true;
 
   const addToCartvariables = { input: productQueryInput };
+
+  cart.addToCart(product);
 
   const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
     addToCartvariables,

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
   modules: [
     "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
     "@nuxtjs/apollo",
     "@formkit/nuxt",
     "@nuxtjs/algolia",
@@ -19,6 +20,7 @@ export default defineNuxtConfig({
       graphqlURL: process.env.PUBLIC_GRAPHQL_URL,
       indexName: process.env.PUBLIC_ALGOLIA_INDEX_NAME,
       placeholderImage: process.env.PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL,
+      currencySymbol: process.env.PUBLIC_CURRENCY_SYMBOL,
     },
   },
   postcss: {

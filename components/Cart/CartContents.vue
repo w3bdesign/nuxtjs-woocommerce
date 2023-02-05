@@ -58,7 +58,11 @@
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
 
+import { useCart } from "@/store/useCart";
+
 const isRemoving = useState("isRemoving", () => false);
+
+const cart = useCart();
 
 defineProps({
   showCheckoutButton: { type: Boolean, required: false, default: false },
@@ -66,8 +70,10 @@ defineProps({
 
 const { data } = await useAsyncQuery(GET_CART_QUERY);
 
-const handleRemoveProduct = ({ key }) => {
+const handleRemoveProduct = (product) => {
   const updatedItems = [];
+
+  const { key } = product;
 
   updatedItems.push({
     key,
@@ -81,6 +87,8 @@ const handleRemoveProduct = ({ key }) => {
       items: updatedItems,
     },
   };
+
+  cart.removeProductFromCart(product);
 
   const { mutate, onDone, onError } = useMutation(UPDATE_CART_MUTATION, {
     variables,

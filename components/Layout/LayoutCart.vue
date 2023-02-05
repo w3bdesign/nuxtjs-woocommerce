@@ -36,7 +36,9 @@
             >
               {{ cartLength }}
             </span>
-            <span class="text-white lg:text-black">Total: {{ subTotal }}</span>
+            <span class="text-white lg:text-black"
+              >Total: {{ config.currencySymbol }} {{ subTotal }}</span
+            >
           </div>
         </transition>
       </NuxtLink>
@@ -49,9 +51,15 @@ import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
 import { getCookie } from "@/utils/functions";
 
+import { useCart } from "@/store/useCart";
+
 const cartLength = useState("cartLength", () => 0);
 const subTotal = useState("subTotal", "");
 const remoteError = useState("remoteError", () => false);
+
+const config = useRuntimeConfig();
+
+const cart = useCart();
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
   options: { fetchPolicy: "cache-and-network" },
@@ -62,22 +70,21 @@ const updateCartDisplay = () => {
     return;
   }
 
-  cartLength.value = data.value.cart.contents.nodes.reduce(
-    (accumulator, argument) => accumulator + argument.quantity,
-    0
-  );
+  cartLength.value = cart.getCartQuantity;
 
-  subTotal.value = data.value.cart.total;
+  subTotal.value = cart.getCartTotal;
 
   remoteError.value = error;
 };
 
-onMounted(() => updateCartDisplay());
+onBeforeMount(() => {
+  execute();
+  updateCartDisplay();
+});
 
 setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
-    execute();
     updateCartDisplay();
   }
-}, 3000);
+}, 1000);
 </script>

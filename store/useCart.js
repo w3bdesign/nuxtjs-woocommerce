@@ -23,7 +23,7 @@ export const useCart = defineStore("cartState", {
         this.cart.push(product);
       }
     },
-    removeProductFromCart({ product }) {
+    removeProductFromCart(product) {
       this.cart.splice(this.cart.indexOf(product), 1);
     },
 

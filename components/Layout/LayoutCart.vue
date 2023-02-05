@@ -66,24 +66,32 @@ const updateCartDisplay = () => {
     return;
   }
 
-  cartLength.value = data.value.cart.contents.nodes.reduce(
+  /*cartLength.value = data.value.cart.contents.nodes.reduce(
     (accumulator, argument) => accumulator + argument.quantity,
     0
   );
+*/
 
-  subTotal.value = data.value.cart.total;
+  cartLength.value = cart.getCartQuantity;
+
+  subTotal.value = cart.getCartTotal;
+
+  console.log("Pinia total: ", cart.getCartTotal);
+
+  //subTotal.value = data.value.cart.total;
 
   remoteError.value = error;
 };
 
-onBeforeMount(() => updateCartDisplay());
+onBeforeMount(() => {
+  execute();
+  updateCartDisplay();
+});
 
 setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
-    execute();
+    //execute();
     updateCartDisplay();
-
-    //console.log("Cart content from useCart: ", cart.getCartContent);
   }
 }, 3000);
 </script>

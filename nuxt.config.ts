@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
   modules: [
     "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
     "@nuxtjs/apollo",
     "@formkit/nuxt",
     "@nuxtjs/algolia",

@@ -6,6 +6,14 @@
 </template>
 
 <script setup>
+import { useCart } from "@/store/useCart";
+
+const cart = useCart();
+
+onBeforeMount(() => {
+  cart.clearCart();
+});
+
 useHead({
   title: "Order placed",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

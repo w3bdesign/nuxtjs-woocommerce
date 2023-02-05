@@ -16,9 +16,11 @@
 
 ## Features
 
--   Nuxt 3
+-   Nuxt 3 
+-   Vue 3 and Composition API
 -   Tailwind CSS
 -   Nuxt Apollo
+-   Pinia with pinia-plugin-persistedstate for cart and state management
 -   Responsive design
 -   Support for simple and variable products
 -   CSS animations and transitions

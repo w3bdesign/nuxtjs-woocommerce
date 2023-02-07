@@ -24,7 +24,7 @@
     "vue": "latest"
   },
   "dependencies": {
-    "@formkit/nuxt": "^1.0.0-beta.14",
+    "@formkit/nuxt": "^1.0.0-beta.15",
     "@nuxtjs/algolia": "^1.5.0",
     "@pinia/nuxt": "^0.4.6",
     "pinia": "^2.0.30",

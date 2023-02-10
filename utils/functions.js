@@ -21,6 +21,15 @@ export const filteredVariantPrice = (price, side) => {
 };
 
 /**
+ * Strips product name from variant name
+ * @param {String} productName Text to strip out
+ * @param {String} input Input text to strip product name from
+ */
+export function filteredVariantName(productName, input) {
+  return input.replace(`${productName} -`, "");
+}
+
+/**
  * Prepares the checkout object based on the input data from the checkout form
  * @param {Object} form Form data to process
  */

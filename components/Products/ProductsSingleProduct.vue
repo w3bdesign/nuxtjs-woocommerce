@@ -45,6 +45,12 @@
               {{ stripHTML(data.product.description) }}
             </p>
             <p
+              v-if="data.product.stockQuantity"
+              class="pt-1 mt-4 text-2xl text-gray-900"
+            >
+              {{ data.product.stockQuantity }} in stock
+            </p>
+            <p
               v-if="data.product.variations"
               class="pt-1 mt-4 text-xl text-gray-900"
             >
@@ -60,7 +66,8 @@
                   :value="variation.databaseId"
                   :selected="index === 0"
                 >
-                  {{ variation.name }}
+                  {{ filteredVariantName(data.product.name, variation.name) }}
+                  ({{ variation.stockQuantity }} in stock)
                 </option>
               </select>
             </p>
@@ -83,7 +90,11 @@
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
-import { stripHTML, filteredVariantPrice } from "@/utils/functions";
+import {
+  stripHTML,
+  filteredVariantPrice,
+  filteredVariantName,
+} from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
 

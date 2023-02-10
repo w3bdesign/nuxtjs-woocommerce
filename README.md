@@ -23,6 +23,7 @@
 -   Pinia with pinia-plugin-persistedstate for cart and state management
 -   Responsive design
 -   Support for simple and variable products
+-   Stock quantity on simple and variable products
 -   CSS animations and transitions
 -   Form handling and validation with Formkit, Vee Validate and Yup
 -   Checkout process

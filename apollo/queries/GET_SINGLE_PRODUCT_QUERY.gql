@@ -18,6 +18,7 @@ query Product($id: ID!) {
       salePrice
       regularPrice
       databaseId
+      stockQuantity
     }
     ... on VariableProduct {
       price

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data.product">
+  <div v-if="data?.product">
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
         <div

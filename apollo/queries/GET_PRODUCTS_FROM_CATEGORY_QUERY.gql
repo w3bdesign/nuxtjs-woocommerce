@@ -1,5 +1,5 @@
 query ProductsFromCategory($id: ID!) {
-  productCategory(id: $id) {
+  productCategory(id: $id, idType: ID) {
     id
     name
     products(first: 50) {

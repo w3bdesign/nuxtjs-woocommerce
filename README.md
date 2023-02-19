@@ -49,6 +49,7 @@ The current release has been tested and is confirmed working with the following 
 -   WooCommerce version 7.4.0
 -   WP GraphQL version 1.13.8
 -   WooGraphQL version 0.12.0
+-   WPGraphQL CORS version 2.1
 
 2.  Make sure WooCommerce has some products already or import some sample products
 

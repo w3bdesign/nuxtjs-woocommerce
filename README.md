@@ -87,3 +87,4 @@ Check the attributes of the products. Right now the application requires Size an
 
 -   Refactor and improve codebase with reusable components
 
+

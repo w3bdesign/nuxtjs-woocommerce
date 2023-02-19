@@ -25,12 +25,12 @@ query Product($id: ID!) {
       salePrice
       regularPrice
       databaseId
-      paColors {
+      allPaColors {
         nodes {
           name
         }
       }
-      paSizes {
+      allPaSizes {
         nodes {
           name
         }

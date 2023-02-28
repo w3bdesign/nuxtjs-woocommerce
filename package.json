@@ -14,7 +14,7 @@
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "autoprefixer": "^10.4.13",
-    "nuxt": "^3.2.2",
+    "nuxt": "^3.2.3",
     "nuxt-icon": "^0.3.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",

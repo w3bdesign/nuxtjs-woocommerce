@@ -19,7 +19,7 @@
             >
               <img
                 id="product-image"
-                class="p-8 border mx-auto w-4/5 border-gray-200 lg:h-[230px] rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
+                class="p-8 border mx-auto w-4/5 border-gray-200 lg:h-[250px] rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
                 :alt="product.name"
                 :src="productImage(product)"
               />

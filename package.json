@@ -28,7 +28,7 @@
     "@nuxtjs/algolia": "^1.5.1",
     "@pinia/nuxt": "^0.4.7",
     "pinia": "^2.0.33",
-    "uid": "^2.0.1",
+    "uid": "^2.0.2",
     "vee-validate": "^4.8.4",
     "yup": "^1.0.2"
   }

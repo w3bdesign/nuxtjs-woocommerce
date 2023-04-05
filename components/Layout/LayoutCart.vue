@@ -71,9 +71,7 @@ const updateCartDisplay = () => {
   }
 
   cartLength.value = cart.getCartQuantity;
-
   subTotal.value = cart.getCartTotal;
-
   remoteError.value = error;
 };
 

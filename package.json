@@ -26,7 +26,7 @@
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-220222.4d97af0",
     "@nuxtjs/algolia": "^1.7.0",
-    "@pinia/nuxt": "^0.4.10",
+    "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.0",
     "uid": "^2.0.2",
     "vee-validate": "^4.9.3",

@@ -5,19 +5,9 @@
         <div
           class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
         >
-          <img
-            v-if="data.product.image"
-            id="product-image"
-            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:shadow-lg hover:scale-95"
+          <ProductImage
             :alt="data.product.name"
             :src="data.product.image.sourceUrl"
-          />
-          <img
-            v-else
-            id="product-image"
-            class="h-auto p-8 transition duration-500 ease-in-out transform xl:p-2 md:p-2 lg:p-2 hover:shadow-lg hover:scale-95"
-            :alt="data.product.name"
-            :src="config.placeholderImage"
           />
           <div class="ml-8">
             <p class="text-3xl font-bold text-left">
@@ -90,6 +80,8 @@
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
+import ProductImage from "@/components/Products/ProductImage.vue";
+
 import {
   stripHTML,
   filteredVariantPrice,
@@ -99,8 +91,6 @@ import {
 import { useCart } from "@/store/useCart";
 
 const isLoading = useState("isLoading", () => false);
-
-const config = useRuntimeConfig();
 
 const cart = useCart();
 

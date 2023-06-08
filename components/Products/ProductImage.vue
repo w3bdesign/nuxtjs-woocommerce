@@ -17,6 +17,6 @@ const props = defineProps({
 const config = useRuntimeConfig();
 
 const displayedImage = computed(() => {
-    return props.src || config.placeholderImage;
+    return props.src || config.public.placeholderImage;
 });
 </script>

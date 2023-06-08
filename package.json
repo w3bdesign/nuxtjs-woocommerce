@@ -27,7 +27,7 @@
     "@formkit/nuxt": "^1.0.0-beta.9-f64c966",
     "@nuxtjs/algolia": "^1.7.0",
     "@pinia/nuxt": "^0.4.11",
-    "pinia": "^2.1.3",   
+    "pinia": "^2.1.3",
     "uid": "^2.0.2",
     "vee-validate": "^4.9.6",
     "yup": "^1.2.0"

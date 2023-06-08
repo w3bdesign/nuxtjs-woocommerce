@@ -15,7 +15,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
 
   const httpLink = createHttpLink({
-    uri: config.graphqlURL,
+    uri: config.public.graphqlURL,
   });
 
   const middleware = new ApolloLink((operation, forward) => {

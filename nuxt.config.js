@@ -21,7 +21,8 @@ export default defineNuxtConfig({
       graphqlURL: process.env.PUBLIC_GRAPHQL_URL,
       indexName: process.env.PUBLIC_ALGOLIA_INDEX_NAME,
       placeholderImage: process.env.PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL,
-      currencySymbol: process.env.PUBLIC_CURRENCY_SYMBOL,
+      currencyLocale: process.env.PUBLIC_CURRENCY_LOCALE,
+      currency: process.env.PUBLIC_CURRENCY,
     },
   },
   postcss: {

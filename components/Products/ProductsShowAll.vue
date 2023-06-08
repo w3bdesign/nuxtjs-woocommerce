@@ -66,32 +66,22 @@
               }"
             >
               <ProductImage :alt="product.name" :src="productImage(product)" />
-
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
                 </p>
               </div>
             </NuxtLink>
-            <div v-if="product.onSale" class="flex justify-center mt-2">
-              <div class="text-lg text-gray-900 line-through">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, "right") }}</span
-                >
-                <span v-else>{{ product.regularPrice }}</span>
-              </div>
-              <div class="ml-4 text-xl text-gray-900">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price) }}</span
-                >
-                <span v-else>{{ product.salePrice }}</span>
-              </div>
-            </div>
-            <div v-else>
-              <p class="mt-2 text-xl text-center text-gray-900">
-                {{ product.price }}
-              </p>
-            </div>
+            <ProductPrice
+              :variantPrice="filteredVariantPrice(product.price)"
+              :onSale="product.onSale"
+              :hasVariations="hasVariations(product)"
+              :salePrice="product.salePrice"
+              :regularPrice="product.regularPrice"
+              :nonSalePrice="product.price"
+              priceFontSize="normal"
+              shouldCenterPrice="true"
+            />
           </div>
         </template>
       </div>
@@ -104,8 +94,9 @@ import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.
 import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
 
 import ProductImage from "@/components/Products/ProductImage.vue";
+import ProductPrice from "@/components/Products/ProductPrice.vue";
 
-import { filteredVariantPrice } from "@/utils/functions";
+import { filteredVariantPrice, hasVariations } from "@/utils/functions";
 
 const props = defineProps({
   categoryId: { type: String, required: false },
@@ -115,7 +106,7 @@ const props = defineProps({
 const config = useRuntimeConfig();
 
 const productImage = (product) =>
-  product.image ? product.image.sourceUrl : config.placeholderImage;
+  product.image ? product.image.sourceUrl : config.public.placeholderImage;
 
 const productVariables = { limit: 99 };
 const { data: allProducts } = await useAsyncQuery(

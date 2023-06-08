@@ -1,5 +1,38 @@
 import { uid } from "uid";
 
+const config = useRuntimeConfig();
+
+/**
+ * Checks if the given data object has any variations by accessing the product's variations nodes array.
+ *
+ * @param {Object} data - The data object to check for variations
+ * @return {Boolean} Returns true if there are any variations, false otherwise.
+ */
+export function hasVariations(data) {
+  // Use optional chaining to access the nodes array safely, and nullish coalescing to default to an empty array
+  const variationsNodes = data?.product?.variations?.nodes ?? [];
+  return variationsNodes.length > 0;
+}
+
+/**
+ * Formats the given price to the currency specified in the config file using the Intl.NumberFormat object.
+ *
+ * @param {number} price - The price to be formatted.
+ * @return {string} The formatted price as a string with the currency symbol and no decimal places.
+ */
+export function formatPrice(price) {
+  // Convert the price string to a numerical float value
+
+  const numericPrice = parseFloat(price.replace(/[^\d.]/g, ""));
+
+  return new Intl.NumberFormat(config.public.currencyLocale, {
+    style: "currency",
+    currency: config.public.currency,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(numericPrice);
+}
+
 /**
  * Strips HTML from the inputted string
  * @param {String} description Input text to strip HTML from

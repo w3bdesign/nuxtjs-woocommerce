@@ -73,14 +73,9 @@
               </div>
             </NuxtLink>
             <ProductPrice
-              :variantPrice="filteredVariantPrice(product.price)"
-              :onSale="product.onSale"
-              :hasVariations="hasVariations(product)"
-              :salePrice="product.salePrice"
-              :regularPrice="product.regularPrice"
-              :nonSalePrice="product.price"
+              :product="product"
               priceFontSize="normal"
-              shouldCenterPrice="true"
+              :shouldCenterPrice="true"
             />
           </div>
         </template>

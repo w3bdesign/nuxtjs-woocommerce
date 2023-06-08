@@ -8,9 +8,7 @@
             <p class="text-3xl font-bold text-left">
               {{ data.product.name }}
             </p>
-            <ProductPrice :variantPrice="filteredVariantPrice(data.product.price)" :onSale="data.product.onSale"
-              :hasVariations="hasVariations(data)" :salePrice="data.product.salePrice"
-              :regularPrice="data.product.regularPrice" :nonSalePrice="data.product.price" priceFontSize="big" />
+            <ProductPrice :product="data.product" :shouldCenterPrice="false" priceFontSize="big" />
             <p class="pt-1 mt-6 text-2xl text-gray-900">
               {{ stripHTML(data.product.description) }}
             </p>

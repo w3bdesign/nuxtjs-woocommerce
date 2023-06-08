@@ -17,12 +17,8 @@
                 query: { id: product.databaseId },
               }"
             >
-              <img
-                id="product-image"
-                class="p-8 border mx-auto w-4/5 border-gray-200 rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
-                :alt="product.name"
-                :src="productImage(product)"
-              />
+              <ProductImage :alt="product.name" :src="productImage(product)" />
+
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
@@ -69,12 +65,8 @@
                 query: { id: product.databaseId },
               }"
             >
-              <img
-                id="product-image"
-                class="p-8 border mx-auto w-4/5 border-gray-200 rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
-                :alt="product.name"
-                :src="productImage(product)"
-              />
+              <ProductImage :alt="product.name" :src="productImage(product)" />
+
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
@@ -110,6 +102,8 @@
 <script setup>
 import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
+
+import ProductImage from "@/components/Products/ProductImage.vue";
 
 import { filteredVariantPrice } from "@/utils/functions";
 

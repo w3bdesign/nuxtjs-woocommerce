@@ -11,7 +11,7 @@
       </p>
       <p
         v-if="hasVariations"
-        class="pt-1 pl-8 mt-4 text-gray-900 line-through"
+        class="pt-1 pl-4 mt-4 text-gray-900 line-through"
         :class="getSaleFontSizeClass"
       >
         >
@@ -19,7 +19,7 @@
       </p>
       <p
         v-else
-        class="pt-1 pl-8 mt-4 text-gray-900 line-through"
+        class="pt-1 pl-4 mt-4 text-gray-900 line-through"
         :class="getSaleFontSizeClass"
       >
         {{ formatPrice(regularPrice) }}
@@ -28,7 +28,7 @@
     <p
       v-else
       class="flex justify-center pt-1 mt-4 text-gray-900"
-      :class="getSaleFontSizeClass"
+      :class="getFontSizeClass"
     >
       {{ formatPrice(nonSalePrice) }}
     </p>
@@ -78,7 +78,7 @@ const getFontSizeClass = computed(() => {
     case "small":
       return "text-lg";
     case "normal":
-      return "text-xl";
+      return "text-2xl";
     case "big":
       return "text-2xl";
     default:
@@ -91,7 +91,7 @@ const getSaleFontSizeClass = computed(() => {
     case "small":
       return "text-lg";
     case "normal":
-      return "text-lg";
+      return "text-xl";
     case "big":
       return "text-xl";
     default:

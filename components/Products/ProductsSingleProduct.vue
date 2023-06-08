@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data?.product">
+  <template v-if="data?.product">
     <section>
       <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
         <div class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2">
@@ -18,7 +18,8 @@
             <p v-if="data.product.variations" class="pt-1 mt-4 text-xl text-gray-900">
               <span class="py-2">Varianter</span>
               <select id="variant" name="variant"
-                class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline">
+                class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
+                v-model="selectedVariation">
                 <option v-for="(variation, index) in data.product.variations.nodes" :key="variation.databaseId"
                   :value="variation.databaseId" :selected="index === 0">
                   {{ filteredVariantName(data.product.name, variation.name) }}
@@ -34,7 +35,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </template>
 </template>
 
 <script setup>
@@ -53,18 +54,15 @@ import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 import ProductImage from "@/components/Products/ProductImage.vue";
 import ProductPrice from "@/components/Products/ProductPrice.vue";
 
-import {
-  stripHTML,
-  filteredVariantPrice,
-  filteredVariantName,
-  hasVariations,
-} from "@/utils/functions";
+import { stripHTML, filteredVariantName } from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
 
 const isLoading = useState("isLoading", () => false);
 
 const cart = useCart();
+
+const selectedVariation = ref(null)
 
 const props = defineProps({
   id: { type: String, required: true },

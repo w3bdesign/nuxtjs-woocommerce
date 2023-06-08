@@ -3,9 +3,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  alias: {
-    tslib: 'tslib'
-  },
   ssr: true,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],

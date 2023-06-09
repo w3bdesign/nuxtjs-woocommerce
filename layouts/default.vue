@@ -1,10 +1,12 @@
 <template>
+  <div>
   <LayoutNavbar />
   <div class="container mx-auto max-w-[84.375rem]">
     <slot />
   </div>
   <LayoutFooter />
   <LayoutStickyFooter />
+  </div>
 </template>
 
 <style>

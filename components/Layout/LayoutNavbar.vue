@@ -30,46 +30,10 @@
               <ul
                 class="items-center justify-end flex-1 pr-4 -mr-4 list-reset lg:flex"
               >
-                <li
-                  class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
-                >
-                  <NuxtLink to="/">
-                    <span
-                      class="text-xl text-white no-underline lg:text-black is-active"
-                    >
-                      Home
-                    </span>
-                  </NuxtLink>
-                </li>
-                <li
-                  class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
-                >
-                  <NuxtLink to="/products">
-                    <span class="text-xl text-white no-underline lg:text-black"
-                      >Products</span
-                    >
-                  </NuxtLink>
-                </li>
-                <li
-                  class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
-                >
-                  <NuxtLink to="/categories">
-                    <span
-                      class="text-xl text-white no-underline lg:text-black is-active"
-                      >Categories</span
-                    >
-                  </NuxtLink>
-                </li>
-                <li
-                  class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
-                >
-                  <NuxtLink to="/search">
-                    <span
-                      class="text-xl text-white no-underline lg:text-black is-active"
-                      >Search</span
-                    >
-                  </NuxtLink>
-                </li>
+                <NavItem to="/" label="Home" />
+                <NavItem to="/products" label="Products" />
+                <NavItem to="/categories" label="Categories" />
+                <NavItem to="/search" label="Search" />
                 <li
                   class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                 >
@@ -90,6 +54,7 @@
  * Vue.js template for a header section of a web page.
  *
  */
+import NavItem from "@/components/Layout/LayoutNavItem.vue";
 </script>
 
 <style scoped>

@@ -78,8 +78,8 @@ const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
 watch(
   () => data.value,
   (dataValue) => {
-    if (dataValue && dataValue.product.variations.nodes.length > 0) {
-      selectedVariation.value = dataValue.product.variations.nodes[0].databaseId;
+    if (dataValue && dataValue.product?.variations?.nodes?.length > 0) {
+      selectedVariation.value = dataValue.product?.variations?.nodes[0].databaseId;
     }
   },
   { immediate: true }

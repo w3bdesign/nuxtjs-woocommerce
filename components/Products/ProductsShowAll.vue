@@ -2,12 +2,21 @@
   <template v-if="allCategoryProducts?.productCategory?.products?.nodes">
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
-        <template v-for="product in allCategoryProducts.productCategory.products.nodes">
-          <div v-if="product.slug" :key="product.id" class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:w-1/4 lg:mr-4">
-            <NuxtLink class="text-black cursor-pointer hover:underline" :to="{
-              path: '/product/' + product.slug,
-              query: { id: product.databaseId },
-            }">
+        <template
+          v-for="product in allCategoryProducts.productCategory.products.nodes"
+        >
+          <div
+            v-if="product.slug"
+            :key="product.id"
+            class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:w-1/4 lg:mr-4"
+          >
+            <NuxtLink
+              class="text-black cursor-pointer hover:underline"
+              :to="{
+                path: '/product/' + product.slug,
+                query: { id: product.databaseId },
+              }"
+            >
               <ProductImage :alt="product.name" :src="productImage(product)" />
 
               <div class="flex justify-center pt-3">
@@ -16,23 +25,11 @@
                 </p>
               </div>
             </NuxtLink>
-            <div v-if="product.onSale" class="flex justify-center mt-2">
-              <div class="text-lg text-gray-900 line-through">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, "right") }}</span>
-                <span v-else>{{ product.regularPrice }}</span>
-              </div>
-              <div class="ml-4 text-xl text-gray-900">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price) }}</span>
-                <span v-else>{{ product.salePrice }}</span>
-              </div>
-            </div>
-            <div v-else>
-              <p class="mt-2 text-xl text-center text-gray-900">
-                {{ product.price }}
-              </p>
-            </div>
+            <ProductPrice
+              :product="product"
+              priceFontSize="normal"
+              :shouldCenterPrice="true"
+            />
           </div>
         </template>
       </div>
@@ -42,11 +39,18 @@
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
         <template v-for="product in allProducts.products.nodes">
-          <div v-if="product.slug" :key="product.id" class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:w-1/4 lg:mr-4">
-            <NuxtLink class="text-black cursor-pointer hover:underline" :to="{
-              path: '/product/' + product.slug,
-              query: { id: product.databaseId },
-            }">
+          <div
+            v-if="product.slug"
+            :key="product.id"
+            class="flex flex-col mt-6 sm:w1/2 md:w-1/3 lg:w-1/4 lg:mr-4"
+          >
+            <NuxtLink
+              class="text-black cursor-pointer hover:underline"
+              :to="{
+                path: '/product/' + product.slug,
+                query: { id: product.databaseId },
+              }"
+            >
               <ProductImage :alt="product.name" :src="productImage(product)" />
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
@@ -54,7 +58,11 @@
                 </p>
               </div>
             </NuxtLink>
-            <ProductPrice :product="product" priceFontSize="normal" :shouldCenterPrice="true" />
+            <ProductPrice
+              :product="product"
+              priceFontSize="normal"
+              :shouldCenterPrice="true"
+            />
           </div>
         </template>
       </div>

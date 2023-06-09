@@ -65,7 +65,7 @@ const isLoading = useState("isLoading", () => false);
 
 const cart = useCart();
 
-const selectedVariation = ref(); // TODO Use selectedVariation v-model and implement this functionality to support multiple variants
+const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
 
 const props = defineProps({
   id: { type: String, required: true },

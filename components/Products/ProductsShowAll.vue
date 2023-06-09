@@ -77,8 +77,6 @@ import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM
 import ProductImage from "@/components/Products/ProductImage.vue";
 import ProductPrice from "@/components/Products/ProductPrice.vue";
 
-import { filteredVariantPrice, hasVariations } from "@/utils/functions";
-
 const props = defineProps({
   categoryId: { type: String, required: false },
   categorySlug: { type: String, required: false },

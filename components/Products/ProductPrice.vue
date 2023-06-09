@@ -26,6 +26,14 @@
 </template>
 
 <script setup>
+/**
+ * Displays the price of a product, with support for sale prices and variations.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.product - The product to display the price for.
+ * @param {string} [props.priceFontSize="normal"] - The font size for the price display.
+ * @param {boolean} [props.shouldCenterPrice=false] - Whether to center the price display.
+ */
 import { computed } from "vue";
 import {
   formatPrice,

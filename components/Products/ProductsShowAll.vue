@@ -18,7 +18,6 @@
               }"
             >
               <ProductImage :alt="product.name" :src="productImage(product)" />
-
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
@@ -84,6 +83,12 @@ const props = defineProps({
 
 const config = useRuntimeConfig();
 
+/**
+ * Returns the source URL of a product image or a placeholder image if the product does not have an image.
+ *
+ * @param {Object} product - The product object containing the image source URL.
+ * @return {string} The source URL of the product image or a placeholder image if the product does not have an image.
+ */
 const productImage = (product) =>
   product.image ? product.image.sourceUrl : config.public.placeholderImage;
 

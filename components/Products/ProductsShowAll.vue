@@ -1,5 +1,5 @@
 <template>
-  <div v-if="allCategoryProducts?.productCategory?.products?.nodes">
+  <template v-if="allCategoryProducts?.productCategory?.products?.nodes">
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
         <template
@@ -17,42 +17,24 @@
                 query: { id: product.databaseId },
               }"
             >
-              <img
-                id="product-image"
-                class="p-8 border mx-auto w-4/5 border-gray-200 rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
-                :alt="product.name"
-                :src="productImage(product)"
-              />
+              <ProductImage :alt="product.name" :src="productImage(product)" />
+
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
                 </p>
               </div>
             </NuxtLink>
-            <div v-if="product.onSale" class="flex justify-center mt-2">
-              <div class="text-lg text-gray-900 line-through">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, "right") }}</span
-                >
-                <span v-else>{{ product.regularPrice }}</span>
-              </div>
-              <div class="ml-4 text-xl text-gray-900">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price) }}</span
-                >
-                <span v-else>{{ product.salePrice }}</span>
-              </div>
-            </div>
-            <div v-else>
-              <p class="mt-2 text-xl text-center text-gray-900">
-                {{ product.price }}
-              </p>
-            </div>
+            <ProductPrice
+              :product="product"
+              priceFontSize="normal"
+              :shouldCenterPrice="true"
+            />
           </div>
         </template>
       </div>
     </section>
-  </div>
+  </template>
   <div v-else>
     <section>
       <div id="product-container" class="flex flex-wrap items-center">
@@ -69,37 +51,18 @@
                 query: { id: product.databaseId },
               }"
             >
-              <img
-                id="product-image"
-                class="p-8 border mx-auto w-4/5 border-gray-200 rounded drop-shadow-lg transition duration-500 ease-in-out transform cursor-pointer lg:ml-0 lg:w-full lg:p-2 hover:scale-95"
-                :alt="product.name"
-                :src="productImage(product)"
-              />
+              <ProductImage :alt="product.name" :src="productImage(product)" />
               <div class="flex justify-center pt-3">
                 <p class="text-2xl font-bold text-center cursor-pointer">
                   {{ product.name }}
                 </p>
               </div>
             </NuxtLink>
-            <div v-if="product.onSale" class="flex justify-center mt-2">
-              <div class="text-lg text-gray-900 line-through">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price, "right") }}</span
-                >
-                <span v-else>{{ product.regularPrice }}</span>
-              </div>
-              <div class="ml-4 text-xl text-gray-900">
-                <span v-if="product.variations">
-                  {{ filteredVariantPrice(product.price) }}</span
-                >
-                <span v-else>{{ product.salePrice }}</span>
-              </div>
-            </div>
-            <div v-else>
-              <p class="mt-2 text-xl text-center text-gray-900">
-                {{ product.price }}
-              </p>
-            </div>
+            <ProductPrice
+              :product="product"
+              priceFontSize="normal"
+              :shouldCenterPrice="true"
+            />
           </div>
         </template>
       </div>
@@ -111,7 +74,8 @@
 import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
 import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
 
-import { filteredVariantPrice } from "@/utils/functions";
+import ProductImage from "@/components/Products/ProductImage.vue";
+import ProductPrice from "@/components/Products/ProductPrice.vue";
 
 const props = defineProps({
   categoryId: { type: String, required: false },
@@ -121,7 +85,7 @@ const props = defineProps({
 const config = useRuntimeConfig();
 
 const productImage = (product) =>
-  product.image ? product.image.sourceUrl : config.placeholderImage;
+  product.image ? product.image.sourceUrl : config.public.placeholderImage;
 
 const productVariables = { limit: 99 };
 const { data: allProducts } = await useAsyncQuery(

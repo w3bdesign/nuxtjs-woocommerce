@@ -44,7 +44,7 @@ import {
 
 const config = useRuntimeConfig();
 
-const indexName = config.indexName || "dfweb";
+const indexName = config.public.indexName || "dfweb";
 const algolia = useAlgoliaRef();
 
 const convertProductNameToSlug = (productName) =>

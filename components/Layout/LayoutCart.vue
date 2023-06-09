@@ -37,7 +37,7 @@
               {{ cartLength }}
             </span>
             <span class="text-white lg:text-black"
-              >Total: {{ config.currencySymbol }} {{ subTotal }}</span
+              >Total: {{ config.public.currencySymbol }} {{ subTotal }}</span
             >
           </div>
         </transition>

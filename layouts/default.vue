@@ -1,11 +1,11 @@
 <template>
   <div>
-    <LayoutNavbar />
-    <div class="container mx-auto max-w-[84.375rem]">
-      <slot />
-    </div>
-    <LayoutFooter />
-    <LayoutStickyFooter />
+  <LayoutNavbar />
+  <div class="container mx-auto max-w-[84.375rem]">
+    <slot />
+  </div>
+  <LayoutFooter />
+  <LayoutStickyFooter />
   </div>
 </template>
 
@@ -14,6 +14,7 @@
 .home-leave-active {
   transition: opacity 0.5s;
 }
+
 .home-enter,
 .home-leave-active {
   opacity: 0;
@@ -23,6 +24,7 @@
 .cart-leave-active {
   transition: all 0.5s;
 }
+
 .cart-enter,
 .cart-leave-active {
   opacity: 0;

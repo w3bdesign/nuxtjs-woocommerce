@@ -41,11 +41,20 @@ import { BILLING_FIELDS, BILLING_SCHEMA } from "./constants/BILLING_FIELDS";
 
 import CHECKOUT_MUTATION from "@/apollo/mutations/CHECKOUT_MUTATION.gql";
 
+/**
+ * Returns an input string with its first character capitalized.
+ *
+ * @param {string} input - The string to capitalize the first character of.
+ * @return {string} The input string with the first character capitalized.
+ */
 const upperCaseFirstChar = (input) =>
   input.charAt(0).toUpperCase() + input.slice(1);
 
 const paymentMethod = "cod";
 
+/**
+ * Handles the submission of a checkout form with the provided user information.
+ */
 const handleSubmit = ({
   firstName,
   lastName,

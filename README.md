@@ -81,9 +81,3 @@ Try logging off wp-admin and try again.
 ### The products page isn't loading
 
 Check the attributes of the products. Right now the application requires Size and Color.
-
-## TODO
-
--   Refactor and improve codebase with reusable components
-
-

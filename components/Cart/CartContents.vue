@@ -11,12 +11,12 @@
           <div class="item">
             <span class="block mt-2 font-extrabold">Remove: <br /></span>
             <span class="item-content">
-              <img
+              <nuxt-img
                 class="mt-2 ml-4 cursor-pointer"
                 :class="{ removing: isRemoving }"
                 alt="Remove icon"
                 aria-label="Remove"
-                src="@/assets/svg/Remove.svg"
+                src="/svg/Remove.svg"
                 @click="handleRemoveProduct(products)"
               />
             </span>

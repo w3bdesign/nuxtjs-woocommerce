@@ -1,7 +1,5 @@
 import { uid } from "uid";
 
-const config = useRuntimeConfig();
-
 /**
  * Checks if the given data object has any variations by accessing the product's variations nodes array.
  *
@@ -15,19 +13,28 @@ export function hasVariations(data) {
 }
 
 /**
- * Formats the given price to the currency specified in the config file using the Intl.NumberFormat object.
+ * Formats a given price into a string with a currency symbol and locale.
  *
- * @param {number} price - The price to be formatted.
- * @return {string} The formatted price as a string with the currency symbol and no decimal places.
+ * @param {string} price - The price to format.
+ * @param {string} currency - The currency to use. Defaults to "NOK".
+ * @param {string} currencyLocale - The locale to use for the currency symbol. Defaults to "nb-NO".
+ * @return {string} The formatted price as a string with the currency symbol and locale.
  */
-export function formatPrice(price) {
-  // Convert the price string to a numerical float value
+export function formatPrice(price, currency, currencyLocale) {
+  // Set default values
+  const currencyPrice = currency || "NOK";
+  const currencySymbol = currencyLocale || "nb-NO";
 
+  if (!price) {
+    return;
+  }
+
+  // Convert the price string to a numerical float value
   const numericPrice = parseFloat(price.replace(/[^\d.]/g, ""));
 
-  return new Intl.NumberFormat(config.public.currencyLocale, {
+  return new Intl.NumberFormat(currencySymbol, {
     style: "currency",
-    currency: config.public.currency,
+    currency: currencyPrice,
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(numericPrice);

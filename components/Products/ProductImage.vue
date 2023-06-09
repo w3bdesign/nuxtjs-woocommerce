@@ -1,5 +1,5 @@
 <template>
-  <img
+  <nuxt-img
     id="product-image"
     class="h-auto p-8 transition duration-500 ease-in-out transform md:p-0 hover:shadow-lg hover:scale-95"
     :alt="alt"

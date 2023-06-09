@@ -13,11 +13,11 @@
             class="text-xl text-white no-underline lg:text-black is-active"
           >
             <span class="hidden lg:block">
-              <img
+              <nuxt-img
                 alt="Cart icon"
                 class="h-12 ml-4 lg:ml-2"
                 aria-label="Cart"
-                src="~/assets/svg/Cart.svg"
+                src="/svg/Cart.svg"
               />
             </span>
             <span class="block lg:hidden">

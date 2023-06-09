@@ -48,6 +48,9 @@
  * @prop {string} id - The ID of the product to display.
  * @prop {string} slug - The slug of the product to display.
  */
+
+import { ref, watch } from 'vue';
+
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
@@ -62,7 +65,7 @@ const isLoading = useState("isLoading", () => false);
 
 const cart = useCart();
 
-const selectedVariation = ref(null)
+const selectedVariation = ref(); // TODO Use selectedVariation v-model and implement this functionality to support multiple variants
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -71,6 +74,16 @@ const props = defineProps({
 
 const variables = { id: props.id, slug: props.slug };
 const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+
+watch(
+  () => data.value,
+  (dataValue) => {
+    if (dataValue && dataValue.product.variations.nodes.length > 0) {
+      selectedVariation.value = dataValue.product.variations.nodes[0].databaseId;
+    }
+  },
+  { immediate: true }
+);
 
 /**
  * Adds a product to the cart by calling the addToCart mutation with the given product.

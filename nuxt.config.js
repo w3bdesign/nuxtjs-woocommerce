@@ -3,7 +3,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
   modules: [

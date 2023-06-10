@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <LayoutNavbar />
-    <div class="container mx-auto max-w-[84.375rem]">
+    <div class="container mx-auto max-w-[84.375rem] flex-grow">
+      <main >
       <slot />
+    </main>
     </div>
     <LayoutFooter />
     <LayoutStickyFooter />

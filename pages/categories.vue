@@ -1,5 +1,7 @@
 <template>
+  <div class="flex justify-center items-center">
   <CategoryShowAll />
+  </div>
 </template>
 
 <script setup>

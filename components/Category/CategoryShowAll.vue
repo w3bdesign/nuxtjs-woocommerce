@@ -1,8 +1,8 @@
 <template>
   <div v-if="data.productCategories">
-    <section class="mx-auto bg-white">
+    <section class=" bg-white">
       <div
-        class="grid gap-2 px-2 pt-2 pb-2 lg:px-0 xl:px-0 md:px-0 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 xs:grid-cols-3"
+        class="flex justify-center align-middle flex-col md:flex-row"
       >
         <template v-for="nodes in data.productCategories">
           <template v-for="category in nodes">
@@ -14,9 +14,9 @@
                   query: { id: category.id },
                 }"
               >
-                <div class="mt-6 cursor-pointer">
+                <div class="cursor-pointer ml-4 mt-[5rem] md:mt-[20rem] w-full md:w-64 flex-row">
                   <div
-                    class="flex items-center justify-center w-full h-16 text-center border border-gray-300 rounded-lg shadow hover:shadow-outline"
+                    class="p-4 min-w-[10rem] flex items-center justify-center w-full h-16 text-center border border-gray-300 rounded-lg shadow hover:shadow-outline"
                   >
                     <p class="text-lg">
                       {{ category.name }}

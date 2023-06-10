@@ -5,7 +5,7 @@
   >
     <div class="flex flex-wrap lg:px-4">
       <div class="w-full pr-2 my-2 lg:w-3/12 md:w-10/12">
-        <div class="ml-4 lg:ml-0">
+        <div class="ml-4 lg:ml-2">
           <nuxt-img
             alt="Logo"
             class="h-16 lg:h-18 ml-[55px] md:ml-0"

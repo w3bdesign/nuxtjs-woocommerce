@@ -32,7 +32,7 @@
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.4",
     "uid": "^2.0.2",
-    "vee-validate": "^4.10.0",
+    "vee-validate": "^4.10.1",
     "yup": "^1.2.0"
   }
 }

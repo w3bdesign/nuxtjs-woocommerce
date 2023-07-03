@@ -1,9 +1,7 @@
 <template>
   <div v-if="data.productCategories">
-    <section class=" bg-white">
-      <div
-        class="flex justify-center align-middle flex-col md:flex-row"
-      >
+    <section class="bg-white">
+      <div class="flex justify-center align-middle flex-col md:flex-row">
         <template v-for="nodes in data.productCategories">
           <template v-for="category in nodes">
             <div v-if="category.slug !== undefined" :key="category.id">
@@ -14,7 +12,9 @@
                   query: { id: category.id },
                 }"
               >
-                <div class="cursor-pointer ml-4 mt-[5rem] md:mt-[20rem] w-full md:w-64 flex-row">
+                <div
+                  class="cursor-pointer ml-4 mt-[5rem] md:mt-[20rem] w-full md:w-64 flex-row"
+                >
                   <div
                     class="p-4 min-w-[10rem] flex items-center justify-center w-full h-16 text-center border border-gray-300 rounded-lg shadow hover:shadow-outline"
                   >

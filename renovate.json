@@ -23,7 +23,7 @@
     },
     {
       "matchUpdateTypes": ["patch", "lockFileMaintenance"],
-      "automerge": true,
+      "automerge": false,
       "automergeType": "branch",
       "matchDepTypes": [
         "dependencies",

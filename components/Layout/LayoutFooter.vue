@@ -3,9 +3,7 @@
     <footer
       class="px-6 text-center bg-white border border-gray-300 rounded-lg shadow-lg"
     >
-      <div class="p-6">
-        Copyright reserved &copy; {{ todayDate }} Daniel
-      </div>
+      <div class="p-6">Copyright reserved &copy; {{ todayDate }} Daniel</div>
     </footer>
   </div>
 </template>

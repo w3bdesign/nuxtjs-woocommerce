@@ -27,6 +27,7 @@
 -   Form handling and validation with Formkit, Vee Validate and Yup
 -   Checkout process
 -   Animated mobile menu
+-   Basic Playwright test(s) integrated with Github actions
 
 ## Installation
 

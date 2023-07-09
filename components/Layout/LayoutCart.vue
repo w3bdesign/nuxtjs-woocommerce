@@ -76,7 +76,7 @@ const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
  * @return {void}
  */
 const updateCartDisplay = () => {
-  if (!data || !data?.value?.cart?.contents?.nodes?.length) {
+  if (!data?.value?.cart?.contents?.nodes?.length) {
     return;
   }
 

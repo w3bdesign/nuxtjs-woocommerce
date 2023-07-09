@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import debounce from "lodash.debounce";
+import _ from "lodash";
 import { ref, watch } from "vue";
 
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
@@ -95,13 +95,6 @@ const updateCartDisplay = () => {
     0
   );
 
-  console.log("remoteCartLength", remoteCartLength);
-  console.log("cart.getCartQuantity", cart.getCartQuantity);
-  console.log("data.value.cart.contents", data.value.cart.contents);
-  console.log("remoteTotal", remoteTotal);
-
-  //cartLength.value = cart.getCartQuantity;
-  //subTotal.value = cart.getCartTotal;
   cartLength.value = remoteCartLength;
   subTotal.value = remoteTotal;
   remoteError.value = error;
@@ -117,12 +110,12 @@ onBeforeMount(() => {
 });
 
 // Debounce the execution of fetching data
-const debouncedExecute = debounce(() => {
+const debouncedExecute = _.debounce(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
     execute(); // Re-fetch the data
     updateCartDisplay();
   }
-}, 1000);
+}, 2000);
 
 // Watch for changes in the cart state
 watch(

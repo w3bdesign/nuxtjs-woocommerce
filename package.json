@@ -30,7 +30,7 @@
     "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/algolia": "^1.8.0",
     "@pinia/nuxt": "^0.4.11",
-    "lodash.debounce": "^4.0.8",
+    "lodash": "^4.17.21",
     "pinia": "^2.1.4",
     "uid": "^2.0.2",
     "vee-validate": "^4.10.6",

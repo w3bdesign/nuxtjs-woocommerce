@@ -21,7 +21,6 @@
               />
             </span>
           </div>
-
           <div class="item">
             <span class="block mt-2 font-extrabold">Name: <br /></span>
             <span class="item-content">{{ products.product.node.name }}</span>

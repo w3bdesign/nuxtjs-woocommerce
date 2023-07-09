@@ -33,6 +33,19 @@
 </template>
 
 <script setup>
+/**
+ * Vue component representing a product item in a shopping cart.
+ *
+ * @component CartItem
+ *
+ * @prop {Object} product - The product object containing information about the product.
+ * @prop {string} product.name - The name of the product.
+ * @prop {number} product.quantity - The quantity of the product.
+ * @prop {number} product.total - The subtotal of the product.
+ *
+ * @emits CartItem#remove - Emitted when the remove button is clicked.
+ */
+
 import { defineProps, defineEmits } from "vue";
 
 import { formatPrice } from "@/utils/functions";

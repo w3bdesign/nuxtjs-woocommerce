@@ -17,6 +17,14 @@
 </template>
 
 <script setup>
+/**
+ * Vue.js component for handling the logic of removing a product from the cart and updating the cart state.
+ *
+ * @module CartContents
+ * @param {Object} props - Object containing the component's properties.
+ * @param {Boolean} props.showCheckoutButton - Determines whether the checkout button should be shown or not.
+ * @returns {Object} The Vue.js component object.
+ */
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
 

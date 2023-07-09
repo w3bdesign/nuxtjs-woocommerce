@@ -3,9 +3,9 @@
     role="banner"
     class="container flex flex-col justify-center px-0 pt-4 md:pt-6 mx-auto mb-6"
   >
-    <div class="flex flex-wrap lg:px-4">
-      <div class="w-full pr-2 my-2 lg:w-3/12 md:w-10/12">
-        <div class="ml-4 lg:ml-2">
+    <div class="flex flex-wrap lg:px-4 items-center">
+      <div class="pr-2 my-2 lg:w-3/12 md:w-10/12">
+        <div class="ml-4 lg:ml-2 mt-6">
           <nuxt-img
             alt="Logo"
             class="h-16 lg:h-18 ml-[55px] md:ml-0"

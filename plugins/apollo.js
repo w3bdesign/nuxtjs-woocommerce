@@ -53,7 +53,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         }
       }
       return response;
-    }),
+    })
   );
 
   // Cache implementation

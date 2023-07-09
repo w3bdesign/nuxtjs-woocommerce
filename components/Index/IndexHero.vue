@@ -69,7 +69,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 onMounted(() => {
-  swiper = new Swiper(".swiper", {
+  new Swiper(".swiper", {
     modules: [Navigation, Pagination],
     pagination: {
       el: ".swiper-pagination",

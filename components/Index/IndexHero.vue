@@ -67,8 +67,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-let swiper;
-
 onMounted(() => {
   swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],
@@ -89,6 +87,6 @@ onMounted(() => {
 }
 
 .swiper {
-  width: 100%; 
+  width: 100%;
 }
 </style>

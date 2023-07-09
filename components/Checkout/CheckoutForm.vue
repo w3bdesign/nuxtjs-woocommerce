@@ -1,5 +1,5 @@
 <template>
-  <section class="text-gray-700 container p-4 py-2 mx-auto">
+  <section class="text-gray-700 container p-4 py-2 mx-auto mt-8">
     <Form :validation-schema="BILLING_SCHEMA" @submit="handleSubmit">
       <div class="mx-auto lg:w-1/2 flex flex-wrap">
         <div

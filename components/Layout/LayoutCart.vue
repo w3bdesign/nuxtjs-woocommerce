@@ -8,7 +8,7 @@
     <NuxtLink to="/cart">
       <transition name="cart">
         <span
-          v-if="cartLength"
+          v-if="cartLength && !loading"
           class="text-xl text-white no-underline lg:text-black is-active"
         >
           <span class="hidden lg:block">
@@ -29,7 +29,7 @@
         </span>
       </transition>
       <transition name="cart">
-        <div v-if="cartLength">
+        <div v-if="cartLength && !loading">
           <span
             class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-black bg-white lg:text-white lg:bg-black rounded-full lg:ml-14"
           >
@@ -59,6 +59,7 @@ const subTotal = useState("subTotal", "");
 const remoteError = useState("remoteError", () => false);
 
 const cartChanged = ref(false);
+const loading = ref(true);
 
 const cart = useCart();
 
@@ -102,6 +103,10 @@ const updateCartDisplay = () => {
 onBeforeMount(() => {
   execute();
   updateCartDisplay();
+});
+
+onMounted(() => {
+  loading.value = false;
 });
 
 // Debounce the execution of fetching data

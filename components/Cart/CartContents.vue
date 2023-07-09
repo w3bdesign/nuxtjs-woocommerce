@@ -41,7 +41,7 @@
     </div>
     <h2
       v-if="!data.cart?.contents?.nodes?.length"
-      class="m-4 text-3xl text-center"
+      class="mt-64 text-3xl text-center"
     >
       Cart is currently empty
     </h2>

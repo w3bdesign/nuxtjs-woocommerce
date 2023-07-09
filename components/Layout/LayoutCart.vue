@@ -77,7 +77,7 @@ const cartChanged = ref(false);
  * @return {void}
  */
 const updateCartDisplay = () => {
-  if (!data || !data.value.cart.contents.nodes.length) {
+  if (!data || !data?.value?.cart?.contents?.nodes?.length) {
     return;
   }
 
@@ -86,13 +86,29 @@ const updateCartDisplay = () => {
     0
   );
 
+  const remoteTotal = data.value.cart.contents.nodes.reduce(
+    (total, product) => {
+      // Remove non-numeric characters and convert to number
+      const productTotal = Number(product.total.replace(/[^0-9.-]+/g, ""));
+      return total + productTotal;
+    },
+    0
+  );
+
+  console.log("remoteCartLength", remoteCartLength);
+  console.log("cart.getCartQuantity", cart.getCartQuantity);
+  console.log("data.value.cart.contents", data.value.cart.contents);
+  console.log("remoteTotal", remoteTotal);
+
+  //cartLength.value = cart.getCartQuantity;
+  //subTotal.value = cart.getCartTotal;
+  cartLength.value = remoteCartLength;
+  subTotal.value = remoteTotal;
+  remoteError.value = error;
+
   if (remoteCartLength !== cart.getCartQuantity) {
     cartChanged.value = true;
   }
-
-  cartLength.value = cart.getCartQuantity;
-  subTotal.value = cart.getCartTotal;
-  remoteError.value = error;
 };
 
 onBeforeMount(() => {

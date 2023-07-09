@@ -2,53 +2,18 @@
   <template v-if="data.cart?.contents?.nodes?.length">
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <section class="mt-10">
-      <div
-        v-for="products in data.cart.contents.nodes"
-        :key="products.id"
-        class="container mx-auto mt-4 flex-container"
-      >
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Remove: <br /></span>
-          <span class="item-content">
-            <nuxt-img
-              class="mt-2 ml-4 cursor-pointer"
-              :class="{ removing: isRemoving }"
-              alt="Remove icon"
-              aria-label="Remove"
-              src="/svg/Remove.svg"
-              @click="handleRemoveProduct(products)"
-            />
-          </span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Name: <br /></span>
-          <span class="item-content">{{ products.product.node.name }}</span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Quantity: <br /> </span>
-          <span class="item-content">
-            {{ products.quantity }}
-          </span>
-        </div>
-        <div class="item">
-          <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
-          <span class="item-content"> {{ products.total }} </span>
-        </div>
-      </div>
+      <CartItem
+        v-for="product in data.cart.contents.nodes"
+        :key="product.id"
+        :product="product"
+        @remove="handleRemoveProduct"
+      />
     </section>
-    <h2
-      v-if="!data.cart?.contents?.nodes?.length"
-      class="mt-64 text-3xl text-center"
-    >
-      Cart is currently empty
-    </h2>
-    <CommonButton
-      link-to="/checkout"
-      v-if="showCheckoutButton && data.cart?.contents?.nodes?.length"
-      center-button
-      >CHECKOUT</CommonButton
-    >
+    <CommonButton link-to="/checkout" v-if="showCheckoutButton" center-button>
+      CHECKOUT
+    </CommonButton>
   </template>
+  <h2 v-else class="mt-64 text-3xl text-center">Cart is currently empty</h2>
 </template>
 
 <script setup>

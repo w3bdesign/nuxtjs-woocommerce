@@ -84,5 +84,5 @@ setInterval(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
     updateCartDisplay();
   }
-}, 1000);
+}, 2000);
 </script>

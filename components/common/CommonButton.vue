@@ -54,8 +54,11 @@
 </template>
 
 <script setup>
-/*
- * Usage:
+/**
+ * Vue.js component that renders a button.
+ *
+ * @component CommonButton
+ * @example
  * <CommonButton @common-button-click="functionName" is-loading="true" center-button="false" link-to="/link">Common button</CommonButton>
  */
 

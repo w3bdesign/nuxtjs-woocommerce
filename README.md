@@ -22,6 +22,7 @@
 -   Nuxt Apollo
 -   Pinia with pinia-plugin-persistedstate for cart and state management
 -   Responsive design
+-   Swiper integration for Hero section
 -   Support for simple and variable products
 -   Stock quantity on simple and variable products
 -   CSS animations and transitions

@@ -72,13 +72,13 @@ const productImage = (product) =>
 const productVariables = { limit: 99 };
 const { data: allProducts } = await useAsyncQuery(
   FETCH_ALL_PRODUCTS_QUERY,
-  productVariables
+  productVariables,
 );
 
 const categoryVariables = { id: props.categoryId };
 const { data: allCategoryProducts } = await useAsyncQuery(
   GET_PRODUCTS_FROM_CATEGORY_QUERY,
-  categoryVariables
+  categoryVariables,
 );
 </script>
 

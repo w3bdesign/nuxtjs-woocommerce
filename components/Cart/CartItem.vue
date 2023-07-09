@@ -25,13 +25,17 @@
     </div>
     <div class="item">
       <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
-      <span class="item-content">{{ product.total }}</span>
+      <span class="item-content"
+        >{{ formatPrice(`${product.total}`) }}</span
+      >
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from "vue";
+
+import { formatPrice } from "@/utils/functions";
 
 const isRemoving = useState("isRemoving", () => false);
 

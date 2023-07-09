@@ -117,7 +117,10 @@ const displayMobileMenu = () => {
 .burger.burger-squeeze .burger-lines,
 .burger.burger-squeeze .burger-lines:after,
 .burger.burger-squeeze .burger-lines:before {
-  transition: 0.2s top 0.2s, 0.1s left, 0.2s transform,
+  transition:
+    0.2s top 0.2s,
+    0.1s left,
+    0.2s transform,
     0.4s background-color 0.2s;
 }
 .burger.burger-squeeze .burger-lines:after,
@@ -127,7 +130,11 @@ const displayMobileMenu = () => {
 .burger.burger-squeeze.open .burger-lines,
 .burger.burger-squeeze.open .burger-lines:after,
 .burger.burger-squeeze.open .burger-lines:before {
-  transition: 0.2s background-color, 0.2s top, 0.2s left, 0.2s transform 0.15s;
+  transition:
+    0.2s background-color,
+    0.2s top,
+    0.2s left,
+    0.2s transform 0.15s;
 }
 .burger.burger-squeeze.open .burger-lines {
   background-color: transparent;

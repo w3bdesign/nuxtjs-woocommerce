@@ -109,7 +109,7 @@ watch(
         dataValue.product?.variations?.nodes[0].databaseId;
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 /**

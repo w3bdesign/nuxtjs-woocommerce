@@ -11,7 +11,7 @@ export const useCart = defineStore("cartState", {
   actions: {
     addToCart(product) {
       const foundProductInCartIndex = this.cart.findIndex(
-        (cartproduct) => product.slug === cartproduct.slug
+        (cartproduct) => product.slug === cartproduct.slug,
       );
 
       if (foundProductInCartIndex > -1) {
@@ -40,7 +40,7 @@ export const useCart = defineStore("cartState", {
         (total, product) =>
           total +
           Number(product.price.replace(currencySymbol, "")) * product.quantity,
-        0
+        0,
       );
     },
   },

@@ -61,6 +61,9 @@ const props = defineProps({
 
 const emit = defineEmits(["remove"]);
 
+/**
+ * Emits a "remove" event with the `product` prop as the payload.
+  */
 const emitRemove = () => {
   emit("remove", props.product);
 };

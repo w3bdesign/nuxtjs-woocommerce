@@ -62,8 +62,6 @@ const remoteError = useState("remoteError", () => false);
 
 const cartChanged = ref(false);
 
-const config = useRuntimeConfig();
-
 const cart = useCart();
 
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {

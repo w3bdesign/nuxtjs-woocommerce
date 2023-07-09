@@ -36,9 +36,9 @@
             >
               {{ cartLength }}
             </span>
-            <span class="text-white lg:text-black"
-              >Total: {{ config.public.currencySymbol }} {{ subTotal }}</span
-            >
+            <span class="text-white lg:text-black">
+              Total: {{ formatPrice(`${subTotal}`) }}
+            </span>
           </div>
         </transition>
       </NuxtLink>
@@ -52,13 +52,15 @@ import { ref, watch } from "vue";
 
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
-import { getCookie } from "@/utils/functions";
+import { getCookie, formatPrice } from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
 
 const cartLength = useState("cartLength", () => 0);
 const subTotal = useState("subTotal", "");
 const remoteError = useState("remoteError", () => false);
+
+const cartChanged = ref(false);
 
 const config = useRuntimeConfig();
 
@@ -67,9 +69,6 @@ const cart = useCart();
 const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
   options: { fetchPolicy: "cache-and-network" },
 });
-
-// A ref to track if the cart changed
-const cartChanged = ref(false);
 
 /**
  * Updates the display of the cart.

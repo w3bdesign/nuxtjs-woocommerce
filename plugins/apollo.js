@@ -9,7 +9,7 @@ import { provideApolloClient } from "@vue/apollo-composable";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const cookie = useCookie("woo-session", {
-    maxAge: 86_400,
+    maxAge: 1_209_600, // 14 days
     sameSite: "lax",
   });
   const config = useRuntimeConfig();

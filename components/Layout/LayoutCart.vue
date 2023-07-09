@@ -47,6 +47,9 @@
 </template>
 
 <script setup>
+import debounce from "lodash.debounce";
+import { ref, watch } from "vue";
+
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
 import { getCookie } from "@/utils/functions";
@@ -65,9 +68,26 @@ const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
   options: { fetchPolicy: "cache-and-network" },
 });
 
+// A ref to track if the cart changed
+const cartChanged = ref(false);
+
+/**
+ * Updates the display of the cart.
+ *
+ * @return {void}
+ */
 const updateCartDisplay = () => {
-  if (!data) {
+  if (!data || !data.value.cart.contents.nodes.length) {
     return;
+  }
+
+  const remoteCartLength = data.value.cart.contents.nodes.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
+
+  if (remoteCartLength !== cart.getCartQuantity) {
+    cartChanged.value = true;
   }
 
   cartLength.value = cart.getCartQuantity;
@@ -80,9 +100,28 @@ onBeforeMount(() => {
   updateCartDisplay();
 });
 
-setInterval(() => {
+// Debounce the execution of fetching data
+const debouncedExecute = debounce(() => {
   if (process.client && !pending.value && getCookie("woo-session")) {
+    execute(); // Re-fetch the data
     updateCartDisplay();
   }
-}, 2000);
+}, 1000);
+
+// Watch for changes in the cart state
+watch(
+  () => cart.getCartQuantity,
+  () => {
+    cartChanged.value = true;
+    debouncedExecute();
+  }
+);
+
+// Use a longer interval if you still want to use an interval
+setInterval(() => {
+  if (cartChanged.value) {
+    cartChanged.value = false;
+    debouncedExecute();
+  }
+}, 5000);
 </script>

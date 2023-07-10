@@ -49,11 +49,6 @@
 </template>
 
 <script setup>
-/**
- *
- * Vue.js template for a header section of a web page.
- *
- */
 import NavItem from "@/components/Layout/LayoutNavItem.vue";
 </script>
 

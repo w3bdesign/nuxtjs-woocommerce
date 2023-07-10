@@ -1,5 +1,14 @@
 import { defineStore } from "pinia";
 
+/**
+ * Manages a shopping cart store using the Pinia library.
+ *
+ * @typedef {Object} CartState
+ * @property {Array} cart - The array representing the cart.
+ * @property {boolean} loading - The loading status of the cart.
+ * @property {string|null} error - The error message, if any.
+ */
+
 const state = {
   cart: [],
   loading: true,
@@ -11,7 +20,7 @@ export const useCart = defineStore("cartState", {
   actions: {
     addToCart(product) {
       const foundProductInCartIndex = this.cart.findIndex(
-        (cartproduct) => product.slug === cartproduct.slug,
+        (cartproduct) => product.slug === cartproduct.slug
       );
 
       if (foundProductInCartIndex > -1) {
@@ -40,7 +49,7 @@ export const useCart = defineStore("cartState", {
         (total, product) =>
           total +
           Number(product.price.replace(currencySymbol, "")) * product.quantity,
-        0,
+        0
       );
     },
   },

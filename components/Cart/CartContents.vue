@@ -40,6 +40,11 @@ defineProps({
 
 const { data } = await useAsyncQuery(GET_CART_QUERY);
 
+/**
+ * Handles the removal of a product.
+ *
+ * @param {Object} product - The product to be removed.
+ */
 const handleRemoveProduct = (product) => {
   const updatedItems = [];
 

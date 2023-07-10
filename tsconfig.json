@@ -1,6 +1,10 @@
 {
-    "extends": "./.nuxt/tsconfig.json",
-    "compilerOptions": {
-      "allowJs": true
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
     }
   }
+}

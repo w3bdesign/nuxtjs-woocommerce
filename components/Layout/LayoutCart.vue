@@ -67,11 +67,6 @@ const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
   options: { fetchPolicy: "cache-and-network" },
 });
 
-/**
- * Updates the display of the cart.
- *
- * @return {void}
- */
 const updateCartDisplay = () => {
   if (!data?.value?.cart?.contents?.nodes?.length) {
     return;

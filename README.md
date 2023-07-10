@@ -1,7 +1,7 @@
 [![Playwright Tests](https://github.com/w3bdesign/nuxtjs-woocommerce/actions/workflows/playwright.yml/badge.svg)](https://github.com/w3bdesign/nuxtjs-woocommerce/actions/workflows/playwright.yml)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1835e693354349ffaa703c0bbaf2b52b)](https://app.codacy.com/gh/w3bdesign/nuxtjs-woocommerce?utm_source=github.com&utm_medium=referral&utm_content=w3bdesign/nuxtjs-woocommerce&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1835e693354349ffaa703c0bbaf2b52b)](https://app.codacy.com/gh/w3bdesign/nuxtjs-woocommerce?utm_source=github.com\&utm_medium=referral\&utm_content=w3bdesign/nuxtjs-woocommerce\&utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce/badge)](https://www.codefactor.io/repository/github/w3bdesign/nuxtjs-woocommerce)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nuxtjs-woocommerce&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nuxtjs-woocommerce)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=w3bdesign_nuxtjs-woocommerce\&metric=alert_status)](https://sonarcloud.io/dashboard?id=w3bdesign_nuxtjs-woocommerce)
 
 # Nuxt 3 Ecommerce site with WooCommerce backend
 
@@ -9,49 +9,49 @@
 
 ## Table Of Contents (TOC)
 
--   [Features](#Features)
--   [Installation](#Installation)
--   [Troubleshooting](#Troubleshooting)
--   [TODO](#TODO)
+*   [Features](#Features)
+*   [Installation](#Installation)
+*   [Troubleshooting](#Troubleshooting)
+*   [TODO](#TODO)
 
 ## Features
 
--   Nuxt 3 
--   Vue 3 and Composition API with <script setup> syntax
--   Tailwind CSS
--   Nuxt Apollo
--   Pinia with pinia-plugin-persistedstate for cart and state management
--   Responsive design
--   Swiper integration for Hero section
--   Support for simple and variable products
--   Stock quantity on simple and variable products
--   CSS animations and transitions
--   Form handling and validation with Formkit, Vee Validate and Yup
--   Checkout process
--   Animated mobile menu
--   Basic Playwright test(s) integrated with Github actions
+*   Nuxt 3
+*   Vue 3 and Composition API with <script setup> syntax
+*   Tailwind CSS
+*   Nuxt Apollo
+*   Pinia with pinia-plugin-persistedstate for cart and state management
+*   Responsive design
+*   Swiper integration for Hero section
+*   Support for simple and variable products
+*   Stock quantity on simple and variable products
+*   CSS animations and transitions
+*   Form handling and validation with Formkit, Vee Validate and Yup
+*   Checkout process
+*   Animated mobile menu
+*   Basic Playwright test(s) integrated with Github actions
 
 ## Installation
 
 1.  Install and activate the following required plugins, in your WordPress plugin directory:
 
--   [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.
--   [wp-graphql](https://wordpress.org/plugins/wp-graphql) Exposes GraphQL for WordPress.
--   [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) Adds WooCommerce functionality to a WPGraphQL schema. Currently only confirmed to be working with version 0.62 of this plugin.
--   [wp-algolia-woo-indexer](https://github.com/w3bdesign/wp-algolia-woo-indexer) WordPress plugin coded by me. Sends WooCommerce products to Algolia. Required for search to work.
+*   [woocommerce](https://wordpress.org/plugins/woocommerce) Ecommerce for WordPress.
+*   [wp-graphql](https://wordpress.org/plugins/wp-graphql) Exposes GraphQL for WordPress.
+*   [wp-graphql-woocommerce](https://github.com/wp-graphql/wp-graphql-woocommerce) Adds WooCommerce functionality to a WPGraphQL schema. Currently only confirmed to be working with version 0.62 of this plugin.
+*   [wp-algolia-woo-indexer](https://github.com/w3bdesign/wp-algolia-woo-indexer) WordPress plugin coded by me. Sends WooCommerce products to Algolia. Required for search to work.
 
 Optional plugin:
 
--   [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
--   [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
+*   [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
+*   [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
 
 The current release has been tested and is confirmed working with the following plugin versions:
 
--   WordPress version 6.1.1
--   WooCommerce version 7.4.0
--   WP GraphQL version 1.13.8
--   WooGraphQL version 0.12.0
--   WPGraphQL CORS version 2.1
+*   WordPress version 6.1.1
+*   WooCommerce version 7.4.0
+*   WP GraphQL version 1.13.8
+*   WooGraphQL version 0.12.0
+*   WPGraphQL CORS version 2.1
 
 2.  Make sure WooCommerce has some products already or import some sample products
 

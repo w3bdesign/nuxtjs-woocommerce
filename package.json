@@ -31,7 +31,7 @@
     "@nuxtjs/algolia": "^1.8.0",
     "@pinia/nuxt": "^0.4.11",
     "lodash": "^4.17.21",
-    "pinia": "^2.1.4",
+    "pinia": "^2.1.6",
     "swiper": "^10.0.4",
     "uid": "^2.0.2",
     "vee-validate": "^4.10.8",

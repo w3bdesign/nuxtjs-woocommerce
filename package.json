@@ -23,7 +23,7 @@
   },
   "overrides": {
     "vue": "^3.3.4",
-    "tslib": "2.5.1"
+    "tslib": "2.6.2"
   },
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-beta.9-f64c966",

@@ -3,7 +3,8 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  ssr: true,
+  //ssr: true,
+  ssr: false,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
   modules: [
@@ -33,7 +34,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      charset: "utf-16",
+      charset: "utf-8",
       viewport: "width=500, initial-scale=1",
       meta: [{ name: "description", content: "Nuxt 3 - Woocommerce" }],
     },

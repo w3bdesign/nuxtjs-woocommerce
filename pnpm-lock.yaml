@@ -19,9 +19,6 @@ dependencies:
   swiper:
     specifier: ^10.2.0
     version: 10.2.0
-  tslib:
-    specifier: ^2.6.2
-    version: 2.6.2
   uid:
     specifier: ^2.0.2
     version: 2.0.2
@@ -5728,6 +5725,7 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
 
   /tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}

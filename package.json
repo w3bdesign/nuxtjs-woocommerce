@@ -23,7 +23,8 @@
     "tailwindcss": "^3.3.3"
   },
   "overrides": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "tslib": "2.5.1"
   },
   "dependencies": {
     "@formkit/nuxt": "^0.19.0",
@@ -32,7 +33,7 @@
     "lodash": "^4.17.21",
     "pinia": "^2.1.6",
     "swiper": "^10.2.0",
-    "tslib": "^2.6.2",
+    
     "uid": "^2.0.2",
     "vee-validate": "^4.11.3",
     "yup": "^1.2.0"

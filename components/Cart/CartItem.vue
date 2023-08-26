@@ -25,9 +25,7 @@
     </div>
     <div class="item">
       <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
-      <span class="item-content"
-        >{{ formatPrice(`${product.total}`) }}</span
-      >
+      <span class="item-content">{{ formatPrice(`${product.total}`) }}</span>
     </div>
   </div>
 </template>
@@ -63,7 +61,7 @@ const emit = defineEmits(["remove"]);
 
 /**
  * Emits a "remove" event with the `product` prop as the payload.
-  */
+ */
 const emitRemove = () => {
   emit("remove", props.product);
 };

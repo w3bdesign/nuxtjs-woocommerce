@@ -18,18 +18,19 @@ query Product($id: ID!) {
       salePrice
       regularPrice
       databaseId
+      stockQuantity
     }
     ... on VariableProduct {
       price
       salePrice
       regularPrice
       databaseId
-      paColors {
+      allPaColors {
         nodes {
           name
         }
       }
-      paSizes {
+      allPaSizes {
         nodes {
           name
         }

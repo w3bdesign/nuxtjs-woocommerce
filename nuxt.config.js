@@ -1,73 +1,63 @@
-export default {
-  generate: {
-    fallback: true,
-  },
-  target: 'server', // Default is 'server'. Can be 'server' or 'static'
-  // Environment variables (https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env)
-  env: {
-    graphqlUrl: process.env.GRAPHQL_URL || 'http://localhost:3000/graphql',
-    placeholderSmallImage: process.env.PLACEHOLDER_SMALL_IMAGE_URL || '',
-    AlgoliaApplicationId: process.env.ALGOLIA_APPLICATION_ID || '',
-    AlgoliaSearchOnlyAPIKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY || '',
-    AlgoliaIndexName: process.env.ALGOLIA_INDEX_NAME || '',
-  },
-  // Global page headers (https://go.nuxtjs.dev/config-head)
-  head: {
-    title: 'NuxtJS WooCommerce',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://unpkg.com/swiper/swiper-bundle.min.css',
-      },
-    ],
-  },
+// https://nuxt.com/docs/api/configuration/nuxt-config
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  // css: ['@/assets/css/animate.min.css', '@/assets/css/swiper-bundle.min.css'],
-  css: ['@/assets/css/animate.min.css'],
+import { defineNuxtConfig } from "nuxt/config";
 
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/vue-formulate'],
-
-  // Auto import components (https://go.nuxtjs.dev/config-components)
+export default defineNuxtConfig({
+  ssr: true,
   components: true,
-
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    '@nuxt/postcss8',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+  css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
+  modules: [
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxtjs/apollo",
+    "@formkit/nuxt",
+    "@nuxtjs/algolia",
+    "nuxt-icon",
+    "@nuxt/image",
   ],
-
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/apollo'],
-
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    transpile: ['vue-instantsearch', 'instantsearch.js/es'],
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          // loader: 'eslint-loader', // DEPRECATED
-          // loader: "eslint-webpack-plugin",
-          exclude: /(node_modules)/,
-        })
-      }
+  plugins: ["~/plugins/apollo"],
+  runtimeConfig: {
+    public: {
+      graphqlURL: process.env.PUBLIC_GRAPHQL_URL,
+      indexName: process.env.PUBLIC_ALGOLIA_INDEX_NAME,
+      placeholderImage: process.env.PUBLIC_PLACEHOLDER_SMALL_IMAGE_URL,
+      currencyLocale: process.env.PUBLIC_CURRENCY_LOCALE,
+      currency: process.env.PUBLIC_CURRENCY,
     },
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  app: {
+    head: {
+      charset: "utf-16",
+      viewport: "width=500, initial-scale=1",
+      meta: [{ name: "description", content: "Nuxt 3 - Woocommerce" }],
+    },
+    // global transition
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
+  },
+  algolia: {
+    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+    applicationId: process.env.ALGOLIA_APPLICATION_ID,
+    instantSearch: { theme: "algolia" },
   },
   apollo: {
-    clientConfigs: {
-      default: '@/plugins/apollo-client-config.js',
+    authType: "Session",
+    authHeader: "woocommerce-session",
+    tokenStorage: "cookie",
+    tokenName: "woocommerce-session",
+    clients: {
+      default: {
+        httpEndpoint: process.env.PUBLIC_GRAPHQL_URL,
+        httpLinkOptions: {
+          credentials: "include",
+        },
+      },
     },
   },
-}
+});

@@ -1,12 +1,12 @@
 <template>
-  <div class="flex justify-center items-center">
-    <CategoryShowAll />
-  </div>
+  <ProductsSingleProduct :id="route.query.id" :slug="route.params.product" />
 </template>
 
 <script setup>
+const route = useRoute();
+
 useHead({
-  title: "Categories",
+  title: route.params.product,
   titleTemplate: "%s - Nuxt 3 Woocommerce",
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },

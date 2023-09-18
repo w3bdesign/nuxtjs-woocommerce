@@ -45,8 +45,8 @@ devDependencies:
     specifier: 5.0.0-alpha.6
     version: 5.0.0-alpha.6(typescript@5.2.2)(vue@3.3.4)
   '@pinia-plugin-persistedstate/nuxt':
-    specifier: ^1.1.1
-    version: 1.1.1(@pinia/nuxt@0.4.11)(pinia@2.1.6)
+    specifier: ^1.1.2
+    version: 1.1.2(@pinia/nuxt@0.4.11)(pinia@2.1.6)
   '@playwright/test':
     specifier: ^1.38.0
     version: 1.38.0
@@ -1563,12 +1563,12 @@ packages:
       '@parcel/watcher-win32-x64': 2.3.0
     dev: true
 
-  /@pinia-plugin-persistedstate/nuxt@1.1.1(@pinia/nuxt@0.4.11)(pinia@2.1.6):
-    resolution: {integrity: sha512-b6ZNP3Re8COmfZEpj4KQmbp2TuDKrLggDFLZa8FiJF68xE/oCsPXIuXUvAt8E4ht/5sq4Z/grlA+iGXaI2aeKQ==}
+  /@pinia-plugin-persistedstate/nuxt@1.1.2(@pinia/nuxt@0.4.11)(pinia@2.1.6):
+    resolution: {integrity: sha512-3deRNiIlFoFGO/K8Sz+yc53ayMzElR8ack7RnGka80zBgp6Fs9GWjoLJiy+ToIc7qVa6wrQcoLDsxcnvzX4T0g==}
     peerDependencies:
       '@pinia/nuxt': ^0.4.4
     dependencies:
-      '@nuxt/kit': 3.7.0
+      '@nuxt/kit': 3.7.3
       '@pinia/nuxt': 0.4.11(typescript@5.2.2)(vue@3.3.4)
       defu: 6.1.2
       pinia-plugin-persistedstate: 3.2.0(pinia@2.1.6)

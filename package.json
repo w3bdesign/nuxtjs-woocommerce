@@ -8,7 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier --write \"**/*.{js,ts,vue}\"",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm i && npm run format"
+    "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && npm run format"
   },
   "devDependencies": {
     "@nuxt/image": "1.0.0-rc.2",

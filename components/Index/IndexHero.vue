@@ -4,7 +4,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <nuxt-img
-            class="mx-auto"
+            class="mx-auto w-full"
             alt="Image slider slide #1"
             src="/images/Hero.jpg"
           />
@@ -21,7 +21,7 @@
 
         <div class="swiper-slide">
           <nuxt-img
-            class="mx-auto"
+            class="mx-auto w-full"
             alt="Image slider slide #1"
             src="/images/Hero2.jpg"
           />
@@ -37,7 +37,7 @@
         </div>
         <div class="swiper-slide">
           <nuxt-img
-            class="mx-auto"
+            class="mx-auto w-full"
             alt="Image slider slide #1"
             src="/images/Hero3.jpg"
           />

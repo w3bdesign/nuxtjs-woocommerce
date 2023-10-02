@@ -11,7 +11,7 @@
     "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && npm run format"
   },
   "devDependencies": {
-    "@nuxt/image": "1.0.0-rc.2",
+    "@nuxt/image": "1.0.0-rc.3",
     "@nuxtjs/apollo": "5.0.0-alpha.6",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
     "@playwright/test": "^1.38.1",

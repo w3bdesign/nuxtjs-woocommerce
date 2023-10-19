@@ -16,7 +16,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
     "@playwright/test": "^1.39.0",
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.7.4",
+    "nuxt": "^3.8.0",
     "nuxt-icon": "^0.5.0",
     "postcss": "^8.4.30",
     "prettier": "^3.0.3",

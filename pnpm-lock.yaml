@@ -31,8 +31,8 @@ dependencies:
     specifier: ^2.0.2
     version: 2.0.2
   vee-validate:
-    specifier: ^4.11.6
-    version: 4.11.8(vue@3.3.8)
+    specifier: ^4.12.0
+    version: 4.12.0(vue@3.3.8)
   yup:
     specifier: ^1.3.2
     version: 1.3.2
@@ -6876,8 +6876,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /type-fest@4.7.1:
-    resolution: {integrity: sha512-iWr8RUmzAJRfhZugX9O7nZE6pCxDU8CZ3QxsLuTnGcBLJpCaP2ll3s4eMTBoFnU/CeXY/5rfQSuAEsTGJO4y8A==}
+  /type-fest@4.8.2:
+    resolution: {integrity: sha512-mcvrCjixA5166hSrUoJgGb9gBQN4loMYyj9zxuMs/66ibHNEFd5JXMw37YVDx58L4/QID9jIzdTBB4mDwDJ6KQ==}
     engines: {node: '>=16'}
     dev: false
 
@@ -7156,13 +7156,13 @@ packages:
       builtins: 5.0.1
     dev: true
 
-  /vee-validate@4.11.8(vue@3.3.8):
-    resolution: {integrity: sha512-ZuVpw0axWYBM3aVTD/bm94hcWHumqeUgNjptOqfBT0gyqyHaGYCrm0tSD/0bygEbWUDwEPJOQaEKaUGM82j8TQ==}
+  /vee-validate@4.12.0(vue@3.3.8):
+    resolution: {integrity: sha512-hQtSziTN/l70uq8Y8X4ZayGwHtJo0VPLXImzUbvl0OqEdX6jlgrnePSmQIZlu1HeEjDfOVvCJCDACKerJzRVSw==}
     peerDependencies:
       vue: ^3.3.4
     dependencies:
       '@vue/devtools-api': 6.5.1
-      type-fest: 4.7.1
+      type-fest: 4.8.2
       vue: 3.3.8
     dev: false
 

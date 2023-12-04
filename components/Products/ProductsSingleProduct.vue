@@ -138,6 +138,8 @@ const addProductToCart = async (product) => {
 
   onDone(() => {
     isLoading.value = false;
+    // Refresh the page
+    window.location.reload();
   });
 
   onError(() => {

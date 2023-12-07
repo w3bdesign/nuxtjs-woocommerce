@@ -48,8 +48,8 @@ devDependencies:
     specifier: 1.1.0
     version: 1.1.0
   '@nuxtjs/apollo':
-    specifier: 5.0.0-alpha.10
-    version: 5.0.0-alpha.10(vue@3.3.10)
+    specifier: 5.0.0-alpha.11
+    version: 5.0.0-alpha.11(vue@3.3.10)
   '@pinia-plugin-persistedstate/nuxt':
     specifier: ^1.2.0
     version: 1.2.0(@pinia/nuxt@0.5.1)(pinia@2.1.7)
@@ -1593,14 +1593,14 @@ packages:
       - vue-server-renderer
     dev: false
 
-  /@nuxtjs/apollo@5.0.0-alpha.10(vue@3.3.10):
-    resolution: {integrity: sha512-jp25y7k6jpY8SqCxGZhetEhtmJqpFzYPiyKg8rcsv0AYolc9i301RHSQ5acEA8FvWAfaHSEPNZh9rEQGx6DVxQ==}
+  /@nuxtjs/apollo@5.0.0-alpha.11(vue@3.3.10):
+    resolution: {integrity: sha512-7fjkKawCwgW5j6m9c2D6vfsy3AbjDqH9eC4ZLiARDkHu6F6sZWUi915c2g/+cgOAFtPWPs1k2YllF+xrDout4Q==}
     dependencies:
       '@apollo/client': 3.8.8(graphql-ws@5.14.2)(graphql@16.8.1)
       '@nuxt/kit': 3.8.2
       '@rollup/plugin-graphql': 2.0.4(graphql@16.8.1)
-      '@vue/apollo-composable': 4.0.0-beta.11(@apollo/client@3.8.8)(graphql@16.8.1)(vue@3.3.10)
-      '@vue/apollo-option': 4.0.0-beta.9(@apollo/client@3.8.8)(vue@3.3.10)
+      '@vue/apollo-composable': 4.0.0-beta.12(@apollo/client@3.8.8)(graphql@16.8.1)(vue@3.3.10)
+      '@vue/apollo-option': 4.0.0-beta.12(@apollo/client@3.8.8)(vue@3.3.10)
       defu: 6.1.3
       destr: 2.0.2
       graphql: 16.8.1
@@ -2283,8 +2283,8 @@ packages:
       - rollup
     dev: true
 
-  /@vue/apollo-composable@4.0.0-beta.11(@apollo/client@3.8.8)(graphql@16.8.1)(vue@3.3.10):
-    resolution: {integrity: sha512-ZtztRDrQe2sTn31h+teBfYw81AePfxlBssTaZVk2jOagdZgTfZigR7aJjO98FxwvGnB80ElWHKubvqYwNf8heg==}
+  /@vue/apollo-composable@4.0.0-beta.12(@apollo/client@3.8.8)(graphql@16.8.1)(vue@3.3.10):
+    resolution: {integrity: sha512-qfi6B6obkzvCUVGB9l28s96xCzPfffB0c7esR8y3UbKc1KwzdOIESMHmoYv0xM2isYP0pu+dz6Rt9KUn7zNf4Q==}
     peerDependencies:
       '@apollo/client': ^3.4.13
       '@vue/composition-api': ^1.0.0
@@ -2304,8 +2304,8 @@ packages:
       - typescript
     dev: true
 
-  /@vue/apollo-option@4.0.0-beta.9(@apollo/client@3.8.8)(vue@3.3.10):
-    resolution: {integrity: sha512-hxWk9vfYFmw/CwlGm0afcCcREWxxmTUpiLad1xpaxpYC0UMqXDJEXz7WU5G0e5KdRi0/HFr1EBkqVN1UyzhsiQ==}
+  /@vue/apollo-option@4.0.0-beta.12(@apollo/client@3.8.8)(vue@3.3.10):
+    resolution: {integrity: sha512-QgfLG1mRsLxRUpiwuOXJgvWt1UziiHu62zQaC3TnPWNmblTvWiEIl/FrqaJ3BbVC/kEu8dvLdvqic0zC/VA3Ww==}
     peerDependencies:
       '@apollo/client': ^3.2.1
       vue: ^3.3.10

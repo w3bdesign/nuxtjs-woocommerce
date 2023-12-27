@@ -17,7 +17,7 @@
     "@playwright/test": "^1.40.1",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.9.0",
-    "nuxt-icon": "^0.6.7",
+    "nuxt-icon": "^0.6.8",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.4.0"

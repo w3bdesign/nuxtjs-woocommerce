@@ -63,8 +63,8 @@ devDependencies:
     specifier: ^3.9.0
     version: 3.9.0(vite@4.5.1)
   nuxt-icon:
-    specifier: ^0.6.7
-    version: 0.6.7(nuxt@3.9.0)(vite@4.5.1)(vue@3.3.10)
+    specifier: ^0.6.8
+    version: 0.6.8(nuxt@3.9.0)(vite@4.5.1)(vue@3.3.10)
   postcss:
     specifier: ^8.4.32
     version: 8.4.32
@@ -1098,8 +1098,8 @@ packages:
       graphql: 16.8.1
     dev: true
 
-  /@iconify/collections@1.0.366:
-    resolution: {integrity: sha512-xILFf0SeEPYTreD0oLVq+dXiZYIQeErlkIkxwQCRu49RXnMIYrRq+GzCGliZ6fUK3wonPJAAUX3aLOHgdcZvVQ==}
+  /@iconify/collections@1.0.374:
+    resolution: {integrity: sha512-7M8ruZSWACypaR+OpBQIk/b5Vf/fzggMlfVv7JqSYrQ9YjCPtIAMgPi7Kbbm1Rinvp5mVXIylGZKaBqqjqKNJQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -1312,22 +1312,6 @@ packages:
 
   /@nuxt/devalue@2.0.2:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
-    dev: true
-
-  /@nuxt/devtools-kit@1.0.4(nuxt@3.9.0)(vite@4.5.1):
-    resolution: {integrity: sha512-AXNeI1dBilNryCmwuTd3lU7CrPBhzUJ5ntTFiXw9MmFwe5QT3NOxDFOv0gX7z1DFnmBEmx5mPKWysCwh7htEnQ==}
-    peerDependencies:
-      nuxt: ^3.8.1
-      vite: '*'
-    dependencies:
-      '@nuxt/kit': 3.8.2
-      '@nuxt/schema': 3.8.2
-      execa: 7.2.0
-      nuxt: 3.9.0(vite@4.5.1)
-      vite: 4.5.1
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
     dev: true
 
   /@nuxt/devtools-kit@1.0.6(nuxt@3.9.0)(vite@4.5.1):
@@ -5283,13 +5267,13 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /nuxt-icon@0.6.7(nuxt@3.9.0)(vite@4.5.1)(vue@3.3.10):
-    resolution: {integrity: sha512-0QnQM0yqJCb8PWt+gAn6RiXy1/CHScFuOPbsfIIwHMvyKkea+blj5/unq7F9ZHMkfrHozyCID8ErFPSzwEYLeA==}
+  /nuxt-icon@0.6.8(nuxt@3.9.0)(vite@4.5.1)(vue@3.3.10):
+    resolution: {integrity: sha512-6eWlNOb6Uvp63uXFdhcmsB1JlubDv76Pot/VwmIu0yJxDYhwytbnv3WAjw2khl2l7W/65V4eMGIEeX9C5Ahxng==}
     dependencies:
-      '@iconify/collections': 1.0.366
+      '@iconify/collections': 1.0.374
       '@iconify/vue': 4.1.1(vue@3.3.10)
-      '@nuxt/devtools-kit': 1.0.4(nuxt@3.9.0)(vite@4.5.1)
-      '@nuxt/kit': 3.8.2
+      '@nuxt/devtools-kit': 1.0.6(nuxt@3.9.0)(vite@4.5.1)
+      '@nuxt/kit': 3.9.0
     transitivePeerDependencies:
       - nuxt
       - rollup

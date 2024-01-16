@@ -14,7 +14,7 @@
     "@nuxt/image": "1.2.0",
     "@nuxtjs/apollo": "5.0.0-alpha.11",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@playwright/test": "^1.40.1",
+    "@playwright/test": "^1.41.0",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.9.1",
     "nuxt-icon": "^0.6.8",

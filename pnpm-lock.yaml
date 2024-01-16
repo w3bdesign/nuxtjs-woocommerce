@@ -10,8 +10,8 @@ overrides:
 
 dependencies:
   '@formkit/nuxt':
-    specifier: ^1.4.0
-    version: 1.4.0(tailwindcss@3.4.1)(vite@4.5.1)
+    specifier: ^1.5.0
+    version: 1.5.0(tailwindcss@3.4.1)(vite@4.5.1)
   '@nuxtjs/algolia':
     specifier: ^1.10.1
     version: 1.10.1(vue@3.4.14)
@@ -974,45 +974,45 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@formkit/core@1.4.0:
-    resolution: {integrity: sha512-LQYICzYWTC+ZXPyfizHDRJTBx6WLM3eRk9T4tzU8YPV58AYWPq3E4dbN5CKl7mPApAcJX6NxQOCYuNrdNKZvQA==}
+  /@formkit/core@1.5.0:
+    resolution: {integrity: sha512-6GitRLD24aF7+GAoNdjBQ0U8nMBTKdzyjjEWQ8LnhHa+g0B7eXTVxPaaSJRC2uPv5qkh1gvV5rxah7d1VPgmDQ==}
     dependencies:
-      '@formkit/utils': 1.4.0
+      '@formkit/utils': 1.5.0
     dev: false
 
-  /@formkit/dev@1.4.0:
-    resolution: {integrity: sha512-y71zSZGAWdqjuj5p7IvptJXgDXYFTZrJSjZ9HeQjNYJ1n3Nwc7latTzJSEQyOHuboSzRWafATYNeB3pqiTvBYg==}
+  /@formkit/dev@1.5.0:
+    resolution: {integrity: sha512-B2KEGzo2ux6XyGTpwoIaY8vEBtnlWm9jPuvZEW0PoOTAsTez7mjkuAEGmDU9zu4+pNmJFlYYpRWs2/cqZn05Kg==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/utils': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/utils': 1.5.0
     dev: false
 
-  /@formkit/i18n@1.4.0:
-    resolution: {integrity: sha512-NRqw3ummnboUVkxN68jdy/T/mvgnf0/8v76160V3dTdt4OK9Q1Eq0a7pgonm0gBqisezX/0pELRWD0NPgUZSPw==}
+  /@formkit/i18n@1.5.0:
+    resolution: {integrity: sha512-y5C6Eo02vjrkCKp3sbazS+5IUZMDrQC95G0rjEaS6gy7BlHDZxfS1KQqZlAFEwml7TXle1vlKqBnh1tVH/XRnA==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/utils': 1.4.0
-      '@formkit/validation': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/utils': 1.5.0
+      '@formkit/validation': 1.5.0
     dev: false
 
-  /@formkit/inputs@1.4.0:
-    resolution: {integrity: sha512-6IvgjOZnvtYq2oSEXkarDCaabxl4o29FhFmD64d0lC8WTaVLcRPKgo9BsLaVvLYfJgVKDzFyPIMGLFNhTsiJ/Q==}
+  /@formkit/inputs@1.5.0:
+    resolution: {integrity: sha512-qu0wm274tEs/k7Pnvvf63tXX8WV6Pba7XV7eUoI3WTWgnGs/O0oJOYKNmybWGWPRlaU1jeddeDoSEAJCHha7tA==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/utils': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/utils': 1.5.0
     dev: false
 
-  /@formkit/nuxt@1.4.0(tailwindcss@3.4.1)(vite@4.5.1):
-    resolution: {integrity: sha512-UmcKiecauf6oBtxA1IfOEZcIcCYD843qL+UUNA8nzACivEkv6WWFqkDTOpUG2Ov7NrInPBlLopVLrzddC6Yw2g==}
+  /@formkit/nuxt@1.5.0(tailwindcss@3.4.1)(vite@4.5.1):
+    resolution: {integrity: sha512-COdZW8kOM24uqw0LWf56eqBjVth4qpeI90F2aW8+YNLF+DOibFyHVIJ3cEVDuH9RlAak1PijSVamv9HnYdWRFA==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/i18n': 1.4.0
-      '@formkit/vue': 1.4.0(tailwindcss@3.4.1)
-      '@nuxt/kit': 3.8.2
+      '@formkit/core': 1.5.0
+      '@formkit/i18n': 1.5.0
+      '@formkit/vue': 1.5.0(tailwindcss@3.4.1)
+      '@nuxt/kit': 3.9.1
       chokidar: 3.5.3
       nuxi: 3.10.0
-      pathe: 1.1.1
-      unplugin-formkit: 0.2.7(vite@4.5.1)
+      pathe: 1.1.2
+      unplugin-formkit: 0.2.12(vite@4.5.1)
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -1025,23 +1025,23 @@ packages:
       - windicss
     dev: false
 
-  /@formkit/observer@1.4.0:
-    resolution: {integrity: sha512-sNjLqi+deN2TCnuRDWdOJ1OjTyxavFKg9pVK1E1KRrbQr0pvPDaS4qYIjrIIWg0YMsQiea487r03elLVesMWWw==}
+  /@formkit/observer@1.5.0:
+    resolution: {integrity: sha512-096+ecY0N7QeA7zQMs0MANf0qj75p0NMS65Owgz/X9Alvck594cfdSmuOoGm6AdiVmfCtVN3+CaehMLyBL58OA==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/utils': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/utils': 1.5.0
     dev: false
 
-  /@formkit/rules@1.4.0:
-    resolution: {integrity: sha512-NEVDjN89Zwx26Ze0gwqd/Bml3d4QIzp3SDps3uND9IE1Ssd3yvvSSjF5jVeHLE7ZMDLUDfOepf5xyqhPE1UbqA==}
+  /@formkit/rules@1.5.0:
+    resolution: {integrity: sha512-W9RDbLlV7fR5/6KYtvPIyG2ellO42FQMhJ6ka1WRymyaMzkd/9SfkfdqlzpN3hl1jBdyA74kXZtU+f/8BPdONw==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/utils': 1.4.0
-      '@formkit/validation': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/utils': 1.5.0
+      '@formkit/validation': 1.5.0
     dev: false
 
-  /@formkit/themes@1.4.0(tailwindcss@3.4.1):
-    resolution: {integrity: sha512-isyHZALh6S3BM+0G5NeRQkI12gydDRXEkI6oGt5uTn3Ju2olLt8RwOXNYgJ9lWSb8HrfuHh7/89SozdIRNVuCA==}
+  /@formkit/themes@1.5.0(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-LjPuz9KFWeAyaA4PKGwL10OLQIzIUgpWJZ+HvhkY+HuOPvVlqJnRRlI5MIzqjc3GpT27cvIOf7YsDI3ozAQgvA==}
     peerDependencies:
       tailwindcss: ^3.2.0
       unocss: ^0.31.0
@@ -1054,34 +1054,34 @@ packages:
       windicss:
         optional: true
     dependencies:
-      '@formkit/core': 1.4.0
+      '@formkit/core': 1.5.0
       tailwindcss: 3.4.1
     dev: false
 
-  /@formkit/utils@1.4.0:
-    resolution: {integrity: sha512-HAkULL7/0PnRZmMJyFHZ3wxxTYl+tuJrSk13/LQyxB77luwlq8sCvlGaF5cz+0JX70HSVVc0ZJjJT4o0uTVeYQ==}
+  /@formkit/utils@1.5.0:
+    resolution: {integrity: sha512-QLriU0ofuDivsPtJuKU7/DVzKrpHzJHIwlo46sWOdS+703cHP+rWEP+ltyKtLHHB5Iwet52dIT8tNasKAAV+Uw==}
     dev: false
 
-  /@formkit/validation@1.4.0:
-    resolution: {integrity: sha512-KF25aU5ouwg+dFryyDGPTEFgik2TzbiT824PkIQJn7Fgepplo3Dj/UvjHmM2u0hBvIE2CS6XtgE0XVhn1kRG+A==}
+  /@formkit/validation@1.5.0:
+    resolution: {integrity: sha512-zxNSHEm2bfMkq7uS6akbSYe1h4w5l1mLWHDMr4y5hMjxaVp0qzbcetf3SDEhdtrYpINMpov6cokgGjIEdTTH7Q==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/observer': 1.4.0
-      '@formkit/utils': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/observer': 1.5.0
+      '@formkit/utils': 1.5.0
     dev: false
 
-  /@formkit/vue@1.4.0(tailwindcss@3.4.1):
-    resolution: {integrity: sha512-qxLJLG/rc0Mv75h9aaBu1SIFo8AZq1mMCa+u4aWQdXf0k/e8Mfuyhkch25c9pfbzSjEpFzs7G7L5U1gMuTcmtQ==}
+  /@formkit/vue@1.5.0(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-E1ZnC1RV6st02tFkhwTXOL1LQbaDRSK+L8NlaWPqn98QMGyKsG0Dfqlcay0iGZ2jgg7ibJo5PhKow5pi0wCcgA==}
     dependencies:
-      '@formkit/core': 1.4.0
-      '@formkit/dev': 1.4.0
-      '@formkit/i18n': 1.4.0
-      '@formkit/inputs': 1.4.0
-      '@formkit/observer': 1.4.0
-      '@formkit/rules': 1.4.0
-      '@formkit/themes': 1.4.0(tailwindcss@3.4.1)
-      '@formkit/utils': 1.4.0
-      '@formkit/validation': 1.4.0
+      '@formkit/core': 1.5.0
+      '@formkit/dev': 1.5.0
+      '@formkit/i18n': 1.5.0
+      '@formkit/inputs': 1.5.0
+      '@formkit/observer': 1.5.0
+      '@formkit/rules': 1.5.0
+      '@formkit/themes': 1.5.0(tailwindcss@3.4.1)
+      '@formkit/utils': 1.5.0
+      '@formkit/validation': 1.5.0
       vue: 3.4.14
     transitivePeerDependencies:
       - tailwindcss
@@ -1339,7 +1339,7 @@ packages:
       execa: 7.2.0
       global-directory: 4.0.1
       magicast: 0.3.2
-      pathe: 1.1.1
+      pathe: 1.1.2
       pkg-types: 1.0.3
       prompts: 2.4.2
       rc9: 2.1.1
@@ -1378,7 +1378,7 @@ packages:
       ofetch: 1.3.3
       ohash: 1.1.3
       pacote: 17.0.5
-      pathe: 1.1.1
+      pathe: 1.1.2
       perfect-debounce: 1.0.0
       pkg-types: 1.0.3
       rc9: 2.1.1
@@ -1525,7 +1525,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/schema@3.8.2:
     resolution: {integrity: sha512-AMpysQ/wHK2sOujLShqYdC4OSj/S3fFJGjhYXqA2g6dgmz+FNQWJRG/ie5sI9r2EX9Ela1wt0GN1jZR3wYNE8Q==}
@@ -1574,7 +1573,7 @@ packages:
       consola: 3.2.3
       defu: 6.1.4
       hookable: 5.5.3
-      pathe: 1.1.1
+      pathe: 1.1.2
       pkg-types: 1.0.3
       scule: 1.1.1
       std-env: 3.7.0
@@ -1584,7 +1583,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/telemetry@2.5.3:
     resolution: {integrity: sha512-Ghv2MgWbJcUM9G5Dy3oQP0cJkUwEgaiuQxEF61FXJdn0a69Q4StZEP/hLF0MWPM9m6EvAwI7orxkJHM7MrmtVg==}
@@ -1604,7 +1602,7 @@ packages:
       nanoid: 4.0.2
       ofetch: 1.3.3
       parse-git-config: 3.0.0
-      pathe: 1.1.1
+      pathe: 1.1.2
       rc9: 2.1.1
       std-env: 3.7.0
     transitivePeerDependencies:
@@ -1641,7 +1639,7 @@ packages:
       magic-string: 0.30.5
       mlly: 1.4.2
       ohash: 1.1.3
-      pathe: 1.1.1
+      pathe: 1.1.2
       perfect-debounce: 1.0.0
       pkg-types: 1.0.3
       postcss: 8.4.33
@@ -2766,7 +2764,7 @@ packages:
     dependencies:
       '@babel/parser': 7.23.6
       '@rollup/pluginutils': 5.1.0(rollup@4.6.1)
-      pathe: 1.1.1
+      pathe: 1.1.2
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -2777,7 +2775,7 @@ packages:
     dependencies:
       '@babel/parser': 7.23.6
       '@rollup/pluginutils': 5.1.0(rollup@4.6.1)
-      pathe: 1.1.1
+      pathe: 1.1.2
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -2958,7 +2956,7 @@ packages:
       jiti: 1.21.0
       mlly: 1.4.2
       ohash: 1.1.3
-      pathe: 1.1.1
+      pathe: 1.1.2
       perfect-debounce: 1.0.0
       pkg-types: 1.0.3
       rc9: 2.1.1
@@ -3778,7 +3776,7 @@ packages:
     dependencies:
       enhanced-resolve: 5.15.0
       mlly: 1.4.2
-      pathe: 1.1.1
+      pathe: 1.1.2
       ufo: 1.3.2
     dev: true
 
@@ -3959,7 +3957,7 @@ packages:
       node-fetch-native: 1.6.1
       nypm: 0.3.4
       ohash: 1.1.3
-      pathe: 1.1.1
+      pathe: 1.1.2
       tar: 6.2.0
 
   /git-config-path@2.0.0:
@@ -4983,7 +4981,7 @@ packages:
     resolution: {integrity: sha512-i/Ykufi2t1EZ6NaPLdfnZk2AX8cs0d+mTzVKuPfqPKPatxLApaBoxJQ9x1/uckXtrS/U5oisPMDkNs0yQTaBRg==}
     dependencies:
       acorn: 8.11.3
-      pathe: 1.1.1
+      pathe: 1.1.2
       pkg-types: 1.0.3
       ufo: 1.3.2
 
@@ -5098,7 +5096,7 @@ packages:
       ofetch: 1.3.3
       ohash: 1.1.3
       openapi-typescript: 6.7.2
-      pathe: 1.1.1
+      pathe: 1.1.2
       perfect-debounce: 1.0.0
       pkg-types: 1.0.3
       pretty-bytes: 6.1.1
@@ -5472,7 +5470,7 @@ packages:
     dependencies:
       citty: 0.1.5
       execa: 8.0.1
-      pathe: 1.1.1
+      pathe: 1.1.2
       ufo: 1.3.2
 
   /object-assign@4.1.1:
@@ -5658,7 +5656,6 @@ packages:
 
   /pathe@1.1.2:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
-    dev: true
 
   /perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
@@ -5707,7 +5704,7 @@ packages:
     dependencies:
       jsonc-parser: 3.2.0
       mlly: 1.4.2
-      pathe: 1.1.1
+      pathe: 1.1.2
 
   /playwright-core@1.40.1:
     resolution: {integrity: sha512-+hkOycxPiV534c4HhpfX6yrlawqVUzITRKwHAmYfmsVreltEl6fAZJ3DPfLMOODw0H3s1Itd6MDCWmP1fl/QvQ==}
@@ -7138,7 +7135,7 @@ packages:
       defu: 6.1.4
       mime: 3.0.0
       node-fetch-native: 1.6.1
-      pathe: 1.1.1
+      pathe: 1.1.2
     dev: true
 
   /unhead@1.8.9:
@@ -7165,7 +7162,7 @@ packages:
       local-pkg: 0.5.0
       magic-string: 0.30.5
       mlly: 1.4.2
-      pathe: 1.1.1
+      pathe: 1.1.2
       pkg-types: 1.0.3
       scule: 1.1.1
       strip-literal: 1.3.0
@@ -7192,8 +7189,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-formkit@0.2.7(vite@4.5.1):
-    resolution: {integrity: sha512-2Ea5CyEZ2rwjSpx6maweyzFUsV1M/6CiACXHkz4Jv2G32SI4jq58stU7ADWSqrIKgjJE0bllyUx25lpj6ry9gA==}
+  /unplugin-formkit@0.2.12(vite@4.5.1):
+    resolution: {integrity: sha512-l1XqnFCC2jsdTXEWdgO7oIt4Nv/ayKPPuRT8IVmKWxfnf/sR7hjwNKBgVqxErlL7gU84O6S7rCUL9apjIQPQYg==}
     peerDependencies:
       esbuild: '*'
       rollup: ^3
@@ -7209,8 +7206,8 @@ packages:
       webpack:
         optional: true
     dependencies:
-      pathe: 1.1.1
-      unplugin: 1.5.1
+      pathe: 1.1.2
+      unplugin: 1.6.0
       vite: 4.5.1
     dev: false
 
@@ -7231,7 +7228,7 @@ packages:
       json5: 2.2.3
       local-pkg: 0.4.3
       mlly: 1.4.2
-      pathe: 1.1.1
+      pathe: 1.1.2
       scule: 1.1.1
       unplugin: 1.6.0
       vue-router: 4.2.5(vue@3.4.14)
@@ -7395,7 +7392,7 @@ packages:
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
-      pathe: 1.1.1
+      pathe: 1.1.2
       picocolors: 1.0.0
       vite: 5.0.11
     transitivePeerDependencies:

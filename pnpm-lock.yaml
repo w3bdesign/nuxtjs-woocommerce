@@ -31,8 +31,8 @@ dependencies:
     specifier: ^2.0.2
     version: 2.0.2
   vee-validate:
-    specifier: ^4.12.5
-    version: 4.12.5(vue@3.4.18)
+    specifier: ^4.12.6
+    version: 4.12.6(vue@3.4.18)
   vite:
     specifier: 4.5.2
     version: 4.5.2
@@ -7701,8 +7701,8 @@ packages:
       builtins: 5.0.1
     dev: true
 
-  /vee-validate@4.12.5(vue@3.4.18):
-    resolution: {integrity: sha512-rvaDfLPSLwTk+mf016XWE4drB8yXzOsKXiKHTb9gNXNLTtQSZ0Ww26O0/xbIFQe+n3+u8Wv1Y8uO/aLDX4fxOg==}
+  /vee-validate@4.12.6(vue@3.4.18):
+    resolution: {integrity: sha512-EKM3YHy8t1miPh30d5X6xOrfG/Ctq0nbN4eMpCK7ezvI6T98/S66vswP+ihL4QqAK/k5KqreWOxof09+JG7N/A==}
     peerDependencies:
       vue: ^3.4.18
     dependencies:

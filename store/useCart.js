@@ -30,7 +30,6 @@ export const useCart = defineStore("cartState", {
         this.cart.push(productCopy);
       }
     },
-
     removeProductFromCart(product) {
       this.cart.splice(this.cart.indexOf(product), 1);
     },
@@ -42,8 +41,7 @@ export const useCart = defineStore("cartState", {
     getCartQuantity() {
       return this.cart.reduce((total, product) => total + product.quantity, 0);
     },
-
-    getCartTotal() {
+   getCartTotal() {
       const currencySymbol = useRuntimeConfig().public.currencySymbol || "kr";
 
       return this.cart.reduce(

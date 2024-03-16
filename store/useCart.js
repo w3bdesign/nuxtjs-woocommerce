@@ -20,16 +20,17 @@ export const useCart = defineStore("cartState", {
   actions: {
     addToCart(product) {
       const foundProductInCartIndex = this.cart.findIndex(
-        (cartproduct) => product.slug === cartproduct.slug,
+        (cartProduct) => product.slug === cartProduct.slug
       );
 
       if (foundProductInCartIndex > -1) {
         this.cart[foundProductInCartIndex].quantity += 1;
       } else {
-        product.quantity = 1;
-        this.cart.push(product);
+        const productCopy = { ...product, quantity: 1 };
+        this.cart.push(productCopy);
       }
     },
+
     removeProductFromCart(product) {
       this.cart.splice(this.cart.indexOf(product), 1);
     },
@@ -49,7 +50,7 @@ export const useCart = defineStore("cartState", {
         (total, product) =>
           total +
           Number(product.price.replace(currencySymbol, "")) * product.quantity,
-        0,
+        0
       );
     },
   },

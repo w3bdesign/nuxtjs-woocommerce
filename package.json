@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "1.4.0",
-    "@nuxtjs/apollo": "5.0.0-alpha.11",
+    "@nuxtjs/apollo": "5.0.0-alpha.13",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@playwright/test": "^1.42.1",
     "autoprefixer": "^10.4.17",

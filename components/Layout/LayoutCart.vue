@@ -121,19 +121,17 @@ watch(
   }
 );
 
-if (process.client) {
-  onMounted(() => {
-    const intervalId = setInterval(() => {
-      if (cartChanged.value) {
-        cartChanged.value = false;
-        debouncedExecute();
-      }
-    }, 5000);
+onMounted(() => {
+  const intervalId = setInterval(() => {
+    if (cartChanged.value) {
+      cartChanged.value = false;
+      debouncedExecute();
+    }
+  }, 5000);
 
-    // Clear the interval when the component is unmounted to prevent memory leaks
-    onBeforeUnmount(() => {
-      clearInterval(intervalId);
-    });
+  // Clear the interval when the component is unmounted to prevent memory leaks
+  onBeforeUnmount(() => {
+    clearInterval(intervalId);
   });
-}
+});
 </script>

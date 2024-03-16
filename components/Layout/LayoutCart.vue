@@ -121,16 +121,6 @@ watch(
   }
 );
 
-/*
-// Use a longer interval if you still want to use an interval
-setInterval(() => {
-  if (cartChanged.value) {
-    cartChanged.value = false;
-    debouncedExecute();
-  }
-}, 5000);
-*/
-
 if (process.client) {
   onMounted(() => {
     const intervalId = setInterval(() => {

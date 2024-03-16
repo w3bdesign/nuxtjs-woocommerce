@@ -44,8 +44,6 @@
  * @emits CartItem#remove - Emitted when the remove button is clicked.
  */
 
-import { defineProps, defineEmits } from "vue";
-
 import { formatPrice } from "@/utils/functions";
 
 const isRemoving = useState("isRemoving", () => false);

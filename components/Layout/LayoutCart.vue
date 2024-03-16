@@ -74,7 +74,7 @@ const updateCartDisplay = () => {
 
   const remoteCartLength = data.value.cart.contents.nodes.reduce(
     (total, product) => total + product.quantity,
-    0,
+    0
   );
 
   const remoteTotal = data.value.cart.contents.nodes.reduce(
@@ -83,7 +83,7 @@ const updateCartDisplay = () => {
       const productTotal = Number(product.total.replace(/[^0-9.-]+/g, ""));
       return total + productTotal;
     },
-    0,
+    0
   );
 
   cartLength.value = remoteCartLength;
@@ -118,7 +118,7 @@ watch(
   () => {
     cartChanged.value = true;
     debouncedExecute();
-  },
+  }
 );
 
 /*
@@ -128,7 +128,8 @@ setInterval(() => {
     cartChanged.value = false;
     debouncedExecute();
   }
-}, 5000);*/
+}, 5000);
+*/
 
 if (process.client) {
   onMounted(() => {
@@ -145,8 +146,4 @@ if (process.client) {
     });
   });
 }
-
-
-
-
 </script>

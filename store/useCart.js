@@ -36,6 +36,7 @@ export const useCart = defineStore("cartState", {
 
         if (response.data && response.data.addToCart) {
           console.log("Response from Add To Cart mutation:", response);
+          this.loading = false;
           // Assuming the response returns the updated cart item, we need to handle it properly
           const newCartItem = response.data.addToCart.cartItem;
           const foundProductInCartIndex = this.cart.findIndex(
@@ -81,6 +82,10 @@ export const useCart = defineStore("cartState", {
     */
 
     getCartQuantity() {
+
+      //console.log("Cart is:", this.cart);
+      
+
       if (!this.cart) {
         console.error("Cart is undefined");
         return 0;

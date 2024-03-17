@@ -52,7 +52,7 @@
             <div class="pt-1 mt-2">
               <CommonButton
                 @common-button-click="addProductToCart(data.product)"
-                :is-loading="isLoading"
+                :is-loading="isTestLoading"
               >
                 ADD TO CART</CommonButton
               >
@@ -87,9 +87,10 @@ import { stripHTML, filteredVariantName } from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
 
-const isLoading = useState("isLoading", () => false);
-
 const cart = useCart();
+
+// You can now access the loading state directly from the cart store
+const isTestLoading = computed(() => cart.loading);
 
 const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
 
@@ -119,43 +120,12 @@ watch(
  * @return {Promise<void>} A Promise that resolves when the product has been successfully added to the cart.
  */
 const addProductToCart = async (product) => {
-  const productId = product.databaseId ? product.databaseId : product;
-  const productQueryInput = {
-    productId,
-  };
-
-  isLoading.value = true;
-
-  const addToCartvariables = { input: productQueryInput };
-
   cart.addToCart(product);
 
-  const { mutate, onDone, onError } = useMutation(ADD_TO_CART_MUTATION, {
-    addToCartvariables,
-  });
-
-  // mutate(addToCartvariables);
-
-  console.log("We should have added the product here, but it is disabled");
-
-  console.log("Before Triggering a refresh");
-
   watchEffect(() => {
-    console.log("watchEffect isLoading.value:", isLoading.value);
-
-    if (isLoading.value === false) {
+    if (isTestLoading.value === false) {
       window.location.reload();
     }
-  });
-
-  onDone(() => {
-    isLoading.value = false;
-    // Refresh the page
-    window.location.reload();
-  });
-
-  onError(() => {
-    isLoading.value = false;
   });
 };
 </script>

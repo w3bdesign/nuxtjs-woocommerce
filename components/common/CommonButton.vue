@@ -2,8 +2,9 @@
   <div v-if="linkTo" :class="{ center: centerButton }">
     <NuxtLink :to="linkTo" class="button-link">
       <button
+        :disabled="isLoading"
         :class="{ disabled: isLoading }"
-        @click="$emit('CommonButtonClick')"
+        @click.stop="$emit('CommonButtonClick')"
         type="submit"
       >
         <slot />
@@ -28,8 +29,9 @@
   </div>
   <div v-else :class="{ center: centerButton }">
     <button
+      :disabled="isLoading"
       :class="{ disabled: isLoading }"
-      @click="$emit('CommonButtonClick')"
+      @click.stop="$emit('CommonButtonClick')"
       type="submit"
     >
       <slot />
@@ -80,6 +82,10 @@ defineProps({
 </script>
 
 <style scoped>
+button.disabled {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed;
+}
+
 .disabled {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed;
 }

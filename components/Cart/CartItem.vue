@@ -46,7 +46,7 @@
 
 import { formatPrice } from "@/utils/functions";
 
-const isRemoving = useState("isRemoving", () => false);
+const isRemoving = useRef(false);
 
 const props = defineProps({
   product: {

@@ -52,7 +52,7 @@
             <div class="pt-1 mt-2">
               <CommonButton
                 @common-button-click="addProductToCart(data.product)"
-                :is-loading="isTestLoading"
+                :is-loading="isLoading"
               >
                 ADD TO CART</CommonButton
               >
@@ -89,8 +89,7 @@ import { useCart } from "@/store/useCart";
 
 const cart = useCart();
 
-// You can now access the loading state directly from the cart store
-const isTestLoading = computed(() => cart.loading);
+const isLoading = computed(() => cart.loading);
 
 const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
 
@@ -123,7 +122,7 @@ const addProductToCart = async (product) => {
   cart.addToCart(product);
 
   watchEffect(() => {
-    if (isTestLoading.value === false) {
+    if (isLoading.value === false) {
       window.location.reload();
     }
   });

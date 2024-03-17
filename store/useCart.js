@@ -27,13 +27,12 @@ export const useCart = defineStore("cartState", {
         const response = await mutate({
           input: {
             productId: product.databaseId,
-            quantity: 1, // Assuming you're adding one product at a time
+            quantity: 1,
           },
         });
 
         if (response.data && response.data.addToCart) {
           this.loading = false;
-          // Assuming the response returns the updated cart item, we need to handle it properly
           const newCartItem = response.data.addToCart.cartItem;
           const foundProductInCartIndex = this.cart.findIndex(
             (cartProduct) => newCartItem.product.node.slug === cartProduct.slug

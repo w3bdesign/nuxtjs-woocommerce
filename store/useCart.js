@@ -13,7 +13,7 @@ import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
 const state = {
   cart: [],
-  loading: true,
+  loading: false,
   error: null,
 };
 

@@ -11,22 +11,22 @@
     "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && npm run format"
   },
   "devDependencies": {
-    "@nuxt/image": "1.4.0",
-    "@nuxtjs/apollo": "5.0.0-alpha.13",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@playwright/test": "^1.42.1",
     "autoprefixer": "^10.4.18",
     "nuxt": "^3.11.0",
     "nuxt-icon": "^0.6.9",
-    "postcss": "^8.4.36",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "postcss": "^8.4.36",
+    "@nuxt/image": "1.4.0",
+    "@nuxtjs/apollo": "5.0.0-alpha.13",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@formkit/nuxt": "^1.6.0",
     "@nuxtjs/algolia": "^1.10.1",
     "@pinia/nuxt": "^0.5.1",
-    "graphql": "^16.8.1",    
+    "graphql": "^16.8.1",
     "pinia": "^2.1.7",
     "swiper": "^10.3.1",
     "uid": "^2.0.2",

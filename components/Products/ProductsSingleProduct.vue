@@ -109,7 +109,7 @@ watch(
         dataValue.product?.variations?.nodes[0].databaseId;
     }
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 /**
@@ -134,7 +134,19 @@ const addProductToCart = async (product) => {
     addToCartvariables,
   });
 
-  mutate(addToCartvariables);
+  // mutate(addToCartvariables);
+
+  console.log("We should have added the product here, but it is disabled");
+
+  console.log("Before Triggering a refresh");
+
+  watchEffect(() => {
+    console.log("watchEffect isLoading.value:", isLoading.value);
+
+    if (isLoading.value === false) {
+      window.location.reload();
+    }
+  });
 
   onDone(() => {
     isLoading.value = false;

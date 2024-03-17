@@ -23,9 +23,6 @@ export const useCart = defineStore("cartState", {
     async addToCart(product) {
       this.loading = true;
       try {
-        console.log("Adding to cart:", product);
-        console.log("Adding product.databaseId to cart:", product.databaseId);
-
         const { mutate } = useMutation(ADD_TO_CART_MUTATION);
         const response = await mutate({
           input: {
@@ -35,7 +32,6 @@ export const useCart = defineStore("cartState", {
         });
 
         if (response.data && response.data.addToCart) {
-          console.log("Response from Add To Cart mutation:", response);
           this.loading = false;
           // Assuming the response returns the updated cart item, we need to handle it properly
           const newCartItem = response.data.addToCart.cartItem;
@@ -74,18 +70,7 @@ export const useCart = defineStore("cartState", {
     },
   },
   getters: {
-    /*    
-    
     getCartQuantity() {
-      return this.cart.reduce((total, product) => total + product.quantity, 0);
-    },
-    */
-
-    getCartQuantity() {
-
-      //console.log("Cart is:", this.cart);
-      
-
       if (!this.cart) {
         console.error("Cart is undefined");
         return 0;

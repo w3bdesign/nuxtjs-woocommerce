@@ -30,8 +30,6 @@ import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
 
 import { useCart } from "@/store/useCart";
 
-const isRemoving = useState("isRemoving", () => false);
-
 const cart = useCart();
 
 defineProps({
@@ -55,8 +53,6 @@ const handleRemoveProduct = (product) => {
     quantity: 0,
   });
 
-  isRemoving.value = true;
-
   const variables = {
     input: {
       items: updatedItems,
@@ -72,11 +68,8 @@ const handleRemoveProduct = (product) => {
   mutate(variables);
 
   onDone(() => {
-    isRemoving.value = false;
     document.location = "/cart";
   });
-
-  onError(() => (isRemoving.value = false));
 };
 </script>
 

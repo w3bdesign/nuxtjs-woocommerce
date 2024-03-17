@@ -45,26 +45,20 @@
 </template>
 
 <script setup>
-import _ from "lodash";
-import {
-  ref,
-  onBeforeMount,
-  onMounted,
-  onBeforeUnmount,
-  computed,
-  watchEffect,
-} from "vue";
+import { ref, onBeforeMount, computed, watch } from "vue";
+
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 import { getCookie } from "@/utils/functions";
 import { useCart } from "@/store/useCart";
 
-const { data, error, pending, execute } = await useAsyncQuery(GET_CART_QUERY, {
-  options: { fetchPolicy: "cache-and-network" },
-});
-
 const cart = useCart();
 const cartChanged = ref(false);
 const loading = ref(true);
+const remoteError = ref(false);
+
+const { data, error, pending, execute } = useAsyncQuery(GET_CART_QUERY, {
+  fetchPolicy: "cache-and-network",
+});
 
 const cartContents = computed(() => data.value?.cart?.contents?.nodes || []);
 const cartLength = computed(() =>
@@ -76,39 +70,37 @@ const subTotal = computed(() =>
     0
   )
 );
-const remoteError = ref(false);
 
-const debouncedExecute = _.debounce(() => {
-  if (process.client && !pending.value && getCookie("woo-session")) {
-    execute(); // Re-fetch the data
-  }
-}, 2000);
-
-watchEffect(() => {
-  if (cart.getCartQuantity !== cartLength.value) {
+// Watch for changes in the cart quantity and set a flag if it changes
+watch(cartLength, (newLength, oldLength) => {
+  if (newLength !== oldLength) {
     cartChanged.value = true;
   }
 });
 
+// Execute the query initially
 onBeforeMount(() => {
   execute();
 });
 
-onMounted(() => {
-  loading.value = false;
-  const intervalId = setInterval(() => {
-    if (cartChanged.value) {
-      cartChanged.value = false;
-      debouncedExecute();
-    }
-  }, 5000);
+// When the component is mounted, stop the loading state
+loading.value = false;
 
-  onBeforeUnmount(() => {
-    clearInterval(intervalId);
-  });
+// Watch for the cartChanged flag and execute the query when it changes
+watch(cartChanged, (newValue) => {
+  if (
+    newValue &&
+    process.client &&
+    !pending.value &&
+    getCookie("woo-session")
+  ) {
+    execute();
+    cartChanged.value = false; // Reset the flag after executing the query
+  }
 });
 
-watchEffect(() => {
-  remoteError.value = error.value;
+// Watch for errors from the Apollo query
+watch(error, (newError) => {
+  remoteError.value = !!newError;
 });
 </script>

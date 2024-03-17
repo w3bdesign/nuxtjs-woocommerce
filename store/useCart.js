@@ -36,29 +36,27 @@ export const useCart = defineStore("cartState", {
 
         if (response.data && response.data.addToCart) {
           console.log("Response from Add To Cart mutation:", response);
-
-          console.log(
-            "Second Response from Add To Cart mutation: ",
-            response.data.addToCart.cartItem
-          );
-
-          // Update local cart state with the response if needed
-          // For example, if the mutation returns the updated cart
-          //this.cart = response.data.addToCart.cart;
-          
-        } else {
-          // If the mutation doesn't return the updated cart,
-          // update the local state as before
+          // Assuming the response returns the updated cart item, we need to handle it properly
+          const newCartItem = response.data.addToCart.cartItem;
           const foundProductInCartIndex = this.cart.findIndex(
-            (cartProduct) => product.slug === cartProduct.slug
+            (cartProduct) => newCartItem.product.node.slug === cartProduct.slug
           );
 
           if (foundProductInCartIndex > -1) {
-            this.cart[foundProductInCartIndex].quantity += 1;
+            this.cart[foundProductInCartIndex].quantity += newCartItem.quantity;
           } else {
-            const productCopy = { ...product, quantity: 1 };
+            // We need to construct a cart item that matches the expected structure in `this.cart`
+            const productCopy = {
+              ...newCartItem.product.node,
+              quantity: newCartItem.quantity,
+              price: newCartItem.total, // Assuming 'total' is the price for one item
+              slug: newCartItem.product.node.slug,
+            };
             this.cart.push(productCopy);
           }
+        } else {
+          // Handle the case where the mutation does not return the expected data
+          this.error = "Did not receive expected cart data from the server.";
         }
       } catch (error) {
         this.error = error.message || "An error occurred while adding to cart.";
@@ -84,7 +82,7 @@ export const useCart = defineStore("cartState", {
 
     getCartQuantity() {
       if (!this.cart) {
-        console.error('Cart is undefined');
+        console.error("Cart is undefined");
         return 0;
       }
       return this.cart.reduce((total, product) => total + product.quantity, 0);

@@ -39,8 +39,6 @@ export const useCart = defineStore("cartState", {
           );
 
           if (foundProductInCartIndex > -1) {
-            // We need to update the quantity
-
             this.cart[foundProductInCartIndex].quantity += 1;
           } else {
             // We need to construct a cart item that matches the expected structure in `this.cart`
@@ -82,8 +80,6 @@ export const useCart = defineStore("cartState", {
 
     getCartTotal() {
       const currencySymbol = useRuntimeConfig().public.currencySymbol || "kr";
-
-      //console.log("Cart:", this.cart);
 
       const total = this.cart.reduce((total, product) => {
         // Assuming product.price is a string that includes the currency symbol

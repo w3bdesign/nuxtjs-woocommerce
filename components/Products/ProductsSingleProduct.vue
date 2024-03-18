@@ -66,7 +66,7 @@
 
 <script setup>
 /**
- * Vue.js component that displays a single product.
+ * Component that displays a single product.
  *
  * @component
  * @example
@@ -119,7 +119,7 @@ watch(
  * @return {Promise<void>} A Promise that resolves when the product has been successfully added to the cart.
  */
 const addProductToCart = async (product) => {
-  cart.addToCart(product);
+  await cart.addToCart(product);
 
   watchEffect(() => {
     if (isLoading.value === false) {

@@ -39,7 +39,9 @@ export const useCart = defineStore("cartState", {
           );
 
           if (foundProductInCartIndex > -1) {
-            this.cart[foundProductInCartIndex].quantity += newCartItem.quantity;
+            // We need to update the quantity
+
+            this.cart[foundProductInCartIndex].quantity += 1;
           } else {
             // We need to construct a cart item that matches the expected structure in `this.cart`
             const productCopy = {
@@ -48,6 +50,7 @@ export const useCart = defineStore("cartState", {
               price: newCartItem.total, // Assuming 'total' is the price for one item
               slug: newCartItem.product.node.slug,
             };
+
             this.cart.push(productCopy);
           }
         } else {
@@ -80,12 +83,24 @@ export const useCart = defineStore("cartState", {
     getCartTotal() {
       const currencySymbol = useRuntimeConfig().public.currencySymbol || "kr";
 
-      return this.cart.reduce(
-        (total, product) =>
-          total +
-          Number(product.price.replace(currencySymbol, "")) * product.quantity,
-        0
-      );
+      //console.log("Cart:", this.cart);
+
+      const total = this.cart.reduce((total, product) => {
+        // Assuming product.price is a string that includes the currency symbol
+        const numericPrice = product.price
+          .replace(currencySymbol, "")
+          .replace(/[^0-9.]+/g, "");
+
+        // Convert the cleaned string to a floating-point number
+        const price = parseFloat(numericPrice);
+
+        const productTotal = price * product.quantity;
+
+        return total + productTotal;
+      }, 0);
+
+      // Format the total with the currency symbol and return it
+      return `${currencySymbol} ${total.toFixed(2)}`;
     },
   },
   persist: true,

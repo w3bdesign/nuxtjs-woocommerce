@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@formkit/nuxt':
     specifier: ^1.6.0
-    version: 1.6.0(tailwindcss@3.4.1)(vite@4.5.2)(vue@3.4.21)
+    version: 1.6.0(tailwindcss@3.4.3)(vite@4.5.2)(vue@3.4.21)
   '@nuxt/image':
     specifier: 1.4.0
     version: 1.4.0
@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^3.2.5
     version: 3.2.5
   tailwindcss:
-    specifier: ^3.4.1
-    version: 3.4.1
+    specifier: ^3.4.3
+    version: 3.4.3
 
 packages:
 
@@ -1196,12 +1196,12 @@ packages:
       '@formkit/utils': 1.6.0
     dev: false
 
-  /@formkit/nuxt@1.6.0(tailwindcss@3.4.1)(vite@4.5.2)(vue@3.4.21):
+  /@formkit/nuxt@1.6.0(tailwindcss@3.4.3)(vite@4.5.2)(vue@3.4.21):
     resolution: {integrity: sha512-JHZByAUZGbrnLt4q2KElc/7f99MBQwvEJPG/vtmJYN1J8/9J6fDyPFSVtP2ZIrq+4dv9LZPdaF8OkaKr5HV4Qg==}
     dependencies:
       '@formkit/core': 1.6.0
       '@formkit/i18n': 1.6.0
-      '@formkit/vue': 1.6.0(tailwindcss@3.4.1)(vue@3.4.21)
+      '@formkit/vue': 1.6.0(tailwindcss@3.4.3)(vue@3.4.21)
       '@nuxt/kit': 3.10.3
       chokidar: 3.6.0
       nuxi: 3.10.1
@@ -1235,7 +1235,7 @@ packages:
       '@formkit/validation': 1.6.0
     dev: false
 
-  /@formkit/themes@1.6.0(tailwindcss@3.4.1):
+  /@formkit/themes@1.6.0(tailwindcss@3.4.3):
     resolution: {integrity: sha512-b4bkRNDjmZEngXDIgGt3JmeSahUoDf7w0UkLCo1RUezGNmKwWrwgt2QzqFDvsxVsG9/fN0EAsaAX/EMbIJyvJg==}
     peerDependencies:
       tailwindcss: ^3.2.0
@@ -1250,7 +1250,7 @@ packages:
         optional: true
     dependencies:
       '@formkit/core': 1.6.0
-      tailwindcss: 3.4.1
+      tailwindcss: 3.4.3
     dev: false
 
   /@formkit/utils@1.6.0:
@@ -1265,7 +1265,7 @@ packages:
       '@formkit/utils': 1.6.0
     dev: false
 
-  /@formkit/vue@1.6.0(tailwindcss@3.4.1)(vue@3.4.21):
+  /@formkit/vue@1.6.0(tailwindcss@3.4.3)(vue@3.4.21):
     resolution: {integrity: sha512-3RicHg5kpOSmvDpVTamehqY2QtSZvcxxW5UR5p9AR6EtTuPzgkZl8zownTJcgeYp6GWjLzo7zwBIWgrM8GQU/A==}
     peerDependencies:
       vue: ^3.4.0
@@ -1276,7 +1276,7 @@ packages:
       '@formkit/inputs': 1.6.0
       '@formkit/observer': 1.6.0
       '@formkit/rules': 1.6.0
-      '@formkit/themes': 1.6.0(tailwindcss@3.4.1)
+      '@formkit/themes': 1.6.0(tailwindcss@3.4.3)
       '@formkit/utils': 1.6.0
       '@formkit/validation': 1.6.0
       vue: 3.4.21
@@ -7058,8 +7058,8 @@ packages:
     engines: {node: '>=18'}
     requiresBuild: true
 
-  /tailwindcss@3.4.1:
-    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
+  /tailwindcss@3.4.3:
+    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

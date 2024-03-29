@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.10.1
     version: 1.10.1(vue@3.4.21)
   '@nuxtjs/apollo':
-    specifier: 5.0.0-alpha.13
-    version: 5.0.0-alpha.13(vue@3.4.21)
+    specifier: 5.0.0-alpha.14
+    version: 5.0.0-alpha.14(vue@3.4.21)
   '@pinia-plugin-persistedstate/nuxt':
     specifier: ^1.2.0
     version: 1.2.0(@pinia/nuxt@0.5.1)(pinia@2.1.7)
@@ -1528,8 +1528,8 @@ packages:
       nuxt: ^3.9.0
       vite: '*'
     dependencies:
-      '@nuxt/kit': 3.10.3
-      '@nuxt/schema': 3.10.3
+      '@nuxt/kit': 3.11.1
+      '@nuxt/schema': 3.11.1
       execa: 7.2.0
       nuxt: 3.11.1(vite@4.5.2)
       vite: 4.5.2
@@ -1681,6 +1681,7 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
+    dev: false
 
   /@nuxt/kit@3.11.1:
     resolution: {integrity: sha512-8VVlhaY4N+wipgHmSXP+gLM+esms9TEBz13I/J++PbOUJuf2cJlUUTyqMoRVL0xudVKK/8fJgSndRkyidy1m2w==}
@@ -1707,7 +1708,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/schema@3.10.3:
     resolution: {integrity: sha512-a4cYbeskEVBPazgAhvUGkL/j7ho/iPWMK3vCEm6dRMjSqHVEITRosrj0aMfLbRrDpTrMjlRs0ZitxiaUfE/p5Q==}
@@ -1721,12 +1721,13 @@ packages:
       pkg-types: 1.0.3
       scule: 1.3.0
       std-env: 3.7.0
-      ufo: 1.5.1
+      ufo: 1.5.2
       unimport: 3.7.1(rollup@4.13.0)
       untyped: 1.4.2
     transitivePeerDependencies:
       - rollup
       - supports-color
+    dev: false
 
   /@nuxt/schema@3.11.1:
     resolution: {integrity: sha512-XyGlJsf3DtkouBCvBHlvjz+xvN4vza3W7pY3YBNMnktxlMQtfFiF3aB3A2NGLmBnJPqD3oY0j7lljraELb5hkg==}
@@ -1746,7 +1747,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/telemetry@2.5.3:
     resolution: {integrity: sha512-Ghv2MgWbJcUM9G5Dy3oQP0cJkUwEgaiuQxEF61FXJdn0a69Q4StZEP/hLF0MWPM9m6EvAwI7orxkJHM7MrmtVg==}
@@ -1860,11 +1860,11 @@ packages:
       - vue-server-renderer
     dev: false
 
-  /@nuxtjs/apollo@5.0.0-alpha.13(vue@3.4.21):
-    resolution: {integrity: sha512-QoEzzR7uK2Kh6hEB0ynnA1kkOvM7CHiost06gjJT+3IAs88zhEElDc0RGm79dwjRlBdGSnjuiYw7dKhdb/xP3g==}
+  /@nuxtjs/apollo@5.0.0-alpha.14(vue@3.4.21):
+    resolution: {integrity: sha512-Mri3ZV2+d4u15Uk9u97RuKnP8XglScBKsUHQoyzDubwmJ7RwzSdCTb5gkQ5WnkzgJThnlS55y8M1F49rMjY09g==}
     dependencies:
       '@apollo/client': 3.9.7(graphql-ws@5.15.0)(graphql@16.8.1)
-      '@nuxt/kit': 3.10.3
+      '@nuxt/kit': 3.11.1
       '@rollup/plugin-graphql': 2.0.4(graphql@16.8.1)
       '@vue/apollo-composable': 4.0.2(@apollo/client@3.9.7)(graphql@16.8.1)(vue@3.4.21)
       '@vue/apollo-option': 4.0.0(@apollo/client@3.9.7)(vue@3.4.21)
@@ -4301,7 +4301,7 @@ packages:
       iron-webcrypto: 1.1.0
       ohash: 1.1.3
       radix3: 1.1.1
-      ufo: 1.5.1
+      ufo: 1.5.2
       uncrypto: 0.1.3
       unenv: 1.9.0
     transitivePeerDependencies:

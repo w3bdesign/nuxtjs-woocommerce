@@ -23,7 +23,7 @@
     "@nuxt/image": "1.5.0",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@formkit/nuxt": "^1.6.0",
+    "@formkit/nuxt": "^1.6.1",
     "@nuxtjs/algolia": "^1.10.1",
     "@pinia/nuxt": "^0.5.1",
     "graphql": "^16.8.1",

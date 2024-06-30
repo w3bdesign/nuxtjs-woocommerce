@@ -21,7 +21,7 @@ importers:
         specifier: 5.0.0-alpha.14
         version: 5.0.0-alpha.14(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.31)
       '@pinia-plugin-persistedstate/nuxt':
-        specifier: ^1.2.0
+        specifier: ^1.2.1
         version: 1.2.1(@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.31))(magicast@0.3.4)(pinia@2.1.7(vue@3.4.31))(rollup@4.18.0)
       '@pinia/nuxt':
         specifier: ^0.5.1

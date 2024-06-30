@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@formkit/nuxt':
     specifier: ^1.6.1
-    version: 1.6.1(tailwindcss@3.4.3)(unocss@0.58.9)(vite@4.5.3)(vue@3.4.31)
+    version: 1.6.1(tailwindcss@3.4.4)(unocss@0.58.9)(vite@4.5.3)(vue@3.4.31)
   '@nuxt/image':
     specifier: 1.7.0
     version: 1.7.0
@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^3.3.1
     version: 3.3.1
   tailwindcss:
-    specifier: ^3.4.3
-    version: 3.4.3
+    specifier: ^3.4.4
+    version: 3.4.4
 
 packages:
 
@@ -252,7 +252,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   /@babel/compat-data@7.24.7:
     resolution: {integrity: sha512-qJzAIcv03PyaWqxRgO4mSU3lihncDT296vnyuE2O8uA4w3UHWI4S3hgeZd1L8W1Bft40w9JxJ2b412iDUFFRhw==}
@@ -456,7 +456,7 @@ packages:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   /@babel/parser@7.24.7:
     resolution: {integrity: sha512-9uUYRm6OqQrCqQdG1iCBwBPZgN8ciDBro2nIOFaiRz1/BCxaI7CNvQbDHvsArAC7Tw9Hda/B3U+6ui9u4HWXPw==}
@@ -1264,12 +1264,12 @@ packages:
       '@formkit/utils': 1.6.1
     dev: false
 
-  /@formkit/nuxt@1.6.1(tailwindcss@3.4.3)(unocss@0.58.9)(vite@4.5.3)(vue@3.4.31):
+  /@formkit/nuxt@1.6.1(tailwindcss@3.4.4)(unocss@0.58.9)(vite@4.5.3)(vue@3.4.31):
     resolution: {integrity: sha512-A3pC+OwSUTdfcXPCl53d5ADboIkT3+3SlfG4TVTWDjlLmOU1ID8EStkiDCYplh7Ekv93IT755NXTcghBZQmY4g==}
     dependencies:
       '@formkit/core': 1.6.1
       '@formkit/i18n': 1.6.1
-      '@formkit/vue': 1.6.1(tailwindcss@3.4.3)(unocss@0.58.9)(vue@3.4.31)
+      '@formkit/vue': 1.6.1(tailwindcss@3.4.4)(unocss@0.58.9)(vue@3.4.31)
       '@nuxt/kit': 3.11.1
       chokidar: 3.6.0
       pathe: 1.1.2
@@ -1302,7 +1302,7 @@ packages:
       '@formkit/validation': 1.6.1
     dev: false
 
-  /@formkit/themes@1.6.1(tailwindcss@3.4.3)(unocss@0.58.9):
+  /@formkit/themes@1.6.1(tailwindcss@3.4.4)(unocss@0.58.9):
     resolution: {integrity: sha512-O5t9TER1kpZbPWKt+EjmT1qFyKWXWGUxdv+EuzrRKhx2W4wEhInHxbttKCmRhxohKqvjLYoCJgntlmoMW9OxRQ==}
     peerDependencies:
       tailwindcss: ^3.2.0
@@ -1317,7 +1317,7 @@ packages:
         optional: true
     dependencies:
       '@formkit/core': 1.6.1
-      tailwindcss: 3.4.3
+      tailwindcss: 3.4.4
       unocss: 0.58.9(postcss@8.4.39)(vite@4.5.3)
     dev: false
 
@@ -1333,7 +1333,7 @@ packages:
       '@formkit/utils': 1.6.1
     dev: false
 
-  /@formkit/vue@1.6.1(tailwindcss@3.4.3)(unocss@0.58.9)(vue@3.4.31):
+  /@formkit/vue@1.6.1(tailwindcss@3.4.4)(unocss@0.58.9)(vue@3.4.31):
     resolution: {integrity: sha512-DoC8Ar3uEnxz3cQC+3H4QPzTvGD+G26NTUCK3sqS3g7cvxtme4bd66Uy2Y8IEAs+HgoSTJ6VvFVvQSWFSioGmA==}
     peerDependencies:
       vue: ^3.4.0
@@ -1344,7 +1344,7 @@ packages:
       '@formkit/inputs': 1.6.1
       '@formkit/observer': 1.6.1
       '@formkit/rules': 1.6.1
-      '@formkit/themes': 1.6.1(tailwindcss@3.4.3)(unocss@0.58.9)
+      '@formkit/themes': 1.6.1(tailwindcss@3.4.4)(unocss@0.58.9)
       '@formkit/utils': 1.6.1
       '@formkit/validation': 1.6.1
       vue: 3.4.31
@@ -1774,7 +1774,7 @@ packages:
       globby: 14.0.1
       hash-sum: 2.0.0
       ignore: 5.3.1
-      jiti: 1.21.0
+      jiti: 1.21.6
       knitwork: 1.0.0
       mlly: 1.6.1
       pathe: 1.1.2
@@ -5543,6 +5543,7 @@ packages:
   /jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
+    dev: false
 
   /jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
@@ -5630,7 +5631,7 @@ packages:
   /launch-editor@2.6.1:
     resolution: {integrity: sha512-eB/uXmFVpY4zezmGp5XtU21kwo7GBbKB+EQ+UZeWtGb9yAM5xt/Evk+lYH3eRNAtId+ej4u7TYPFZ07w4s7rRw==}
     dependencies:
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       shell-quote: 1.8.1
     dev: true
 
@@ -6715,6 +6716,7 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
 
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -6969,7 +6971,7 @@ packages:
       postcss: ^8.2.14
     dependencies:
       postcss: 8.4.39
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
 
   /postcss-normalize-charset@7.0.0(postcss@8.4.39):
     resolution: {integrity: sha512-ABisNUXMeZeDNzCQxPxBCkXexvBrUHV+p7/BXOY+ulxkcjUZO0cp8ekGBwvIh2LbCwnWbyMPNJVtBSdyhM2zYQ==}
@@ -7093,20 +7095,12 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-selector-parser@6.0.16:
-    resolution: {integrity: sha512-A0RVJrX+IUkVZbW3ClroRWurercFhieevHB38sr2+l9eUClMqome3LmEmnhlNy+5Mr2EYN6B2Kaw9wYdd+VHiw==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
   /postcss-selector-parser@6.1.0:
     resolution: {integrity: sha512-UMz42UD0UY0EApS0ZL9o1XnLhSTtvvvLe5Dc2H2O56fvRZi+KulDyf5ctDhhtYJBGKStV2FL1fy6253cmLgqVQ==}
     engines: {node: '>=4'}
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
-    dev: true
 
   /postcss-svgo@7.0.1(postcss@8.4.39):
     resolution: {integrity: sha512-0WBUlSL4lhD9rA5k1e5D8EN5wCEyZD6HJk0jIvRxl+FDVOMlJ7DePHYWGGVc5QRqrJ3/06FTXM0bxjmJpmTPSA==}
@@ -7942,7 +7936,7 @@ packages:
       css-tree: 2.3.1
       css-what: 6.1.0
       csso: 5.0.5
-      picocolors: 1.0.0
+      picocolors: 1.0.1
     dev: false
     optional: true
 
@@ -7957,7 +7951,7 @@ packages:
       css-tree: 2.3.1
       css-what: 6.1.0
       csso: 5.0.5
-      picocolors: 1.0.0
+      picocolors: 1.0.1
     dev: true
 
   /swiper@10.3.1:
@@ -7979,8 +7973,8 @@ packages:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
     dev: true
 
-  /tailwindcss@3.4.3:
-    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
+  /tailwindcss@3.4.4:
+    resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -7992,18 +7986,18 @@ packages:
       fast-glob: 3.3.2
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      jiti: 1.21.0
+      jiti: 1.21.6
       lilconfig: 2.1.0
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-hash: 3.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       postcss: 8.4.39
       postcss-import: 15.1.0(postcss@8.4.39)
       postcss-js: 4.0.1(postcss@8.4.39)
       postcss-load-config: 4.0.2(postcss@8.4.39)
       postcss-nested: 6.0.1(postcss@8.4.39)
-      postcss-selector-parser: 6.0.16
+      postcss-selector-parser: 6.1.0
       resolve: 1.22.8
       sucrase: 3.35.0
     transitivePeerDependencies:
@@ -8522,7 +8516,7 @@ packages:
     dependencies:
       browserslist: 4.23.0
       escalade: 3.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   /uqr@0.1.2:
     resolution: {integrity: sha512-MJu7ypHq6QasgF5YRTjqscSzQp/W11zoUk6kvmlH+fmWEs63Y0Eib13hYFwAzagRJcVY8WVnlV+eBDUGMJ5IbA==}
@@ -8575,7 +8569,7 @@ packages:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       vite: 5.3.1
     transitivePeerDependencies:
       - '@types/node'
@@ -8655,7 +8649,7 @@ packages:
       fs-extra: 11.2.0
       open: 10.1.0
       perfect-debounce: 1.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       sirv: 2.0.4
       vite: 4.5.3
     transitivePeerDependencies:

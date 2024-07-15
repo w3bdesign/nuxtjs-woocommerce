@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@formkit/nuxt':
         specifier: ^1.6.1
-        version: 1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.4)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.31)
+        version: 1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.5)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.31)
       '@nuxt/image':
         specifier: 1.7.0
         version: 1.7.0(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.18.0)
@@ -70,8 +70,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.4
+        specifier: ^3.4.5
+        version: 3.4.5
 
 packages:
 
@@ -4056,8 +4056,8 @@ packages:
     resolution: {integrity: sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==}
     engines: {node: '>=18'}
 
-  tailwindcss@3.4.4:
-    resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
+  tailwindcss@3.4.5:
+    resolution: {integrity: sha512-DlTxttYcogpDfx3tf/8jfnma1nfAYi2cBUYV2YNoPPecwmO3YGiFlOX9D8tGAu+EDF38ryBzvrDKU/BLMsUwbw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -5253,11 +5253,11 @@ snapshots:
       '@formkit/core': 1.6.5
       '@formkit/utils': 1.6.5
 
-  '@formkit/nuxt@1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.4)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.31)':
+  '@formkit/nuxt@1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.5)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.31)':
     dependencies:
       '@formkit/core': 1.6.5
       '@formkit/i18n': 1.6.5
-      '@formkit/vue': 1.6.5(tailwindcss@3.4.4)(vue@3.4.31)
+      '@formkit/vue': 1.6.5(tailwindcss@3.4.5)(vue@3.4.31)
       '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
       chokidar: 3.6.0
       pathe: 1.1.2
@@ -5286,11 +5286,11 @@ snapshots:
       '@formkit/utils': 1.6.5
       '@formkit/validation': 1.6.5
 
-  '@formkit/themes@1.6.5(tailwindcss@3.4.4)':
+  '@formkit/themes@1.6.5(tailwindcss@3.4.5)':
     dependencies:
       '@formkit/core': 1.6.5
     optionalDependencies:
-      tailwindcss: 3.4.4
+      tailwindcss: 3.4.5
 
   '@formkit/utils@1.6.5': {}
 
@@ -5300,7 +5300,7 @@ snapshots:
       '@formkit/observer': 1.6.5
       '@formkit/utils': 1.6.5
 
-  '@formkit/vue@1.6.5(tailwindcss@3.4.4)(vue@3.4.31)':
+  '@formkit/vue@1.6.5(tailwindcss@3.4.5)(vue@3.4.31)':
     dependencies:
       '@formkit/core': 1.6.5
       '@formkit/dev': 1.6.5
@@ -5308,7 +5308,7 @@ snapshots:
       '@formkit/inputs': 1.6.5
       '@formkit/observer': 1.6.5
       '@formkit/rules': 1.6.5
-      '@formkit/themes': 1.6.5(tailwindcss@3.4.4)
+      '@formkit/themes': 1.6.5(tailwindcss@3.4.5)
       '@formkit/utils': 1.6.5
       '@formkit/validation': 1.6.5
       vue: 3.4.31
@@ -9121,7 +9121,7 @@ snapshots:
 
   system-architecture@0.1.0: {}
 
-  tailwindcss@3.4.4:
+  tailwindcss@3.4.5:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2

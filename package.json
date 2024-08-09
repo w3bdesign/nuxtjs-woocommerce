@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.46.0",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "nuxt": "^3.12.4",
     "nuxt-icon": "^0.6.10",
     "prettier": "^3.3.2",

@@ -22,10 +22,10 @@ importers:
         version: 5.0.0-alpha.14(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)
       '@pinia-plugin-persistedstate/nuxt':
         specifier: ^1.2.0
-        version: 1.2.1(@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37))(magicast@0.3.4)(pinia@2.2.1(vue@3.4.37))(rollup@4.18.0)
+        version: 1.2.1(@pinia/nuxt@0.5.3(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37))(magicast@0.3.4)(pinia@2.2.1(vue@3.4.37))(rollup@4.18.0)
       '@pinia/nuxt':
-        specifier: ^0.5.1
-        version: 0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)
+        specifier: ^0.5.3
+        version: 0.5.3(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)
       graphql:
         specifier: ^16.9.0
         version: 16.9.0
@@ -1305,8 +1305,8 @@ packages:
     peerDependencies:
       '@pinia/nuxt': ^0.5.0
 
-  '@pinia/nuxt@0.5.1':
-    resolution: {integrity: sha512-6wT6TqY81n+7/x3Yhf0yfaJVKkZU42AGqOR0T3+UvChcaOJhSma7OWPN64v+ptYlznat+fS1VTwNAcbi2lzHnw==}
+  '@pinia/nuxt@0.5.3':
+    resolution: {integrity: sha512-AEuHEcaxZdAl73qUOco1TpOGjcmn83nJlYORZ63zhufSCVMj28lPq15ZnfhhofwBh5IjkT/lB7d8Ff958LajDQ==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -5942,10 +5942,10 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
 
-  '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37))(magicast@0.3.4)(pinia@2.2.1(vue@3.4.37))(rollup@4.18.0)':
+  '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.3(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37))(magicast@0.3.4)(pinia@2.2.1(vue@3.4.37))(rollup@4.18.0)':
     dependencies:
       '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
-      '@pinia/nuxt': 0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)
+      '@pinia/nuxt': 0.5.3(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)
       defu: 6.1.4
       pinia-plugin-persistedstate: 3.2.1(pinia@2.2.1(vue@3.4.37))
     transitivePeerDependencies:
@@ -5954,9 +5954,9 @@ snapshots:
       - rollup
       - supports-color
 
-  '@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)':
+  '@pinia/nuxt@0.5.3(magicast@0.3.4)(rollup@4.18.0)(vue@3.4.37)':
     dependencies:
-      '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
+      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.18.0)
       pinia: 2.2.1(vue@3.4.37)
     transitivePeerDependencies:
       - '@vue/composition-api'

@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@formkit/nuxt':
         specifier: ^1.6.1
-        version: 1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.6)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.38)
+        version: 1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.10)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.38)
       '@nuxt/image':
         specifier: 1.7.0
         version: 1.7.0(ioredis@5.4.1)(magicast@0.3.4)(rollup@4.18.0)
@@ -70,8 +70,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       tailwindcss:
-        specifier: ^3.4.6
-        version: 3.4.6
+        specifier: ^3.4.10
+        version: 3.4.10
 
 packages:
 
@@ -3955,8 +3955,8 @@ packages:
     resolution: {integrity: sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==}
     engines: {node: '>=18'}
 
-  tailwindcss@3.4.6:
-    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
+  tailwindcss@3.4.10:
+    resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -5164,11 +5164,11 @@ snapshots:
       '@formkit/core': 1.6.5
       '@formkit/utils': 1.6.5
 
-  '@formkit/nuxt@1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.6)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.38)':
+  '@formkit/nuxt@1.6.5(magicast@0.3.4)(rollup@4.18.0)(tailwindcss@3.4.10)(vite@4.5.3(@types/node@20.14.9)(terser@5.31.1))(vue@3.4.38)':
     dependencies:
       '@formkit/core': 1.6.5
       '@formkit/i18n': 1.6.5
-      '@formkit/vue': 1.6.5(tailwindcss@3.4.6)(vue@3.4.38)
+      '@formkit/vue': 1.6.5(tailwindcss@3.4.10)(vue@3.4.38)
       '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
       chokidar: 3.6.0
       pathe: 1.1.2
@@ -5197,11 +5197,11 @@ snapshots:
       '@formkit/utils': 1.6.5
       '@formkit/validation': 1.6.5
 
-  '@formkit/themes@1.6.5(tailwindcss@3.4.6)':
+  '@formkit/themes@1.6.5(tailwindcss@3.4.10)':
     dependencies:
       '@formkit/core': 1.6.5
     optionalDependencies:
-      tailwindcss: 3.4.6
+      tailwindcss: 3.4.10
 
   '@formkit/utils@1.6.5': {}
 
@@ -5211,7 +5211,7 @@ snapshots:
       '@formkit/observer': 1.6.5
       '@formkit/utils': 1.6.5
 
-  '@formkit/vue@1.6.5(tailwindcss@3.4.6)(vue@3.4.38)':
+  '@formkit/vue@1.6.5(tailwindcss@3.4.10)(vue@3.4.38)':
     dependencies:
       '@formkit/core': 1.6.5
       '@formkit/dev': 1.6.5
@@ -5219,7 +5219,7 @@ snapshots:
       '@formkit/inputs': 1.6.5
       '@formkit/observer': 1.6.5
       '@formkit/rules': 1.6.5
-      '@formkit/themes': 1.6.5(tailwindcss@3.4.6)
+      '@formkit/themes': 1.6.5(tailwindcss@3.4.10)
       '@formkit/utils': 1.6.5
       '@formkit/validation': 1.6.5
       vue: 3.4.38
@@ -8325,24 +8325,24 @@ snapshots:
     dependencies:
       postcss: 8.4.39
 
-  postcss-import@15.1.0(postcss@8.4.39):
+  postcss-import@15.1.0(postcss@8.4.41):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.41
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.39):
+  postcss-js@4.0.1(postcss@8.4.41):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.39
+      postcss: 8.4.41
 
-  postcss-load-config@4.0.2(postcss@8.4.39):
+  postcss-load-config@4.0.2(postcss@8.4.41):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.4.5
     optionalDependencies:
-      postcss: 8.4.39
+      postcss: 8.4.41
 
   postcss-merge-longhand@7.0.2(postcss@8.4.39):
     dependencies:
@@ -8383,9 +8383,9 @@ snapshots:
       postcss: 8.4.39
       postcss-selector-parser: 6.1.0
 
-  postcss-nested@6.0.1(postcss@8.4.39):
+  postcss-nested@6.0.1(postcss@8.4.41):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.41
       postcss-selector-parser: 6.1.0
 
   postcss-normalize-charset@7.0.0(postcss@8.4.39):
@@ -8938,7 +8938,7 @@ snapshots:
 
   system-architecture@0.1.0: {}
 
-  tailwindcss@3.4.6:
+  tailwindcss@3.4.10:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -8954,11 +8954,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.39
-      postcss-import: 15.1.0(postcss@8.4.39)
-      postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.2(postcss@8.4.39)
-      postcss-nested: 6.0.1(postcss@8.4.39)
+      postcss: 8.4.41
+      postcss-import: 15.1.0(postcss@8.4.41)
+      postcss-js: 4.0.1(postcss@8.4.41)
+      postcss-load-config: 4.0.2(postcss@8.4.41)
+      postcss-nested: 6.0.1(postcss@8.4.41)
       postcss-selector-parser: 6.1.0
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -9342,7 +9342,7 @@ snapshots:
   vite@5.3.4(@types/node@20.14.9)(terser@5.31.1):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.39
+      postcss: 8.4.41
       rollup: 4.18.0
     optionalDependencies:
       '@types/node': 20.14.9

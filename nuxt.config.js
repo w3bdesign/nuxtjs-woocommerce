@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   ssr: true,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
+
   modules: [
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
@@ -13,7 +14,9 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/image",
   ],
+
   plugins: ["~/plugins/apollo"],
+
   runtimeConfig: {
     public: {
       graphqlURL: process.env.PUBLIC_GRAPHQL_URL,
@@ -23,12 +26,14 @@ export default defineNuxtConfig({
       currency: process.env.PUBLIC_CURRENCY,
     },
   },
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   app: {
     head: {
       charset: "utf-8",
@@ -39,11 +44,13 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
   },
+
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_APPLICATION_ID,
     instantSearch: { theme: "algolia" },
   },
+
   apollo: {
     authType: "Session",
     authHeader: "woocommerce-session",
@@ -58,4 +65,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2024-08-23",
 });

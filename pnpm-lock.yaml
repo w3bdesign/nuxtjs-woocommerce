@@ -21,7 +21,7 @@ importers:
         specifier: 5.0.0-alpha.14
         version: 5.0.0-alpha.14(magicast@0.3.4)(rollup@4.18.0)(vue@3.5.0)
       '@pinia-plugin-persistedstate/nuxt':
-        specifier: ^1.2.0
+        specifier: ^1.2.1
         version: 1.2.1(@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.5.0))(magicast@0.3.4)(pinia@2.2.2(vue@3.5.0))(rollup@4.18.0)
       '@pinia/nuxt':
         specifier: ^0.5.1
@@ -6034,7 +6034,7 @@ snapshots:
 
   '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.5.0))(magicast@0.3.4)(pinia@2.2.2(vue@3.5.0))(rollup@4.18.0)':
     dependencies:
-      '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.18.0)
       '@pinia/nuxt': 0.5.1(magicast@0.3.4)(rollup@4.18.0)(vue@3.5.0)
       defu: 6.1.4
       pinia-plugin-persistedstate: 3.2.1(pinia@2.2.2(vue@3.5.0))

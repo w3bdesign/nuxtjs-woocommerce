@@ -25,7 +25,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@formkit/nuxt": "^1.6.1",
     "@nuxtjs/algolia": "^1.10.1",
-    "@pinia/nuxt": "^0.5.1",
+    "@pinia/nuxt": "^0.5.4",
     "graphql": "^16.9.0",
     "pinia": "^2.2.2",
     "swiper": "^10.3.1",

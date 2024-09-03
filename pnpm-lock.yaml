@@ -42,8 +42,8 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       vee-validate:
-        specifier: ^4.13.0
-        version: 4.13.1(vue@3.5.0)
+        specifier: ^4.13.2
+        version: 4.13.2(vue@3.5.0)
       vite:
         specifier: 4.5.3
         version: 4.5.3(@types/node@20.14.9)(terser@5.31.1)
@@ -4320,8 +4320,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vee-validate@4.13.1:
-    resolution: {integrity: sha512-JAlUWTBHg0z66n+v66mrtE9IC1xmVCggzpyc7UXCNkizVok8Zgt1VAVjobSxA/0N19Zn6v6hRfjoYciYH/Z11Q==}
+  vee-validate@4.13.2:
+    resolution: {integrity: sha512-HlpR/6MJ92TW9f135umMZKUqdd/tFQTxLNSf2ImbU4Y/MlLVAUpF1l64VdjTOhbClAqPjCb5p/SqHDxLpUHXrw==}
     peerDependencies:
       vue: ^3.4.26
 
@@ -9432,7 +9432,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vee-validate@4.13.1(vue@3.5.0):
+  vee-validate@4.13.2(vue@3.5.0):
     dependencies:
       '@vue/devtools-api': 6.6.3
       type-fest: 4.20.1

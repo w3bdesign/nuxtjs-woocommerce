@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       v-if="!firstRender"
-      class="fixed h-[calc(100vh-4rem)] w-screen z-10 bg-white animate__animated -bottom-4 mb-8"
+      class="fixed top-0 left-0 h-[600px] w-screen mt-4 z-0 bg-white animate__animated"
       :class="{
         animate__fadeInLeft: expandedMenu,
         animate__fadeOutRight: !expandedMenu && !firstRender,

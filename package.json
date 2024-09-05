@@ -13,26 +13,26 @@
   "devDependencies": {
     "@playwright/test": "^1.46.1",
     "autoprefixer": "^10.4.20",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.13.1",
     "nuxt-icon": "^0.6.10",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10"
   },
   "dependencies": {
     "postcss": "^8.4.45",
     "@nuxt/image": "1.8.0",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@formkit/nuxt": "^1.6.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
+    "@formkit/nuxt": "^1.6.5",
     "@nuxtjs/algolia": "^1.10.1",
-    "@pinia/nuxt": "^0.5.1",
+    "@pinia/nuxt": "^0.5.4",
     "graphql": "^16.9.0",
     "pinia": "^2.2.2",
     "swiper": "^10.3.1",
     "uid": "^2.0.2",
-    "vee-validate": "^4.13.0",
+    "vee-validate": "^4.13.2",
     "vite": "4.5.3",
-    "vue": "^3.5.0",
+    "vue": "^3.5.1",
     "yup": "^1.4.0"
   }
 }

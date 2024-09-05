@@ -61,14 +61,13 @@ const displayMobileMenu = () => {
 </script>
 
 <style scoped>
-/* Mobile menu positioning */
+
 .mobile-menu {
   top: 0;
-  bottom: 80px; /* Adjust this value to match your footer height */
-  max-height: calc(100vh - 80px); /* Adjust this value to match your footer height */
+  bottom: 80px; 
+  max-height: calc(100vh - 80px);
 }
 
-/* Style for mobile menu links */
 .linkStyle {
   @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded;
 }
@@ -77,7 +76,6 @@ const displayMobileMenu = () => {
   @apply w-auto p-4 m-4 font-bold text-center;
 }
 
-/* Main hamburger styling */
 .burger {
   height: 3em;
   width: 3em;
@@ -85,17 +83,19 @@ const displayMobileMenu = () => {
   font-size: 14px;
   cursor: pointer;
   transition: 0.5s all;
-
   -webkit-tap-highlight-color: transparent;
 }
+
 .burger .burger-lines:after {
   left: 0;
   top: -1em;
 }
+
 .burger .burger-lines:before {
   left: 1em;
   top: 1em;
 }
+
 .burger:after {
   content: "";
   display: block;
@@ -105,10 +105,12 @@ const displayMobileMenu = () => {
   top: -25%;
   left: -25%;
 }
+
 .burger .burger-lines {
   top: 50%;
   margin-top: -0.125em;
 }
+
 .burger .burger-lines,
 .burger .burger-lines:after,
 .burger .burger-lines:before {
@@ -123,7 +125,6 @@ const displayMobileMenu = () => {
   transform: rotate(0);
 }
 
-/* Burger animations classes */
 .burger.burger-squeeze .burger-lines,
 .burger.burger-squeeze .burger-lines:after,
 .burger.burger-squeeze .burger-lines:before {

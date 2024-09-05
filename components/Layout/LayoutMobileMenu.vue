@@ -1,32 +1,34 @@
 <template>
   <div class="relative">
-    <div
-      v-if="!firstRender"
-      class="fixed top-0 left-0 h-[580px] w-screen mt-4 z-0 bg-white animate__animated"
-      :class="{
-        animate__fadeInLeft: expandedMenu,
-        animate__fadeOutRight: !expandedMenu && !firstRender,
-      }"
+    <Transition
+      enter-active-class="animate__animated animate__fadeInLeft"
+      leave-active-class="animate__animated animate__fadeOutRight"
     >
-      <ul>
-        <li class="text-xl linkStyle">
-          <NuxtLink to="/" @click="displayMobileMenu"> Home </NuxtLink>
-        </li>
-        <li class="text-xl linkStyle">
-          <NuxtLink to="/products" @click="displayMobileMenu">
-            Products
-          </NuxtLink>
-        </li>
-        <li class="text-xl linkStyle">
-          <NuxtLink to="/categories" @click="displayMobileMenu">
-            Categories
-          </NuxtLink>
-        </li>
-        <li class="text-xl linkStyle">
-          <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
-        </li>
-      </ul>
-    </div>
+      <div
+        v-if="expandedMenu"
+        ref="mobileMenu"
+        class="fixed left-0 w-screen z-10 bg-white overflow-y-auto mobile-menu"
+      >
+        <ul>
+          <li class="text-xl linkStyle">
+            <NuxtLink to="/" @click="displayMobileMenu"> Home </NuxtLink>
+          </li>
+          <li class="text-xl linkStyle">
+            <NuxtLink to="/products" @click="displayMobileMenu">
+              Products
+            </NuxtLink>
+          </li>
+          <li class="text-xl linkStyle">
+            <NuxtLink to="/categories" @click="displayMobileMenu">
+              Categories
+            </NuxtLink>
+          </li>
+          <li class="text-xl linkStyle">
+            <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </Transition>
     <div class="w-5/12 lg:hidden" />
     <div class="flex flex-row w-2/12 px-2 my-2 lg:hidden">
       <div class="self-center block w-full mr-4">
@@ -48,16 +50,24 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 const expandedMenu = useState("expandedMenu", () => false);
-const firstRender = useState("firstRender", () => true);
+const mobileMenu = ref(null);
 
 const displayMobileMenu = () => {
   expandedMenu.value = !expandedMenu.value;
-  firstRender.value = false;
 };
 </script>
 
 <style scoped>
+/* Mobile menu positioning */
+.mobile-menu {
+  top: 0;
+  bottom: 80px; /* Adjust this value to match your footer height */
+  max-height: calc(100vh - 80px); /* Adjust this value to match your footer height */
+}
+
 /* Style for mobile menu links */
 .linkStyle {
   @apply w-auto p-4 m-4 font-bold text-center border border-gray-300 border-opacity-50 shadow-md rounded;

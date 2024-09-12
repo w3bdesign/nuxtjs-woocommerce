@@ -1,5 +1,11 @@
 <template>
-  <div v-if="cartItems.length">
+  <div v-if="isLoading">
+    <h2 class="mt-64 text-3xl text-center">Loading cart...</h2>
+  </div>
+  <div v-else-if="error">
+    <h2 class="mt-64 text-3xl text-center text-red-500">Error loading cart. Please try again.</h2>
+  </div>
+  <div v-else-if="cartItems.length">
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <section class="mt-10">
       <CartItem
@@ -23,11 +29,13 @@
  * @module CartContents
  * @returns {Object} The Vue.js component object.
  */
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import { useCart } from "@/store/useCart";
 import CommonButton from '@/components/common/CommonButton.vue';
 
 const cart = useCart();
+const isLoading = ref(true);
+const error = ref(null);
 
 const cartItems = computed(() => cart.cart);
 
@@ -45,6 +53,17 @@ const handleRemoveProduct = async (key) => {
     // without exposing the error details
   }
 };
+
+onMounted(async () => {
+  try {
+    await cart.refetch();
+  } catch (err) {
+    console.error('Error fetching cart:', err);
+    error.value = err;
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <style scoped>

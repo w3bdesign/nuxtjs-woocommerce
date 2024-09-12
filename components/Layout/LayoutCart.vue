@@ -1,14 +1,17 @@
 <template>
-  <div v-if="cart.error">
-    <span class="text-xl text-red-500">
-      Error fetching cart. Please refresh the page.
-    </span>
-  </div>
-  <div v-else class="mt-4 lg:mt-0">
-    <NuxtLink to="/cart">
+  <div class="mt-4 lg:mt-0">
+    <div v-if="isLoading">
+      <span class="text-xl text-gray-500">Loading cart...</span>
+    </div>
+    <div v-else-if="error">
+      <span class="text-xl text-red-500">
+        Error fetching cart. Please refresh the page.
+      </span>
+    </div>
+    <NuxtLink v-else to="/cart">
       <transition name="cart">
         <span
-          v-if="cartLength && !cart.loading"
+          v-if="cartLength > 0"
           class="text-xl text-white no-underline lg:text-black is-active"
         >
           <span class="hidden lg:block">
@@ -29,7 +32,7 @@
         </span>
       </transition>
       <transition name="cart">
-        <div v-if="cartLength && !cart.loading">
+        <div v-if="cartLength > 0">
           <span
             class="absolute w-6 h-6 pb-2 ml-16 -mt-12 text-center text-black bg-white lg:text-white lg:bg-black rounded-full lg:ml-14"
           >
@@ -45,12 +48,24 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useCart } from "@/store/useCart";
 import { formatPrice } from "@/utils/functions";
 
 const cart = useCart();
+const isLoading = ref(true);
+const error = ref(null);
 
 const cartLength = computed(() => cart.cartQuantity);
 const cartSubtotal = computed(() => cart.cartSubtotal);
+
+onMounted(async () => {
+  try {
+    await cart.refetch();
+  } catch (err) {
+    error.value = err;
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>

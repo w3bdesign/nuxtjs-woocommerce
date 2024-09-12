@@ -57,11 +57,11 @@
                 ADD TO CART
               </CommonButton>
             </div>
-            <p v-if="successMessage" class="mt-4 text-green-600">{{ successMessage }}</p>
           </div>
         </div>
       </div>
     </section>
+    <Toast ref="toast" />
   </template>
 </template>
 
@@ -82,6 +82,7 @@ import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.
 
 import ProductImage from "@/components/Products/ProductImage.vue";
 import ProductPrice from "@/components/Products/ProductPrice.vue";
+import Toast from "@/components/common/Toast.vue";
 
 import { stripHTML, filteredVariantName } from "@/utils/functions";
 
@@ -92,7 +93,7 @@ const cart = useCart();
 const isLoading = computed(() => cart.loading);
 
 const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
-const successMessage = ref('');
+const toast = ref(null);
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -122,10 +123,7 @@ watch(
 const addProductToCart = async (product) => {
   try {
     await cart.addToCart(product);
-    successMessage.value = 'Product added to cart successfully!';
-    setTimeout(() => {
-      successMessage.value = '';
-    }, 3000);
+    toast.value.show();
   } catch (error) {
     console.error('Error adding product to cart:', error);
     // You might want to show an error message to the user here

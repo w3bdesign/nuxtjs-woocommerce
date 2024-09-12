@@ -1,68 +1,70 @@
 <template>
-  <template v-if="data?.product">
-    <section>
-      <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
-        <div
-          class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
-        >
-          <ProductImage
-            :alt="data.product.name"
-            :src="data.product.image.sourceUrl"
-          />
-          <div class="ml-8">
-            <p class="text-3xl font-bold text-left">
-              {{ data.product.name }}
-            </p>
-            <ProductPrice
-              :product="data.product"
-              :shouldCenterPrice="false"
-              priceFontSize="big"
+  <div class="product-single-container">
+    <template v-if="data?.product">
+      <section>
+        <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
+          <div
+            class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
+          >
+            <ProductImage
+              :alt="data.product.name"
+              :src="data.product.image.sourceUrl"
             />
-            <p class="pt-1 mt-6 text-2xl text-gray-900">
-              {{ stripHTML(data.product.description) }}
-            </p>
-            <p
-              v-if="data.product.stockQuantity"
-              class="pt-1 mt-4 text-2xl text-gray-900"
-            >
-              {{ data.product.stockQuantity }} in stock
-            </p>
-            <p
-              v-if="data.product.variations"
-              class="pt-1 mt-4 text-xl text-gray-900"
-            >
-              <span class="py-2">Varianter</span>
-              <select
-                id="variant"
-                name="variant"
-                class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
-                v-model="selectedVariation"
+            <div class="ml-8">
+              <p class="text-3xl font-bold text-left">
+                {{ data.product.name }}
+              </p>
+              <ProductPrice
+                :product="data.product"
+                :shouldCenterPrice="false"
+                priceFontSize="big"
+              />
+              <p class="pt-1 mt-6 text-2xl text-gray-900">
+                {{ stripHTML(data.product.description) }}
+              </p>
+              <p
+                v-if="data.product.stockQuantity"
+                class="pt-1 mt-4 text-2xl text-gray-900"
               >
-                <option
-                  v-for="(variation, index) in data.product.variations.nodes"
-                  :key="variation.databaseId"
-                  :value="variation.databaseId"
-                  :selected="index === 0"
+                {{ data.product.stockQuantity }} in stock
+              </p>
+              <p
+                v-if="data.product.variations"
+                class="pt-1 mt-4 text-xl text-gray-900"
+              >
+                <span class="py-2">Varianter</span>
+                <select
+                  id="variant"
+                  name="variant"
+                  class="block w-64 px-6 py-2 bg-white border border-gray-500 rounded-lg focus:outline-none focus:shadow-outline"
+                  v-model="selectedVariation"
                 >
-                  {{ filteredVariantName(data.product.name, variation.name) }}
-                  ({{ variation.stockQuantity }} in stock)
-                </option>
-              </select>
-            </p>
-            <div class="pt-1 mt-2">
-              <CommonButton
-                @common-button-click="addProductToCart(data.product)"
-                :is-loading="isLoading"
-              >
-                ADD TO CART
-              </CommonButton>
+                  <option
+                    v-for="(variation, index) in data.product.variations.nodes"
+                    :key="variation.databaseId"
+                    :value="variation.databaseId"
+                    :selected="index === 0"
+                  >
+                    {{ filteredVariantName(data.product.name, variation.name) }}
+                    ({{ variation.stockQuantity }} in stock)
+                  </option>
+                </select>
+              </p>
+              <div class="pt-1 mt-2">
+                <CommonButton
+                  @common-button-click="addProductToCart(data.product)"
+                  :is-loading="isLoading"
+                >
+                  ADD TO CART
+                </CommonButton>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <Toast ref="toast" />
-  </template>
+      </section>
+      <Toast ref="toast" />
+    </template>
+  </div>
 </template>
 
 <script setup>

@@ -15,7 +15,7 @@
     </div>
     <div class="item">
       <span class="block mt-2 font-extrabold">Name: <br /></span>
-      <span class="item-content">{{ product.product.node.name }}</span>
+      <span class="item-content">{{ product.product.name }}</span>
     </div>
     <div class="item">
       <span class="block mt-2 font-extrabold">Quantity: <br /></span>
@@ -25,7 +25,7 @@
     </div>
     <div class="item">
       <span class="block mt-2 font-extrabold">Subtotal: <br /></span>
-      <span class="item-content">{{ formatPrice(`${product.total}`) }}</span>
+      <span class="item-content">{{ formatPrice(product.total) }}</span>
     </div>
   </div>
 </template>
@@ -37,13 +37,16 @@
  * @component CartItem
  *
  * @prop {Object} product - The product object containing information about the product.
- * @prop {string} product.name - The name of the product.
+ * @prop {Object} product.product - The product details.
+ * @prop {string} product.product.name - The name of the product.
  * @prop {number} product.quantity - The quantity of the product.
- * @prop {number} product.total - The subtotal of the product.
+ * @prop {string} product.total - The subtotal of the product.
+ * @prop {string} product.key - The unique key for the cart item.
  *
  * @emits CartItem#remove - Emitted when the remove button is clicked.
  */
 
+import { ref } from 'vue';
 import { formatPrice } from "@/utils/functions";
 
 const isRemoving = ref(false);
@@ -58,10 +61,11 @@ const props = defineProps({
 const emit = defineEmits(["remove"]);
 
 /**
- * Emits a "remove" event with the `product` prop as the payload.
+ * Emits a "remove" event with the product's key as the payload.
  */
 const emitRemove = () => {
-  emit("remove", props.product);
+  isRemoving.value = true;
+  emit("remove", props.product.key);
 };
 </script>
 

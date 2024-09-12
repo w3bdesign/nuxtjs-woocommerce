@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/image",
   ],
-  plugins: ["~/plugins/apollo"],
+  plugins: ["~/plugins/apollo", "~/plugins/cartUpdater"],
   runtimeConfig: {
     public: {
       graphqlURL: process.env.PUBLIC_GRAPHQL_URL,

@@ -54,13 +54,14 @@
                 @common-button-click="addProductToCart(data.product)"
                 :is-loading="isLoading"
               >
-                ADD TO CART</CommonButton
-              >
+                ADD TO CART
+              </CommonButton>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <Toast ref="toast" />
   </template>
 </template>
 
@@ -75,13 +76,13 @@
  * @prop {string} slug - The slug of the product to display.
  */
 
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
-import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 
 import ProductImage from "@/components/Products/ProductImage.vue";
 import ProductPrice from "@/components/Products/ProductPrice.vue";
+import Toast from "@/components/common/Toast.vue";
 
 import { stripHTML, filteredVariantName } from "@/utils/functions";
 
@@ -92,6 +93,7 @@ const cart = useCart();
 const isLoading = computed(() => cart.loading);
 
 const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
+const toast = ref(null);
 
 const props = defineProps({
   id: { type: String, required: true },
@@ -119,12 +121,12 @@ watch(
  * @return {Promise<void>} A Promise that resolves when the product has been successfully added to the cart.
  */
 const addProductToCart = async (product) => {
-  await cart.addToCart(product);
-
-  watchEffect(() => {
-    if (isLoading.value === false) {
-      window.location.reload();
-    }
-  });
+  try {
+    await cart.addToCart(product);
+    toast.value.show();
+  } catch (error) {
+    console.error('Error adding product to cart:', error);
+    // You might want to show an error message to the user here
+  }
 };
 </script>

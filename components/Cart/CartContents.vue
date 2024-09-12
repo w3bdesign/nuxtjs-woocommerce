@@ -1,18 +1,24 @@
 <template>
-  <template v-if="data.cart?.contents?.nodes?.length">
+  <div v-if="isLoading">
+    <h2 class="mt-64 text-3xl text-center">Loading cart...</h2>
+  </div>
+  <div v-else-if="error">
+    <h2 class="mt-64 text-3xl text-center text-red-500">Error loading cart. Please try again.</h2>
+  </div>
+  <div v-else-if="cartItems.length">
     <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
     <section class="mt-10">
       <CartItem
-        v-for="product in data.cart.contents.nodes"
-        :key="product.id"
+        v-for="product in cartItems"
+        :key="product.key"
         :product="product"
         @remove="handleRemoveProduct"
       />
     </section>
-    <CommonButton link-to="/checkout" v-if="showCheckoutButton" center-button>
+    <CommonButton link-to="/checkout" center-button>
       CHECKOUT
     </CommonButton>
-  </template>
+  </div>
   <h2 v-else class="mt-64 text-3xl text-center">Cart is currently empty</h2>
 </template>
 
@@ -21,56 +27,43 @@
  * Vue.js component for handling the logic of removing a product from the cart and updating the cart state.
  *
  * @module CartContents
- * @param {Object} props - Object containing the component's properties.
- * @param {Boolean} props.showCheckoutButton - Determines whether the checkout button should be shown or not.
  * @returns {Object} The Vue.js component object.
  */
-import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
-import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
-
+import { computed, ref, onMounted } from 'vue';
 import { useCart } from "@/store/useCart";
+import CommonButton from '@/components/common/CommonButton.vue';
 
 const cart = useCart();
+const isLoading = ref(true);
+const error = ref(null);
 
-defineProps({
-  showCheckoutButton: { type: Boolean, required: false, default: false },
-});
-
-const { data } = await useAsyncQuery(GET_CART_QUERY);
+const cartItems = computed(() => cart.cart);
 
 /**
  * Handles the removal of a product.
  *
- * @param {Object} product - The product to be removed.
+ * @param {string} key - The key of the product to be removed.
  */
-const handleRemoveProduct = (product) => {
-  const updatedItems = [];
-
-  const { key } = product;
-
-  updatedItems.push({
-    key,
-    quantity: 0,
-  });
-
-  const variables = {
-    input: {
-      items: updatedItems,
-    },
-  };
-
-  cart.removeProductFromCart(product);
-
-  const { mutate, onDone, onError } = useMutation(UPDATE_CART_MUTATION, {
-    variables,
-  });
-
-  mutate(variables);
-
-  onDone(() => {
-    document.location = "/cart";
-  });
+const handleRemoveProduct = async (key) => {
+  try {
+    await cart.removeProductFromCart(key);
+  } catch (error) {
+    console.error('Error removing product from cart:', error);
+    // Optionally, you can add a user-friendly notification here
+    // without exposing the error details
+  }
 };
+
+onMounted(async () => {
+  try {
+    await cart.refetch();
+  } catch (err) {
+    console.error('Error fetching cart:', err);
+    error.value = err;
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <style scoped>

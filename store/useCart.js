@@ -11,7 +11,7 @@ export const useCart = defineStore("cartState", () => {
   const error = ref(null);
   const cartTotals = ref({});
 
-  const { result: cartResult, loading: cartLoading, refetch } = useQuery(GET_CART_QUERY, null, { fetchPolicy: 'network-only' });
+  const { result: cartResult, loading: cartLoading, refetch: refetchCart } = useQuery(GET_CART_QUERY, null, { fetchPolicy: 'network-only' });
 
   watch(cartResult, (newCartResult) => {
     if (newCartResult && newCartResult.cart) {
@@ -48,16 +48,6 @@ export const useCart = defineStore("cartState", () => {
     loading.value = true;
     error.value = null;
     try {
-      // Optimistically update the local state
-      const newItem = {
-        key: Date.now().toString(), // Temporary key
-        product: product,
-        quantity: quantity,
-        total: (parseFloat(product.price) * quantity).toString(),
-        subtotal: (parseFloat(product.price) * quantity).toString(),
-      };
-      cart.value.push(newItem);
-
       const { mutate } = useMutation(ADD_TO_CART_MUTATION);
       await mutate({
         input: {
@@ -65,12 +55,9 @@ export const useCart = defineStore("cartState", () => {
           quantity: quantity,
         },
       });
-      await refetch();
+      await refetchCart();
     } catch (err) {
       console.error("Error adding to cart:", err);
-      error.value = err.message || "An error occurred while adding to cart.";
-      // Revert the optimistic update
-      cart.value = cart.value.filter(item => item.key !== Date.now().toString());
     } finally {
       loading.value = false;
     }
@@ -80,24 +67,16 @@ export const useCart = defineStore("cartState", () => {
     loading.value = true;
     error.value = null;
     try {
-      // Optimistically update the local state
-      const itemIndex = cart.value.findIndex(item => item.key === key);
-      if (itemIndex !== -1) {
-        cart.value[itemIndex].quantity = quantity;
-      }
-
       const { mutate } = useMutation(UPDATE_CART_MUTATION);
       await mutate({
         input: {
           items: [{ key, quantity }],
         },
       });
-      await refetch();
+      await refetchCart();
     } catch (err) {
       console.error("Error updating cart:", err);
-      error.value = err.message || "An error occurred while updating the cart.";
-      // Revert the optimistic update
-      await refetch();
+      await refetchCart();
     } finally {
       loading.value = false;
     }
@@ -107,17 +86,12 @@ export const useCart = defineStore("cartState", () => {
     loading.value = true;
     error.value = null;
     try {
-      // Optimistically update the local state
-      cart.value = cart.value.filter(item => item.key !== key);
-
       await updateCartItemQuantity(key, 0);
     } catch (err) {
       console.error("Error removing product from cart:", err);
-      error.value = err.message || "An error occurred while removing the product from the cart.";
-      // Revert the optimistic update
-      await refetch();
     } finally {
       loading.value = false;
+      await refetchCart();
     }
   };
 
@@ -130,9 +104,9 @@ export const useCart = defineStore("cartState", () => {
       }
     } catch (err) {
       console.error("Error clearing cart:", err);
-      error.value = err.message || "An error occurred while clearing the cart.";
     } finally {
       loading.value = false;
+      await refetchCart();
     }
   };
 
@@ -160,6 +134,6 @@ export const useCart = defineStore("cartState", () => {
     cartQuantity,
     cartSubtotal,
     cartTotal,
-    refetch,
+    refetch: refetchCart,
   };
 });

@@ -34,14 +34,15 @@ const cartItems = computed(() => cart.cart);
 /**
  * Handles the removal of a product.
  *
- * @param {Object} product - The product to be removed.
+ * @param {string} key - The key of the product to be removed.
  */
-const handleRemoveProduct = async (product) => {
+const handleRemoveProduct = async (key) => {
   try {
-    await cart.removeProductFromCart(product.key);
+    await cart.removeProductFromCart(key);
   } catch (error) {
     console.error('Error removing product from cart:', error);
-    // You might want to show an error message to the user here
+    // Optionally, you can add a user-friendly notification here
+    // without exposing the error details
   }
 };
 </script>

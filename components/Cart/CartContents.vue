@@ -15,7 +15,7 @@
         @remove="handleRemoveProduct"
       />
     </section>
-    <CommonButton link-to="/checkout" center-button>
+    <CommonButton v-if="showCheckoutButton" link-to="/checkout" center-button>
       CHECKOUT
     </CommonButton>
   </div>
@@ -32,6 +32,13 @@
 import { computed, ref, onMounted } from 'vue';
 import { useCart } from "@/store/useCart";
 import CommonButton from '@/components/common/CommonButton.vue';
+
+const props = defineProps({
+  showCheckoutButton: {
+    type: Boolean,
+    default: false
+  }
+});
 
 const cart = useCart();
 const isLoading = ref(true);

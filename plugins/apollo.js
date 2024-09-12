@@ -57,12 +57,29 @@ export default defineNuxtPlugin((nuxtApp) => {
   );
 
   // Cache implementation
-  const cache = new InMemoryCache();
+  const cache = new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          cart: {
+            merge(existing, incoming) {
+              return incoming;
+            },
+          },
+        },
+      },
+    },
+  });
 
   // Create the apollo client
   const apolloClient = new ApolloClient({
     link: middleware.concat(afterware.concat(httpLink)),
     cache,
+    defaultOptions: {
+      watchQuery: {
+        fetchPolicy: 'cache-and-network',
+      },
+    },
   });
 
   provideApolloClient(apolloClient);

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CartContents show-checkout-button />
+    <CartContents :show-checkout-button="true" />
   </div>
 </template>
 

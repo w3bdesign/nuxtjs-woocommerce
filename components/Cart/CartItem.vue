@@ -41,6 +41,7 @@
  * @prop {string} product.product.name - The name of the product.
  * @prop {number} product.quantity - The quantity of the product.
  * @prop {string} product.total - The subtotal of the product.
+ * @prop {string} product.key - The unique key for the cart item.
  *
  * @emits CartItem#remove - Emitted when the remove button is clicked.
  */
@@ -60,10 +61,11 @@ const props = defineProps({
 const emit = defineEmits(["remove"]);
 
 /**
- * Emits a "remove" event with the `product` prop as the payload.
+ * Emits a "remove" event with the product's key as the payload.
  */
 const emitRemove = () => {
-  emit("remove", props.product);
+  isRemoving.value = true;
+  emit("remove", props.product.key);
 };
 </script>
 

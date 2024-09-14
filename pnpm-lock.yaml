@@ -36,8 +36,8 @@ importers:
         specifier: ^8.4.45
         version: 8.4.45
       swiper:
-        specifier: ^10.3.1
-        version: 10.3.1
+        specifier: ^11.1.14
+        version: 11.1.14
       uid:
         specifier: ^2.0.2
         version: 2.0.2
@@ -3542,8 +3542,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  swiper@10.3.1:
-    resolution: {integrity: sha512-24Wk3YUdZHxjc9faID97GTu6xnLNia+adMt6qMTZG/HgdSUt4fS0REsGUXJOgpTED0Amh/j+gRGQxsLayJUlBQ==}
+  swiper@11.1.14:
+    resolution: {integrity: sha512-VbQLQXC04io6AoAjIUWuZwW4MSYozkcP9KjLdrsG/00Q/yiwvhz9RQyt0nHXV10hi9NVnDNy1/wv7Dzq1lkOCQ==}
     engines: {node: '>= 4.7.0'}
 
   symbol-observable@4.0.0:
@@ -8009,7 +8009,7 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.0
 
-  swiper@10.3.1: {}
+  swiper@11.1.14: {}
 
   symbol-observable@4.0.0: {}
 

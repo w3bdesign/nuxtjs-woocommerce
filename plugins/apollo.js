@@ -77,7 +77,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     cache,
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: 'cache-and-network',
+        fetchPolicy: "cache-and-network",
       },
     },
   });

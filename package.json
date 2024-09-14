@@ -8,7 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier --write \"**/*.{js,ts,vue}\"",
-    "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && npm run format"
+    "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && pnpm run format"
   },
   "devDependencies": {
     "@playwright/test": "^1.47.1",

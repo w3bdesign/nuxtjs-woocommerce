@@ -24,7 +24,9 @@
             </NuxtLink>
           </li>
           <li class="text-xl linkStyle">
-            <NuxtLink to="/search" @click="displayMobileMenu"> Search </NuxtLink>
+            <NuxtLink to="/search" @click="displayMobileMenu">
+              Search
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -50,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const expandedMenu = useState("expandedMenu", () => false);
 const mobileMenu = ref(null);
@@ -61,10 +63,9 @@ const displayMobileMenu = () => {
 </script>
 
 <style scoped>
-
 .mobile-menu {
   top: 0;
-  bottom: 80px; 
+  bottom: 80px;
   max-height: calc(100vh - 80px);
 }
 

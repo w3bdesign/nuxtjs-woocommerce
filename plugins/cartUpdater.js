@@ -1,9 +1,9 @@
-import { useCart } from '@/store/useCart';
+import { useCart } from "@/store/useCart";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.hook('app:created', () => {
+  nuxtApp.hook("app:created", () => {
     const cart = useCart();
-    
+
     // Refetch cart data on initial load
     cart.refetch();
 

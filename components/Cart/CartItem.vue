@@ -46,7 +46,7 @@
  * @emits CartItem#remove - Emitted when the remove button is clicked.
  */
 
-import { ref } from 'vue';
+import { ref } from "vue";
 import { formatPrice } from "@/utils/functions";
 
 const isRemoving = ref(false);

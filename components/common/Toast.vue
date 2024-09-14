@@ -11,17 +11,17 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch } from "vue";
 
 const props = defineProps({
   message: {
     type: String,
-    default: 'Product added to cart'
+    default: "Product added to cart",
   },
   duration: {
     type: Number,
-    default: 3000
-  }
+    default: 3000,
+  },
 });
 
 const isVisible = ref(false);
@@ -45,7 +45,7 @@ defineExpose({ show });
 }
 
 .toast-content {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   border-radius: 4px;

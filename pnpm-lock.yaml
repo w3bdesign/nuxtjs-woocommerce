@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@formkit/nuxt':
-        specifier: ^1.6.5
+        specifier: ^1.6.6
         version: 1.6.6(magicast@0.3.5)(rollup@4.21.3)(tailwindcss@3.4.12)(vite@5.4.6(@types/node@22.5.5)(terser@5.32.0))(vue@3.5.6)
       '@nuxt/image':
         specifier: 1.8.0
@@ -4642,7 +4642,7 @@ snapshots:
       '@formkit/core': 1.6.6
       '@formkit/i18n': 1.6.6
       '@formkit/vue': 1.6.6(tailwindcss@3.4.12)(vue@3.5.6)
-      '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.3)
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
       chokidar: 3.6.0
       pathe: 1.1.2
       unplugin: 1.14.1

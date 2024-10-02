@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "postcss": "^8.4.47",
-    "@nuxt/image": "1.8.0",
+    "@nuxt/image": "1.8.1",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@formkit/nuxt": "^1.6.6",

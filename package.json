@@ -11,7 +11,7 @@
     "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && pnpm run format"
   },
   "devDependencies": {
-    "@playwright/test": "^1.47.1",
+    "@playwright/test": "^1.48.0",
     "autoprefixer": "^10.4.20",
     "nuxt": "^3.13.2",
     "nuxt-icon": "^0.6.10",

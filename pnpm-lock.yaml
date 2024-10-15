@@ -15,7 +15,7 @@ importers:
         specifier: 1.8.1
         version: 1.8.1(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)
       '@nuxtjs/algolia':
-        specifier: ^1.10.1
+        specifier: ^1.10.2
         version: 1.10.2(@vue/server-renderer@3.5.7(vue@3.5.7))(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
       '@nuxtjs/apollo':
         specifier: 5.0.0-alpha.14
@@ -5107,7 +5107,7 @@ snapshots:
       '@algolia/cache-in-memory': 4.24.0
       '@algolia/recommend': 4.24.0
       '@algolia/requester-fetch': 4.24.0
-      '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.3)
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
       algoliasearch: 4.24.0
       instantsearch.css: 7.4.5
       metadata-scraper: 0.2.61

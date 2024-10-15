@@ -22,10 +22,10 @@ importers:
         version: 5.0.0-alpha.14(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
       '@pinia-plugin-persistedstate/nuxt':
         specifier: ^1.2.1
-        version: 1.2.1(@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)
+        version: 1.2.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)
       '@pinia/nuxt':
-        specifier: ^0.5.4
-        version: 0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
+        specifier: ^0.5.5
+        version: 0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
       graphql:
         specifier: ^16.9.0
         version: 16.9.0
@@ -1008,8 +1008,8 @@ packages:
     peerDependencies:
       '@pinia/nuxt': ^0.5.0
 
-  '@pinia/nuxt@0.5.4':
-    resolution: {integrity: sha512-nNEs2pq6+Ji5qIyRwmeD9LUdctL8aJ8QMVLTYxUc16cXEOcIIN+MSA8Xudsd0lVETYgEAROT5HiBHnOYRDY3yQ==}
+  '@pinia/nuxt@0.5.5':
+    resolution: {integrity: sha512-wjxS7YqIesh4OLK+qE3ZjhdOJ5pYZQ+VlEmZNtTwzQn1Kavei/khovx7mzXVXNA/mvSPXVhb9xBzhyS3XMURtw==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -5211,12 +5211,12 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
 
-  '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)':
+  '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)':
     dependencies:
       '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.3)
-      '@pinia/nuxt': 0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
+      '@pinia/nuxt': 0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
       defu: 6.1.4
-      pinia-plugin-persistedstate: 4.0.1(@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)
+      pinia-plugin-persistedstate: 4.0.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3)
     transitivePeerDependencies:
       - magicast
       - pinia
@@ -5224,9 +5224,9 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)':
+  '@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)':
     dependencies:
-      '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.3)
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
       pinia: 2.2.4(vue@3.5.7)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -7473,14 +7473,14 @@ snapshots:
 
   pify@2.3.0: {}
 
-  pinia-plugin-persistedstate@4.0.1(@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3):
+  pinia-plugin-persistedstate@4.0.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7))(magicast@0.3.5)(pinia@2.2.4(vue@3.5.7))(rollup@4.21.3):
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
       deep-pick-omit: 1.2.0
       defu: 6.1.4
       destr: 2.0.3
     optionalDependencies:
-      '@pinia/nuxt': 0.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
+      '@pinia/nuxt': 0.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.7)
       pinia: 2.2.4(vue@3.5.7)
     transitivePeerDependencies:
       - magicast

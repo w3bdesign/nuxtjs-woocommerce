@@ -19,7 +19,7 @@
     "tailwindcss": "^3.4.12"
   },
   "dependencies": {
-    "postcss": "^8.4.48",
+    "postcss": "^8.5.0",
     "@nuxt/image": "1.8.1",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",

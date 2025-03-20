@@ -15,8 +15,8 @@ importers:
         specifier: 1.10.0
         version: 1.10.0(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)
       '@nuxtjs/algolia':
-        specifier: ^1.10.2
-        version: 1.10.2(@vue/server-renderer@3.5.13(vue@3.5.12(typescript@5.6.3)))(magicast@0.3.5)(rollup@4.36.0)(vue@3.5.12(typescript@5.6.3))
+        specifier: ^1.11.2
+        version: 1.11.2(@vue/server-renderer@3.5.13(vue@3.5.12(typescript@5.6.3)))(magicast@0.3.5)(vue@3.5.12(typescript@5.6.3))
       '@nuxtjs/apollo':
         specifier: 5.0.0-alpha.14
         version: 5.0.0-alpha.14(magicast@0.3.5)(rollup@4.36.0)(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))
@@ -93,6 +93,10 @@ packages:
   '@algolia/client-common@4.24.0':
     resolution: {integrity: sha512-bc2ROsNL6w6rqpl5jj/UywlIYC21TwSSoFHKl01lYirGMW+9Eek6r02Tocg4gZ8HAw3iBvu6XQiM3BEbmEMoiA==}
 
+  '@algolia/client-common@5.21.0':
+    resolution: {integrity: sha512-iHLgDQFyZNe9M16vipbx6FGOA8NoMswHrfom/QlCGoyh7ntjGvfMb+J2Ss8rRsAlOWluv8h923Ku3QVaB0oWDQ==}
+    engines: {node: '>= 14.0.0'}
+
   '@algolia/client-personalization@4.24.0':
     resolution: {integrity: sha512-l5FRFm/yngztweU0HdUzz1rC4yoWCFo3IF+dVIVTfEPg906eZg5BOd1k0K6rZx5JzyyoP4LdmOikfkfGsKVE9w==}
 
@@ -122,6 +126,10 @@ packages:
 
   '@algolia/requester-node-http@4.24.0':
     resolution: {integrity: sha512-JF18yTjNOVYvU/L3UosRcvbPMGT9B+/GQWNWnenIImglzNVGpyzChkXLnrSf6uxwVNO6ESGu6oN8MqcGQcjQJw==}
+
+  '@algolia/requester-node-http@5.21.0':
+    resolution: {integrity: sha512-WqU0VumUILrIeVYCTGZlyyZoC/tbvhiyPxfGRRO1cSjxN558bnJLlR2BvS0SJ5b75dRNK7HDvtXo2QoP9eLfiA==}
+    engines: {node: '>= 14.0.0'}
 
   '@algolia/transporter@4.24.0':
     resolution: {integrity: sha512-86nI7w6NzWxd1Zp9q3413dRshDqAzSbsQjhcDhPIatEFiZrL1/TjnHL8S7jVKFePlIMzDsZWXAXwXzcok9c5oA==}
@@ -827,8 +835,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  '@nuxtjs/algolia@1.10.2':
-    resolution: {integrity: sha512-vN+CSnZmRNWiwzLRQZb5gt+qGgCUYp5Uwd3//f3VWH/gUSlWw+fP71Azvzx3WdAr8Gjsp75U1JPdrHaXGbxG1g==}
+  '@nuxtjs/algolia@1.11.2':
+    resolution: {integrity: sha512-x22Sx6EQebvUmrEY5vDqSaTjNzmAaIA36TKR2Sn9WYM0lS7+tcVL2l3AKg0fUNTLHZz6kesoLMGsppX6cq5Lrw==}
 
   '@nuxtjs/apollo@5.0.0-alpha.14':
     resolution: {integrity: sha512-Mri3ZV2+d4u15Uk9u97RuKnP8XglScBKsUHQoyzDubwmJ7RwzSdCTb5gkQ5WnkzgJThnlS55y8M1F49rMjY09g==}
@@ -4480,6 +4488,8 @@ snapshots:
       '@algolia/requester-common': 4.24.0
       '@algolia/transporter': 4.24.0
 
+  '@algolia/client-common@5.21.0': {}
+
   '@algolia/client-personalization@4.24.0':
     dependencies:
       '@algolia/client-common': 4.24.0
@@ -4527,6 +4537,10 @@ snapshots:
   '@algolia/requester-node-http@4.24.0':
     dependencies:
       '@algolia/requester-common': 4.24.0
+
+  '@algolia/requester-node-http@5.21.0':
+    dependencies:
+      '@algolia/client-common': 5.21.0
 
   '@algolia/transporter@4.24.0':
     dependencies:
@@ -5540,23 +5554,25 @@ snapshots:
       - vue-tsc
       - yaml
 
-  '@nuxtjs/algolia@1.10.2(@vue/server-renderer@3.5.13(vue@3.5.12(typescript@5.6.3)))(magicast@0.3.5)(rollup@4.36.0)(vue@3.5.12(typescript@5.6.3))':
+  '@nuxtjs/algolia@1.11.2(@vue/server-renderer@3.5.13(vue@3.5.12(typescript@5.6.3)))(magicast@0.3.5)(vue@3.5.12(typescript@5.6.3))':
     dependencies:
       '@algolia/cache-in-memory': 4.24.0
       '@algolia/recommend': 4.24.0
       '@algolia/requester-fetch': 4.24.0
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.36.0)
+      '@algolia/requester-node-http': 5.21.0
+      '@nuxt/kit': 3.16.1(magicast@0.3.5)
       algoliasearch: 4.24.0
+      defu: 6.1.4
+      exsolve: 1.0.4
       instantsearch.css: 7.4.5
       metadata-scraper: 0.2.61
+      mocked-exports: 0.1.1
       storyblok-algolia-indexer: 1.1.0
       vue-instantsearch: 4.19.4(@vue/server-renderer@3.5.13(vue@3.5.12(typescript@5.6.3)))(algoliasearch@4.24.0)(vue@3.5.12(typescript@5.6.3))
     transitivePeerDependencies:
       - '@vue/server-renderer'
       - debug
       - magicast
-      - rollup
-      - supports-color
       - vue
       - vue-server-renderer
 

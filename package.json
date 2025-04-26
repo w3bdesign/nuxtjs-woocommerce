@@ -26,7 +26,7 @@
     "@formkit/nuxt": "^1.6.6",
     "@nuxtjs/algolia": "^1.11.2",
     "@pinia/nuxt": "^0.5.5",
-    "graphql": "^16.10.0",
+    "graphql": "^16.11.0",
     "pinia": "^2.3.1",
     "swiper": "^11.2.3",
     "uid": "^2.0.2",

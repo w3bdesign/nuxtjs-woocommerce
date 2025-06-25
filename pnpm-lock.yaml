@@ -67,8 +67,8 @@ importers:
         specifier: ^0.6.10
         version: 0.6.10(magicast@0.3.5)(rollup@4.40.0)(vite@5.4.19(@types/node@22.5.5)(terser@5.32.0))(vue@3.5.17(typescript@5.6.3))
       prettier:
-        specifier: ^3.6.0
-        version: 3.6.0
+        specifier: ^3.6.1
+        version: 3.6.1
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -3811,8 +3811,8 @@ packages:
     engines: {node: ^14.14.0 || >=16.0.0}
     hasBin: true
 
-  prettier@3.6.0:
-    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
+  prettier@3.6.1:
+    resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -9416,7 +9416,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  prettier@3.6.0: {}
+  prettier@3.6.1: {}
 
   pretty-bytes@6.1.1: {}
 

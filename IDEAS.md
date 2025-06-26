@@ -43,7 +43,7 @@ A well-designed component architecture is crucial for a large application.
 *   **Action:** Remove the hardcoded `paymentMethod` and `transactionId` from the `CheckoutForm.vue` component.
 *   **Action:** Consider creating a component library with Storybook to document and test the components in isolation.
 
-## 4. Testing (Priority: High)
+## 5. Testing (Priority: High)
 
 A comprehensive testing strategy is essential for an enterprise-ready application.
 
@@ -53,7 +53,7 @@ A comprehensive testing strategy is essential for an enterprise-ready applicatio
 *   **Action:** Write component tests for the `components/Products/ProductsSingleProduct.vue` and `components/Checkout/CheckoutForm.vue` components.
 *   **Action:** Review and expand the existing Playwright E2E tests to cover all critical user flows.
 
-## 5. Utility Functions (Priority: Medium)
+## 6. Utility Functions (Priority: Medium)
 
 The utility functions in `utils/functions.js` can be improved.
 

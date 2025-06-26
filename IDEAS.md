@@ -4,17 +4,25 @@ This document outlines a plan to make the Nuxt.js + WooCommerce project enterpri
 
 Based on a thorough analysis of the codebase, the following areas have been identified for improvement:
 
-## 1. TypeScript Migration (Priority: High)
+## 1. Incremental TypeScript Migration (Priority: High)
 
-This is the most critical step. Migrating the codebase to TypeScript will provide type safety, improve developer experience, and make the code easier to refactor and maintain.
+This is the most critical step for improving the long-term stability and maintainability of the project. We will adopt TypeScript incrementally to manage the workload and start realizing benefits immediately.
 
-*   **Action:** Rename all `.js` files to `.ts`.
-*   **Action:** Update `<script>` tags in `.vue` files to `<script lang="ts">`.
-*   **Action:** Add types to all variables, function parameters, and return values.
-*   **Action:** Create TypeScript interfaces for all data structures, such as `Product`, `Category`, `CartItem`, and `Order`.
-*   **Action:** Use GraphQL Code Generator to automatically generate TypeScript types from the GraphQL schema. This will ensure that the frontend is always in sync with the backend API.
+*   **Strategy:** Convert JavaScript files to TypeScript one at a time, starting with the most critical areas of the application. The `allowJs` flag in `tsconfig.json` will be enabled to allow `.js` and `.ts` files to coexist.
+*   **Action (First Step):** Convert `store/useCart.js` to `store/useCart.ts`. Define strict types and interfaces for the cart state and actions. This will provide immediate type safety for all components that interact with the cart.
+*   **Action (Next Steps):** Gradually convert other high-impact files, such as checkout components, utility functions, and other Pinia stores.
+*   **Action:** Use GraphQL Code Generator to automatically generate TypeScript types from the GraphQL schema. This will save significant time and ensure our frontend data models are always in sync with the API.
 
-## 2. State Management with Pinia (Priority: High)
+## 2. Leveraging Modern Nuxt 3 Features (Priority: High)
+
+To ensure the application is performant and scalable, we must take full advantage of the features offered by Nuxt 3 and its server engine, Nitro.
+
+*   **Action (Caching):** Implement a strategic caching strategy using Nuxt's `routeRules`. We will apply server-side caching to public, non-personalized pages (e.g., product and category pages) to ensure fast initial load times. User-specific pages (e.g., cart, checkout) will be explicitly excluded from server-side caching to prevent data conflicts with the client-side Apollo cache.
+*   **Action (API Routes):** Utilize Nitro's server API routes (`server/api`) for any custom backend logic, such as handling webhooks or creating dedicated endpoints to interface with third-party services.
+*   **Action (Image Optimization):** Audit the project to ensure `NuxtImg` and `NuxtPicture` are used for all images to serve optimized, responsive images in modern formats.
+*   **Action (Component Islands):** Identify opportunities to use component islands for highly interactive but non-essential components to reduce the initial JavaScript payload.
+
+## 3. State Management with Pinia (Priority: High)
 
 The project already uses Pinia, which is great. The next step is to ensure that the state management is robust and scalable.
 

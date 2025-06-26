@@ -31,7 +31,7 @@ The project already uses Pinia, which is great. The next step is to ensure that 
 *   **Action:** Improve the error handling in the Pinia store. Instead of just logging errors to the console, we should provide feedback to the user.
 *   **Action:** Refactor the cart refetching logic in `plugins/cartUpdater.js`. Instead of refetching the cart on every route change, we should only refetch it when necessary (e.g., after adding a product to the cart).
 
-## 3. Component Architecture (Priority: Medium)
+## 4. Component Architecture (Priority: Medium)
 
 A well-designed component architecture is crucial for a large application.
 

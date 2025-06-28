@@ -36,12 +36,13 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { uid } from "uid";
-import { onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useCart } from "@/store/useCart";
 
 import { BILLING_FIELDS, BILLING_SCHEMA } from "./constants/BILLING_FIELDS";
 
 import CHECKOUT_MUTATION from "@/apollo/mutations/CHECKOUT_MUTATION.gql";
+import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
 
 /**
  * Returns an input string with its first character capitalized.
@@ -54,6 +55,7 @@ const upperCaseFirstChar = (input) =>
 
 const paymentMethod = "cod";
 const cart = useCart();
+const hasSession = ref(false);
 
 // Clear WooCommerce session
 const clearWooCommerceSession = () => {
@@ -63,9 +65,45 @@ const clearWooCommerceSession = () => {
   }
 };
 
-// Ensure cart is loaded on mount
+// Check if we have a valid session
+const checkSession = () => {
+  if (process.client) {
+    const sessionData = localStorage.getItem("woo-session");
+    if (sessionData) {
+      try {
+        const parsed = JSON.parse(sessionData);
+        hasSession.value = !!(parsed && parsed.token);
+      } catch (e) {
+        hasSession.value = false;
+      }
+    } else {
+      hasSession.value = false;
+    }
+  }
+};
+
+// Use query to establish session
+const { result: cartResult, refetch: refetchCartQuery } = useQuery(
+  GET_CART_QUERY,
+  null,
+  {
+    notifyOnNetworkStatusChange: true,
+    fetchPolicy: "network-only",
+  }
+);
+
+// Watch for cart result to update session status
+watch(cartResult, (newResult) => {
+  if (newResult && newResult.cart) {
+    checkSession();
+    // The cart store will automatically update via its own watcher
+  }
+});
+
+// Ensure cart is loaded and session established on mount
 onMounted(async () => {
-  await cart.refetch();
+  await refetchCartQuery();
+  checkSession();
 });
 
 /**

@@ -36,6 +36,8 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { uid } from "uid";
+import { ref, onMounted } from "vue";
+import { useCart } from "@/store/useCart";
 
 import { BILLING_FIELDS, BILLING_SCHEMA } from "./constants/BILLING_FIELDS";
 
@@ -51,6 +53,68 @@ const upperCaseFirstChar = (input) =>
   input.charAt(0).toUpperCase() + input.slice(1);
 
 const paymentMethod = "cod";
+const cart = useCart();
+const orderData = ref(null);
+const isLoading = ref(false);
+
+// Clear WooCommerce session
+const clearWooCommerceSession = () => {
+  if (process.client) {
+    localStorage.removeItem("woo-session");
+    localStorage.removeItem("woocommerce-cart");
+  }
+};
+
+// Set up mutation with variables
+const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION, {
+  variables: computed(() => ({ input: orderData.value })),
+});
+
+onDone(async (result) => {
+  const { data } = result;
+  clearWooCommerceSession();
+  isLoading.value = false;
+  
+  if (data?.checkout?.result === "success") {
+    await cart.refetch();
+    await navigateTo("/success");
+  } else {
+    alert("Error, order not placed. Please try again.");
+    await cart.refetch();
+  }
+});
+
+onError(async (error) => {
+  console.error("Checkout error:", error);
+  isLoading.value = false;
+  
+  if (error.message.includes("session")) {
+    clearWooCommerceSession();
+    alert("Your session has expired. Please refresh the page and try again.");
+  } else {
+    alert("An unexpected error occurred. Please try again.");
+  }
+  
+  await cart.refetch();
+});
+
+// Ensure cart is loaded on mount
+onMounted(async () => {
+  await cart.refetch();
+});
+
+// Watch for orderData changes and trigger mutation
+watch(orderData, (newOrderData) => {
+  if (newOrderData) {
+    isLoading.value = true;
+    mutate();
+    
+    // Refetch after a delay
+    setTimeout(() => {
+      cart.refetch();
+    }, 2000);
+  }
+}, { deep: true });
 
 /**
  * Handles the submission of a checkout form with the provided user information.
@@ -92,28 +156,6 @@ const handleSubmit = ({
     transactionId: "hjkhjkhsdsdiui",
   };
 
-  const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION);
-
-  mutate({ input: checkoutData });
-
-  onDone(async (result) => {
-    const { data } = result;
-    if (data?.checkout?.result === "success") {
-      await navigateTo("/success");
-    } else {
-      alert("Error, order not placed. Please try again.");
-    }
-  });
-
-  onError((error) => {
-    console.error("Checkout error:", error);
-    if (error.message.includes("session")) {
-      alert(
-        "Your session has expired. Please refresh the page and try again.",
-      );
-    } else {
-      alert("An unexpected error occurred. Please try again.");
-    }
-  });
+  orderData.value = checkoutData;
 };
 </script>

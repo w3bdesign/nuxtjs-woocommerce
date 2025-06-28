@@ -92,16 +92,28 @@ const handleSubmit = ({
     transactionId: "hjkhjkhsdsdiui",
   };
 
-  const variables = { input: checkoutData };
+  const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION);
 
-  const { mutate, onDone, onError } = useMutation(CHECKOUT_MUTATION, {
-    variables,
+  mutate({ input: checkoutData });
+
+  onDone(async (result) => {
+    const { data } = result;
+    if (data?.checkout?.result === "success") {
+      await navigateTo("/success");
+    } else {
+      alert("Error, order not placed. Please try again.");
+    }
   });
 
-  mutate(checkoutData);
-
-  onDone(async () => await navigateTo("/success"));
-
-  onError(() => alert("Error, order not placed"));
+  onError((error) => {
+    console.error("Checkout error:", error);
+    if (error.message.includes("session")) {
+      alert(
+        "Your session has expired. Please refresh the page and try again.",
+      );
+    } else {
+      alert("An unexpected error occurred. Please try again.");
+    }
+  });
 };
 </script>

@@ -7,11 +7,9 @@ import {
 
 import { provideApolloClient } from "@vue/apollo-composable";
 
+const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+
 export default defineNuxtPlugin((nuxtApp) => {
-  const cookie = useCookie("woo-session", {
-    maxAge: 1_209_600, // 14 days
-    sameSite: "lax",
-  });
   const config = useRuntimeConfig();
 
   const httpLink = createHttpLink({
@@ -22,13 +20,25 @@ export default defineNuxtPlugin((nuxtApp) => {
     /**
      * If session data exist in local storage, set value as session header.
      */
+    const sessionData = process.client
+      ? JSON.parse(localStorage.getItem("woo-session"))
+      : null;
 
-    if (cookie.value) {
-      operation.setContext(() => ({
-        headers: {
-          "woocommerce-session": `Session ${cookie.value}`,
-        },
-      }));
+    if (sessionData && sessionData.token && sessionData.createdTime) {
+      const { token, createdTime } = sessionData;
+
+      // Check if the token is older than 7 days
+      if (Date.now() - createdTime > SEVEN_DAYS) {
+        // If it is, delete it
+        localStorage.removeItem("woo-session");
+      } else {
+        // If it's not, use the token
+        operation.setContext(() => ({
+          headers: {
+            "woocommerce-session": `Session ${token}`,
+          },
+        }));
+      }
     }
 
     return forward(operation);
@@ -47,11 +57,16 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       const session = headers.get("woocommerce-session");
 
-      if (session) {
+      if (session && process.client) {
         if (session === "false") {
-          cookie.value = null;
-        } else if (session !== cookie.value) {
-          cookie.value = session;
+          // Remove session data if session destroyed.
+          localStorage.removeItem("woo-session");
+          // Update session new data if changed.
+        } else if (!localStorage.getItem("woo-session")) {
+          localStorage.setItem(
+            "woo-session",
+            JSON.stringify({ token: session, createdTime: Date.now() })
+          );
         }
       }
       return response;
@@ -87,6 +102,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   provideApolloClient(apolloClient);
 
   nuxtApp.hook("apollo:auth", ({ token }) => {
-    token.value = cookie.value;
+    if (process.client) {
+      const sessionData = JSON.parse(localStorage.getItem("woo-session"));
+      if (sessionData && sessionData.token) {
+        token.value = sessionData.token;
+      }
+    }
   });
 });

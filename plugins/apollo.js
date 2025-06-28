@@ -23,7 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
      * If session data exist in local storage, set value as session header.
      */
 
-    if (process.client && cookie.value) {
+    if (cookie.value) {
       operation.setContext(() => ({
         headers: {
           "woocommerce-session": `Session ${cookie.value}`,
@@ -45,9 +45,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         response: { headers },
       } = context;
 
-      const session = headers.get("woocommerce-session") || cookie.value;
+      const session = headers.get("woocommerce-session");
 
-      if (process.client && session) {
+      if (session) {
         if (session !== cookie.value) {
           cookie.value = session;
         }

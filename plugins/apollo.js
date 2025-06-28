@@ -48,7 +48,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       const session = headers.get("woocommerce-session");
 
       if (session) {
-        if (session !== cookie.value) {
+        if (session === "false") {
+          cookie.value = null;
+        } else if (session !== cookie.value) {
           cookie.value = session;
         }
       }

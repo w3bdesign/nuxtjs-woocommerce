@@ -1,5 +1,10 @@
 <template>
-  <ProductsShowAll />
+  <div class="container mx-auto">
+    <div class="flex flex-wrap">
+      <ProductFilter />
+      <ProductGrid />
+    </div>
+  </div>
 </template>
 
 <script setup>

@@ -26,11 +26,9 @@ export const useProductsStore = defineStore("products", {
         products = products.filter((product) => {
           const productCategories =
             product.productCategories?.nodes.map((cat) =>
-              cat.name.toLowerCase()
+              cat.name.toLowerCase(),
             ) || [];
-          return selectedTypes.some((type) =>
-            productCategories.includes(type)
-          );
+          return selectedTypes.some((type) => productCategories.includes(type));
         });
       }
 
@@ -59,7 +57,9 @@ export const useProductsStore = defineStore("products", {
       });
     },
     getUniqueProductTypes(state) {
-      const productTypes = state.products.flatMap((p) => p.productCategories.nodes);
+      const productTypes = state.products.flatMap(
+        (p) => p.productCategories.nodes,
+      );
       const unique = [];
       const map = new Map();
       for (const item of productTypes) {

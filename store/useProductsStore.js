@@ -59,21 +59,21 @@ export const useProductsStore = defineStore("products", {
       });
     },
     getUniqueProductTypes(state) {
-        const productTypes = state.products.flatMap(p => p.productCategories.nodes);
-        const unique = [];
-        const map = new Map();
-        for (const item of productTypes) {
-            if(!map.has(item.id)){
-                map.set(item.id, true);
-                unique.push({
-                    id: item.id,
-                    name: item.name,
-                    checked: false
-                });
-            }
+      const productTypes = state.products.flatMap((p) => p.productCategories.nodes);
+      const unique = [];
+      const map = new Map();
+      for (const item of productTypes) {
+        if (!map.has(item.id)) {
+          map.set(item.id, true);
+          unique.push({
+            id: item.id,
+            name: item.name,
+            checked: false,
+          });
         }
-        return unique;
-    }
+      }
+      return unique;
+    },
   },
 
   actions: {
@@ -104,16 +104,16 @@ export const useProductsStore = defineStore("products", {
       this.priceRange = range;
     },
     toggleProductType(id) {
-        const productType = this.productTypes.find(pt => pt.id === id);
-        if (productType) {
-            productType.checked = !productType.checked;
-        }
+      const productType = this.productTypes.find((pt) => pt.id === id);
+      if (productType) {
+        productType.checked = !productType.checked;
+      }
     },
     resetFilters() {
-        this.selectedSizes = [];
-        this.selectedColors = [];
-        this.priceRange = [0, 1000];
-        this.productTypes.forEach(pt => pt.checked = false);
-    }
+      this.selectedSizes = [];
+      this.selectedColors = [];
+      this.priceRange = [0, 1000];
+      this.productTypes.forEach((pt) => (pt.checked = false));
+    },
   },
 });

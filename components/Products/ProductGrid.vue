@@ -26,7 +26,7 @@ import { useProductsStore } from "@/store/useProductsStore";
 
 const store = useProductsStore();
 
-onMounted(() => {
-  store.fetchProducts();
-});
+if (store.products.length === 0) {
+  await store.fetchProducts();
+}
 </script>

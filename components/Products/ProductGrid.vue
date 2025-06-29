@@ -4,29 +4,25 @@
       <ProductSort />
     </div>
     <div id="product-container" class="flex flex-wrap items-center">
-      <template v-if="store.loading">
-        <SpinnerLoading />
-      </template>
-      <template v-else-if="store.error">
-        <p>Error loading products.</p>
-      </template>
-      <template v-else>
+      <template v-if="products.length > 0">
         <ProductCard
-          v-for="product in store.filteredProducts"
+          v-for="product in products"
           :key="product.id"
           :product="product"
         />
+      </template>
+      <template v-else>
+        <p>No products are available.</p>
       </template>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useProductsStore } from "@/store/useProductsStore";
-
-const store = useProductsStore();
-
-if (store.products.length === 0) {
-  await store.fetchProducts();
-}
+defineProps({
+  products: {
+    type: Array,
+    required: true,
+  },
+});
 </script>

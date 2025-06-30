@@ -118,7 +118,7 @@ const onQuantityChange = (newQuantity) => {
 }
 
 .item-content {
-  @apply inline-block mt-4 w-20 h-12 md:w-full lg:w-full xl:w-full;
+  @apply flex justify-center items-center mt-4 w-20 h-12 md:w-full lg:w-full xl:w-full;
 }
 
 .removing {

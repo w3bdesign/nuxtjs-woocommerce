@@ -1,10 +1,7 @@
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row gap-8">
-      <!-- Sidebar Filters -->
-      <ProductFilters />
-
-      <!-- Main Content -->
+      <ProductsProductFilters />
       <div class="flex-1">
         <div
           class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8"
@@ -12,9 +9,9 @@
           <h1 class="text-xl sm:text-2xl font-medium text-center sm:text-left">
             Produkter <span class="text-gray-500">(0)</span>
           </h1>
-          <ProductSort />
+          <ProductsProductSort />
         </div>
-        <ProductsShowAll />
+        <ProductsProductsShowAll />
       </div>
     </div>
   </div>

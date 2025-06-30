@@ -4,15 +4,15 @@
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRODUKT TYPE</h3>
         <div class="space-y-2">
-          <Checkbox id="clothing" label="Clothing" :checked="false" />
-          <Checkbox id="tshirts" label="Tshirts" :checked="false" />
-          <Checkbox id="uncategorized" label="Uncategorized" :checked="false" />
+          <CommonCheckbox id="clothing" label="Clothing" :checked="false" />
+          <CommonCheckbox id="tshirts" label="Tshirts" :checked="false" />
+          <CommonCheckbox id="uncategorized" label="Uncategorized" :checked="false" />
         </div>
       </div>
 
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRIS</h3>
-        <RangeSlider
+        <CommonRangeSlider
           id="price-range"
           label="Pris"
           :min="0"

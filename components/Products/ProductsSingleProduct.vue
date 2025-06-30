@@ -62,7 +62,7 @@
           </div>
         </div>
       </section>
-      <Toast ref="toast" />
+      <CommonToast ref="toast" />
     </template>
   </div>
 </template>

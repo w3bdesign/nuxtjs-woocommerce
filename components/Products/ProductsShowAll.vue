@@ -33,17 +33,14 @@ import ProductPrice from "@/components/Products/ProductPrice.vue";
 const props = defineProps({
   categoryId: { type: String, required: false },
   categorySlug: { type: String, required: false },
-});
-
-const config = useRuntimeConfig();
-
-const props = defineProps({
   products: {
     type: Array,
     required: true,
     default: () => [],
   },
 });
+
+const config = useRuntimeConfig();
 
 const products = computed(() => props.products);
 

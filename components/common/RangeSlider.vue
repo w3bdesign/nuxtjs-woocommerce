@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center space-x-2 w-full">
+  <div class="w-full">
     <input
       type="range"
       min="0"
@@ -7,7 +7,10 @@
       class="w-full accent-blue-600"
       disabled
     />
-    <span class="text-sm">kr 0 - kr 1000</span>
+    <div class="flex justify-between text-sm mt-1">
+      <span>kr 0</span>
+      <span>kr 1000</span>
+    </div>
   </div>
 </template>
 

@@ -20,7 +20,7 @@
     <div class="item">
       <span class="block mt-2 font-extrabold">Quantity: <br /></span>
       <span class="item-content">
-        <QuantityInput
+        <CommonInput
           :model-value="localQuantity"
           :min="1"
           :loading="isUpdating"
@@ -53,7 +53,6 @@
 
 import { ref, watch } from "vue";
 import { formatPrice } from "@/utils/functions";
-import QuantityInput from "@/components/common/QuantityInput.vue";
 
 const isRemoving = ref(false);
 const isUpdating = ref(false);

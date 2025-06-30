@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import { useAsyncQuery } from "@vue/apollo-composable";
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
+
 const route = useRoute();
 
 const variables = { id: route.query.id };

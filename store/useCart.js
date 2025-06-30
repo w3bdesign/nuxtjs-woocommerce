@@ -16,7 +16,6 @@ export const useCart = defineStore(
 
     const {
       result: cartResult,
-      loading: cartLoading,
       refetch: refetchCart,
     } = useQuery(GET_CART_QUERY, null, { fetchPolicy: "network-only" });
 

@@ -20,9 +20,6 @@ importers:
       '@nuxtjs/apollo':
         specifier: 5.0.0-alpha.14
         version: 5.0.0-alpha.14(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
-      '@pinia-plugin-persistedstate/nuxt':
-        specifier: ^1.2.1
-        version: 1.2.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(magicast@0.3.5)(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(rollup@4.43.0)
       '@pinia/nuxt':
         specifier: ^0.5.5
         version: 0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
@@ -32,6 +29,9 @@ importers:
       pinia:
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
+      pinia-plugin-persistedstate:
+        specifier: ^4.4.1
+        version: 4.4.1(@nuxt/kit@3.17.5(magicast@0.3.5))(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -1074,12 +1074,6 @@ packages:
   '@parcel/watcher@2.4.1':
     resolution: {integrity: sha512-HNjmfLQEVRZmHRET336f20H/8kOozUGwk7yajvsonjNxbj2wBTK1WsQuHkD5yYh9RxFGL2EyDHryOihOwUoKDA==}
     engines: {node: '>= 10.0.0'}
-
-  '@pinia-plugin-persistedstate/nuxt@1.2.1':
-    resolution: {integrity: sha512-q8s+4aQW/AjBMyeqLL48/qzBR5lcgnvvf1525ovNuKf6Wl9CsoLjPKh/5X8vNoKGwSow4gP7lVmdYPQRypgjgg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    peerDependencies:
-      '@pinia/nuxt': ^0.5.0
 
   '@pinia/nuxt@0.5.5':
     resolution: {integrity: sha512-wjxS7YqIesh4OLK+qE3ZjhdOJ5pYZQ+VlEmZNtTwzQn1Kavei/khovx7mzXVXNA/mvSPXVhb9xBzhyS3XMURtw==}
@@ -2175,8 +2169,8 @@ packages:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
     engines: {node: '>=4.0.0'}
 
-  deep-pick-omit@1.2.0:
-    resolution: {integrity: sha512-2CGvfTM2c+IP/MhdRZMpaHhTc6zIlgz3tQXJ/VGAkc7mjMrjqSU28qiI63yEcy+fcYfd/K+NNJcGRzap4M4bqw==}
+  deep-pick-omit@1.2.1:
+    resolution: {integrity: sha512-2J6Kc/m3irCeqVG42T+SaUMesaK7oGWaedGnQQK/+O0gYc+2SP5bKh/KKTE7d7SJ+GCA9UUE1GRzh6oDe0EnGw==}
 
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
@@ -3495,12 +3489,15 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
-  pinia-plugin-persistedstate@4.0.1:
-    resolution: {integrity: sha512-Gs2nhKUi6Rwhhc8PH9wvEAxfz4iZeJ/36qQv2ieYs94+zMozbGtMLIR4p9Aoim3c/PKf8J9orOz9n+f0ZF9CdA==}
+  pinia-plugin-persistedstate@4.4.1:
+    resolution: {integrity: sha512-lmuMPpXla2zJKjxEq34e1E9P9jxkWEhcVwwioCCE0izG45kkTOvQfCzvwhW3i38cvnaWC7T1eRdkd15Re59ldw==}
     peerDependencies:
-      '@pinia/nuxt': '>=0.5.0'
-      pinia: '>=2.0.0'
+      '@nuxt/kit': '>=3.0.0'
+      '@pinia/nuxt': '>=0.10.0'
+      pinia: '>=3.0.0'
     peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
       '@pinia/nuxt':
         optional: true
       pinia:
@@ -5946,7 +5943,7 @@ snapshots:
       c12: 3.0.3(magicast@0.3.5)
       consola: 3.4.2
       defu: 6.1.4
-      destr: 2.0.3
+      destr: 2.0.5
       errx: 0.1.0
       exsolve: 1.0.4
       globby: 14.1.0
@@ -6332,18 +6329,6 @@ snapshots:
       '@parcel/watcher-win32-arm64': 2.4.1
       '@parcel/watcher-win32-ia32': 2.4.1
       '@parcel/watcher-win32-x64': 2.4.1
-
-  '@pinia-plugin-persistedstate/nuxt@1.2.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(magicast@0.3.5)(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(rollup@4.43.0)':
-    dependencies:
-      '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.43.0)
-      '@pinia/nuxt': 0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
-      defu: 6.1.4
-      pinia-plugin-persistedstate: 4.0.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(magicast@0.3.5)(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))
-    transitivePeerDependencies:
-      - magicast
-      - pinia
-      - rollup
-      - supports-color
 
   '@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))':
     dependencies:
@@ -7501,7 +7486,7 @@ snapshots:
   deep-extend@0.6.0:
     optional: true
 
-  deep-pick-omit@1.2.0: {}
+  deep-pick-omit@1.2.1: {}
 
   deepmerge@4.3.1: {}
 
@@ -8019,7 +8004,7 @@ snapshots:
       cookie-es: 1.2.2
       crossws: 0.3.4
       defu: 6.1.4
-      destr: 2.0.3
+      destr: 2.0.5
       iron-webcrypto: 1.2.1
       node-mock-http: 1.0.0
       radix3: 1.1.2
@@ -8176,7 +8161,7 @@ snapshots:
       citty: 0.1.6
       consola: 3.4.2
       defu: 6.1.4
-      destr: 2.0.3
+      destr: 2.0.5
       etag: 1.8.1
       h3: 1.15.1
       image-meta: 0.2.1
@@ -9036,17 +9021,15 @@ snapshots:
 
   pify@2.3.0: {}
 
-  pinia-plugin-persistedstate@4.0.1(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(magicast@0.3.5)(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))):
+  pinia-plugin-persistedstate@4.4.1(@nuxt/kit@3.17.5(magicast@0.3.5))(@pinia/nuxt@0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)))(pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))):
     dependencies:
-      '@nuxt/kit': 3.17.0(magicast@0.3.5)
-      deep-pick-omit: 1.2.0
+      deep-pick-omit: 1.2.1
       defu: 6.1.4
       destr: 2.0.5
     optionalDependencies:
+      '@nuxt/kit': 3.17.5(magicast@0.3.5)
       '@pinia/nuxt': 0.5.5(magicast@0.3.5)(rollup@4.43.0)(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
       pinia: 2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
-    transitivePeerDependencies:
-      - magicast
 
   pinia@2.3.1(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3)):
     dependencies:

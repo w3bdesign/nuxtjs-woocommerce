@@ -1,6 +1,11 @@
 <template>
   <label class="flex items-center space-x-2 cursor-pointer">
-    <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600 rounded" disabled />
+    <input
+      type="checkbox"
+      class="form-checkbox h-4 w-4 text-blue-600 rounded"
+      :checked="modelValue"
+      @change="$emit('change', $event.target.checked)"
+    />
     <span class="text-sm">{{ label }}</span>
   </label>
 </template>
@@ -11,5 +16,10 @@ defineProps({
     type: String,
     default: '',
   },
+  modelValue: {
+    type: Boolean,
+    default: false,
+  },
 });
+defineEmits(['change']);
 </script>

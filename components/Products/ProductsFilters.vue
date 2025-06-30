@@ -9,8 +9,8 @@
             :key="type.id"
             :id="type.id"
             :label="type.name"
-            :checked="type.checked"
-            @change="() => toggleProductType(type.id)"
+            :modelValue="type.checked"
+            @change="(checked) => toggleProductType(type.id)"
           />
         </div>
       </div>
@@ -24,7 +24,6 @@
           :max="1000"
           :value="priceRange[1]"
           :startValue="priceRange[0]"
-          :disabled="false"
           @input="(value) => setPriceRange([priceRange[0], value])"
         />
       </div>

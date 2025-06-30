@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full md:w-64 flex-shrink-0">
+  <div>
+    Filter!
     <div class="bg-white px-8 pb-8 sm:px-6 sm:pb-6 rounded-lg shadow-sm">
       <!-- PRODUCT TYPE -->
       <div class="mb-8">
@@ -52,7 +53,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-
-</script>

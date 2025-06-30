@@ -30,10 +30,10 @@
               <ul
                 class="items-center justify-end flex-1 pr-4 -mr-4 list-reset lg:flex"
               >
-                <NavItem to="/" label="Home" />
-                <NavItem to="/products" label="Products" />
-                <NavItem to="/categories" label="Categories" />
-                <NavItem to="/search" label="Search" />
+                <LayoutNavItem to="/" label="Home" />
+                <LayoutNavItem to="/products" label="Products" />
+                <LayoutNavItem to="/categories" label="Categories" />
+                <LayoutNavItem to="/search" label="Search" />
                 <li
                   class="inline-block py-2 text-xl font-semibold no-underline lg:text-base lg:px-4"
                 >
@@ -47,10 +47,6 @@
     </div>
   </header>
 </template>
-
-<script setup>
-import NavItem from "@/components/Layout/LayoutNavItem.vue";
-</script>
 
 <style scoped>
 header {

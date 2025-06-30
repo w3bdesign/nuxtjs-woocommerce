@@ -122,6 +122,8 @@ const addProductToCart = async (product) => {
   try {
     await cart.addToCart(product);
     toast.value.show();
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error adding product to cart");
+  }
 };
 </script>

@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { useQuery, useMutation } from "@vue/apollo-composable";
 import { computed, ref, watch } from "vue";
+
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
 import GET_CART_QUERY from "@/apollo/queries/GET_CART_QUERY.gql";
@@ -61,7 +62,6 @@ export const useCart = defineStore("cartState", () => {
       });
       await refetchCart();
     } catch (err) {
-      console.error("Error adding to cart:", err);
     } finally {
       loading.value = false;
     }
@@ -79,7 +79,6 @@ export const useCart = defineStore("cartState", () => {
       });
       await refetchCart();
     } catch (err) {
-      console.error("Error updating cart:", err);
       await refetchCart();
     } finally {
       loading.value = false;
@@ -92,7 +91,6 @@ export const useCart = defineStore("cartState", () => {
     try {
       await updateCartItemQuantity(key, 0);
     } catch (err) {
-      console.error("Error removing product from cart:", err);
     } finally {
       loading.value = false;
       await refetchCart();
@@ -107,7 +105,6 @@ export const useCart = defineStore("cartState", () => {
         await removeProductFromCart(item.key);
       }
     } catch (err) {
-      console.error("Error clearing cart:", err);
     } finally {
       loading.value = false;
       await refetchCart();

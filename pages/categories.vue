@@ -1,10 +1,14 @@
 <template>
   <div class="flex justify-center items-center">
-    <CategoryShowAll />
+    <CategoryShowAll :data="data" />
   </div>
 </template>
 
 <script setup>
+import FETCH_ALL_CATEGORIES_QUERY from "@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql";
+const variables = { limit: 99 };
+const { data } = await useAsyncQuery(FETCH_ALL_CATEGORIES_QUERY, variables);
+
 useHead({
   title: "Categories",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

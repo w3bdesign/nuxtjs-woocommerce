@@ -107,6 +107,24 @@ const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
 
 watch(
   () => data.value,
+  (productData) => {
+    if (productData?.product) {
+      const { name, description, image } = productData.product;
+      useSeoMeta({
+        title: name,
+        description: stripHTML(description),
+        ogTitle: name,
+        ogDescription: stripHTML(description),
+        ogImage: image?.sourceUrl,
+        twitterCard: 'summary_large_image',
+      });
+    }
+  },
+  { immediate: true },
+);
+
+watch(
+  () => data.value,
   (dataValue) => {
     if (dataValue && dataValue.product?.variations?.nodes?.length > 0) {
       selectedVariation.value =

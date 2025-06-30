@@ -14,18 +14,24 @@
 </template>
 
 <script setup>
-useHead({
-  title: "Index",
-  titleTemplate: "%s - Nuxt 3 Woocommerce",
-  meta: [
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
+useSeoMeta({
+  title: "Nuxt 3 Woocommerce",
+  description:
+    "A modern, fast, and SEO-friendly e-commerce site built with Nuxt 3 and WooCommerce.",
+  ogTitle: "Nuxt 3 Woocommerce",
+  ogDescription:
+    "A modern, fast, and SEO-friendly e-commerce site built with Nuxt 3 and WooCommerce.",
+  twitterCard: "summary_large_image",
+  htmlAttrs: {
+    lang: "en",
+  },
+  link: [
     {
-      hid: "description",
-      name: "description",
-      content: "Nuxt 3 Woocommerce",
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/favicon.ico",
     },
   ],
-  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 });
 </script>
 

@@ -30,11 +30,6 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    head: {
-      charset: "utf-8",
-      viewport: "width=500, initial-scale=1",
-      meta: [{ name: "description", content: "Nuxt 3 - Woocommerce" }],
-    },
     // global transition
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },

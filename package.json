@@ -16,7 +16,7 @@
     "nuxt": "^3.17.5",
     "nuxt-icon": "^0.6.10",
     "prettier": "^3.6.2",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.1.11"
   },
   "dependencies": {
     "postcss": "^8.5.6",
@@ -31,7 +31,7 @@
     "swiper": "^11.2.10",
     "uid": "^2.0.2",
     "vee-validate": "^4.15.1",
-    "vite": "5.4.19",
+    "vite": "7.0.0",
     "vue": "^3.5.17",
     "yup": "^1.6.1"
   }

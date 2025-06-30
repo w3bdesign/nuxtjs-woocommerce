@@ -44,12 +44,12 @@ Optional plugin:
 - [headless-wordpress](https://github.com/w3bdesign/headless-wp) Disables the frontend so only the backend is accessible.
 - [wp-graphql-cors](https://github.com/funkhaus/wp-graphql-cors) Ensures that CORS works correctly. Remember to add the domain to the store under `Extend "Access-Control-Allow-Origin” header`
 
-The current release has been tested and is confirmed working with the following plugin versions:
+The current release has been tested and is confirmed working with the following versions:
 
-- WordPress version 6.6.2
-- WooCommerce version 7.4.0
-- WP GraphQL version 1.13.8
-- WooGraphQL version 0.12.0
+- WordPress version 6.8.1
+- WooCommerce version 9.9.5
+- WP GraphQL version 2.3.3
+- WooGraphQL version 0.19.0
 - WPGraphQL CORS version 2.1
 
 2.  Make sure WooCommerce has some products already or import some sample products

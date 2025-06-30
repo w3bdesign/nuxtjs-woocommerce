@@ -14,12 +14,13 @@ export const useCart = defineStore(
     const error = ref(null);
     const cartTotals = ref({});
 
-    const {
-      result: cartResult,
-      refetch: refetchCart,
-    } = useQuery(GET_CART_QUERY, null, {
-      fetchPolicy: "network-only",
-    });
+    const { result: cartResult, refetch: refetchCart } = useQuery(
+      GET_CART_QUERY,
+      null,
+      {
+        fetchPolicy: "network-only",
+      }
+    );
 
     watch(cartResult, (newCartResult) => {
       if (newCartResult && newCartResult.cart) {
@@ -146,5 +147,5 @@ export const useCart = defineStore(
       storage: piniaPluginPersistedstate.localStorage,
       paths: ["cart", "cartTotals"],
     },
-  },
+  }
 );

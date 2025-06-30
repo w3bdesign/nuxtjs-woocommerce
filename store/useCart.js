@@ -19,7 +19,7 @@ export const useCart = defineStore(
       null,
       {
         fetchPolicy: "network-only",
-      }
+      },
     );
 
     watch(cartResult, (newCartResult) => {
@@ -147,5 +147,5 @@ export const useCart = defineStore(
       storage: piniaPluginPersistedstate.localStorage,
       paths: ["cart", "cartTotals"],
     },
-  }
+  },
 );

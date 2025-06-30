@@ -127,8 +127,7 @@ const addProductToCart = async (product) => {
     await cart.addToCart(product);
     toast.value.show();
   } catch (error) {
-    console.error("Error adding product to cart:", error);
-    // You might want to show an error message to the user here
+   
   }
 };
 </script>

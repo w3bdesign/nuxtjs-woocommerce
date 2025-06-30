@@ -1,35 +1,32 @@
 <template>
   <div class="product-single-container">
-    <template v-if="data?.product">
+    <template v-if="product">
       <section>
         <div class="container flex flex-wrap items-center pt-4 pb-12 mx-auto">
           <div
             class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
           >
-            <ProductsImage
-              :alt="data.product.name"
-              :src="data.product.image.sourceUrl"
-            />
+            <ProductsImage :alt="product.name" :src="product.image.sourceUrl" />
             <div class="ml-8">
               <p class="text-3xl font-bold text-left">
-                {{ data.product.name }}
+                {{ product.name }}
               </p>
               <ProductsPrice
-                :product="data.product"
+                :product="product"
                 :shouldCenterPrice="false"
                 priceFontSize="big"
               />
               <p class="pt-1 mt-6 text-2xl text-gray-900">
-                {{ stripHTML(data.product.description) }}
+                {{ stripHTML(product.description) }}
               </p>
               <p
-                v-if="data.product.stockQuantity"
+                v-if="product.stockQuantity"
                 class="pt-1 mt-4 text-2xl text-gray-900"
               >
-                {{ data.product.stockQuantity }} in stock
+                {{ product.stockQuantity }} in stock
               </p>
               <p
-                v-if="data.product.variations"
+                v-if="product.variations"
                 class="pt-1 mt-4 text-xl text-gray-900"
               >
                 <span class="py-2">Varianter</span>
@@ -40,19 +37,19 @@
                   v-model="selectedVariation"
                 >
                   <option
-                    v-for="(variation, index) in data.product.variations.nodes"
+                    v-for="(variation, index) in product.variations.nodes"
                     :key="variation.databaseId"
                     :value="variation.databaseId"
                     :selected="index === 0"
                   >
-                    {{ filteredVariantName(data.product.name, variation.name) }}
+                    {{ filteredVariantName(product.name, variation.name) }}
                     ({{ variation.stockQuantity }} in stock)
                   </option>
                 </select>
               </p>
               <div class="pt-1 mt-2">
                 <CommonButton
-                  @common-button-click="addProductToCart(data.product)"
+                  @common-button-click="addProductToCart(product)"
                   :is-loading="isLoading"
                 >
                   ADD TO CART
@@ -62,7 +59,7 @@
           </div>
         </div>
       </section>
-      <Toast ref="toast" />
+      <CommonToast ref="toast" />
     </template>
   </div>
 </template>
@@ -80,8 +77,6 @@
 
 import { ref, watch, computed } from "vue";
 
-import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
-
 import { stripHTML, filteredVariantName } from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
@@ -90,23 +85,19 @@ const cart = useCart();
 
 const isLoading = computed(() => cart.loading);
 
-const selectedVariation = ref(); // TODO Pass this value to addProductToCart()
 const toast = ref(null);
 
 const props = defineProps({
-  id: { type: String, required: true },
-  slug: { type: String, required: true },
+  product: { type: Object, required: true },
 });
 
-const variables = { id: props.id, slug: props.slug };
-const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+const selectedVariation = ref();
 
 watch(
-  () => data.value,
-  (dataValue) => {
-    if (dataValue && dataValue.product?.variations?.nodes?.length > 0) {
-      selectedVariation.value =
-        dataValue.product?.variations?.nodes[0].databaseId;
+  () => props.product,
+  (productValue) => {
+    if (productValue && productValue.variations?.nodes?.length > 0) {
+      selectedVariation.value = productValue.variations?.nodes[0].databaseId;
     }
   },
   { immediate: true }

@@ -1,9 +1,15 @@
 <template>
-  <ProductsSingleProduct :id="route.query.id" :slug="route.params.product" />
+  <ProductsSingleProduct :product="productData" v-if="productData" />
 </template>
 
 <script setup>
+import { useAsyncQuery } from "@vue/apollo-composable";
+import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
 const route = useRoute();
+
+const variables = { id: route.query.id };
+const { result } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+const productData = result.value?.product;
 
 useHead({
   title: route.params.product,

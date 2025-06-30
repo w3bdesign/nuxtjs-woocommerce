@@ -34,7 +34,6 @@
  */
 import { computed, ref, onMounted } from "vue";
 import { useCart } from "@/store/useCart";
-import CommonButton from "@/components/common/CommonButton.vue";
 
 const props = defineProps({
   showCheckoutButton: {

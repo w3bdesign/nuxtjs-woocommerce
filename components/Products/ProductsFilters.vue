@@ -36,7 +36,7 @@
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <ColorSwatch color="#3b82f6" title="Blue" />
+          <CommonColorSwatch color="#3b82f6" title="Blue" />
         </div>
       </div>
 

@@ -7,7 +7,7 @@
           type="button"
           @click="emitRemove"
           :disabled="isRemoving"
-          class="flex items-center justify-center w-12 h-12 p-2 rounded-full bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition disabled:opacity-50"
+          class="flex items-center justify-center w-10 h-10 p-2 rounded-full hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition disabled:opacity-50"
           aria-label="Remove item from cart"
         >
           <nuxt-img

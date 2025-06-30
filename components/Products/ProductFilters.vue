@@ -27,26 +27,33 @@
       <div class="mb-8">
         <h3 class="font-semibold mb-4">STØRRELSE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <Button :selected="true" variant="filter" :disabled="true"
-            >Large</Button
-          >
+          <CommonButton :selected="true" variant="filter" :disabled="true">
+            Large
+          </CommonButton>
         </div>
       </div>
 
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <Button
+          <CommonButton
             :disabled="true"
-            class="w-8 h-8 rounded-full bg-blue-500 p-0 border-0 shadow-none"
+            variant="color"
+            class="bg-blue-500"
             title="Blue"
           />
         </div>
       </div>
 
-      <Button variant="reset" class="mt-4 w-full" :disabled="true">
+      <CommonButton variant="reset" class="mt-4 w-full" :disabled="true">
         Resett filter
-      </Button>
+      </CommonButton>
     </div>
   </div>
 </template>
+
+<script setup>
+import Checkbox from '~/components/common/Checkbox.vue'
+import RangeSlider from '~/components/common/RangeSlider.vue'
+import CommonButton from '~/components/common/CommonButton.vue'
+</script>

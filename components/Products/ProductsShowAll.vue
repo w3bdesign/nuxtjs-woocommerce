@@ -37,13 +37,15 @@ const props = defineProps({
 
 const config = useRuntimeConfig();
 
-const products = computed(() => {
-  return (
-    allCategoryProducts.value?.productCategory?.products?.nodes ||
-    allProducts.value?.products?.nodes ||
-    []
-  );
+const props = defineProps({
+  products: {
+    type: Array,
+    required: true,
+    default: () => [],
+  },
 });
+
+const products = computed(() => props.products);
 
 /**
  * Returns the path and query parameters for a product link.

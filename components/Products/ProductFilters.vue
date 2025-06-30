@@ -46,10 +46,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import Checkbox from '~/components/common/Checkbox.vue'
-import RangeSlider from '~/components/common/RangeSlider.vue'
-import CommonButton from '~/components/common/CommonButton.vue'
-import ColorSwatch from '~/components/common/ColorSwatch.vue'
-</script>

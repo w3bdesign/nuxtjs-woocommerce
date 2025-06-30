@@ -13,7 +13,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-// No logic yet, presentational only
-</script>

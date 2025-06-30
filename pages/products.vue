@@ -21,9 +21,6 @@
 </template>
 
 <script setup>
-import ProductFilters from '~/components/Products/ProductFilters.vue'
-import ProductSort from '~/components/Products/ProductSort.vue'
-
 useHead({
   title: "Products",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

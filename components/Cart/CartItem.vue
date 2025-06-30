@@ -20,7 +20,12 @@
     <div class="item">
       <span class="block mt-2 font-extrabold">Quantity: <br /></span>
       <span class="item-content">
-        {{ product.quantity }}
+        <CommonInput
+          :model-value="localQuantity"
+          :min="1"
+          :loading="isUpdating"
+          @update:modelValue="onQuantityChange"
+        />
       </span>
     </div>
     <div class="item">
@@ -46,10 +51,19 @@
  * @emits CartItem#remove - Emitted when the remove button is clicked.
  */
 
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { formatPrice } from "@/utils/functions";
 
 const isRemoving = ref(false);
+const isUpdating = ref(false);
+const localQuantity = ref(props.product.quantity);
+
+watch(
+  () => props.product.quantity,
+  (newVal) => {
+    localQuantity.value = newVal;
+  }
+);
 
 const props = defineProps({
   product: {
@@ -58,7 +72,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["remove"]);
+const emit = defineEmits(["remove", "update-quantity"]);
 
 /**
  * Emits a "remove" event with the product's key as the payload.
@@ -66,6 +80,16 @@ const emit = defineEmits(["remove"]);
 const emitRemove = () => {
   isRemoving.value = true;
   emit("remove", props.product.key);
+};
+
+const onQuantityChange = (newQuantity) => {
+  if (newQuantity === props.product.quantity || isUpdating.value) return;
+  isUpdating.value = true;
+  emit("update-quantity", { key: props.product.key, quantity: newQuantity });
+  // UI disables controls while updating; parent resets isUpdating via prop or reactivity
+  setTimeout(() => {
+    isUpdating.value = false;
+  }, 1000);
 };
 </script>
 

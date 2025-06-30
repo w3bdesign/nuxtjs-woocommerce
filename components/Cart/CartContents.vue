@@ -15,6 +15,7 @@
         :key="product.key"
         :product="product"
         @remove="handleRemoveProduct"
+        @update-quantity="handleUpdateQuantity"
       />
     </section>
     <CommonButton v-if="showCheckoutButton" link-to="/checkout" center-button>
@@ -73,6 +74,20 @@ onMounted(async () => {
     isLoading.value = false;
   }
 });
+
+/**
+ * Handles updating the quantity of a cart item.
+ *
+ * @param {{ key: string, quantity: number }} payload
+ */
+const handleUpdateQuantity = async ({ key, quantity }) => {
+  try {
+    await cart.updateCartItemQuantity(key, quantity);
+  } catch (error) {
+    console.error("Error updating cart item quantity:", error);
+    // Optionally, add user notification here
+  }
+};
 </script>
 
 <style scoped>

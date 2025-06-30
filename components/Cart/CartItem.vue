@@ -3,14 +3,22 @@
     <div class="item">
       <span class="block mt-2 font-extrabold">Remove: <br /></span>
       <span class="item-content">
-        <nuxt-img
-          class="mt-2 ml-4 cursor-pointer"
-          :class="{ removing: isRemoving }"
-          alt="Remove icon"
-          aria-label="Remove"
-          src="/svg/Remove.svg"
+        <button
+          type="button"
           @click="emitRemove"
-        />
+          :disabled="isRemoving"
+          class="flex items-center justify-center w-12 h-12 p-2 rounded-full bg-red-50 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-400 transition disabled:opacity-50"
+          aria-label="Remove item from cart"
+        >
+          <nuxt-img
+            class="w-7 h-7"
+            :class="{ removing: isRemoving }"
+            alt="Remove icon"
+            src="/svg/Remove.svg"
+            aria-hidden="true"
+            draggable="false"
+          />
+        </button>
       </span>
     </div>
     <div class="item">

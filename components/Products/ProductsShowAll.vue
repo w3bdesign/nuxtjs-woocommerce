@@ -33,16 +33,17 @@ import ProductPrice from "@/components/Products/ProductPrice.vue";
 const props = defineProps({
   categoryId: { type: String, required: false },
   categorySlug: { type: String, required: false },
-  products: {
-    type: Array,
-    required: true,
-    default: () => [],
-  },
 });
 
 const config = useRuntimeConfig();
 
-const products = computed(() => props.products);
+const products = computed(() => {
+  return (
+    allCategoryProducts.value?.productCategory?.products?.nodes ||
+    allProducts.value?.products?.nodes ||
+    []
+  );
+});
 
 /**
  * Returns the path and query parameters for a product link.

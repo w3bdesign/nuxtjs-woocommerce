@@ -6,14 +6,14 @@
           class="text-black cursor-pointer hover:underline"
           :to="productLink(product)"
         >
-          <ProductImage :alt="product.name" :src="productImage(product)" />
+          <ProductsImage :alt="product.name" :src="productImage(product)" />
           <div class="flex justify-center pt-3">
             <p class="text-2xl font-bold text-center cursor-pointer">
               {{ product.name }}
             </p>
           </div>
         </NuxtLink>
-        <ProductPrice
+        <ProductsPrice
           :product="product"
           priceFontSize="normal"
           :shouldCenterPrice="true"
@@ -24,9 +24,6 @@
 </template>
 
 <script setup>
-import ProductImage from "@/components/Products/ProductImage.vue";
-import ProductPrice from "@/components/Products/ProductPrice.vue";
-
 const config = useRuntimeConfig();
 
 const props = defineProps({

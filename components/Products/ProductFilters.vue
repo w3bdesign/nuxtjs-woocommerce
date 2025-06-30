@@ -1,56 +1,60 @@
 <template>
   <div class="w-full md:w-64 flex-shrink-0">
     <div class="bg-white px-8 pb-8 sm:px-6 sm:pb-6 rounded-lg shadow-sm">
+      <!-- PRODUCT TYPE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRODUKT TYPE</h3>
         <div class="space-y-2">
-          <div class="flex items-center">
-            <input type="checkbox" id="clothing" class="form-checkbox h-4 w-4 text-blue-600 rounded" disabled />
-            <label for="clothing" class="ml-2 text-sm">Clothing</label>
-          </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="tshirts" class="form-checkbox h-4 w-4 text-blue-600 rounded" disabled />
-            <label for="tshirts" class="ml-2 text-sm">Tshirts</label>
-          </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="uncategorized" class="form-checkbox h-4 w-4 text-blue-600 rounded" disabled />
-            <label for="uncategorized" class="ml-2 text-sm">Uncategorized</label>
-          </div>
+          <Checkbox id="clothing" label="Clothing" :checked="false" />
+          <Checkbox id="tshirts" label="Tshirts" :checked="false" />
+          <Checkbox id="uncategorized" label="Uncategorized" :checked="false" />
         </div>
       </div>
 
+      <!-- PRICE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRIS</h3>
-        <div class="flex items-center space-x-2">
-          <input type="range" min="0" max="1000" class="w-full accent-blue-600" disabled />
-        </div>
-        <div class="flex justify-between text-sm mt-1">
-          <span>kr 0</span>
-          <span>kr 1000</span>
-        </div>
+        <RangeSlider
+          id="price-range"
+          label="Pris"
+          :min="0"
+          :max="1000"
+          :value="1000"
+          :startValue="0"
+          :formatValue="(v) => `kr ${v}`"
+          :disabled="true"
+        />
       </div>
 
+      <!-- SIZE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">STØRRELSE</h3>
-        <div class="grid grid-cols-1 gap-2">
-          <button class="px-4 py-1 rounded border text-sm bg-gray-100 text-gray-800" disabled>Large</button>
+        <div class="grid grid-cols-3 gap-2">
+          <Button :selected="true" variant="filter" :disabled="true">Large</Button>
         </div>
       </div>
 
+      <!-- COLOR -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
-        <div class="grid grid-cols-1 gap-2">
-          <button class="w-8 h-8 rounded-full bg-blue-500" disabled></button>
+        <div class="grid grid-cols-3 gap-2">
+          <button
+            class="w-8 h-8 rounded-full flex items-center justify-center text-xs bg-blue-500"
+            :disabled="true"
+            title="Blue"
+          />
         </div>
       </div>
 
-      <button class="mt-4 w-full py-2 rounded bg-gray-100 text-gray-500 text-sm font-medium" disabled>
+      <Button variant="reset" class="mt-4 w-full" :disabled="true">
         Resett filter
-      </button>
+      </Button>
     </div>
   </div>
 </template>
 
 <script setup>
-// No logic yet, purely presentational
+import Checkbox from '~/components/common/Checkbox.vue'
+import RangeSlider from '~/components/common/RangeSlider.vue'
+import Button from '~/components/common/CommonButton.vue'
 </script>

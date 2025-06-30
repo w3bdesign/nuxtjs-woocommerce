@@ -2,7 +2,6 @@
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row gap-8">
       <!-- Sidebar Filters -->
-      ProductFilters:
       <ProductFilters />
 
       <!-- Main Content -->
@@ -22,6 +21,9 @@
 </template>
 
 <script setup>
+import ProductFilters from '~/components/Products/ProductFilters.vue'
+import ProductSort from '~/components/Products/ProductSort.vue'
+
 useHead({
   title: "Products",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

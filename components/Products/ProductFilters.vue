@@ -36,11 +36,11 @@
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <button
-            class="w-8 h-8 rounded-full flex items-center justify-center text-xs bg-blue-500"
+          <Button
             :disabled="true"
+            class="w-8 h-8 rounded-full bg-blue-500 p-0 border-0 shadow-none"
             title="Blue"
-          ></button>
+          />
         </div>
       </div>
 

@@ -54,7 +54,5 @@
 </template>
 
 <script setup>
-import Checkbox from '~/components/common/Checkbox.vue'
-import RangeSlider from '~/components/common/RangeSlider.vue'
-import Button from '~/components/common/CommonButton.vue'
+
 </script>

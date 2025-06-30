@@ -24,25 +24,16 @@
 </template>
 
 <script setup>
-import FETCH_ALL_PRODUCTS_QUERY from "@/apollo/queries/FETCH_ALL_PRODUCTS_QUERY.gql";
-import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
-
 import ProductImage from "@/components/Products/ProductImage.vue";
 import ProductPrice from "@/components/Products/ProductPrice.vue";
 
-const props = defineProps({
-  categoryId: { type: String, required: false },
-  categorySlug: { type: String, required: false },
-});
-
 const config = useRuntimeConfig();
 
-const products = computed(() => {
-  return (
-    allCategoryProducts.value?.productCategory?.products?.nodes ||
-    allProducts.value?.products?.nodes ||
-    []
-  );
+const props = defineProps({
+  products: {
+    type: Array,
+    required: true,
+  },
 });
 
 /**
@@ -68,18 +59,6 @@ const productLink = (product) => {
  */
 const productImage = (product) =>
   product.image ? product.image.sourceUrl : config.public.placeholderImage;
-
-const productVariables = { limit: 99 };
-const { data: allProducts } = await useAsyncQuery(
-  FETCH_ALL_PRODUCTS_QUERY,
-  productVariables,
-);
-
-const categoryVariables = { id: props.categoryId };
-const { data: allCategoryProducts } = await useAsyncQuery(
-  GET_PRODUCTS_FROM_CATEGORY_QUERY,
-  categoryVariables,
-);
 </script>
 
 <style scoped>

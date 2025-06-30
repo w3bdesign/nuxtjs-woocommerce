@@ -6,7 +6,7 @@
           <div
             class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-2"
           >
-            <ProductImage
+            <ProductsImage
               :alt="data.product.name"
               :src="data.product.image.sourceUrl"
             />
@@ -14,7 +14,7 @@
               <p class="text-3xl font-bold text-left">
                 {{ data.product.name }}
               </p>
-              <ProductPrice
+              <ProductsPrice
                 :product="data.product"
                 :shouldCenterPrice="false"
                 priceFontSize="big"
@@ -82,10 +82,6 @@ import { ref, watch, computed } from "vue";
 
 import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.gql";
 
-import ProductImage from "@/components/Products/ProductImage.vue";
-import ProductPrice from "@/components/Products/ProductPrice.vue";
-import Toast from "@/components/common/Toast.vue";
-
 import { stripHTML, filteredVariantName } from "@/utils/functions";
 
 import { useCart } from "@/store/useCart";
@@ -113,7 +109,7 @@ watch(
         dataValue.product?.variations?.nodes[0].databaseId;
     }
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 /**
@@ -126,8 +122,6 @@ const addProductToCart = async (product) => {
   try {
     await cart.addToCart(product);
     toast.value.show();
-  } catch (error) {
-   
-  }
+  } catch (error) {}
 };
 </script>

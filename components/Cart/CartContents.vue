@@ -57,18 +57,13 @@ const cartItems = computed(() => cart.cart);
 const handleRemoveProduct = async (key) => {
   try {
     await cart.removeProductFromCart(key);
-  } catch (error) {
-    console.error("Error removing product from cart:", error);
-    // Optionally, you can add a user-friendly notification here
-    // without exposing the error details
-  }
+  } catch (error) {}
 };
 
 onMounted(async () => {
   try {
     await cart.refetch();
   } catch (err) {
-    console.error("Error fetching cart:", err);
     error.value = err;
   } finally {
     isLoading.value = false;
@@ -84,7 +79,6 @@ const handleUpdateQuantity = async ({ key, quantity }) => {
   try {
     await cart.updateCartItemQuantity(key, quantity);
   } catch (error) {
-    console.error("Error updating cart item quantity:", error);
     // Optionally, add user notification here
   }
 };

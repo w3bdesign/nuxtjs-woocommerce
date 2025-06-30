@@ -13,7 +13,3 @@
     </select>
   </div>
 </template>
-
-<script setup>
-// No logic yet, purely presentational
-</script>

@@ -54,6 +54,13 @@
 import { ref, watch } from "vue";
 import { formatPrice } from "@/utils/functions";
 
+const props = defineProps({
+  product: {
+    type: Object,
+    required: true,
+  },
+});
+
 const isRemoving = ref(false);
 const isUpdating = ref(false);
 const localQuantity = ref(props.product.quantity);
@@ -64,13 +71,6 @@ watch(
     localQuantity.value = newVal;
   }
 );
-
-const props = defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-});
 
 const emit = defineEmits(["remove", "update-quantity"]);
 

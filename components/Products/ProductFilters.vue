@@ -36,12 +36,7 @@
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <CommonButton
-            :disabled="true"
-            variant="color"
-            class="bg-blue-500"
-            title="Blue"
-          />
+          <ColorSwatch color="#3b82f6" title="Blue" />
         </div>
       </div>
 
@@ -56,4 +51,5 @@
 import Checkbox from '~/components/common/Checkbox.vue'
 import RangeSlider from '~/components/common/RangeSlider.vue'
 import CommonButton from '~/components/common/CommonButton.vue'
+import ColorSwatch from '~/components/common/ColorSwatch.vue'
 </script>

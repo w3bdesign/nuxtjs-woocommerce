@@ -1,8 +1,6 @@
 <template>
-  <div>
-    Filter!
+  <div class="w-full md:w-64 flex-shrink-0">
     <div class="bg-white px-8 pb-8 sm:px-6 sm:pb-6 rounded-lg shadow-sm">
-      <!-- PRODUCT TYPE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRODUKT TYPE</h3>
         <div class="space-y-2">
@@ -12,7 +10,6 @@
         </div>
       </div>
 
-      <!-- PRICE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">PRIS</h3>
         <RangeSlider
@@ -27,15 +24,15 @@
         />
       </div>
 
-      <!-- SIZE -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">STØRRELSE</h3>
         <div class="grid grid-cols-3 gap-2">
-          <Button :selected="true" variant="filter" :disabled="true">Large</Button>
+          <Button :selected="true" variant="filter" :disabled="true"
+            >Large</Button
+          >
         </div>
       </div>
 
-      <!-- COLOR -->
       <div class="mb-8">
         <h3 class="font-semibold mb-4">FARGE</h3>
         <div class="grid grid-cols-3 gap-2">
@@ -43,7 +40,7 @@
             class="w-8 h-8 rounded-full flex items-center justify-center text-xs bg-blue-500"
             :disabled="true"
             title="Blue"
-          />
+          ></button>
         </div>
       </div>
 

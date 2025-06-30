@@ -33,8 +33,10 @@
 </template>
 
 <script setup>
-import FETCH_ALL_CATEGORIES_QUERY from "@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql";
-
-const variables = { limit: 99 };
-const { data } = await useAsyncQuery(FETCH_ALL_CATEGORIES_QUERY, variables);
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true
+  }
+});
 </script>

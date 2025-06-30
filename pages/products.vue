@@ -11,7 +11,7 @@
           </h1>
           <ProductsProductSort />
         </div>
-        <ProductsProductsShowAll />
+        <ProductsShowAll />
       </div>
     </div>
   </div>

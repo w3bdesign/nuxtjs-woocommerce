@@ -1,8 +1,8 @@
 <template>
-  <div v-if="data.productCategories">
+  <div v-if="categories.productCategories">
     <section class="bg-white">
       <div class="flex justify-center align-middle flex-col md:flex-row">
-        <template v-for="nodes in data.productCategories">
+        <template v-for="nodes in categories.productCategories">
           <template v-for="category in nodes">
             <div v-if="category.slug !== undefined" :key="category.id">
               <NuxtLink
@@ -34,7 +34,7 @@
 
 <script setup>
 const props = defineProps({
-  data: {
+  categories: {
     type: Object,
     required: true
   }

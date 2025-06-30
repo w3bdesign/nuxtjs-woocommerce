@@ -1,7 +1,7 @@
 <template>
   <header
     role="banner"
-    class="container flex flex-col justify-center px-0 pt-4 md:pt-6 mx-auto mb-6"
+    class="container flex flex-col justify-center px-0 pt-4 md:pt-6 mx-auto mb-6 max-w-[1400px]"
   >
     <div class="flex flex-wrap lg:px-4 items-center">
       <div class="pr-2 my-2 lg:w-3/12 md:w-10/12">
@@ -47,9 +47,3 @@
     </div>
   </header>
 </template>
-
-<style scoped>
-header {
-  max-width: 1400px;
-}
-</style>

@@ -27,7 +27,7 @@
     "@nuxtjs/algolia": "^1.11.2",
     "@pinia/nuxt": "^0.5.5",
     "graphql": "^16.11.0",
-    "pinia": "^2.3.1",
+    "pinia": "^3.0.3",
     "swiper": "^11.2.10",
     "uid": "^2.0.2",
     "vee-validate": "^4.15.1",

@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       viewport: "width=500, initial-scale=1",
       meta: [{ name: "description", content: "Nuxt 3 - Woocommerce" }],
       link: [
-        { rel: "icon", type: "image/svg+xml", href: "/svg/Logo.svg" }
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }
       ],
     },
     // global transition

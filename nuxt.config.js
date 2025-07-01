@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  compatibilityDate: '2025-07-01',
   ssr: true,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],

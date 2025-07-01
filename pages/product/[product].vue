@@ -9,7 +9,8 @@ const route = useRoute();
 
 const variables = { id: route.query.id };
 const { result } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
-const productData = result.value?.product;
+
+const productData = computed(() => result.value?.product);
 
 useHead({
   title: route.params.product,

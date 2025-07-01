@@ -1,5 +1,5 @@
 <template>
-  <ProductsSingleProduct :product="productData" v-if="productData" />
+  <ProductsSingleProduct :product="data.product" v-if="data && data.product" />
 </template>
 
 <script setup>
@@ -7,10 +7,12 @@ import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.
 
 const route = useRoute();
 
-const variables = { id: route.query.id };
-const { result } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+console.log("Route:", route.query);
 
-const productData = computed(() => result.value?.product);
+const variables = { id: route.query.id };
+const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
+
+console.log("Data:", data);
 
 useHead({
   title: route.params.product,

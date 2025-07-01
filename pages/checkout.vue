@@ -6,6 +6,11 @@
 </template>
 
 <script setup>
+import { useCart } from "@/store/useCart";
+const cart = useCart();
+if (cart.cart.length === 0) {
+  await navigateTo("/");
+}
 useHead({
   title: "Checkout",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

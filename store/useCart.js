@@ -93,11 +93,14 @@ export const useCart = defineStore(
       loading.value = true;
       error.value = null;
       try {
+        const isLastItem = cart.value.length === 1;
         await updateCartItemQuantity(key, 0);
+        if (isLastItem) {
+          await navigateTo("/");
+        }
       } catch (err) {
       } finally {
         loading.value = false;
-        await refetchCart();
       }
     };
 

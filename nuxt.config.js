@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  compatibilityDate: "2025-07-01",
   ssr: true,
   components: true,
   css: ["~/assets/css/main.css", "~/assets/css/animate.min.css"],
@@ -34,6 +35,7 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=500, initial-scale=1",
       meta: [{ name: "description", content: "Nuxt 3 - Woocommerce" }],
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
     },
     // global transition
     pageTransition: { name: "page", mode: "out-in" },

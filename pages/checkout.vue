@@ -7,10 +7,20 @@
 
 <script setup>
 import { useCart } from "@/store/useCart";
+import { watch } from "vue";
+
 const cart = useCart();
-if (cart.cart.length === 0) {
-  await navigateTo("/");
-}
+
+watch(
+  () => cart.loading,
+  (loading) => {
+    if (!loading && cart.cart.length === 0) {
+      navigateTo("/");
+    }
+  },
+  { immediate: true },
+);
+
 useHead({
   title: "Checkout",
   titleTemplate: "%s - Nuxt 3 Woocommerce",

@@ -7,12 +7,8 @@ import GET_SINGLE_PRODUCT_QUERY from "@/apollo/queries/GET_SINGLE_PRODUCT_QUERY.
 
 const route = useRoute();
 
-console.log("Route:", route.query);
-
 const variables = { id: route.query.id };
 const { data } = await useAsyncQuery(GET_SINGLE_PRODUCT_QUERY, variables);
-
-console.log("Data:", data);
 
 useHead({
   title: route.params.product,

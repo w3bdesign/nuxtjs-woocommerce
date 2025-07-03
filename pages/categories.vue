@@ -7,7 +7,10 @@
 <script setup>
 import FETCH_ALL_CATEGORIES_QUERY from "@/apollo/queries/FETCH_ALL_CATEGORIES_QUERY.gql";
 const variables = { limit: 99 };
-const { data: categories } = await useAsyncQuery(FETCH_ALL_CATEGORIES_QUERY, variables);
+const { data: categories } = await useAsyncQuery(
+  FETCH_ALL_CATEGORIES_QUERY,
+  variables,
+);
 
 useHead({
   title: "Categories",

@@ -6,7 +6,9 @@
       :disabled="loading || value <= min"
       @click="updateValue(value - 1)"
       type="button"
-    >-</button>
+    >
+      -
+    </button>
     <input
       type="tel"
       pattern="\d*"
@@ -25,7 +27,9 @@
       :disabled="loading || (max !== null && value >= max)"
       @click="updateValue(value + 1)"
       type="button"
-    >+</button>
+    >
+      +
+    </button>
   </div>
 </template>
 

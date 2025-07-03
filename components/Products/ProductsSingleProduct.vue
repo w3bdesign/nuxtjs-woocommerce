@@ -100,7 +100,7 @@ watch(
       selectedVariation.value = productValue.variations?.nodes[0].databaseId;
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 /**

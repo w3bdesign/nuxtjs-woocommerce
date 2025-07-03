@@ -77,7 +77,7 @@ watch(
   () => props.product.quantity,
   (newVal) => {
     localQuantity.value = newVal;
-  }
+  },
 );
 
 const emit = defineEmits(["remove", "update-quantity"]);

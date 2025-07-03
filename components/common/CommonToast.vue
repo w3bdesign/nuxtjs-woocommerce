@@ -60,7 +60,7 @@ defineExpose({ show });
 .toast-enter-from,
 .toast-leave-to {
   opacity: 0;
-  transform: translateX(30px); 
+  transform: translateX(30px);
 }
 
 .toast-enter-to,

@@ -744,6 +744,7 @@ packages:
   '@oxc-parser/binding-linux-x64-gnu@0.75.0':
     resolution: {integrity: sha512-223VDGrX7cnmhSSRimnL+/eOCp/ABU4Iobfnelz5zbQKRpijQQjk8Ohx2kb7aZ5Q0dY09fDSUNjY/iOBBFaRIg==}
     engines: {node: '>=20.0.0'}
+    cpu: [x64]
     os: [linux]
 
   '@oxc-parser/binding-linux-x64-musl@0.75.0':

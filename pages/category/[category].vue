@@ -6,8 +6,12 @@
 import GET_PRODUCTS_FROM_CATEGORY_QUERY from "@/apollo/queries/GET_PRODUCTS_FROM_CATEGORY_QUERY.gql";
 const route = useRoute();
 
-const { data } = await useAsyncQuery(GET_PRODUCTS_FROM_CATEGORY_QUERY, { id: route.query.id });
-const products = computed(() => data.value?.productCategory?.products?.nodes || []);
+const { data } = await useAsyncQuery(GET_PRODUCTS_FROM_CATEGORY_QUERY, {
+  id: route.query.id,
+});
+const products = computed(
+  () => data.value?.productCategory?.products?.nodes || [],
+);
 
 useHead({
   title: route.params.category,

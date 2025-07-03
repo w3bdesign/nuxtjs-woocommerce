@@ -96,8 +96,7 @@ export const useCart = defineStore(
 
     const removeProductFromCart = async (key) => {
       try {
-        const isLastItem =
-          cart.value.length === 1 && cart.value[0].key === key;
+        const isLastItem = cart.value.length === 1 && cart.value[0].key === key;
         await updateCartItemQuantity(key, 0);
         if (isLastItem) {
           updateCartState(null); // Clear cart locally to update UI instantly
@@ -133,7 +132,8 @@ export const useCart = defineStore(
     return {
       cart,
       loading: computed(
-        () => loading.value || addToCartLoading.value || updateCartLoading.value,
+        () =>
+          loading.value || addToCartLoading.value || updateCartLoading.value,
       ),
       error,
       cartTotals,

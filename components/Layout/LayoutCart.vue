@@ -48,24 +48,15 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useCart } from "@/store/useCart";
 import { formatPrice } from "@/utils/functions";
 
 const cart = useCart();
-const isLoading = ref(true);
-const error = ref(null);
 
+// Use the store's reactive state directly
+const isLoading = computed(() => cart.loading);
+const error = computed(() => cart.error);
 const cartLength = computed(() => cart.cartQuantity);
 const cartSubtotal = computed(() => cart.cartSubtotal);
-
-onMounted(async () => {
-  try {
-    await cart.refetch();
-  } catch (err) {
-    error.value = err;
-  } finally {
-    isLoading.value = false;
-  }
-});
 </script>

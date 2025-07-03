@@ -32,7 +32,7 @@
  * @module CartContents
  * @returns {Object} The Vue.js component object.
  */
-import { computed, ref, onMounted } from "vue";
+import { computed } from "vue";
 import { useCart } from "@/store/useCart";
 
 const props = defineProps({
@@ -43,9 +43,10 @@ const props = defineProps({
 });
 
 const cart = useCart();
-const isLoading = ref(true);
-const error = ref(null);
 
+// Use the store's reactive state directly
+const isLoading = computed(() => cart.loading);
+const error = computed(() => cart.error);
 const cartItems = computed(() => cart.cart);
 
 /**
@@ -58,16 +59,6 @@ const handleRemoveProduct = async (key) => {
     await cart.removeProductFromCart(key);
   } catch (error) {}
 };
-
-onMounted(async () => {
-  try {
-    await cart.refetch();
-  } catch (err) {
-    error.value = err;
-  } finally {
-    isLoading.value = false;
-  }
-});
 
 /**
  * Handles updating the quantity of a cart item.

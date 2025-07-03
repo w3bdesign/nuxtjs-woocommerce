@@ -1,15 +1,18 @@
 <template>
-  <div v-if="isLoading">
+  <div v-if="isLoading && cartItems.length === 0">
     <h2 class="mt-64 text-3xl text-center">Loading cart...</h2>
   </div>
-  <div v-else-if="error">
+  <div v-else-if="error && cartItems.length === 0">
     <h2 class="mt-64 text-3xl text-center text-red-500">
       Error loading cart. Please try again.
     </h2>
   </div>
   <div v-else-if="cartItems.length">
-    <h1 class="h-10 p-6 text-3xl font-bold text-center">Cart</h1>
-    <section class="mt-10">
+    <h1 class="h-10 p-6 text-3xl font-bold text-center">
+      Cart
+      <span v-if="isLoading" class="text-sm text-gray-500 ml-2">(updating...)</span>
+    </h1>
+    <section class="mt-10" :class="{ 'opacity-70': isLoading }">
       <CartItem
         v-for="product in cartItems"
         :key="product.key"

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import { useQuery, useMutation } from "@vue/apollo-composable";
-import { computed, ref, watch } from "vue";
+import { useMutation } from "@vue/apollo-composable";
+import { computed, ref } from "vue";
 
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
@@ -14,21 +14,32 @@ export const useCart = defineStore(
     const error = ref(null);
     const cartTotals = ref({});
 
-    const { result: cartResult, refetch: refetchCart } = useQuery(
-      GET_CART_QUERY,
-      null,
-      {
-        fetchPolicy: "network-only",
-      },
-    );
+    const { $apollo } = useNuxtApp();
 
-    watch(cartResult, (newCartResult) => {
-      if (newCartResult && newCartResult.cart) {
-        updateCartState(newCartResult.cart);
+    const fetchCart = async () => {
+      try {
+        const { data } = await useAsyncData("cart", async () => {
+          const { data } = await $apollo.client.query({
+            query: GET_CART_QUERY,
+            fetchPolicy: "network-only",
+          });
+          return data.cart;
+        });
+
+        if (data.value) {
+          updateCartState(data.value);
+        }
+      } catch (e) {
+        error.value = e;
       }
-    });
+    };
 
     const updateCartState = (newCart) => {
+      if (!newCart) {
+        cart.value = [];
+        cartTotals.value = {};
+        return;
+      }
       cart.value = newCart.contents.nodes.map((item) => ({
         key: item.key,
         product: item.product.node,
@@ -64,8 +75,9 @@ export const useCart = defineStore(
             quantity: quantity,
           },
         });
-        await refetchCart();
+        await fetchCart();
       } catch (err) {
+        error.value = err;
       } finally {
         loading.value = false;
       }
@@ -81,17 +93,16 @@ export const useCart = defineStore(
             items: [{ key, quantity }],
           },
         });
-        await refetchCart();
+        await fetchCart();
       } catch (err) {
-        await refetchCart();
+        error.value = err;
+        await fetchCart();
       } finally {
         loading.value = false;
       }
     };
 
     const removeProductFromCart = async (key) => {
-      loading.value = true;
-      error.value = null;
       try {
         const isLastItem = cart.value.length === 1;
         await updateCartItemQuantity(key, 0);
@@ -99,23 +110,13 @@ export const useCart = defineStore(
           await navigateTo("/");
         }
       } catch (err) {
-      } finally {
-        loading.value = false;
+        error.value = err;
       }
     };
 
     const clearCart = async () => {
-      loading.value = true;
-      error.value = null;
-      try {
-        for (const item of cart.value) {
-          await removeProductFromCart(item.key);
-        }
-      } catch (err) {
-      } finally {
-        loading.value = false;
-        await refetchCart();
-      }
+      const itemKeys = cart.value.map((item) => ({ key: item.key, quantity: 0 }));
+      await updateCartItemQuantity(itemKeys);
     };
 
     const cartQuantity = computed(() => {
@@ -142,7 +143,7 @@ export const useCart = defineStore(
       cartQuantity,
       cartSubtotal,
       cartTotal,
-      refetch: refetchCart,
+      fetchCart,
     };
   },
   {

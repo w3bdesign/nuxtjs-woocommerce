@@ -62,9 +62,15 @@ export const useCart = defineStore(
     };
 
     const { mutate: addToCartMutation, loading: addToCartLoading } =
-      useMutation(ADD_TO_CART_MUTATION);
+      useMutation(ADD_TO_CART_MUTATION, {
+        refetchQueries: [{ query: GET_CART_QUERY }],
+        awaitRefetchQueries: true,
+      });
     const { mutate: updateCartMutation, loading: updateCartLoading } =
-      useMutation(UPDATE_CART_MUTATION);
+      useMutation(UPDATE_CART_MUTATION, {
+        refetchQueries: [{ query: GET_CART_QUERY }],
+        awaitRefetchQueries: true,
+      });
 
     const addToCart = async (product, quantity = 1) => {
       try {
@@ -74,7 +80,6 @@ export const useCart = defineStore(
             quantity: quantity,
           },
         });
-        await refetchCart();
       } catch (err) {
         console.error("Error adding to cart:", err);
       }
@@ -87,10 +92,8 @@ export const useCart = defineStore(
             items: Array.isArray(key) ? key : [{ key, quantity }],
           },
         });
-        await refetchCart();
       } catch (err) {
         console.error("Error updating cart item quantity:", err);
-        await refetchCart();
       }
     };
 

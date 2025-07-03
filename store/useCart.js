@@ -115,7 +115,10 @@ export const useCart = defineStore(
     };
 
     const clearCart = async () => {
-      const itemKeys = cart.value.map((item) => ({ key: item.key, quantity: 0 }));
+      const itemKeys = cart.value.map((item) => ({
+        key: item.key,
+        quantity: 0,
+      }));
       await updateCartItemQuantity(itemKeys);
     };
 

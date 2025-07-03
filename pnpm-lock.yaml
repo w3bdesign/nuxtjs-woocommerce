@@ -26,6 +26,9 @@ importers:
       graphql:
         specifier: ^16.11.0
         version: 16.11.0
+      oxc-parser:
+        specifier: 0.75.0
+        version: 0.75.0
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))

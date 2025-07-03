@@ -3,7 +3,7 @@
     <div v-if="isLoading">
       <Icon
         name="ri:loader-4-line"
-        size="1.5em"
+        size="2em"
         class="text-gray-500 animate-spin"
       />
     </div>

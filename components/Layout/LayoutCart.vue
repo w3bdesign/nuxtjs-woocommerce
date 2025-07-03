@@ -1,7 +1,11 @@
 <template>
   <div class="mt-4 lg:mt-0">
     <div v-if="isLoading">
-      <span class="text-xl text-gray-500">Loading cart...</span>
+      <Icon
+        name="ri:loader-4-line"
+        size="1.5em"
+        class="text-gray-500 animate-spin"
+      />
     </div>
     <div v-else-if="error">
       <span class="text-xl text-red-500">

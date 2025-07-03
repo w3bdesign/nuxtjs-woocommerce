@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
-import { useMutation } from "@vue/apollo-composable";
+import { useQuery, useMutation } from "@vue/apollo-composable";
 
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
@@ -13,11 +13,14 @@ export const useCart = defineStore(
     const cartTotals = ref({});
 
     const {
-      data: cartData,
-      pending: loading,
+      result: cartData,
+      loading,
       error,
-      refresh: refetchCart,
-    } = useAsyncQuery(GET_CART_QUERY);
+      refetch: refetchCart,
+    } = useQuery(GET_CART_QUERY, {}, {
+      fetchPolicy: 'cache-and-network',
+      notifyOnNetworkStatusChange: true,
+    });
 
     watch(
       cartData,
@@ -62,15 +65,9 @@ export const useCart = defineStore(
     };
 
     const { mutate: addToCartMutation, loading: addToCartLoading } =
-      useMutation(ADD_TO_CART_MUTATION, {
-        refetchQueries: [{ query: GET_CART_QUERY }],
-        awaitRefetchQueries: true,
-      });
+      useMutation(ADD_TO_CART_MUTATION);
     const { mutate: updateCartMutation, loading: updateCartLoading } =
-      useMutation(UPDATE_CART_MUTATION, {
-        refetchQueries: [{ query: GET_CART_QUERY }],
-        awaitRefetchQueries: true,
-      });
+      useMutation(UPDATE_CART_MUTATION);
 
     const addToCart = async (product, quantity = 1) => {
       try {
@@ -80,8 +77,12 @@ export const useCart = defineStore(
             quantity: quantity,
           },
         });
+        // Force refetch to ensure cache is updated
+        await refetchCart();
       } catch (err) {
         console.error("Error adding to cart:", err);
+        // Still refetch on error to ensure consistency
+        await refetchCart();
       }
     };
 
@@ -92,8 +93,12 @@ export const useCart = defineStore(
             items: Array.isArray(key) ? key : [{ key, quantity }],
           },
         });
+        // Force refetch to ensure cache is updated
+        await refetchCart();
       } catch (err) {
         console.error("Error updating cart item quantity:", err);
+        // Still refetch on error to ensure consistency
+        await refetchCart();
       }
     };
 

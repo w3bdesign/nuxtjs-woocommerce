@@ -26,9 +26,6 @@ importers:
       graphql:
         specifier: ^16.11.0
         version: 16.11.0
-      oxc-parser:
-        specifier: 0.75.0
-        version: 0.75.0
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
@@ -57,6 +54,9 @@ importers:
         specifier: ^1.6.1
         version: 1.6.1
     devDependencies:
+      '@oxc-parser/binding-linux-x64-gnu':
+        specifier: ^0.75.0
+        version: 0.75.0
       '@playwright/test':
         specifier: ^1.53.2
         version: 1.53.2
@@ -744,7 +744,6 @@ packages:
   '@oxc-parser/binding-linux-x64-gnu@0.75.0':
     resolution: {integrity: sha512-223VDGrX7cnmhSSRimnL+/eOCp/ABU4Iobfnelz5zbQKRpijQQjk8Ohx2kb7aZ5Q0dY09fDSUNjY/iOBBFaRIg==}
     engines: {node: '>=20.0.0'}
-    cpu: [x64]
     os: [linux]
 
   '@oxc-parser/binding-linux-x64-musl@0.75.0':
@@ -5370,8 +5369,7 @@ snapshots:
   '@oxc-parser/binding-linux-s390x-gnu@0.75.0':
     optional: true
 
-  '@oxc-parser/binding-linux-x64-gnu@0.75.0':
-    optional: true
+  '@oxc-parser/binding-linux-x64-gnu@0.75.0': {}
 
   '@oxc-parser/binding-linux-x64-musl@0.75.0':
     optional: true

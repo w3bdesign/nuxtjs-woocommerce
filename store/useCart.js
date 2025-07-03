@@ -17,10 +17,14 @@ export const useCart = defineStore(
       loading,
       error,
       refetch: refetchCart,
-    } = useQuery(GET_CART_QUERY, {}, {
-      fetchPolicy: 'cache-and-network',
-      notifyOnNetworkStatusChange: true,
-    });
+    } = useQuery(
+      GET_CART_QUERY,
+      {},
+      {
+        fetchPolicy: "cache-and-network",
+        notifyOnNetworkStatusChange: true,
+      },
+    );
 
     watch(
       cartData,

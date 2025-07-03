@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
+import { computed, ref, watch } from "vue";
 import { useMutation } from "@vue/apollo-composable";
-import { computed, ref } from "vue";
 
 import ADD_TO_CART_MUTATION from "@/apollo/mutations/ADD_TO_CART_MUTATION.gql";
 import UPDATE_CART_MUTATION from "@/apollo/mutations/UPDATE_CART_MUTATION.gql";
@@ -10,29 +10,26 @@ export const useCart = defineStore(
   "cartState",
   () => {
     const cart = ref([]);
-    const loading = ref(false);
-    const error = ref(null);
     const cartTotals = ref({});
 
-    const { $apollo } = useNuxtApp();
+    const {
+      data: cartData,
+      pending: loading,
+      error,
+      refresh: refetchCart,
+    } = useAsyncQuery(GET_CART_QUERY);
 
-    const fetchCart = async () => {
-      try {
-        const { data } = await useAsyncData("cart", async () => {
-          const { data } = await $apollo.client.query({
-            query: GET_CART_QUERY,
-            fetchPolicy: "network-only",
-          });
-          return data.cart;
-        });
-
-        if (data.value) {
-          updateCartState(data.value);
+    watch(
+      cartData,
+      (newCartData) => {
+        if (newCartData && newCartData.cart) {
+          updateCartState(newCartData.cart);
+        } else if (newCartData && newCartData.cart === null) {
+          updateCartState(null);
         }
-      } catch (e) {
-        error.value = e;
-      }
-    };
+      },
+      { immediate: true },
+    );
 
     const updateCartState = (newCart) => {
       if (!newCart) {
@@ -64,62 +61,60 @@ export const useCart = defineStore(
       };
     };
 
+    const { mutate: addToCartMutation, loading: addToCartLoading } =
+      useMutation(ADD_TO_CART_MUTATION);
+    const { mutate: updateCartMutation, loading: updateCartLoading } =
+      useMutation(UPDATE_CART_MUTATION);
+
     const addToCart = async (product, quantity = 1) => {
-      loading.value = true;
-      error.value = null;
       try {
-        const { mutate } = useMutation(ADD_TO_CART_MUTATION);
-        await mutate({
+        await addToCartMutation({
           input: {
             productId: product.databaseId,
             quantity: quantity,
           },
         });
-        await fetchCart();
+        await refetchCart();
       } catch (err) {
-        error.value = err;
-      } finally {
-        loading.value = false;
+        console.error("Error adding to cart:", err);
       }
     };
 
     const updateCartItemQuantity = async (key, quantity) => {
-      loading.value = true;
-      error.value = null;
       try {
-        const { mutate } = useMutation(UPDATE_CART_MUTATION);
-        await mutate({
+        await updateCartMutation({
           input: {
-            items: [{ key, quantity }],
+            items: Array.isArray(key) ? key : [{ key, quantity }],
           },
         });
-        await fetchCart();
+        await refetchCart();
       } catch (err) {
-        error.value = err;
-        await fetchCart();
-      } finally {
-        loading.value = false;
+        console.error("Error updating cart item quantity:", err);
+        await refetchCart();
       }
     };
 
     const removeProductFromCart = async (key) => {
       try {
-        const isLastItem = cart.value.length === 1;
+        const isLastItem = cart.value.length === 1 && cart.value[0].key === key;
         await updateCartItemQuantity(key, 0);
         if (isLastItem) {
+          updateCartState(null); // Clear cart locally to update UI instantly
           await navigateTo("/");
         }
       } catch (err) {
-        error.value = err;
+        console.error("Error removing product from cart:", err);
       }
     };
 
     const clearCart = async () => {
+      if (!cart.value.length) return;
       const itemKeys = cart.value.map((item) => ({
         key: item.key,
         quantity: 0,
       }));
       await updateCartItemQuantity(itemKeys);
+      updateCartState(null); // Clear cart locally
     };
 
     const cartQuantity = computed(() => {
@@ -136,7 +131,10 @@ export const useCart = defineStore(
 
     return {
       cart,
-      loading,
+      loading: computed(
+        () =>
+          loading.value || addToCartLoading.value || updateCartLoading.value,
+      ),
       error,
       cartTotals,
       addToCart,
@@ -146,7 +144,7 @@ export const useCart = defineStore(
       cartQuantity,
       cartSubtotal,
       cartTotal,
-      fetchCart,
+      refetch: refetchCart,
     };
   },
   {

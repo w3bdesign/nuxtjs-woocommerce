@@ -7,7 +7,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     cart.refetch();
 
     // Refetch cart data on route change
-    nuxtApp.$router.beforeEach((to, from, next) => {
+    nuxtApp.$router.beforeEach((_to, _from, next) => {
       cart.refetch();
       next();
     });

@@ -55,8 +55,8 @@ importers:
         version: 1.6.1
     devDependencies:
       '@oxc-parser/binding-linux-x64-gnu':
-        specifier: ^0.75.1
-        version: 0.75.1
+        specifier: ^0.76.0
+        version: 0.76.0
       '@playwright/test':
         specifier: ^1.53.2
         version: 1.53.2
@@ -747,8 +747,8 @@ packages:
     cpu: [x64]
     os: [linux]
 
-  '@oxc-parser/binding-linux-x64-gnu@0.75.1':
-    resolution: {integrity: sha512-zJ2t+d1rV5dcPJHxN3B1Fxc2KDN+gPgdXtlzp0/EH4iO3s5OePpPvTTZA/d1vfPoQFiFOT7VYNmaD9XjHfMQaw==}
+  '@oxc-parser/binding-linux-x64-gnu@0.76.0':
+    resolution: {integrity: sha512-7/acaG9htovp3gp/J0kHgbItQTuHctl+rbqPPqZ9DRBYTz8iV8kv3QN8t8Or8i/hOmOjfZp9McDoSU1duoR4/A==}
     engines: {node: '>=20.0.0'}
     cpu: [x64]
     os: [linux]
@@ -5419,7 +5419,7 @@ snapshots:
   '@oxc-parser/binding-linux-x64-gnu@0.75.0':
     optional: true
 
-  '@oxc-parser/binding-linux-x64-gnu@0.75.1': {}
+  '@oxc-parser/binding-linux-x64-gnu@0.76.0': {}
 
   '@oxc-parser/binding-linux-x64-musl@0.75.0':
     optional: true

@@ -24,7 +24,7 @@
     "@nuxt/image": "1.10.0",
     "@nuxtjs/algolia": "^1.11.2",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
-    "@pinia/nuxt": "^0.11.1",
+    "@pinia/nuxt": "^0.11.2",
     "graphql": "^16.11.0",  
     "pinia": "^3.0.3",
     "pinia-plugin-persistedstate": "^4.4.1",

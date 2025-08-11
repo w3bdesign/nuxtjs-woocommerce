@@ -27,7 +27,7 @@
     "@pinia/nuxt": "^0.11.2",
     "graphql": "^16.11.0",  
     "pinia": "^3.0.3",
-    "pinia-plugin-persistedstate": "^4.4.1",
+    "pinia-plugin-persistedstate": "^4.5.0",
     "postcss": "^8.5.6",
     "swiper": "^11.2.10",
     "uid": "^2.0.2",

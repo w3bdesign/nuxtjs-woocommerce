@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@oxc-parser/binding-linux-x64-gnu": "^0.93.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.55.1",
     "autoprefixer": "^10.4.21",
     "nuxt": "^3.19.2",
     "nuxt-icon": "^0.6.10",

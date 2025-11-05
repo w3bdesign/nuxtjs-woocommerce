@@ -22,16 +22,16 @@ importers:
         version: 5.0.0-alpha.15(crossws@0.3.5)(magicast@0.5.0)(rollup@4.52.5)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))(ws@8.18.3)
       '@pinia/nuxt':
         specifier: ^0.11.2
-        version: 0.11.2(magicast@0.5.0)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
+        version: 0.11.2(magicast@0.5.0)(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
       graphql:
         specifier: ^16.12.0
         version: 16.12.0
       pinia:
-        specifier: ^3.0.3
-        version: 3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
+        specifier: ^3.0.4
+        version: 3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
       pinia-plugin-persistedstate:
         specifier: ^4.7.1
-        version: 4.7.1(@nuxt/kit@4.2.0(magicast@0.5.0))(@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))))(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
+        version: 4.7.1(@nuxt/kit@4.2.0(magicast@0.5.0))(@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))))(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -3213,11 +3213,11 @@ packages:
       pinia:
         optional: true
 
-  pinia@3.0.3:
-    resolution: {integrity: sha512-ttXO/InUULUXkMHpTdp9Fj4hLpD/2AoJdmAbAeW2yu1iy1k+pkFekQXw5VpC0/5p51IOR/jDaDRfRWRnMMsGOA==}
+  pinia@3.0.4:
+    resolution: {integrity: sha512-l7pqLUFTI/+ESXn6k3nu30ZIzW5E2WZF/LaHJEpoq6ElcLD+wduZoB2kBN19du6K/4FDpPMazY2wJr+IndBtQw==}
     peerDependencies:
-      typescript: '>=4.4.4'
-      vue: ^2.7.0 || ^3.5.11
+      typescript: '>=4.5.0'
+      vue: ^3.5.11
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -5920,10 +5920,10 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.1
       '@parcel/watcher-win32-x64': 2.5.1
 
-  '@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))':
+  '@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))':
     dependencies:
       '@nuxt/kit': 3.17.7(magicast@0.5.0)
-      pinia: 3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
+      pinia: 3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
     transitivePeerDependencies:
       - magicast
 
@@ -8366,15 +8366,15 @@ snapshots:
 
   pify@2.3.0: {}
 
-  pinia-plugin-persistedstate@4.7.1(@nuxt/kit@4.2.0(magicast@0.5.0))(@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))))(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))):
+  pinia-plugin-persistedstate@4.7.1(@nuxt/kit@4.2.0(magicast@0.5.0))(@pinia/nuxt@0.11.2(magicast@0.5.0)(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))))(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))):
     dependencies:
       defu: 6.1.4
     optionalDependencies:
       '@nuxt/kit': 4.2.0(magicast@0.5.0)
-      '@pinia/nuxt': 0.11.2(magicast@0.5.0)(pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
-      pinia: 3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
+      '@pinia/nuxt': 0.11.2(magicast@0.5.0)(pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)))
+      pinia: 3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
 
-  pinia@3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
+  pinia@3.0.4(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
     dependencies:
       '@vue/devtools-api': 7.7.7
       vue: 3.5.22(typescript@5.8.3)

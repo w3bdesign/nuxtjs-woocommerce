@@ -55,8 +55,8 @@ importers:
         version: 1.7.1
     devDependencies:
       '@oxc-parser/binding-linux-x64-gnu':
-        specifier: ^0.99.0
-        version: 0.99.0
+        specifier: ^0.101.0
+        version: 0.101.0
       '@playwright/test':
         specifier: ^1.57.0
         version: 1.57.0
@@ -862,14 +862,14 @@ packages:
     cpu: [s390x]
     os: [linux]
 
-  '@oxc-parser/binding-linux-x64-gnu@0.94.0':
-    resolution: {integrity: sha512-TbtpRdViF3aPCQBKuEo+TcucwW3KFa6bMHVakgaJu12RZrFpO4h1IWppBbuuBQ9X7SfvpgC1YgCDGve9q6fpEA==}
+  '@oxc-parser/binding-linux-x64-gnu@0.101.0':
+    resolution: {integrity: sha512-owQQTlvFDn496Rcx+aHvxcaVHeX/iQX2zNYB9mh8XywIyO1QLhOVDxNHrFYnbMoXGNnwXnN4CPtpYXPuMS338g==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
 
-  '@oxc-parser/binding-linux-x64-gnu@0.99.0':
-    resolution: {integrity: sha512-YVJMfk5cFWB8i2/nIrbk6n15bFkMHqWnMIWkVx7r2KwpTxHyFMfu2IpeVKo1ITDSmt5nBrGdLHD36QRlu2nDLg==}
+  '@oxc-parser/binding-linux-x64-gnu@0.94.0':
+    resolution: {integrity: sha512-TbtpRdViF3aPCQBKuEo+TcucwW3KFa6bMHVakgaJu12RZrFpO4h1IWppBbuuBQ9X7SfvpgC1YgCDGve9q6fpEA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
@@ -5800,10 +5800,10 @@ snapshots:
   '@oxc-parser/binding-linux-s390x-gnu@0.94.0':
     optional: true
 
+  '@oxc-parser/binding-linux-x64-gnu@0.101.0': {}
+
   '@oxc-parser/binding-linux-x64-gnu@0.94.0':
     optional: true
-
-  '@oxc-parser/binding-linux-x64-gnu@0.99.0': {}
 
   '@oxc-parser/binding-linux-x64-musl@0.94.0':
     optional: true

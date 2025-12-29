@@ -20,7 +20,7 @@
     "tailwindcss": "^3.4.19"
   },
   "dependencies": {
-    "@formkit/nuxt": "^1.6.9",
+    "@formkit/nuxt": "^1.7.2",
     "@nuxt/image": "1.11.0",
     "@nuxtjs/algolia": "^1.11.2",
     "@nuxtjs/apollo": "5.0.0-alpha.15",

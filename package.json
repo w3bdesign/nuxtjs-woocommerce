@@ -11,7 +11,7 @@
     "refresh": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm i && pnpm run format"
   },
   "devDependencies": {
-    "@oxc-parser/binding-linux-x64-gnu": "^0.106.0",
+    "@oxc-parser/binding-linux-x64-gnu": "^0.107.0",
     "@playwright/test": "^1.57.0",
     "autoprefixer": "^10.4.22",
     "nuxt": "^3.20.2",

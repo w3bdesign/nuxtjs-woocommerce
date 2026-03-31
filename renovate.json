@@ -44,5 +44,6 @@
         "peerDependencies"
       ]
     }
-  ]
+  ],
+  "minimumReleaseAge": "3 days"
 }

@@ -28,7 +28,7 @@ export const useCart = defineStore(
 
     const handleCartDataChange = (newCartData) => {
       if (!newCartData) return;
-      
+
       const cartValue = newCartData.cart;
       updateCartState(cartValue);
     };

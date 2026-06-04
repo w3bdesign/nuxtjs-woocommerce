@@ -36,11 +36,11 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const updateSessionCookie = (headers) => {
     if (!process.client) return;
-    
+
     const session = headers.get("woocommerce-session");
     if (!session) return;
     if (session === cookie.value) return;
-    
+
     cookie.value = session;
   };
 
@@ -50,8 +50,10 @@ export default defineNuxtPlugin((nuxtApp) => {
        * Check for session header and update session in local storage accordingly.
        */
       const context = operation.getContext();
-      const { response: { headers } } = context;
-      
+      const {
+        response: { headers },
+      } = context;
+
       updateSessionCookie(headers);
       return response;
     }),

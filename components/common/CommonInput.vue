@@ -59,22 +59,22 @@ const emit = defineEmits(["update:modelValue"]);
 
 const value = computed(() => props.modelValue);
 
-function isValidValue(value) {
+const isValidValue = (value) => {
   if (value < props.min) return false;
   if (props.max !== null && value > props.max) return false;
   return true;
-}
+};
 
-function updateValue(newValue) {
+const updateValue = (newValue) => {
   if (!props.loading && isValidValue(newValue)) {
     emit("update:modelValue", newValue);
   }
-}
+};
 
-function onInput(e) {
+const onInput = (e) => {
   const newValue = Number(e.target.value.replace(/\D/g, ""));
   if (isValidValue(newValue)) {
     emit("update:modelValue", newValue);
   }
-}
+};
 </script>

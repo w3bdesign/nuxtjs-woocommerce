@@ -88,4 +88,3 @@ export default defineNuxtPlugin((nuxtApp) => {
     token.value = cookie.value;
   });
 });
-

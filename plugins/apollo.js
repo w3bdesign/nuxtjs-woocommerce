@@ -34,24 +34,27 @@ export default defineNuxtPlugin((nuxtApp) => {
     return forward(operation);
   });
 
+  const updateSessionCookie = (headers) => {
+    if (!process.client) return;
+
+    const session = headers.get("woocommerce-session");
+    if (!session) return;
+    if (session === cookie.value) return;
+
+    cookie.value = session;
+  };
+
   const afterware = new ApolloLink((operation, forward) =>
     forward(operation).map((response) => {
       /**
        * Check for session header and update session in local storage accordingly.
        */
       const context = operation.getContext();
-
       const {
         response: { headers },
       } = context;
 
-      const session = headers.get("woocommerce-session") || cookie.value;
-
-      if (process.client && session) {
-        if (session !== cookie.value) {
-          cookie.value = session;
-        }
-      }
+      updateSessionCookie(headers);
       return response;
     }),
   );

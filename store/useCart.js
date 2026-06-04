@@ -26,17 +26,14 @@ export const useCart = defineStore(
       },
     );
 
-    watch(
-      cartData,
-      (newCartData) => {
-        if (newCartData && newCartData.cart) {
-          updateCartState(newCartData.cart);
-        } else if (newCartData && newCartData.cart === null) {
-          updateCartState(null);
-        }
-      },
-      { immediate: true },
-    );
+    const handleCartDataChange = (newCartData) => {
+      if (!newCartData) return;
+      
+      const cartValue = newCartData.cart;
+      updateCartState(cartValue);
+    };
+
+    watch(cartData, handleCartDataChange, { immediate: true });
 
     const updateCartState = (newCart) => {
       if (!newCart) {

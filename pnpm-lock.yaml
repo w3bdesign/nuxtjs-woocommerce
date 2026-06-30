@@ -70,7 +70,7 @@ importers:
         specifier: ^0.6.10
         version: 0.6.10(magicast@0.5.3)(vite@8.1.0(@types/node@25.9.1)(esbuild@0.28.0)(jiti@1.21.7)(terser@5.48.0)(yaml@2.9.0))(vue@3.5.39)
       prettier:
-        specifier: ^3.8.5
+        specifier: ^3.9.0
         version: 3.9.1
       tailwindcss:
         specifier: ^3.4.19
@@ -1285,6 +1285,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@oxc-parser/binding-linux-x64-musl@0.133.0':
     resolution: {integrity: sha512-ssTlpXD5Mq9uCssDJPzlRWqBt4Y7Zzd9i+XZhWmK/9Y6KUIuAxVYTYiI8lxcGWi0+3/Cz4A8q9UrD4NK9Y2j7g==}

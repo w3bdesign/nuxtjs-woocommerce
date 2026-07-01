@@ -29,7 +29,7 @@
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
     "postcss": "^8.5.16",
-    "swiper": "^12.2.0",
+    "swiper": "^14.0.0",
     "uid": "^2.0.2",
     "vee-validate": "^4.15.1",
     "vite": "8.1.0",

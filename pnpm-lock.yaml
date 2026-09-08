@@ -58,8 +58,8 @@ importers:
         specifier: ^0.140.0
         version: 0.140.0
       '@playwright/test':
-        specifier: ^1.62.0
-        version: 1.62.0
+        specifier: ^1.63.0
+        version: 1.63.0
       autoprefixer:
         specifier: ^10.5.0
         version: 10.5.0(postcss@8.5.19)
@@ -1563,8 +1563,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/test@1.62.0':
-    resolution: {integrity: sha512-9zOJ6ZQRAena31MpOH9VSzIz8Ou3YJ/wtY/eQm5T2uhfhG7/U3COrMS8xOtUrZrp9OgdmzEnIYODye3nY1VqzA==}
+  '@playwright/test@1.63.0':
+    resolution: {integrity: sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2835,11 +2835,6 @@ packages:
     resolution: {integrity: sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A==}
     engines: {node: '>= 0.8'}
 
-  fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2951,10 +2946,6 @@ packages:
         optional: true
       ws:
         optional: true
-
-  graphql@16.14.1:
-    resolution: {integrity: sha512-cQOsSMS/IrDz82PVyRDvf/Q1F/bRbBVjJlh+xYOkI1qw2bWRvWGiWc+m2O0d6l4Bt1fyY+8kzJ8JFWGJqNeDBg==}
-    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   graphql@16.14.2:
     resolution: {integrity: sha512-Chq1s4CY7jmh8gO2qvLIJyfCDIN+EHLFW/9iShnp1z8FjBQMoodWP1kDC36VAMXXIvAjj4ARa7ntfAV2BrjsbA==}
@@ -3709,13 +3700,13 @@ packages:
   pkg-types@2.3.1:
     resolution: {integrity: sha512-y+ichcgc2LrADuhLNAx8DFjVfgz91pRxfZdI3UDhxHvcVEZsenLO+7XaU5vOp0u/7V/wZ+plyuQxtrDlZJ+yeg==}
 
-  playwright-core@1.62.0:
-    resolution: {integrity: sha512-nsNRyq0r2zsG8AcRHWknc9QRA5XCueC7gWMrs+Gx2tlZn9hcl8zudfh00lhJPY1DE7NmZ6bDsT9g2yey8mXljA==}
+  playwright-core@1.63.0:
+    resolution: {integrity: sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.62.0:
-    resolution: {integrity: sha512-Z14dG305dgaLu6foB1TXQagFiW8JfSUIUaUuPaKQ6NtBPKF1P/qXcqfh6c6K/icPqdy37JmjbiBXf6JNg6Sylw==}
+  playwright@1.63.0:
+    resolution: {integrity: sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -5010,7 +5001,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)':
+  '@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.14.2)
       '@wry/caches': 1.0.1
@@ -5027,7 +5018,7 @@ snapshots:
       tslib: 2.8.1
       zen-observable-ts: 1.2.5
     optionalDependencies:
-      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0)
+      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0)
       react: 19.2.7
     transitivePeerDependencies:
       - '@types/react'
@@ -6067,6 +6058,7 @@ snapshots:
       std-env: 4.1.0
       ufo: 1.6.4
       unenv: 2.0.0-rc.24
+      unplugin: 2.3.11
       vite: 7.3.5(@types/node@25.9.1)(jiti@2.7.0)(lightningcss@1.33.0)(terser@5.48.0)(yaml@2.9.0)
       vite-node: 5.3.0(@types/node@25.9.1)(jiti@2.7.0)(lightningcss@1.33.0)(terser@5.48.0)(yaml@2.9.0)
       vite-plugin-checker: 0.14.1(vite@7.3.5(@types/node@25.9.1)(jiti@2.7.0)(lightningcss@1.33.0)(terser@5.48.0)(yaml@2.9.0))
@@ -6125,16 +6117,16 @@ snapshots:
 
   '@nuxtjs/apollo@5.0.0-alpha.16(crossws@0.3.5)(magicast@0.5.3)(react@19.2.7)(rollup@4.61.0)(vue@3.5.39)(ws@8.21.0)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
       '@nuxt/kit': 4.4.7(magicast@0.5.3)
-      '@rollup/plugin-graphql': 2.0.5(graphql@16.14.1)(rollup@4.61.0)
-      '@vue/apollo-composable': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.1)(vue@3.5.39)
-      '@vue/apollo-option': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.39)
+      '@rollup/plugin-graphql': 2.0.5(graphql@16.14.2)(rollup@4.61.0)
+      '@vue/apollo-composable': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.39)
+      '@vue/apollo-option': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.39)
       defu: 6.1.7
       destr: 2.0.5
-      graphql: 16.14.1
-      graphql-tag: 2.12.6(graphql@16.14.1)
-      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0)
+      graphql: 16.14.2
+      graphql-tag: 2.12.6(graphql@16.14.2)
+      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0)
       jiti: 2.7.0
       ohash: 2.0.11
     transitivePeerDependencies:
@@ -6424,9 +6416,9 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/test@1.62.0':
+  '@playwright/test@1.63.0':
     dependencies:
-      playwright: 1.62.0
+      playwright: 1.63.0
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -6509,11 +6501,11 @@ snapshots:
     optionalDependencies:
       rollup: 4.61.0
 
-  '@rollup/plugin-graphql@2.0.5(graphql@16.14.1)(rollup@4.61.0)':
+  '@rollup/plugin-graphql@2.0.5(graphql@16.14.2)(rollup@4.61.0)':
     dependencies:
       '@rollup/pluginutils': 5.4.0(rollup@4.61.0)
-      graphql: 16.14.1
-      graphql-tag: 2.12.6(graphql@16.14.1)
+      graphql: 16.14.2
+      graphql-tag: 2.12.6(graphql@16.14.2)
     optionalDependencies:
       rollup: 4.61.0
 
@@ -6759,10 +6751,10 @@ snapshots:
     optionalDependencies:
       vue: 3.5.39
 
-  '@vue/apollo-composable@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.1)(vue@3.5.39)':
+  '@vue/apollo-composable@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.39)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
-      graphql: 16.14.1
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      graphql: 16.14.2
       throttle-debounce: 5.0.2
       ts-essentials: 9.4.2
       vue: 3.5.39
@@ -6770,9 +6762,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vue/apollo-option@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.39)':
+  '@vue/apollo-option@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.39)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
       throttle-debounce: 5.0.2
       vue: 3.5.39
 
@@ -7683,9 +7675,6 @@ snapshots:
 
   fresh@2.0.0: {}
 
-  fsevents@2.3.2:
-    optional: true
-
   fsevents@2.3.3:
     optional: true
 
@@ -7785,24 +7774,17 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  graphql-tag@2.12.6(graphql@16.14.1):
-    dependencies:
-      graphql: 16.14.1
-      tslib: 2.8.1
-
   graphql-tag@2.12.6(graphql@16.14.2):
     dependencies:
       graphql: 16.14.2
       tslib: 2.8.1
 
-  graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.1)(ws@8.21.0):
+  graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0):
     dependencies:
-      graphql: 16.14.1
+      graphql: 16.14.2
     optionalDependencies:
       crossws: 0.3.5
       ws: 8.21.0
-
-  graphql@16.14.1: {}
 
   graphql@16.14.2: {}
 
@@ -8781,13 +8763,11 @@ snapshots:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  playwright-core@1.62.0: {}
+  playwright-core@1.63.0: {}
 
-  playwright@1.62.0:
+  playwright@1.63.0:
     dependencies:
-      playwright-core: 1.62.0
-    optionalDependencies:
-      fsevents: 2.3.2
+      playwright-core: 1.63.0
 
   postcss-calc@10.1.1(postcss@8.5.19):
     dependencies:

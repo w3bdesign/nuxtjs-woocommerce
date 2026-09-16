@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@formkit/nuxt": "^2.1.0",
-    "@nuxt/image": "2.0.0",
+    "@nuxt/image": "2.1.0",
     "@nuxtjs/algolia": "^1.11.2",
     "@nuxtjs/apollo": "5.0.0-alpha.16",
     "@pinia/nuxt": "^0.11.3",

@@ -48,7 +48,7 @@ importers:
         specifier: 8.3.0
         version: 8.3.0(@types/node@25.9.1)(esbuild@0.28.0)(jiti@1.21.7)(terser@5.48.0)(yaml@2.9.0)
       vue:
-        specifier: ^3.5.39
+        specifier: ^3.5.42
         version: 3.5.42
       yup:
         specifier: ^1.7.1

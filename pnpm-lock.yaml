@@ -16,16 +16,16 @@ importers:
         version: 2.1.0(@types/node@25.9.1)(magic-string@1.4.1)(magicast@0.5.3)(rolldown@1.2.7)(unplugin@3.3.0(esbuild@0.28.0)(rolldown@1.2.7)(rollup@4.61.0)(vite@8.3.0(@types/node@25.9.1)(esbuild@0.28.0)(jiti@1.21.7)(terser@5.48.0)(yaml@2.9.0)))(unstorage@1.17.5(db0@0.3.4)(ioredis@5.11.0(supports-color@10.2.2)))
       '@nuxtjs/algolia':
         specifier: ^1.11.2
-        version: 1.11.2(@vue/server-renderer@3.5.39(vue@3.5.42))(debug@4.4.3(supports-color@10.2.2))(magicast@0.5.3)(react@19.2.7)(supports-color@10.2.2)(vue@3.5.42)
+        version: 1.11.2(@vue/server-renderer@3.5.42)(debug@4.4.3(supports-color@10.2.2))(magicast@0.5.3)(react@19.2.7)(supports-color@10.2.2)(vue@3.5.42)
       '@nuxtjs/apollo':
         specifier: 5.0.0-alpha.16
-        version: 5.0.0-alpha.16(crossws@0.3.5)(magicast@0.5.3)(react@19.2.7)(rollup@4.61.0)(vue@3.5.42)(ws@8.21.0)
+        version: 5.0.0-alpha.16(crossws@0.3.5)(magicast@0.5.3)(react@19.2.7)(rollup@4.61.0)(vue@3.5.42)(ws@8.21.3)
       '@pinia/nuxt':
         specifier: ^0.11.3
         version: 0.11.3(magicast@0.5.3)(pinia@3.0.4(vue@3.5.42))
       graphql:
-        specifier: ^16.14.2
-        version: 16.14.2
+        specifier: ^17.0.2
+        version: 17.0.2
       pinia:
         specifier: ^3.0.4
         version: 3.0.4(vue@3.5.42)
@@ -1543,11 +1543,6 @@ packages:
   '@vue/runtime-dom@3.5.42':
     resolution: {integrity: sha512-rsCmhiWLaRxGltLwhlCWyYkFn7WAbKRh0q17eZ1A6Dq6eqc2ACQ61IIryxz0LrsvCzHSilLA9JHovVwM8CNE2g==}
 
-  '@vue/server-renderer@3.5.39':
-    resolution: {integrity: sha512-yZSakiAGw85rZfG7UM8akMnIF+FmeiNk47uvHf2nVBBSe+dIKUhZuZq9+XgJhbV3nS5Z4ALH23/MpXofW+mbcw==}
-    peerDependencies:
-      vue: 3.5.39
-
   '@vue/server-renderer@3.5.42':
     resolution: {integrity: sha512-2++5dUyYS4gvo7xQXSECUDhB7TS0aOl5SeVfC5qSq1Jgfhjvegw1zqhwTIR3imZ+QYPJQw9gfcFvXGAjGZ7ajQ==}
 
@@ -2430,6 +2425,10 @@ packages:
   graphql@16.14.2:
     resolution: {integrity: sha512-Chq1s4CY7jmh8gO2qvLIJyfCDIN+EHLFW/9iShnp1z8FjBQMoodWP1kDC36VAMXXIvAjj4ARa7ntfAV2BrjsbA==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
+  graphql@17.0.2:
+    resolution: {integrity: sha512-FRWbddMxfkjiB7z+aQDWIR+E34xo9I8c9mtK2RPv8PmMzKRvrdsreHL/Ui/TmwHJfhHChEtsFPyMHKI+xuarQQ==}
+    engines: {node: ^22.0.0 || ^24.0.0 || ^25.0.0 || >=26.0.0}
 
   gzip-size@7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
@@ -4415,18 +4414,6 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.21.0:
-    resolution: {integrity: sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   ws@8.21.3:
     resolution: {integrity: sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw==}
     engines: {node: '>=10.0.0'}
@@ -4584,7 +4571,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)':
+  '@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.14.2)
       '@wry/caches': 1.0.1
@@ -4601,7 +4588,7 @@ snapshots:
       tslib: 2.8.1
       zen-observable-ts: 1.2.5
     optionalDependencies:
-      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0)
+      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3)
       react: 19.2.7
     transitivePeerDependencies:
       - '@types/react'
@@ -5636,7 +5623,7 @@ snapshots:
       - webpack
       - yaml
 
-  '@nuxtjs/algolia@1.11.2(@vue/server-renderer@3.5.39(vue@3.5.42))(debug@4.4.3(supports-color@10.2.2))(magicast@0.5.3)(react@19.2.7)(supports-color@10.2.2)(vue@3.5.42)':
+  '@nuxtjs/algolia@1.11.2(@vue/server-renderer@3.5.42)(debug@4.4.3(supports-color@10.2.2))(magicast@0.5.3)(react@19.2.7)(supports-color@10.2.2)(vue@3.5.42)':
     dependencies:
       '@algolia/cache-in-memory': 4.26.0
       '@algolia/recommend': 4.27.0
@@ -5650,7 +5637,7 @@ snapshots:
       metadata-scraper: 0.2.61
       mocked-exports: 0.1.1
       storyblok-algolia-indexer: 1.1.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
-      vue-instantsearch: 4.26.7(@vue/server-renderer@3.5.39(vue@3.5.42))(algoliasearch@4.27.0)(react@19.2.7)(vue@3.5.42)
+      vue-instantsearch: 4.26.7(@vue/server-renderer@3.5.42)(algoliasearch@4.27.0)(react@19.2.7)(vue@3.5.42)
     transitivePeerDependencies:
       - '@vue/server-renderer'
       - debug
@@ -5660,18 +5647,18 @@ snapshots:
       - vue
       - vue-server-renderer
 
-  '@nuxtjs/apollo@5.0.0-alpha.16(crossws@0.3.5)(magicast@0.5.3)(react@19.2.7)(rollup@4.61.0)(vue@3.5.42)(ws@8.21.0)':
+  '@nuxtjs/apollo@5.0.0-alpha.16(crossws@0.3.5)(magicast@0.5.3)(react@19.2.7)(rollup@4.61.0)(vue@3.5.42)(ws@8.21.3)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7)
       '@nuxt/kit': 4.4.7(magicast@0.5.3)
       '@rollup/plugin-graphql': 2.0.5(graphql@16.14.2)(rollup@4.61.0)
-      '@vue/apollo-composable': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.42)
-      '@vue/apollo-option': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.42)
+      '@vue/apollo-composable': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.42)
+      '@vue/apollo-option': 4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7))(vue@3.5.42)
       defu: 6.1.7
       destr: 2.0.5
       graphql: 16.14.2
       graphql-tag: 2.12.6(graphql@16.14.2)
-      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0)
+      graphql-ws: 6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3)
       jiti: 2.7.0
       ohash: 2.0.11
     transitivePeerDependencies:
@@ -6122,9 +6109,9 @@ snapshots:
     optionalDependencies:
       vue: 3.5.42
 
-  '@vue/apollo-composable@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.42)':
+  '@vue/apollo-composable@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7))(graphql@16.14.2)(vue@3.5.42)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7)
       graphql: 16.14.2
       throttle-debounce: 5.0.2
       ts-essentials: 9.4.2
@@ -6133,9 +6120,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vue/apollo-option@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7))(vue@3.5.42)':
+  '@vue/apollo-option@4.2.2(@apollo/client@3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7))(vue@3.5.42)':
     dependencies:
-      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react@19.2.7)
+      '@apollo/client': 3.14.1(graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3))(graphql@16.14.2)(react@19.2.7)
       throttle-debounce: 5.0.2
       vue: 3.5.42
 
@@ -6280,13 +6267,6 @@ snapshots:
       '@vue/runtime-core': 3.5.42
       '@vue/shared': 3.5.42
       csstype: 3.2.3
-
-  '@vue/server-renderer@3.5.39(vue@3.5.42)':
-    dependencies:
-      '@vue/compiler-ssr': 3.5.39
-      '@vue/shared': 3.5.39
-      vue: 3.5.42
-    optional: true
 
   '@vue/server-renderer@3.5.42':
     dependencies:
@@ -7172,14 +7152,16 @@ snapshots:
       graphql: 16.14.2
       tslib: 2.8.1
 
-  graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.0):
+  graphql-ws@6.0.8(crossws@0.3.5)(graphql@16.14.2)(ws@8.21.3):
     dependencies:
       graphql: 16.14.2
     optionalDependencies:
       crossws: 0.3.5
-      ws: 8.21.0
+      ws: 8.21.3
 
   graphql@16.14.2: {}
+
+  graphql@17.0.2: {}
 
   gzip-size@7.0.0:
     dependencies:
@@ -9210,7 +9192,7 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-instantsearch@4.26.7(@vue/server-renderer@3.5.39(vue@3.5.42))(algoliasearch@4.27.0)(react@19.2.7)(vue@3.5.42):
+  vue-instantsearch@4.26.7(@vue/server-renderer@3.5.42)(algoliasearch@4.27.0)(react@19.2.7)(vue@3.5.42):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 4.27.0
@@ -9219,7 +9201,7 @@ snapshots:
       mitt: 2.1.0
       vue: 3.5.42
     optionalDependencies:
-      '@vue/server-renderer': 3.5.39(vue@3.5.42)
+      '@vue/server-renderer': 3.5.42
     transitivePeerDependencies:
       - react
 
@@ -9300,9 +9282,6 @@ snapshots:
       strip-ansi: 7.2.0
 
   wrappy@1.0.2: {}
-
-  ws@8.21.0:
-    optional: true
 
   ws@8.21.3: {}
 
